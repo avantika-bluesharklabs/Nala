@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "39253487171",
+    "firebase_url": "https://my-family-first-patient.firebaseio.com",
+    "project_id": "my-family-first-patient",
+    "storage_bucket": "my-family-first-patient.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:39253487171:android:bc24e6873e9e3e3d876ef6",
+        "android_client_info": {
+          "package_name": "com.nala"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "39253487171-bik4fmu8satqt8518tb0b45s1he75emj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJrLn7ezvSVTALR1cXLFN0FJjrue7wKDE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "39253487171-bik4fmu8satqt8518tb0b45s1he75emj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

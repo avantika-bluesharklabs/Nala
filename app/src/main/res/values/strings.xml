@@ -1,0 +1,75 @@
+<resources>
+    <string name="app_name">Nala</string>
+    <string name="default_notification_channel_id">Nala</string>
+    <string name="fcm_message">Nala</string>
+
+
+    <string name="pref_is_user_login">IS_USER_LOGIN</string>
+    <string name="pref_user_appointment">USER_APPOINTMENT</string>
+    <string name="pref_fcm_token">FCM_TOKEN</string>
+    <string name="pref_gps_lat">LAT</string>
+    <string name="pref_gps_lng">LNG</string>
+
+
+    <!-- errors -->
+    <string name="error_blank_email">Enter email or mobile</string>
+    <string name="error_blank_email_signup">Enter email</string>
+    <string name="error_blank_name">Enter name</string>
+    <string name="error_blank_phone">Enter mobile number</string>
+    <string name="error_blank_phone_valid">Enter 10 digit mobile number</string>
+    <string name="error_blank_password">Enter password</string>
+    <string name="error_password_not_matched">Re entered password does not match</string>
+    <string name="error_blank_confirm_password">Re enter your password</string>
+
+    <!-- messages -->
+    <string name="text_norecordfound">No record found</string>
+    <string name="message_something_wrong">Something went wrong. Please try after sometime</string>
+    <string name="message_noconnection">No connection</string>
+    <string name="message_cancel">Cancel</string>
+    <string name="message_alert">Alert</string>
+    <string name="message_camera_absent">This feature requires camera, and your device does not have one</string>
+    <string name="message_unabletochooseimage">Unable to choose image</string>
+    <string name="message_unabletochoosedocument">Unable to choose document</string>
+    <string name="message_camera_unabletocapture">Unable to capture from camera</string>
+    <string name="message_camera_unabletoopen">Unable to open camera</string>
+    <string name="text_storage">Storage</string>
+
+    <string name="permission_camera">Camera permission is needed to capture image</string>
+    <string name="permission_location">Location permission is needed to fetch current location</string>
+    <string name="permission_externalstorage_camera">External storage permission is needed to
+        fetch data captured from camera</string>
+    <string name="permission_externalstorage_photogallery">External storage permission is needed to
+        fetch image information</string>
+    <string name="permission_camera_external">Camera permission is needed to capture image
+        and write external storage permission is needed to fetch image captured from camera</string>
+    <string name="permission_externalstorage_document">External storage permission is needed to
+        fetch document</string>
+
+    <string name="broadcastFragBaseError">broadcastFragBaseError</string>
+    <string name="broadcastImageResult">broadcastImageResult</string>
+    <string name="broadcastDocumentResult">broadcastDocumentResult</string>
+    <string name="bundleDocumentIsAdditional">bundleDocumentIsAdditional</string>
+    <string name="bundleDocumentFilePath">bundleDocumentFilePath</string>
+    <string name="bundleImageResultStream">bundleImageResultStream</string>
+    <string name="bundleImageResultUri">bundleImageResultUri</string>
+    <string name="bundleFragBaseError">bundleFragBaseError</string>
+    <string name="bundleFragBaseErrorString">bundleFragBaseErrorString</string>
+
+    <string name="text_uploaddocument">Upload Document</string>
+    <string name="text_uploadphotousing">Upload photo using</string>
+    <string name="text_uploaddocumentusing">Upload document using</string>
+    <string name="text_camera">Camera</string>
+    <string name="text_request">Request</string>
+    <string name="text_photogallery">Photo gallery</string>
+    <string name="text_document">Document</string>
+
+    <string name="error_filesize_prefix">Please choose another</string>
+    <string name="error_filesize_type_document">document</string>
+    <string name="error_filesize_type_image">image</string>
+    <string name="error_filesize_type_suffix_min">, as size should be more than or equal to</string>
+    <string name="error_filesize_type_suffix_max">, as size should be less than or equal to</string>
+    <string name="error_filesize_suffix_min"> </string>
+    <string name="error_filesize_suffix_max"> </string>
+    <string name="bundleChooserProgressIsToShow">bundleChooserProgressIsToShow</string>
+</resources>
+
