@@ -42,6 +42,7 @@
     </style>
 
 
+
     <style name="progressBarCentre">
         <item name="layout_constraintBottom_toBottomOf">parent</item>
         <item name="layout_constraintLeft_toLeftOf">parent</item>

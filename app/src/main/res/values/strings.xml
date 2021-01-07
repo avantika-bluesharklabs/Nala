@@ -71,5 +71,14 @@
     <string name="error_filesize_suffix_min"> </string>
     <string name="error_filesize_suffix_max"> </string>
     <string name="bundleChooserProgressIsToShow">bundleChooserProgressIsToShow</string>
+    <string name="str_welcome">Welcome!</string>
+    <string name="str_create_acc">Create Account</string>
+    <string name="str_sign_in">Sign In</string>
+    <string name="str_sign_fb">Sign in with Facebook</string>
+    <string name="str_sign_apple">Sign in with Apple</string>
+    <string name="str_sign_google">Sign in with Google</string>
+    <string name="str_email_hint">Email</string>
+    <string name="str_password_hint">Password</string>
+    <string name="str_forgot_pass">Forgot Password?</string>
 </resources>
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#00B2B7</color>
+    <color name="colorPrimary">#7CD9EA</color>
     <color name="colorPrimaryDark">#00B2B7</color>
     <color name="colorAccent">#00B2B7</color>
 
@@ -20,6 +20,10 @@
     <color name="colorBgScreen">#EFF1F9</color>
     <color name="colorDarkGreen">#57B952</color>
     <color name="colorSkyBlue">#00B2B7</color>
-    <color name="colorBlue">#9986EC</color>
+    <color name="colorBlueLight">#9986EC</color>
+    <color name="colorBlue">#1878F3</color>
+    <color name="colorOrange">#FA5434</color>
+
+
 
 </resources>

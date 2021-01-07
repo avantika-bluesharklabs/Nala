@@ -4,6 +4,7 @@ import android.content.Context
 import android.location.Address
 import android.location.Geocoder
 import android.net.ConnectivityManager
+import android.util.Log
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.multidex.MultiDexApplication
 import com.bumptech.glide.load.engine.DiskCacheStrategy
@@ -23,9 +24,19 @@ import java.util.*
  */
 
 class MyApplication : MultiDexApplication() {
+    private var isLogShown: Boolean = true
+
+
     private lateinit var mAppComponent: AppComponent
     private lateinit var mRetrofitInterface: RetroFitInterface
     private lateinit var mPreferences: UtilsSharedPreferences
+
+    fun showLogs(tag: String,msg: String){
+        if(isLogShown){
+            Log.e(tag,msg)
+        }
+
+    }
 
 
     override fun onCreate() {

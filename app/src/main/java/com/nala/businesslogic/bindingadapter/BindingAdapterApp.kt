@@ -13,7 +13,6 @@ import android.widget.Spinner
 import android.widget.TextView
 import androidx.databinding.BindingAdapter
 import androidx.databinding.ObservableInt
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout.OnRefreshListener
@@ -21,8 +20,6 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.nala.R
 import com.nala.businesslogic.interactors.ObservableString
-import com.nala.businesslogic.interfaces.*
-import com.nala.businesslogic.pojo.*
 import com.nala.utils.Utils
 import com.nala.view.adapter.*
 import com.google.android.material.textfield.TextInputEditText
