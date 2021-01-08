@@ -9,7 +9,7 @@
 
         <variable
             name="vmLogin"
-            type="com.nala.businesslogic.viewmodel.ViewModelLogin" />
+            type="com.nala.businesslogic.viewmodel.activities.ViewModelLogin" />
 
     </data>
 
@@ -176,7 +176,7 @@
 
 
                 <Button
-                    android:id="@+id/cl_create_acc"
+                    android:id="@+id/btn_create_acc"
                     android:layout_width="0dp"
                     android:layout_height="@dimen/margin_fifty_five"
                     android:layout_marginTop="@dimen/margin_twelve"
@@ -191,7 +191,7 @@
                     app:layout_constraintTop_toBottomOf="@id/txt_welcome" />
 
                 <Button
-                    android:id="@+id/cl_sign_in"
+                    android:id="@+id/btn_sign_in"
                     android:layout_width="0dp"
                     android:layout_height="@dimen/margin_fifty_five"
                     android:layout_marginTop="@dimen/margin_twelve"
@@ -203,10 +203,10 @@
                     android:textSize="@dimen/textsize_sixteen"
                     app:layout_constraintLeft_toRightOf="@id/guideline_inner_left"
                     app:layout_constraintRight_toLeftOf="@id/guideline_inner_right"
-                    app:layout_constraintTop_toBottomOf="@id/cl_create_acc" />
+                    app:layout_constraintTop_toBottomOf="@id/btn_create_acc" />
 
                 <Button
-                    android:id="@+id/cl_sign_fb"
+                    android:id="@+id/btn_sign_fb"
                     android:layout_width="0dp"
                     android:layout_height="@dimen/margin_fifty_five"
                     android:layout_marginTop="@dimen/margin_twelve"
@@ -220,11 +220,11 @@
                     android:textSize="@dimen/textsize_sixteen"
                     app:layout_constraintLeft_toRightOf="@id/guideline_inner_left"
                     app:layout_constraintRight_toLeftOf="@id/guideline_inner_right"
-                    app:layout_constraintTop_toBottomOf="@id/cl_sign_in" />
+                    app:layout_constraintTop_toBottomOf="@id/btn_sign_in" />
 
 
                 <Button
-                    android:id="@+id/cl_sign_apple"
+                    android:id="@+id/btn_sign_apple"
                     android:layout_width="0dp"
                     android:layout_height="@dimen/margin_fifty_five"
                     android:layout_marginTop="@dimen/margin_twelve"
@@ -238,11 +238,11 @@
                     android:textSize="@dimen/textsize_sixteen"
                     app:layout_constraintLeft_toRightOf="@id/guideline_inner_left"
                     app:layout_constraintRight_toLeftOf="@id/guideline_inner_right"
-                    app:layout_constraintTop_toBottomOf="@id/cl_sign_fb" />
+                    app:layout_constraintTop_toBottomOf="@id/btn_sign_fb" />
 
 
                 <Button
-                    android:id="@+id/cl_sign_google"
+                    android:id="@+id/btn_sign_google"
                     android:layout_width="0dp"
                     android:layout_height="@dimen/margin_fifty_five"
                     android:layout_marginTop="@dimen/margin_twelve"
@@ -257,7 +257,7 @@
                     android:textSize="@dimen/textsize_sixteen"
                     app:layout_constraintLeft_toRightOf="@id/guideline_inner_left"
                     app:layout_constraintRight_toLeftOf="@id/guideline_inner_right"
-                    app:layout_constraintTop_toBottomOf="@id/cl_sign_apple"
+                    app:layout_constraintTop_toBottomOf="@id/btn_sign_apple"
                     app:layout_constraintBottom_toTopOf="@+id/guideline_inner_bottom" />
 
 

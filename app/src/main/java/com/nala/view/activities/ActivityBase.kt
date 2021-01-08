@@ -104,6 +104,10 @@ open class ActivityBase : AppCompatActivity(), LocationListener {
 //            View.SYSTEM_UI_FLAG_LAYOUT_STABLE or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN or View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
 //        window.statusBarColor = Color.TRANSPARENT
 
+        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR)
+        window.statusBarColor = Color.WHITE
+
+
         super.onCreate(savedInstanceState)
         mApplication = application as MyApplication
         mPreferences = mApplication.getAppComponent().getPreferences()

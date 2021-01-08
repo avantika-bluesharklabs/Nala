@@ -18,7 +18,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="file:$USER_HOME$/Android/Sdk/icons/material/materialicons/chevron_right/baseline_chevron_right_24.xml" />
+                                      <entry key="url" value="file:$USER_HOME$/Android/Sdk/icons/material/materialicons/rotate_right/baseline_rotate_right_24.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -28,7 +28,7 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="outputName" value="ic_btn_go" />
+                            <entry key="outputName" value="ic_resend_code" />
                             <entry key="sourceFile" value="$USER_HOME$/Downloads/google.svg" />
                           </map>
                         </option>

@@ -5,8 +5,9 @@ import android.os.Bundle
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.observe
 import com.nala.R
-import com.nala.businesslogic.viewmodel.ViewModelSignIn
+import com.nala.businesslogic.viewmodel.activities.ViewModelSignIn
 import com.nala.databinding.ActivitySignInBinding
+import com.nala.utils.Utils
 
 class ActivitySignIn : ActivityBase() {
 
@@ -18,7 +19,11 @@ class ActivitySignIn : ActivityBase() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mBinding = DataBindingUtil.setContentView(this, R.layout.activity_sign_in)
-        mViewModelSignIn = ViewModelSignIn(mApplication, true)
+        mViewModelSignIn =
+            ViewModelSignIn(
+                mApplication,
+                true
+            )
         mBinding.vmSignIn = mViewModelSignIn
 
         observable()
@@ -32,14 +37,20 @@ class ActivitySignIn : ActivityBase() {
             finish()
         })
 
+
+
         mViewModelSignIn.getLiveEventSignIn().observe(this, {
 
-            mApplication!!.showLogs("SignInCLick", "SignIn")
+            Utils.hideKeyboard(this@ActivitySignIn)
+            mApplication.showLogs("SignInCLick", "SignIn   " + it)
+            if (it) {
+                mViewModelSignIn.networkCallData()
+            }
         })
 
         mViewModelSignIn.getLiveEventForgotPass().observe(this, {
-
-            mApplication!!.showLogs("SignInCLick", "ForgotPass")
+            startActivity(Intent(this, ActivityForgotPassword::class.java))
+            finish()
         })
     }
 }

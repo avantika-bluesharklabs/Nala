@@ -22,8 +22,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".view.activities.ActivitySignIn"></activity>
-        <activity android:name=".view.activities.ActivitySignUp"></activity>
+        <activity android:name=".view.activities.ActivityPhoneVarification"></activity>
+        <activity android:name=".view.activities.ActivityAddUserDetails" />
+        <activity android:name=".view.activities.ActivitySignUp" />
+        <activity android:name=".view.activities.ActivityForgotPassword" />
+        <activity android:name=".view.activities.ActivitySignIn" />
         <activity android:name=".view.activities.ActivityLogin" />
         <activity
             android:name=".view.activities.ActivitySplash"

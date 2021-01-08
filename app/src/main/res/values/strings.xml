@@ -13,6 +13,7 @@
 
     <!-- errors -->
     <string name="error_blank_email">Enter email or mobile</string>
+    <string name="error_invalid_email">Enter valid email</string>
     <string name="error_blank_email_signup">Enter email</string>
     <string name="error_blank_name">Enter name</string>
     <string name="error_blank_phone">Enter mobile number</string>
@@ -80,5 +81,34 @@
     <string name="str_email_hint">Email</string>
     <string name="str_password_hint">Password</string>
     <string name="str_forgot_pass">Forgot Password?</string>
+    <string name="str_tandc"><![CDATA[By continuing you agree to Terms & Conditions and Privacy Policy]]></string>
+    <string name="str_forgot_password">Forgot Password</string>
+    <string name="str_forgot_password_desc">Please enter your registerd email address and we\'ll send you password reset instructions</string>
+    <string name="str_submit">Submit</string>
+    <string name="str_back_to_sign">Back to sign in</string>
+    <string name="str_create_desc">You can registered as a Therapist or User</string>
+    <string name="str_client">Client</string>
+    <string name="str_therapist">Therapist</string>
+    <string name="str_name_hint">Name</string>
+    <string name="str_phone_hint">Phone Number</string>
+    <string name="str_con_password_hint">Confirm Password</string>
+    <string name="str_tb_desc"><![CDATA[Agree with Terms & Conditions and Privacy Policy]]></string>
+    <string name="str_sign_up">Sign Up</string>
+    <string name="str_add_photo">Add Photo</string>
+    <string name="str_iam">I am</string>
+    <string name="str_male">Male</string>
+    <string name="str_female">Female</string>
+    <string name="str_aboutme">About Me</string>
+    <string name="str_max_char">Max 150 characters</string>
+    <string name="str_stu_add">My Studio Address</string>
+    <string name="str_address">Address</string>
+    <string name="str_apt">APT #</string>
+    <string name="str_add_desc">Your address is never disclosed to anyone exept your client who books an In-studio appointment</string>
+    <string name="str_phone_vari">Phone Varification</string>
+    <string name="str_enter_code">Enter 4 digit code</string>
+    <string name="str_code_not_receive">Didn\'t Receive the code</string>
+    <string name="str_verify">Verify</string>
+    <string name="str_success">Success!</string>
+    <string name="str_success_text_desc">Congratulations! Your account has been successfully created.</string>
 </resources>
 

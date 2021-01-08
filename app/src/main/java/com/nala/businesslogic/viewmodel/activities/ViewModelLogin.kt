@@ -1,8 +1,7 @@
-package com.nala.businesslogic.viewmodel
+package com.nala.businesslogic.viewmodel.activities
 
-import android.widget.Toast
 import com.nala.businesslogic.interactors.SingleLiveEvent
-import com.nala.businesslogic.pojo.PojoLoginResponse
+import com.nala.businesslogic.viewmodel.ViewModelBase
 import com.nala.view.MyApplication
 
 class ViewModelLogin(

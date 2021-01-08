@@ -1,26 +1,30 @@
 package com.nala.view.activities
 
+import android.app.Dialog
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
-import android.view.WindowManager
+import android.view.Window
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.observe
 import com.nala.R
-import com.nala.businesslogic.viewmodel.ViewModelLogin
+import com.nala.businesslogic.viewmodel.activities.ViewModelLogin
 import com.nala.databinding.ActivityLoginBinding
 
 class ActivityLogin : ActivityBase() {
 
-     private lateinit var mViewModelLogin: ViewModelLogin
+    private lateinit var mViewModelLogin: ViewModelLogin
     private lateinit var mBinding: ActivityLoginBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mBinding = DataBindingUtil.setContentView(this, R.layout.activity_login)
-        mViewModelLogin = ViewModelLogin(mApplication)
+        mViewModelLogin =
+            ViewModelLogin(
+                mApplication
+            )
         mBinding.vmLogin = mViewModelLogin
-
 
         observable()
 
@@ -29,10 +33,10 @@ class ActivityLogin : ActivityBase() {
 
     fun observable() {
 
-//        mViewModelSignIn.getLiveEventSignUp().observe(this, {
-//            startActivity(Intent(this, ActivitySignUp::class.java))
-//            finish()
-//        })
+        mViewModelLogin.getLiveEventSignUp().observe(this, {
+            startActivity(Intent(this, ActivitySignUp::class.java))
+            finish()
+        })
 
 
         mViewModelLogin.getLiveEventSignIn().observe(this, {
@@ -56,5 +60,7 @@ class ActivityLogin : ActivityBase() {
             mApplication!!.showLogs("LoginCLick", "Google CLicked")
         })
     }
+
+
 
 }
