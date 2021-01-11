@@ -110,5 +110,25 @@
     <string name="str_verify">Verify</string>
     <string name="str_success">Success!</string>
     <string name="str_success_text_desc">Congratulations! Your account has been successfully created.</string>
+    <string name="nav_home">Home</string>
+    <string name="str_demo_name">Jessica Marcel</string>
+    <string name="str_demo_exp">5 years of experience</string>
+    <string name="str_demo_loca">Service Location: In-studio</string>
+    <string name="str_demo_tech">Techniques: Deep Tissue</string>
+    <string name="str_demo_rate">4.5</string>
+    <string name="str_book_now">Book Now</string>
+    <string name="nav_booking">My Bookings</string>
+    <string name="nav_notification">Notification</string>
+    <string name="nav_chat">Chat</string>
+    <string name="nav_profile">Profile</string>
+    <string name="str_near">Who near by you</string>
+    <string name="str_map_view">Demo Map VIew</string>
+    <string name="str_service_pro">Service Pro</string>
+    <string name="str_demo_intensity">Intensity Range: Medium</string>
+    <string name="str_techniques">Techniques</string>
+    <string name="str_review">Reviews</string>
+    <string name="str_choose_time">Choose a time</string>
+    <string name="str_no_time_slot_available">No any time available</string>
+    <string name="str_massage_type">Massage Type</string>
 </resources>
 

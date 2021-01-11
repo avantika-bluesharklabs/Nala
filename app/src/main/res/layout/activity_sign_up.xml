@@ -108,14 +108,16 @@
             app:layout_constraintGuide_end="@dimen/margin_twenty" />
 
 
-        <!--Need to check not scrolling view-->
-        <androidx.core.widget.NestedScrollView
-            android:id="@+id/n_scrollview"
+
+        <ScrollView
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toStartOf="@+id/guideline_right"
-            app:layout_constraintStart_toStartOf="@id/guideline_left"
-            app:layout_constraintTop_toTopOf="@id/guideline_top">
+            android:layout_height="0dp"
+            android:background="@drawable/top_curve_view"
+            app:layout_constraintLeft_toRightOf="@id/guideline_left"
+            app:layout_constraintRight_toLeftOf="@id/guideline_right"
+            app:layout_constraintBottom_toTopOf="@id/guideline_bottom"
+            app:layout_constraintTop_toBottomOf="@id/cl_toolbar">
+
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -155,8 +157,8 @@
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/cl_user"
                         android:layout_width="wrap_content"
-                        android:layout_margin="@dimen/margin_five"
                         android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/margin_five"
                         android:onClick="@{()->vmSignUp.clickUser()}"
                         android:paddingStart="@dimen/margin_twenty"
                         android:paddingTop="@dimen/margin_ten"
@@ -204,8 +206,8 @@
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/cl_therapist"
                         android:layout_width="wrap_content"
-                        android:layout_margin="@dimen/margin_five"
                         android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/margin_five"
                         android:onClick="@{()->vmSignUp.clickTherapist()}"
                         android:paddingStart="@dimen/margin_twenty"
                         android:paddingTop="@dimen/margin_ten"
@@ -251,7 +253,7 @@
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/margin_twenty"
                     android:nestedScrollingEnabled="true"
@@ -378,7 +380,7 @@
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/cl_tandc"
-                        android:layout_width="0dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/margin_thirty"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -408,6 +410,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/margin_twenty"
+                        android:layout_marginBottom="@dimen/margin_thirty"
+
                         android:background="@drawable/curve_view_360"
                         android:backgroundTint="@color/colorBlueForButtons"
                         android:onClick="@{()->vmSignUp.clickSignUp()}"
@@ -423,7 +427,7 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-        </androidx.core.widget.NestedScrollView>
+        </ScrollView>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

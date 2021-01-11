@@ -22,7 +22,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".view.activities.ActivityPhoneVarification"></activity>
+        <activity android:name=".view.activities.ActivityScheduleAppointment"></activity>
+        <activity android:name=".view.activities.ActivityHomeDetails" />
+        <activity android:name=".view.activities.ActivityHome" />
+        <activity android:name=".view.activities.ActivityPhoneVarification" />
         <activity android:name=".view.activities.ActivityAddUserDetails" />
         <activity android:name=".view.activities.ActivitySignUp" />
         <activity android:name=".view.activities.ActivityForgotPassword" />
