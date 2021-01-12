@@ -30,11 +30,14 @@ class ActivitySignIn : ActivityBase() {
     }
 
 
+    override fun onBackPressed() {
+        super.onBackPressed()
+    }
+
     fun observable() {
 
         mViewModelSignIn.getLiveEventBackPress().observe(this, {
-            startActivity(Intent(this, ActivityLogin::class.java))
-            finish()
+            onBackPressed()
         })
 
 
@@ -44,13 +47,15 @@ class ActivitySignIn : ActivityBase() {
             Utils.hideKeyboard(this@ActivitySignIn)
             mApplication.showLogs("SignInCLick", "SignIn   " + it)
             if (it) {
-                mViewModelSignIn.networkCallData()
+                startActivity(Intent(this, ActivityHome::class.java))
+                finish()
+//                mViewModelSignIn.networkCallData()
             }
         })
 
         mViewModelSignIn.getLiveEventForgotPass().observe(this, {
             startActivity(Intent(this, ActivityForgotPassword::class.java))
-            finish()
+//            finish()
         })
     }
 }

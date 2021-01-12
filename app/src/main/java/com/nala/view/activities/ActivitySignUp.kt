@@ -37,22 +37,25 @@ class ActivitySignUp : ActivityBase() {
         selectUser()
     }
 
+    override fun onBackPressed() {
+        super.onBackPressed()
+    }
+
     private fun observable() {
 
 
         mViewModelSignUp.getLiveEventBackPress().observe(this, {
-            startActivity(Intent(this, ActivityLogin::class.java))
-            finish()
+            onBackPressed()
         })
 
 
         mViewModelSignUp.getLiveEventUser().observe(this, {
             if (it != 0) {
 
-                startActivity(Intent(this, ActivityAddUserDetails::class.java))
-                finish()
+//                startActivity(Intent(this, ActivityAddUserDetails::class.java))
+//                finish()
 
-//                selectTherapist()
+                selectTherapist()
             } else {
                 selectUser()
             }
@@ -65,7 +68,10 @@ class ActivitySignUp : ActivityBase() {
             Utils.hideKeyboard(this@ActivitySignUp)
 
             if (it) {
-                mViewModelSignUp.networkCallData()
+                startActivity(Intent(this, ActivityAddUserDetails::class.java))
+                finish()
+
+//                mViewModelSignUp.networkCallData()
             }
         })
     }

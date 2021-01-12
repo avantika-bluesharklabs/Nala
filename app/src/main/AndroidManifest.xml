@@ -22,7 +22,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".view.activities.ActivityScheduleAppointment"></activity>
+        <activity android:name=".view.activities.ActivityMyBookings"></activity>
+        <activity android:name=".view.activities.ActivityScheduleAppointment" />
         <activity android:name=".view.activities.ActivityHomeDetails" />
         <activity android:name=".view.activities.ActivityHome" />
         <activity android:name=".view.activities.ActivityPhoneVarification" />

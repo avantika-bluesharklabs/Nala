@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/margin_fifteen">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_msg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_twenty"
+        android:layout_marginEnd="@dimen/margin_twenty"
+        android:background="@drawable/curve_view"
+        android:fitsSystemWindows="true"
+        android:paddingBottom="@dimen/margin_ten"
+       app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txt_success_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_twenty"
+            android:text="@string/str_success"
+            android:textAlignment="center"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/textsize_twenty_four"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txt_success_desc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_twenty_five"
+            android:layout_marginTop="@dimen/margin_five"
+            android:layout_marginEnd="@dimen/margin_twenty_five"
+            android:text="@string/str_success_desc"
+            android:textAlignment="center"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/textsize_eighteen"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txt_success_text" />
+
+
+        <LinearLayout
+            android:id="@+id/ll_div"
+            android:layout_width="@dimen/margin_eighty"
+            android:layout_height="@dimen/margin_two"
+            android:layout_marginTop="@dimen/margin_twenty"
+            android:background="@color/colorGray"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txt_success_desc" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txt_success_desc2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_twenty_five"
+            android:layout_marginTop="@dimen/margin_twenty"
+            android:layout_marginEnd="@dimen/margin_twenty_five"
+            android:text="@string/str_success_desc_2"
+            android:textAlignment="center"
+            android:textSize="@dimen/textsize_eighteen"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ll_div" />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_ten"
+            android:layout_marginTop="@dimen/margin_twenty_five"
+            android:layout_marginEnd="@dimen/margin_ten"
+            android:background="@drawable/curve_view"
+            android:backgroundTint="@color/colorgray_8"
+            android:paddingTop="@dimen/margin_twenty_five"
+            android:paddingBottom="@dimen/margin_fifteen"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_success_desc2">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img_therapist_image"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_navigations"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txt_massage_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_five"
+                android:text="@string/str_demo_name"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/textsize_eighteen"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/img_therapist_image" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txt_massage_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_five"
+                android:text="@string/str_demo_name"
+                android:textAlignment="center"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/textsize_twenty_four"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txt_massage_name" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txt_massage_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_five"
+
+                android:text="@string/str_demo_name"
+                android:textAlignment="center"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/textsize_eighteen"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txt_massage_date" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/floatbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_navigations"
+        app:layout_constraintBottom_toTopOf="@+id/cl_msg"
+        app:layout_constraintEnd_toEndOf="@+id/cl_msg"
+        app:layout_constraintStart_toStartOf="@+id/cl_msg"
+        app:layout_constraintTop_toTopOf="@id/cl_msg" />
+
+
+    <Button
+        android:id="@+id/btn_see_request"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_twenty"
+        android:background="@drawable/curve_view_360_with_border"
+        android:fitsSystemWindows="true"
+        android:text="@string/str_booking_req"
+        android:textAllCaps="false"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/textsize_twenty"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cl_msg" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

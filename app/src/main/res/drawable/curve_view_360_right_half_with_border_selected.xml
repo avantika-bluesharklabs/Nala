@@ -10,4 +10,9 @@
         android:topLeftRadius="0dp"
         android:topRightRadius="@dimen/margin_threesixty" />
 
+    <padding android:right="@dimen/margin_fifteen"
+        android:left="@dimen/margin_fifteen"
+        android:top="@dimen/margin_ten"
+        android:bottom="@dimen/margin_ten"/>
+
 </shape>

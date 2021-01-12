@@ -27,11 +27,14 @@ class ActivityForgotPassword : ActivityBase() {
         observable()
     }
 
+    override fun onBackPressed() {
+        super.onBackPressed()
+    }
+
     private fun observable() {
 
         mViewModelForgotPass.getLiveEventBackPress().observe(this, {
-            startActivity(Intent(this, ActivitySignIn::class.java))
-            finish()
+            onBackPressed()
         })
 
         mViewModelForgotPass.getLiveEventForgotPass().observe(this,{

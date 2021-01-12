@@ -35,15 +35,11 @@ class ActivityLogin : ActivityBase() {
 
         mViewModelLogin.getLiveEventSignUp().observe(this, {
             startActivity(Intent(this, ActivitySignUp::class.java))
-//            startActivity(Intent(this, ActivityScheduleAppointment::class.java))
-            finish()
         })
 
 
         mViewModelLogin.getLiveEventSignIn().observe(this, {
-//            startActivity(Intent(this, ActivityHome::class.java))
             startActivity(Intent(this, ActivitySignIn::class.java))
-            finish()
         })
 
         mViewModelLogin.getLiveEventBackPress().observe(this, {

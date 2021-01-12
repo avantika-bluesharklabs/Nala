@@ -9,7 +9,7 @@
 
         <variable
             name="vmAddDetails"
-            type="com.nala.businesslogic.viewmodel.activities.ViewModelSignUp" />
+            type="com.nala.businesslogic.viewmodel.activities.ViewModelAddDetails" />
 
     </data>
 
@@ -107,232 +107,243 @@
             android:orientation="vertical"
             app:layout_constraintGuide_end="@dimen/margin_twenty" />
 
-
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <ScrollView
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
+            android:background="@drawable/top_curve_view"
+            app:layout_constraintBottom_toTopOf="@id/guideline_bottom"
             app:layout_constraintLeft_toRightOf="@id/guideline_left"
             app:layout_constraintRight_toLeftOf="@id/guideline_right"
-            app:layout_constraintTop_toBottomOf="@id/guideline_top">
-
+            app:layout_constraintTop_toBottomOf="@id/cl_toolbar">
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/cl_image"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_twenty"
-                android:background="@drawable/curve_view_360"
-                android:backgroundTint="@color/colorLightGrayUser"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+                android:paddingBottom="@dimen/margin_thirty">
 
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:id="@+id/img_user_image"
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_image"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/margin_twenty"
-                    android:src="@drawable/ic_user_image"
+                    android:background="@drawable/curve_view_360"
+                    android:backgroundTint="@color/colorLightGrayUser"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/img_user_image"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_twenty"
+                        android:src="@drawable/ic_user_image"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txt_user_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/str_add_photo"
+                        android:textSize="@dimen/textsize_forteen"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/img_user_image" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/txt_user_text"
+                    android:id="@+id/txt_iam"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/str_add_photo"
-                    android:textSize="@dimen/textsize_forteen"
+                    android:layout_marginTop="@dimen/margin_ten"
+                    android:text="@string/str_iam"
+                    android:textSize="@dimen/textsize_eighteen"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/img_user_image" />
+                    app:layout_constraintTop_toBottomOf="@+id/cl_image" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_gender"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_ten"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_iam">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txt_male"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/curve_view_360_left_half_with_border"
+                        android:gravity="center"
+                        android:singleLine="true"
+                        android:onClick="@{()->vmAddDetails.clickMale()}"
+                        android:text="@string/str_male"
+                        android:textAlignment="center"
+                        android:textSize="@dimen/textsize_forteen"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/txt_female"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txt_female"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/curve_view_360_right_half_with_border"
+                        android:gravity="center"
+                        android:singleLine="true"
+                        android:onClick="@{()->vmAddDetails.clickFemale()}"
+                        android:text="@string/str_female"
+                        android:textAlignment="center"
+                        android:textSize="@dimen/textsize_forteen"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/txt_male"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt_about"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_thirty_five"
+                    android:text="@string/str_aboutme"
+                    android:textSize="@dimen/textsize_eighteen"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cl_gender" />
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textinputlayout_about"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:errorEnabled="@{vmAddDetails.observerErrorEnabledAboutMe}"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_about"
+                    app:setEnabledTIL="@{!vmAddDetails.observerProgressBar}"
+                    app:setError="@{vmAddDetails.observerErrorAboutMe}">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edt_about"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/bg_edittext"
+                        android:gravity="top"
+                        android:hint="@string/str_max_char"
+                        android:inputType="textMultiLine"
+                        android:lines="3"
+                        android:maxLength="150"
+                        android:maxLines="3"
+                        android:scrollbars="vertical"
+                        android:singleLine="false"
+                        android:text="@={vmAddDetails.observerAboutMe}"
+                        android:textColor="@color/colorBlack" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt_stu_add"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_ten"
+                    android:text="@string/str_stu_add"
+                    android:textSize="@dimen/textsize_eighteen"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textinputlayout_about" />
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textinputlayout_add"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:errorEnabled="@{vmAddDetails.observerErrorEnabledAddress}"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_stu_add"
+                    app:setEnabledTIL="@{!vmAddDetails.observerProgressBar}"
+                    app:setError="@{vmAddDetails.observerErrorAddress}">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edt_add"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/bg_edittext"
+                        android:hint="@string/str_address"
+                        android:inputType="text"
+                        android:scrollbars="vertical"
+                        android:text="@={vmAddDetails.observerAddress}"
+                        android:textColor="@color/colorBlack" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textinputlayout_apt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:errorEnabled="@{vmAddDetails.observerErrorEnabledApt}"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textinputlayout_add"
+                    app:setEnabledTIL="@{!vmAddDetails.observerProgressBar}"
+                    app:setError="@{vmAddDetails.observerErrorApt}">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edt_apt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/bg_edittext"
+                        android:hint="@string/str_apt"
+                        android:inputType="text"
+                        android:scrollbars="vertical"
+                        android:text="@={vmAddDetails.observerApt}"
+                        android:textColor="@color/colorBlack" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt_add_desc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_ten"
+                    android:layout_marginTop="@dimen/margin_twenty"
+                    android:layout_marginEnd="@dimen/margin_ten"
+                    android:text="@string/str_add_desc"
+                    android:textAlignment="center"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textinputlayout_apt" />
+
+
+                <Button
+                    android:id="@+id/btn_submit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_twenty"
+                    android:background="@drawable/curve_view_360"
+                    android:backgroundTint="@color/colorBlueForButtons"
+                    android:onClick="@{()->vmAddDetails.clickSubmit()}"
+                    android:text="@string/str_submit"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/textsize_eighteen"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_add_desc" />
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/txt_iam"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_ten"
-                android:text="@string/str_iam"
-                android:textSize="@dimen/textsize_eighteen"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/cl_image" />
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/cl_gender"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_ten"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txt_iam">
-
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/txt_male"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/curve_view_360_left_half_with_border"
-                    android:gravity="center"
-                    android:singleLine="true"
-                    android:text="@string/str_male"
-                    android:textAlignment="center"
-                    android:textSize="@dimen/textsize_forteen"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/txt_female"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/txt_female"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/curve_view_360_right_half_with_border"
-                    android:gravity="center"
-                    android:singleLine="true"
-                    android:text="@string/str_female"
-                    android:textAlignment="center"
-                    android:textSize="@dimen/textsize_forteen"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/txt_male"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/txt_about"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_thirty_five"
-                android:text="@string/str_aboutme"
-                android:textSize="@dimen/textsize_eighteen"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/cl_gender" />
-
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/textinputlayout_about"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:errorEnabled="@{vmAddDetails.observerErrorEnabledName}"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txt_about"
-                app:setEnabledTIL="@{!vmAddDetails.observerProgressBar}"
-                app:setError="@{vmAddDetails.observerErrorName}">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/edt_about"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:background="@drawable/bg_edittext"
-                    android:gravity="top"
-                    android:hint="@string/str_max_char"
-                    android:inputType="textMultiLine"
-                    android:lines="3"
-                    android:maxLength="150"
-                    android:maxLines="3"
-                    android:scrollbars="vertical"
-                    android:singleLine="false"
-                    android:text="@={vmAddDetails.observerName}"
-                    android:textColor="@color/colorBlack" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/txt_stu_add"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_ten"
-                android:text="@string/str_stu_add"
-                android:textSize="@dimen/textsize_eighteen"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textinputlayout_about" />
-
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/textinputlayout_add"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:errorEnabled="@{vmAddDetails.observerErrorEnabledName}"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txt_stu_add"
-                app:setEnabledTIL="@{!vmAddDetails.observerProgressBar}"
-                app:setError="@{vmAddDetails.observerErrorName}">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/edt_add"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:background="@drawable/bg_edittext"
-                    android:hint="@string/str_address"
-                    android:inputType="text"
-                    android:scrollbars="vertical"
-                    android:text="@={vmAddDetails.observerName}"
-                    android:textColor="@color/colorBlack" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/textinputlayout_apt"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:errorEnabled="@{vmAddDetails.observerErrorEnabledName}"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textinputlayout_add"
-                app:setEnabledTIL="@{!vmAddDetails.observerProgressBar}"
-                app:setError="@{vmAddDetails.observerErrorName}">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/edt_apt"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:background="@drawable/bg_edittext"
-                    android:hint="@string/str_apt"
-                    android:inputType="text"
-                    android:scrollbars="vertical"
-                    android:text="@={vmAddDetails.observerName}"
-                    android:textColor="@color/colorBlack" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/txt_add_desc"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/margin_ten"
-                android:layout_marginTop="@dimen/margin_twenty"
-                android:layout_marginEnd="@dimen/margin_ten"
-                android:text="@string/str_add_desc"
-                android:textAlignment="center"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textinputlayout_apt" />
-
-
-            <Button
-                android:id="@+id/btn_submit"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_twenty"
-                android:background="@drawable/curve_view_360"
-                android:backgroundTint="@color/colorBlueForButtons"
-                android:onClick="@{()->vmAddDetails.clickSignUp()}"
-                android:text="@string/str_submit"
-                android:textColor="@color/colorWhite"
-                android:textSize="@dimen/textsize_eighteen"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txt_add_desc" />
-
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

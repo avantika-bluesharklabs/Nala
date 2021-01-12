@@ -126,108 +126,7 @@
                 android:orientation="horizontal" />
 
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/cl_plan"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/top_curve_view"
-                android:paddingBottom="@dimen/margin_thirty"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/guideline_inner_top">
 
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/card_plan1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:cardBackgroundColor="@color/colorWhite"
-                    app:cardCornerRadius="@dimen/margin_five"
-                    app:cardElevation="@dimen/margin_five"
-                    app:cardUseCompatPadding="true"
-                    app:layout_constraintRight_toLeftOf="@+id/card_plan2"
-                    app:layout_constraintTop_toTopOf="parent">
-
-
-                    <androidx.appcompat.widget.AppCompatTextView
-                        android:id="@+id/txt_plan1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="@dimen/margin_five"
-                        android:text="@string/str_techniques"
-                        android:textSize="@dimen/textsize_eighteen" />
-
-                </androidx.cardview.widget.CardView>
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/card_plan2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:cardBackgroundColor="@color/colorWhite"
-                    app:cardCornerRadius="@dimen/margin_five"
-                    app:cardElevation="@dimen/margin_five"
-                    app:cardUseCompatPadding="true"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
-
-
-                    <androidx.appcompat.widget.AppCompatTextView
-                        android:id="@+id/txt_plan2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="@dimen/margin_five"
-                        android:text="@string/str_techniques"
-                        android:textSize="@dimen/textsize_eighteen" />
-
-                </androidx.cardview.widget.CardView>
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/card_plan3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:cardBackgroundColor="@color/colorWhite"
-                    app:cardCornerRadius="@dimen/margin_five"
-                    app:cardElevation="@dimen/margin_five"
-                    app:cardUseCompatPadding="true"
-                    app:layout_constraintRight_toLeftOf="@+id/card_plan4"
-                    app:layout_constraintTop_toBottomOf="@+id/card_plan1">
-
-
-                    <androidx.appcompat.widget.AppCompatTextView
-                        android:id="@+id/txt_plan3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="@dimen/margin_five"
-                        android:text="@string/str_techniques"
-                        android:textSize="@dimen/textsize_eighteen" />
-
-                </androidx.cardview.widget.CardView>
-
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/card_plan4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:cardBackgroundColor="@color/colorWhite"
-                    app:cardCornerRadius="@dimen/margin_five"
-                    app:cardElevation="@dimen/margin_five"
-                    app:cardUseCompatPadding="true"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintLeft_toRightOf="@id/card_plan3"
-                    app:layout_constraintTop_toBottomOf="@id/card_plan2">
-
-
-                    <androidx.appcompat.widget.AppCompatTextView
-                        android:id="@+id/txt_plan4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="@dimen/margin_five"
-                        android:text="@string/str_techniques"
-                        android:textSize="@dimen/textsize_eighteen" />
-
-                </androidx.cardview.widget.CardView>
-
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
 
 
             <!--            <androidx.constraintlayout.widget.Guideline-->
@@ -311,11 +210,12 @@
                     android:layout_width="@dimen/margin_fifty_five"
                     android:layout_height="@dimen/margin_fifty_five"
                     android:layout_marginEnd="@dimen/margin_twenty_five"
+                    android:elevation="2dp"
                     android:background="@android:color/holo_purple"
                     android:src="@drawable/ic_navigations"
-                    app:layout_constraintBottom_toTopOf="@id/cl_details_color"
+                    app:layout_constraintBottom_toTopOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="@id/cl_details_color" />
+                    app:layout_constraintTop_toTopOf="parent" />
 
 
                 <androidx.appcompat.widget.AppCompatTextView
@@ -334,14 +234,14 @@
 
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/img_main_img"
-                    android:layout_width="100dp"
-                    android:layout_height="120dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/margin_twenty_five"
                     android:background="@android:color/holo_purple"
                     android:src="@drawable/ic_navigations"
-                    app:layout_constraintBottom_toTopOf="@id/cl_details_color"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@id/cl_details_color" />
+                    app:layout_constraintBottom_toTopOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
 
                 <androidx.appcompat.widget.AppCompatTextView
@@ -795,6 +695,109 @@
 
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_plan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/top_curve_view"
+                android:paddingBottom="@dimen/margin_thirty"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/guideline_inner_top">
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_plan1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:cardBackgroundColor="@color/colorWhite"
+                    app:cardCornerRadius="@dimen/margin_five"
+                    app:cardElevation="@dimen/margin_five"
+                    app:cardUseCompatPadding="true"
+                    app:layout_constraintRight_toLeftOf="@+id/card_plan2"
+                    app:layout_constraintTop_toTopOf="parent">
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txt_plan1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/margin_five"
+                        android:text="@string/str_techniques"
+                        android:textSize="@dimen/textsize_eighteen" />
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_plan2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:cardBackgroundColor="@color/colorWhite"
+                    app:cardCornerRadius="@dimen/margin_five"
+                    app:cardElevation="@dimen/margin_five"
+                    app:cardUseCompatPadding="true"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txt_plan2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/margin_five"
+                        android:text="@string/str_techniques"
+                        android:textSize="@dimen/textsize_eighteen" />
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_plan3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:cardBackgroundColor="@color/colorWhite"
+                    app:cardCornerRadius="@dimen/margin_five"
+                    app:cardElevation="@dimen/margin_five"
+                    app:cardUseCompatPadding="true"
+                    app:layout_constraintRight_toLeftOf="@+id/card_plan4"
+                    app:layout_constraintTop_toBottomOf="@+id/card_plan1">
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txt_plan3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/margin_five"
+                        android:text="@string/str_techniques"
+                        android:textSize="@dimen/textsize_eighteen" />
+
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_plan4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:cardBackgroundColor="@color/colorWhite"
+                    app:cardCornerRadius="@dimen/margin_five"
+                    app:cardElevation="@dimen/margin_five"
+                    app:cardUseCompatPadding="true"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintLeft_toRightOf="@id/card_plan3"
+                    app:layout_constraintTop_toBottomOf="@id/card_plan2">
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txt_plan4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/margin_five"
+                        android:text="@string/str_techniques"
+                        android:textSize="@dimen/textsize_eighteen" />
+
+                </androidx.cardview.widget.CardView>
+
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

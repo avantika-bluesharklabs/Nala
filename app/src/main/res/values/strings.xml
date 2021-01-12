@@ -16,6 +16,7 @@
     <string name="error_invalid_email">Enter valid email</string>
     <string name="error_blank_email_signup">Enter email</string>
     <string name="error_blank_name">Enter name</string>
+    <string name="error_blank_about">Enter About Me</string>
     <string name="error_blank_phone">Enter mobile number</string>
     <string name="error_blank_phone_valid">Enter 10 digit mobile number</string>
     <string name="error_blank_password">Enter password</string>
@@ -130,5 +131,11 @@
     <string name="str_choose_time">Choose a time</string>
     <string name="str_no_time_slot_available">No any time available</string>
     <string name="str_massage_type">Massage Type</string>
+    <string name="str_success_desc">Your massage has been successfully booked!</string>
+    <string name="str_success_desc_2">The therapist will reah out and suggest another time if they cannot at this day and time.</string>
+    <string name="str_booking_req">See Booking Request</string>
+    <string name="str_my_bookings">My Bookings</string>
+    <string name="error_blank_address">Enter Address</string>
+    <string name="error_blank_apt">Enter Apt</string>
 </resources>
 
