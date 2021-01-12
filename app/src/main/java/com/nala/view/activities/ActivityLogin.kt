@@ -34,7 +34,8 @@ class ActivityLogin : ActivityBase() {
     fun observable() {
 
         mViewModelLogin.getLiveEventSignUp().observe(this, {
-            startActivity(Intent(this, ActivitySignUp::class.java))
+//            startActivity(Intent(this, ActivitySignUp::class.java))
+            startActivity(Intent(this, ActivityHomeDetails::class.java))
         })
 
 

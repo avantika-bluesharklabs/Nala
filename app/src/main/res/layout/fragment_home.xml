@@ -21,47 +21,25 @@
 
         <androidx.cardview.widget.CardView
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             app:cardElevation="@dimen/margin_five"
             app:cardUseCompatPadding="true">
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/margin_ten"
-                android:innerRadius="0dp"
-                android:shape="ring"
-                app:cardCornerRadius="75dp"
-                app:cardElevation="@dimen/margin_five">
-
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:layout_width="@dimen/margin_fifteen"
-                    android:layout_height="@dimen/margin_fifteen"
-                    android:layout_margin="@dimen/margin_ten"
-                    android:rotation="40"
-                    android:src="@drawable/ic_navigations" />
-            </androidx.cardview.widget.CardView>
-
-
-        </androidx.cardview.widget.CardView>
-
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            app:cardElevation="@dimen/margin_five"
-            app:cardUseCompatPadding="true">
-
-
             <androidx.appcompat.widget.AppCompatImageView
                 android:layout_width="wrap_content"
+                android:layout_gravity="center_vertical"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/margin_fifteen"
-                android:src="@drawable/ic_navigations" />
+                android:src="@drawable/home_location_icon" />
 
 
         </androidx.cardview.widget.CardView>
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/filter_icon" />
 
     </LinearLayout>
 
@@ -119,8 +97,9 @@
                     <androidx.appcompat.widget.AppCompatImageView
                         android:id="@+id/img_users"
                         android:layout_width="wrap_content"
+                        android:layout_gravity="center"
                         android:layout_height="wrap_content"
-                        app:srcCompat="@drawable/ic_navigations" />
+                        app:srcCompat="@drawable/home_mapview_icon" />
 
 
                     <LinearLayout
@@ -134,7 +113,8 @@
                         android:id="@+id/img_map"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        app:srcCompat="@drawable/ic_navigations" />
+                        android:layout_gravity="center"
+                        app:srcCompat="@drawable/home_list_icon_selected" />
 
                 </LinearLayout>
 

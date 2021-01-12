@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@color/colorWhite"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite">
 
     <!--need to convert to Constraint-->
     <LinearLayout
@@ -32,22 +33,12 @@
 
         </LinearLayout>
 
-
-        <androidx.cardview.widget.CardView
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/img_filter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:cardElevation="@dimen/margin_five"
-            app:cardUseCompatPadding="true">
+            android:src="@drawable/filter_icon" />
 
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/margin_fifteen"
-                android:src="@drawable/ic_navigations" />
-
-
-        </androidx.cardview.widget.CardView>
 
     </LinearLayout>
 
@@ -55,23 +46,26 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:background="@drawable/top_curve_view"
+        android:backgroundTint="@color/colorgray_9"
         android:padding="@dimen/margin_twenty"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:background="@drawable/top_curve_view"
-        android:backgroundTint="@color/colorgray_9"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ll_toolbar" >
+        app:layout_constraintTop_toBottomOf="@+id/ll_toolbar">
 
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_my_bookings"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:listitem="@layout/adapter_my_bookings_list" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

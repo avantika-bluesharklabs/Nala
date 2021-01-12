@@ -7,6 +7,6 @@ import com.nala.R
 class ActivityHomeDetails : ActivityBase() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_home_details)
+        setContentView(R.layout.activity_home_details_demo)
     }
 }

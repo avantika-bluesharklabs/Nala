@@ -39,7 +39,8 @@ class ActivitySplash : ActivityBase() {
 
         if (mPreferences.getBoolean(R.string.pref_is_user_login)) {
 
-
+            val intent = Intent(this, ActivityHome::class.java)
+            startActivity(intent)
 
         } else {
 

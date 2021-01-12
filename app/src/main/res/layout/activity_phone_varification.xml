@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="vmVerifyMobile"
+            type="com.nala.businesslogic.viewmodel.activities.ViewModelPhoneVarification" />
+
+    </data>
+
+<androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorWhite"
@@ -32,6 +44,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_marginStart="@dimen/margin_twenty"
+                android:onClick="@{()->vmVerifyMobile.clickBackPress()}"
                 app:cardBackgroundColor="@color/colorWhite"
                 app:cardElevation="@dimen/margin_seven">
 
@@ -99,6 +112,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_twenty"
+        android:src="@drawable/phone_verification"
         app:layout_constraintLeft_toRightOf="@id/guideline_left"
         app:layout_constraintRight_toLeftOf="@id/guideline_right"
         app:layout_constraintTop_toBottomOf="@id/guideline_top" />
@@ -153,52 +167,60 @@
         app:layout_constraintTop_toBottomOf="@+id/txt_code">
 
 
-        <EditText
-            android:id="@+id/ed_code_1"
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edt_otp_one"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/margin_fifteen"
-            android:layout_marginEnd="@dimen/margin_fifteen"
+            android:layout_marginStart="@dimen/margin_ten"
+            android:layout_marginEnd="@dimen/margin_five"
+            android:gravity="center_horizontal"
+            android:maxLength="1"
+            android:inputType="numberPassword"
             android:textColor="@color/colorBlack"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toLeftOf="@+id/ed_code_2"
+            app:layout_constraintEnd_toStartOf="@+id/edt_otp_two"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <EditText
-            android:id="@+id/ed_code_2"
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edt_otp_two"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/margin_fifteen"
-            android:layout_marginEnd="@dimen/margin_fifteen"
+            android:layout_marginStart="@dimen/margin_five"
+            android:layout_marginEnd="@dimen/margin_five"
+            android:gravity="center_horizontal"
+            android:maxLength="1"
+            android:inputType="numberPassword"
             android:textColor="@color/colorBlack"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toRightOf="@id/ed_code_1"
-            app:layout_constraintRight_toLeftOf="@+id/ed_code_3"
+            app:layout_constraintEnd_toStartOf="@+id/edt_otp_three"
+            app:layout_constraintStart_toEndOf="@+id/edt_otp_one"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <EditText
-            android:id="@+id/ed_code_3"
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edt_otp_three"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/margin_fifteen"
-            android:layout_marginEnd="@dimen/margin_fifteen"
+            android:layout_marginStart="@dimen/margin_five"
+            android:layout_marginEnd="@dimen/margin_five"
+            android:gravity="center_horizontal"
+            android:maxLength="1"
+            android:inputType="numberPassword"
             android:textColor="@color/colorBlack"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toRightOf="@id/ed_code_2"
-            app:layout_constraintRight_toLeftOf="@+id/ed_code_4"
+            app:layout_constraintEnd_toStartOf="@+id/edt_otp_four"
+            app:layout_constraintStart_toEndOf="@+id/edt_otp_two"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <EditText
-            android:id="@+id/ed_code_4"
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edt_otp_four"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/margin_fifteen"
-            android:layout_marginEnd="@dimen/margin_fifteen"
+            android:layout_marginStart="@dimen/margin_five"
+            android:layout_marginEnd="@dimen/margin_ten"
+            android:gravity="center_horizontal"
+            android:maxLength="1"
+            android:inputType="numberPassword"
             android:textColor="@color/colorBlack"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toRightOf="@id/ed_code_3"
-            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/edt_otp_three"
             app:layout_constraintTop_toTopOf="parent" />
 
 
@@ -213,6 +235,7 @@
         android:background="@drawable/curve_view_360"
         android:backgroundTint="@color/colorPrimary"
         android:text="@string/str_verify"
+        android:onClick="@{()->vmVerifyMobile.clickSubmit()}"
         android:textColor="@color/colorWhite"
         android:textSize="@dimen/textsize_eighteen"
         app:layout_constraintLeft_toRightOf="@id/guideline_left"
@@ -236,6 +259,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/margin_five"
+        android:onClick="@{()->vmVerifyMobile.clickSubmit()}"
         app:layout_constraintBottom_toTopOf="@+id/guideline_bottom"
         app:layout_constraintLeft_toRightOf="@id/guideline_left"
         app:layout_constraintRight_toLeftOf="@id/guideline_right"
@@ -276,3 +300,4 @@
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -11,11 +11,11 @@
         android:label="@string/nav_home"
         tools:layout="@layout/fragment_home" />
 
-<!--    <fragment-->
-<!--        android:id="@+id/navigation_booking"-->
-<!--        android:name="com.familyfirst.view.fragments.FragmentMyBooking"-->
-<!--        android:label="@string/nav_booking"-->
-<!--        tools:layout="@layout/fragment_my_booking" />-->
+    <fragment
+        android:id="@+id/navigation_booking"
+        android:name="com.nala.view.fragments.FragmentMyBookings"
+        android:label="@string/nav_booking"
+        tools:layout="@layout/fragment_my_bookings" />
 
 <!--    <fragment-->
 <!--        android:id="@+id/navigation_notification"-->

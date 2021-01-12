@@ -37,9 +37,12 @@ class ActivityForgotPassword : ActivityBase() {
             onBackPressed()
         })
 
-        mViewModelForgotPass.getLiveEventForgotPass().observe(this,{
+        mViewModelForgotPass.getLiveEventForgotPass().observe(this, {
 
+            if (it) {
+                startActivity(Intent(this, ActivityPhoneVarification::class.java))
 
+            }
 
 
         })

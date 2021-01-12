@@ -137,5 +137,20 @@
     <string name="str_my_bookings">My Bookings</string>
     <string name="error_blank_address">Enter Address</string>
     <string name="error_blank_apt">Enter Apt</string>
+    <string name="str_times">10:00 am</string>
+    <string name="str_bullet">•</string>
+    <string name="str_cancel">Cancel</string>
+    <string name="str_pending">Pending</string>
+    <string name="str_cancel_booking">Cancel Booking</string>
+    <string name="str_by_d_date">By Delivery Date</string>
+    <string name="str_select_here">Select here...</string>
+    <string name="str_by_type">By Service Type</string>
+    <string name="str_by_status">By Status</string>
+    <string name="str_accepted">Accepted</string>
+    <string name="str_cancelled">Cancelled</string>
+    <string name="str_completed">Completed</string>
+    <string name="str_apply">Apply</string>
+    <string name="str_filter">Filter</string>
+    <string name="str_reset">Reset</string>
 </resources>
 
