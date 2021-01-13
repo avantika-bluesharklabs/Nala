@@ -19,24 +19,51 @@
         app:layout_constraintTop_toTopOf="parent">
 
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/card_image"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/img_image"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/margin_ten"
-            app:cardElevation="@dimen/margin_five"
-            app:cardUseCompatPadding="true"
+            android:background="@drawable/curve_view_border_therapist_img"
+            android:elevation="@dimen/margin_two"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
+
             <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/img_main"
-                android:layout_width="80dp"
-                android:layout_height="100dp"
-                android:src="@drawable/ic_navigations" />
+                android:id="@+id/appCompatImageView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
+                android:src="@drawable/success"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
 
-        </androidx.cardview.widget.CardView>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_fifteen"
+                android:background="@drawable/curve_view_5"
+                android:backgroundTint="@color/colorBrown"
+                android:paddingStart="@dimen/margin_fifteen"
+                android:paddingTop="@dimen/margin_five"
+                android:paddingEnd="@dimen/margin_fifteen"
+                android:paddingBottom="@dimen/margin_five"
+                android:text="@string/str_female"
+                android:textColor="@color/colorWhite"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -45,7 +72,7 @@
             android:layout_marginStart="@dimen/margin_ten"
             android:layout_marginTop="@dimen/margin_twenty"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/card_image"
+            app:layout_constraintStart_toEndOf="@+id/img_image"
             app:layout_constraintTop_toTopOf="parent">
 
             <androidx.appcompat.widget.AppCompatTextView
@@ -87,7 +114,7 @@
             android:orientation="vertical"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/card_image" />
+            app:layout_constraintTop_toBottomOf="@id/img_image" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

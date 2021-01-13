@@ -56,7 +56,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_twenty"
-            android:layout_marginEnd="@dimen/textsize_twenty"
+            android:layout_marginEnd="@dimen/margin_twenty"
             android:layout_marginBottom="@dimen/margin_twenty"
             android:text="@string/str_reset"
             android:textColor="@color/colorBlack"
@@ -71,6 +71,8 @@
         android:id="@+id/scrollView2"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:fillViewport="true"
+        android:scrollbars="none"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -215,61 +217,147 @@
                     app:layout_constraintTop_toBottomOf="@id/txt_status_text">
 
 
-                    <Button
-                        android:id="@+id/btn_pending"
-                        android:layout_width="wrap_content"
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/cl_top_btn"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/curve_view_border_yellow"
-                        android:paddingStart="@dimen/margin_twenty"
-                        android:paddingEnd="@dimen/margin_twenty"
-                        android:text="@string/str_pending"
-                        android:textColor="@color/colorDarkYellow"
-                        app:layout_constraintEnd_toStartOf="@+id/btn_accepted"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <Button
-                        android:id="@+id/btn_accepted"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/curve_view_border_blue"
-                        android:paddingStart="@dimen/margin_twenty"
-                        android:paddingEnd="@dimen/margin_twenty"
-                        android:text="@string/str_accepted"
-                        android:textColor="@color/colorBlueForButtons"
+                        android:layout_marginTop="@dimen/margin_five"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="@id/btn_pending"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <Button
+                            android:id="@+id/btn_pending"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/margin_five"
+                            android:layout_marginEnd="@dimen/margin_five"
+                            android:background="@drawable/curve_view_border_yellow"
+                            android:text="@string/str_pending"
+                            android:textColor="@color/colorDarkYellow"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/btn_accepted"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <Button
+                            android:id="@+id/btn_accepted"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/margin_five"
+                            android:layout_marginEnd="@dimen/margin_five"
+                            android:background="@drawable/curve_view_border_blue"
+                            android:paddingStart="@dimen/margin_twenty"
+                            android:paddingEnd="@dimen/margin_twenty"
+                            android:text="@string/str_accepted"
+                            android:textColor="@color/colorBlueForButtons"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/btn_pending"
+                            app:layout_constraintTop_toTopOf="parent" />
 
 
-                    <Button
-                        android:id="@+id/btn_cancelled"
-                        android:layout_width="wrap_content"
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/cl_bottom_btn"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/margin_ten"
-                        android:background="@drawable/curve_view_border_pink"
-                        android:paddingStart="@dimen/margin_twenty"
-                        android:paddingEnd="@dimen/margin_twenty"
-                        android:text="@string/str_cancelled"
-                        android:textColor="@color/dark_pink"
-                        app:layout_constraintEnd_toStartOf="@+id/btn_accepted"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/btn_pending" />
-
-
-                    <Button
-                        android:id="@+id/btn_completed"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/margin_ten"
-                        android:background="@drawable/curve_view_border_teal"
-                        android:paddingStart="@dimen/margin_twenty"
-                        android:paddingEnd="@dimen/margin_twenty"
-                        android:text="@string/str_completed"
-                        android:textColor="@color/colorTeal"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="@id/btn_cancelled"
-                        app:layout_constraintTop_toBottomOf="@id/btn_accepted" />
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/cl_top_btn">
+
+                        <Button
+                            android:id="@+id/btn_cancelled"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/margin_five"
+                            android:layout_marginEnd="@dimen/margin_five"
+                            android:background="@drawable/curve_view_border_pink"
+                            android:paddingStart="@dimen/margin_twenty"
+                            android:paddingEnd="@dimen/margin_twenty"
+                            android:text="@string/str_cancelled"
+                            android:textColor="@color/dark_pink"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/btn_completed"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+
+                        <Button
+                            android:id="@+id/btn_completed"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/margin_five"
+                            android:layout_marginEnd="@dimen/margin_five"
+                            android:background="@drawable/curve_view_border_teal"
+                            android:paddingStart="@dimen/margin_twenty"
+                            android:paddingEnd="@dimen/margin_twenty"
+                            android:text="@string/str_completed"
+                            android:textColor="@color/ColorTeal"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/btn_cancelled"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <!--                    <Button-->
+                    <!--                        android:id="@+id/btn_pending"-->
+                    <!--                        android:layout_width="wrap_content"-->
+                    <!--                        android:layout_height="wrap_content"-->
+                    <!--                        android:background="@drawable/curve_view_border_yellow"-->
+                    <!--                        android:paddingStart="@dimen/margin_twenty"-->
+                    <!--                        android:paddingEnd="@dimen/margin_twenty"-->
+                    <!--                        android:text="@string/str_pending"-->
+                    <!--                        android:textColor="@color/colorDarkYellow"-->
+                    <!--                        app:layout_constraintEnd_toStartOf="@+id/btn_accepted"-->
+                    <!--                        app:layout_constraintStart_toStartOf="parent"-->
+                    <!--                        app:layout_constraintTop_toTopOf="parent" />-->
+
+                    <!--                    <Button-->
+                    <!--                        android:id="@+id/btn_accepted"-->
+                    <!--                        android:layout_width="wrap_content"-->
+                    <!--                        android:layout_height="wrap_content"-->
+                    <!--                        android:background="@drawable/curve_view_border_blue"-->
+                    <!--                        android:paddingStart="@dimen/margin_twenty"-->
+                    <!--                        android:paddingEnd="@dimen/margin_twenty"-->
+                    <!--                        android:text="@string/str_accepted"-->
+                    <!--                        android:textColor="@color/colorBlueForButtons"-->
+                    <!--                        app:layout_constraintEnd_toEndOf="parent"-->
+                    <!--                        app:layout_constraintStart_toEndOf="@id/btn_pending"-->
+                    <!--                        app:layout_constraintTop_toTopOf="parent" />-->
+
+
+                    <!--                    <Button-->
+                    <!--                        android:id="@+id/btn_cancelled"-->
+                    <!--                        android:layout_width="wrap_content"-->
+                    <!--                        android:layout_height="wrap_content"-->
+                    <!--                        android:layout_marginTop="@dimen/margin_ten"-->
+                    <!--                        android:background="@drawable/curve_view_border_pink"-->
+                    <!--                        android:paddingStart="@dimen/margin_twenty"-->
+                    <!--                        android:paddingEnd="@dimen/margin_twenty"-->
+                    <!--                        android:text="@string/str_cancelled"-->
+                    <!--                        android:textColor="@color/dark_pink"-->
+                    <!--                        app:layout_constraintEnd_toStartOf="@+id/btn_accepted"-->
+                    <!--                        app:layout_constraintStart_toStartOf="parent"-->
+                    <!--                        app:layout_constraintTop_toBottomOf="@id/btn_pending" />-->
+
+
+                    <!--                    <Button-->
+                    <!--                        android:id="@+id/btn_completed"-->
+                    <!--                        android:layout_width="wrap_content"-->
+                    <!--                        android:layout_height="wrap_content"-->
+                    <!--                        android:layout_marginTop="@dimen/margin_ten"-->
+                    <!--                        android:background="@drawable/curve_view_border_teal"-->
+                    <!--                        android:paddingStart="@dimen/margin_twenty"-->
+                    <!--                        android:paddingEnd="@dimen/margin_twenty"-->
+                    <!--                        android:text="@string/str_completed"-->
+                    <!--                        android:textColor="@color/ColorTeal"-->
+                    <!--                        app:layout_constraintEnd_toEndOf="parent"-->
+                    <!--                        app:layout_constraintStart_toEndOf="@id/btn_cancelled"-->
+                    <!--                        app:layout_constraintTop_toBottomOf="@id/btn_accepted" />-->
 
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
@@ -279,7 +367,7 @@
 
             <Button
                 android:id="@+id/btn_apply"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_twenty"
                 android:background="@drawable/curve_view_360"

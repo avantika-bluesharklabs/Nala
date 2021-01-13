@@ -100,11 +100,12 @@
     <string name="str_male">Male</string>
     <string name="str_female">Female</string>
     <string name="str_aboutme">About Me</string>
+    <string name="str_long_text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</string>
     <string name="str_max_char">Max 150 characters</string>
     <string name="str_stu_add">My Studio Address</string>
     <string name="str_address">Address</string>
     <string name="str_apt">APT #</string>
-    <string name="str_add_desc">Your address is never disclosed to anyone exept your client who books an In-studio appointment</string>
+    <string name="str_add_desc">Your address is never disclosed to anyone except your client who books an In-studio appointment</string>
     <string name="str_phone_vari">Phone Varification</string>
     <string name="str_enter_code">Enter 4 digit code</string>
     <string name="str_code_not_receive">Didn\'t Receive the code</string>
@@ -143,7 +144,7 @@
     <string name="str_pending">Pending</string>
     <string name="str_cancel_booking">Cancel Booking</string>
     <string name="str_by_d_date">By Delivery Date</string>
-    <string name="str_select_here">Select here...</string>
+    <string name="str_select_here">Select here…</string>
     <string name="str_by_type">By Service Type</string>
     <string name="str_by_status">By Status</string>
     <string name="str_accepted">Accepted</string>
@@ -152,5 +153,13 @@
     <string name="str_apply">Apply</string>
     <string name="str_filter">Filter</string>
     <string name="str_reset">Reset</string>
+    <string name="str_messages">Messages</string>
+    <string name="str_notification">Notification</string>
+    <string name="str_write_here">Write here…</string>
+    <string name="str_rate_service">How was Jessica Marcer\'s Service?</string>
+    <string name="str_rating">Excellent Rating!</string>
+    <string name="str_write_review">Write your review…</string>
+    <string name="str_no_tx">No Thanks</string>
+    <string name="str_schedule">Schedule a Massage</string>
 </resources>
 

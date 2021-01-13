@@ -10,25 +10,24 @@ import com.nala.R
 class AdapterMyBookingsList(val items: ArrayList<String>, val context: Context) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
-    // Gets the number of animals in the list
+    //this method is returning the view for each item in the list
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
+        val v = LayoutInflater.from(parent.context).inflate(R.layout.adapter_my_bookings_list, parent, false)
+        return ViewHolder(v)
+    }
+
+
+    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+    }
+    //this method is giving the size of the list
     override fun getItemCount(): Int {
         return items.size
     }
 
-
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-        return ViewHolder(
-            LayoutInflater.from(context).inflate(R.layout.adapter_my_bookings_list, parent, false)
-        )
-    }
-
-    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+    //the class is hodling the list view
+    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
     }
-}
-
-
-class Viewholder(view: View) : RecyclerView.ViewHolder(view) {
 
 
 }

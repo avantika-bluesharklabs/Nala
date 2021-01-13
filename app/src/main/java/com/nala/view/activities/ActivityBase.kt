@@ -105,7 +105,7 @@ open class ActivityBase : AppCompatActivity(), LocationListener {
 //        window.statusBarColor = Color.TRANSPARENT
 
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR)
-        window.statusBarColor = Color.WHITE
+//        window.statusBarColor = Color.WHITE
 
 
         super.onCreate(savedInstanceState)

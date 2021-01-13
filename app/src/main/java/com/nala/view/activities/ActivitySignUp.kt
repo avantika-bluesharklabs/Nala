@@ -2,8 +2,10 @@ package com.nala.view.activities
 
 import android.content.Intent
 import android.content.res.ColorStateList
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import androidx.core.content.ContextCompat
 import androidx.core.widget.ImageViewCompat
 import androidx.databinding.DataBindingUtil
@@ -23,6 +25,7 @@ class ActivitySignUp : ActivityBase() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        window.statusBarColor = Color.WHITE
         super.onCreate(savedInstanceState)
 
         mBinding = DataBindingUtil.setContentView(this, R.layout.activity_sign_up)

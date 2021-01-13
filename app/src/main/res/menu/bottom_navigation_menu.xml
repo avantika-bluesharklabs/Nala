@@ -17,7 +17,7 @@
         android:title="@string/nav_notification" />
 
     <item
-        android:id="@+id/navigation_favourite"
+        android:id="@+id/navigation_chat"
         android:icon="@drawable/ic_navigations"
         android:title="@string/nav_chat" />
 

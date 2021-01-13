@@ -25,7 +25,7 @@ class FragmentMyBookings : FragmentBase() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        card_filter.setOnClickListener(View.OnClickListener { openFilters() })
+        img_filter.setOnClickListener(View.OnClickListener { openFilters() })
 
     }
 

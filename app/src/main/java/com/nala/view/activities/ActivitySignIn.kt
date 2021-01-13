@@ -1,7 +1,9 @@
 package com.nala.view.activities
 
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
+import android.view.View
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.observe
 import com.nala.R
@@ -17,6 +19,7 @@ class ActivitySignIn : ActivityBase() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        window.statusBarColor = Color.WHITE
         super.onCreate(savedInstanceState)
         mBinding = DataBindingUtil.setContentView(this, R.layout.activity_sign_in)
         mViewModelSignIn =

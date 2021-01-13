@@ -4,25 +4,29 @@ import android.app.Dialog
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
+import android.view.View
 import android.view.Window
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.observe
 import com.nala.R
-import com.nala.businesslogic.viewmodel.activities.ViewModelPhoneVarification
-import com.nala.databinding.ActivityPhoneVarificationBinding
+import com.nala.businesslogic.viewmodel.activities.ViewModelPhoneVerification
+import com.nala.databinding.ActivityPhoneVerificationBinding
 
-class ActivityPhoneVarification : ActivityBase() {
+class ActivityPhoneVerification : ActivityBase() {
 
-    private lateinit var mViewModelPhoneVerification: ViewModelPhoneVarification
-    private lateinit var mBinding: ActivityPhoneVarificationBinding
+    private lateinit var mViewModelPhoneVerification: ViewModelPhoneVerification
+    private lateinit var mBinding: ActivityPhoneVerificationBinding
 
     var mPhoneNumber = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        window.statusBarColor = Color.WHITE
         super.onCreate(savedInstanceState)
-        mBinding = DataBindingUtil.setContentView(this, R.layout.activity_phone_varification)
-        mViewModelPhoneVerification = ViewModelPhoneVarification(mApplication, true)
+        mBinding = DataBindingUtil.setContentView(this, R.layout.activity_phone_verification)
+        mViewModelPhoneVerification = ViewModelPhoneVerification(mApplication, true)
         mBinding.vmVerifyMobile = mViewModelPhoneVerification
+
+        observable()
     }
 
 

@@ -5,6 +5,7 @@ import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
+import android.view.View
 import android.view.Window
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.observe
@@ -18,6 +19,7 @@ class ActivityLogin : ActivityBase() {
     private lateinit var mBinding: ActivityLoginBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        window.statusBarColor = Color.WHITE
         super.onCreate(savedInstanceState)
         mBinding = DataBindingUtil.setContentView(this, R.layout.activity_login)
         mViewModelLogin =
@@ -34,8 +36,9 @@ class ActivityLogin : ActivityBase() {
     fun observable() {
 
         mViewModelLogin.getLiveEventSignUp().observe(this, {
-//            startActivity(Intent(this, ActivitySignUp::class.java))
-            startActivity(Intent(this, ActivityHomeDetails::class.java))
+            startActivity(Intent(this, ActivitySignUp::class.java))
+//            startActivity(Intent(this, ActivityHomeDetails::class.java))
+//            startActivity(Intent(this, ActivityBookingInfo::class.java))
         })
 
 

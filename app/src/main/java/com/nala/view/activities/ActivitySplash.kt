@@ -1,10 +1,12 @@
 package com.nala.view.activities
 
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
-import com.nala.R
+import android.view.View
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.messaging.FirebaseMessaging
+import com.nala.R
 
 
 /**
@@ -13,8 +15,10 @@ import com.google.firebase.messaging.FirebaseMessaging
 class ActivitySplash : ActivityBase() {
 
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
+        window.decorView.systemUiVisibility =
+            View.SYSTEM_UI_FLAG_LAYOUT_STABLE or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN or View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
+        window.statusBarColor = Color.TRANSPARENT
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
 
@@ -35,19 +39,25 @@ class ActivitySplash : ActivityBase() {
 
     fun navigateFromSplash() {
 
-        mApplication.showLogs("checkLogin","boolean is   "+mPreferences.getBoolean(R.string.pref_is_user_login))
+        mApplication.showLogs(
+            "checkLogin",
+            "boolean is   " + mPreferences.getBoolean(R.string.pref_is_user_login)
+        )
 
         if (mPreferences.getBoolean(R.string.pref_is_user_login)) {
 
-            val intent = Intent(this, ActivityHome::class.java)
+            startActivity(Intent(this, ActivityRateTherapist::class.java))
+
+//            val intent = Intent(this, ActivityHome::class.java)
             startActivity(intent)
+            finish()
 
         } else {
 
 
-            val intent = Intent(this, ActivityLogin::class.java)
+//            val intent = Intent(this, ActivityLogin::class.java)
             startActivity(intent)
-
+            finish()
 
 
         }

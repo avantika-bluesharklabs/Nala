@@ -10,7 +10,7 @@ import com.nala.businesslogic.pojo.PojoCommonResponse
 import com.nala.businesslogic.viewmodel.ViewModelCommon
 import com.nala.view.MyApplication
 
-class ViewModelPhoneVarification(
+class ViewModelPhoneVerification(
     mApplication: MyApplication,
     isToShowErrors: Boolean
 ) : ViewModelCommon<PojoCommonResponse>(mApplication, isToShowErrors) {

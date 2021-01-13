@@ -7,29 +7,32 @@
     android:background="@color/colorWhite">
 
 
-    <!--need to convert to Constraint-->
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/ll_toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
         android:padding="@dimen/margin_fifteen"
-        android:weightSum="1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-
         <androidx.cardview.widget.CardView
+            android:id="@+id/card_search"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"
+            app:cardCornerRadius="@dimen/margin_five"
             app:cardElevation="@dimen/margin_five"
-            app:cardUseCompatPadding="true">
+            app:cardUseCompatPadding="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/img_filter"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:layout_width="wrap_content"
-                android:layout_gravity="center_vertical"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="@dimen/margin_five"
+                android:paddingTop="@dimen/margin_five"
                 android:src="@drawable/home_location_icon" />
 
 
@@ -37,11 +40,16 @@
 
 
         <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/img_filter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/filter_icon" />
+            android:src="@drawable/filter_icon"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -97,8 +105,8 @@
                     <androidx.appcompat.widget.AppCompatImageView
                         android:id="@+id/img_users"
                         android:layout_width="wrap_content"
-                        android:layout_gravity="center"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center"
                         app:srcCompat="@drawable/home_mapview_icon" />
 
 
@@ -160,7 +168,7 @@
                 android:id="@+id/rv_home_hori_list"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/textsize_twenty"
+                android:layout_marginBottom="@dimen/margin_twenty"
                 android:orientation="horizontal"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 app:layout_constraintBottom_toBottomOf="parent"

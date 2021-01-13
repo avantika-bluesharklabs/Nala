@@ -1,9 +1,11 @@
 package com.nala.view.activities
 
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
@@ -21,6 +23,7 @@ class ActivityHome : ActivityBase(), BottomNavigationView.OnNavigationItemSelect
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        window.statusBarColor = Color.WHITE
         super.onCreate(savedInstanceState)
 
         mBinding = DataBindingUtil.setContentView(this, R.layout.activity_home)
@@ -68,8 +71,8 @@ class ActivityHome : ActivityBase(), BottomNavigationView.OnNavigationItemSelect
                 /*supportActionBar?.title = getString(R.string.nav_notification)
                 supportActionBar?.hide()*/
 
-            } else if (id == R.id.navigation_favourite) {
-                navController.navigate(R.id.navigation_favourite)
+            } else if (id == R.id.navigation_chat) {
+                navController.navigate(R.id.navigation_chat)
                 /*supportActionBar?.title = getString(R.string.nav_favourite)
                 supportActionBar?.hide()*/
 
