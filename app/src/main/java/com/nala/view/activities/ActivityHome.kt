@@ -1,11 +1,9 @@
 package com.nala.view.activities
 
 import android.graphics.Color
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.view.View
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
@@ -21,13 +19,12 @@ class ActivityHome : ActivityBase(), BottomNavigationView.OnNavigationItemSelect
     lateinit var navController: NavController
 
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         window.statusBarColor = Color.WHITE
         super.onCreate(savedInstanceState)
 
         mBinding = DataBindingUtil.setContentView(this, R.layout.activity_home)
-        mViewModelHome = ViewModelHome(mApplication,false)
+        mViewModelHome = ViewModelHome(mApplication, false)
         mBinding.viewModel = mViewModelHome
         mBinding.bottomNavigation.setOnNavigationItemSelectedListener(this)
         navController = findNavController(R.id.nav_tab_host_fragment)
@@ -58,29 +55,17 @@ class ActivityHome : ActivityBase(), BottomNavigationView.OnNavigationItemSelect
         if (check) {
             removeBackStack()
             if (id == R.id.navigation_specialist) {
-                /* supportActionBar?.title = getString(R.string.nav_specialist)
-                 supportActionBar?.hide()*/
                 navController.navigate(R.id.navigation_specialist)
             } else if (id == R.id.navigation_booking) {
                 navController.navigate(R.id.navigation_booking)
-                /*supportActionBar?.title =  getString(R.string.nav_booking)
-                supportActionBar?.hide()*/
 
             } else if (id == R.id.navigation_notification) {
                 navController.navigate(R.id.navigation_notification)
-                /*supportActionBar?.title = getString(R.string.nav_notification)
-                supportActionBar?.hide()*/
 
             } else if (id == R.id.navigation_chat) {
                 navController.navigate(R.id.navigation_chat)
-                /*supportActionBar?.title = getString(R.string.nav_favourite)
-                supportActionBar?.hide()*/
-
             } else if (id == R.id.navigation_profile) {
                 navController.navigate(R.id.navigation_profile)
-                /*supportActionBar?.title = getString(R.string.nav_profile)
-                supportActionBar?.hide()*/
-
             }
         }
         return true
