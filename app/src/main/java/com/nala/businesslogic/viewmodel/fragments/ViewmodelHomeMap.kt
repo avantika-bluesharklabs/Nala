@@ -3,22 +3,22 @@ package com.nala.businesslogic.viewmodel.fragments
 import androidx.recyclerview.widget.RecyclerView
 import com.nala.businesslogic.interactors.SingleLiveEvent
 import com.nala.businesslogic.pojo.PojoCommonResponse
-import com.nala.businesslogic.pojo.PojoHome
 import com.nala.businesslogic.pojo.PojoMyBooking
+import com.nala.businesslogic.pojo.PojoHomeMap
 import com.nala.businesslogic.viewmodel.ViewModelRecyclerView
 import com.nala.view.MyApplication
 
-class ViewModelMyBookings(myApplication: MyApplication, isToShowErrors: Boolean) :
-    ViewModelRecyclerView<PojoCommonResponse, PojoMyBooking>(myApplication,false,false,
-        0, RecyclerView.VERTICAL){
+class ViewmodelHomeMap(myApplication: MyApplication, isToShowErrors: Boolean) :
+    ViewModelRecyclerView<PojoCommonResponse, PojoHomeMap>(myApplication,false,false,
+        0, RecyclerView.HORIZONTAL){
 
 
     private val liveEvent: SingleLiveEvent<Boolean> = SingleLiveEvent()
-    private val liveEventSuccess: SingleLiveEvent<PojoMyBooking> = SingleLiveEvent()
+    private val liveEventSuccess: SingleLiveEvent<PojoHomeMap> = SingleLiveEvent()
 
     init {
 
-        var pojoMyBooking = PojoMyBooking()
+     /*   var pojoMyBooking = PojoMyBooking()
         pojoMyBooking.txt_name = "Rahul Dravid"
         pojoMyBooking.txt_status = "Pending"
 
@@ -40,7 +40,7 @@ class ViewModelMyBookings(myApplication: MyApplication, isToShowErrors: Boolean)
         pojoMyBooking.txt_name = "Pant Rishabh"
         pojoMyBooking.txt_status ="Pending"
 
-        observerContent.add(pojoMyBooking)
+        observerContent.add(pojoMyBooking)*/
 
 
     }
@@ -51,7 +51,7 @@ class ViewModelMyBookings(myApplication: MyApplication, isToShowErrors: Boolean)
         return liveEvent
     }
 
-    fun getLiveEventSuccess(): SingleLiveEvent<PojoMyBooking> {
+    fun getLiveEventSuccess(): SingleLiveEvent<PojoHomeMap> {
         return liveEventSuccess
     }
 

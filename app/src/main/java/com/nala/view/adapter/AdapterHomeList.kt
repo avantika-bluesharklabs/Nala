@@ -7,27 +7,76 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.nala.R
+import com.nala.businesslogic.interfaces.OnClickHome
+import com.nala.businesslogic.pojo.PojoHome
+import com.nala.databinding.FragmentHomeBinding
+import com.nala.databinding.FragmentHomeRowListBinding
 
-class AdapterHomeList(val items: ArrayList<String>, val context: Context) :
-    RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class AdapterHomeList(
+    var mContext: Context, var mArrayContent: List<PojoHome>,
+    var mOnClickHomeListener: OnClickHome
+) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
-    //this method is returning the view for each item in the list
+    val mViewTypeItem = 1
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-        val v = LayoutInflater.from(parent.context).inflate(R.layout.adapter_home_list, parent, false)
-        return ViewHolder(v)
-    }
 
+        val layoutInflater = LayoutInflater.from(parent.context)
+        return if (viewType == mViewTypeItem) {
+            val binding: FragmentHomeRowListBinding = DataBindingUtil.inflate(
+                layoutInflater,
+                R.layout.fragment_home_row_list,
+                parent,
+                false
+            )
+
+            // binding.onContentClickListener = mOnClickHomeListListener
+
+            binding.setOnContentClickListener(mOnClickHomeListener)
+
+            Viewholder(binding)
+        } else {
+            ProgressViewHolder(
+                LayoutInflater.from(parent.context)
+                    .inflate(R.layout.layout_progress, parent, false)
+            )
+        }
+
+    }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+        if (holder is Viewholder) {
+            (holder as Viewholder).bind(mArrayContent[position], position)
+        }
     }
-    //this method is giving the size of the list
+
+
     override fun getItemCount(): Int {
-        return items.size
+        return mArrayContent.size
     }
 
-    //the class is hodling the list view
-    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-
+    override fun getItemViewType(position: Int): Int {
+        return if (mArrayContent!![position] != null) mViewTypeItem else 0
     }
+
+    class ProgressViewHolder(v: View?) :
+        RecyclerView.ViewHolder(v!!)
+
+    class Viewholder(binding: FragmentHomeRowListBinding) :
+        RecyclerView.ViewHolder(binding.getRoot()) {
+
+        private val mBinding: FragmentHomeRowListBinding
+
+        fun bind(data: PojoHome, position: Int) {
+            mBinding.setData(data)
+            mBinding.setLayoutPosition(position)
+            mBinding.executePendingBindings()
+
+        }
+
+        init {
+            mBinding = binding
+        }
+    }
+
 }
-

@@ -1,7 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="vmHomeDetails"
+            type="com.nala.businesslogic.viewmodel.activities.ViewModelHomeDetails" />
+
+        <variable
+            name="onContentClickListener"
+            type="com.nala.businesslogic.interfaces.OnClickHomeDetails" />
+
+    </data>
+
+
+<androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorLightGray">
@@ -619,7 +637,7 @@
                         </androidx.cardview.widget.CardView>
 
 
-                        <Button
+                        <androidx.appcompat.widget.AppCompatButton
                             android:id="@+id/btn_book_now"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -756,3 +774,4 @@
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

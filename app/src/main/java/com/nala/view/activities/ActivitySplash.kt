@@ -46,16 +46,15 @@ class ActivitySplash : ActivityBase() {
 
         if (mPreferences.getBoolean(R.string.pref_is_user_login)) {
 
-            startActivity(Intent(this, ActivityRateTherapist::class.java))
+          //  startActivity(Intent(this, ActivityRateTherapist::class.java))
 
-//            val intent = Intent(this, ActivityHome::class.java)
+            val intent = Intent(this, ActivityHome::class.java)
             startActivity(intent)
             finish()
 
         } else {
 
-
-//            val intent = Intent(this, ActivityLogin::class.java)
+            val intent = Intent(this, ActivityLogin::class.java)
             startActivity(intent)
             finish()
 

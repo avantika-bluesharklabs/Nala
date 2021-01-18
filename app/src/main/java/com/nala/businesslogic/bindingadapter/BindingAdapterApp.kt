@@ -13,6 +13,7 @@ import android.widget.Spinner
 import android.widget.TextView
 import androidx.databinding.BindingAdapter
 import androidx.databinding.ObservableInt
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout.OnRefreshListener
@@ -24,10 +25,81 @@ import com.nala.utils.Utils
 import com.nala.view.adapter.*
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
+import com.nala.businesslogic.interfaces.OnClickHome
+import com.nala.businesslogic.interfaces.OnClickMyBooking
+import com.nala.businesslogic.pojo.PojoHome
+import com.nala.businesslogic.pojo.PojoMyBooking
 import java.io.ByteArrayOutputStream
 import java.io.File
 
 object BindingAdapterApp {
+
+    @BindingAdapter(
+        "recyclerHome",
+        "adapterHome",
+        "clickListenerHome",
+        "scrollListenerHome"
+    )
+    @JvmStatic
+    fun setRecyclerViewHomeAdapter(
+        recyclerView: RecyclerView?,
+        layoutManager: LinearLayoutManager?,
+        contents: List<PojoHome>,
+        onClickContent: OnClickHome,
+        onScrollListener: RecyclerView.OnScrollListener?
+    ) {
+        if (recyclerView != null) {
+            if (recyclerView.adapter == null) {
+                recyclerView.layoutManager = layoutManager
+                val adapterContent = AdapterHomeList(
+                    recyclerView.context, contents, onClickContent
+                )
+                recyclerView.adapter = adapterContent
+                if (onScrollListener != null) {
+                    recyclerView.addOnScrollListener(onScrollListener)
+                }
+            } else {
+                recyclerView.adapter!!.notifyDataSetChanged()
+            }
+        }
+    }
+
+
+    @BindingAdapter(
+        "recyclerMyBooking",
+        "adapterMyBooking",
+        "clickListenerMyBooking",
+        "scrollListenerMyBooking"
+    )
+    @JvmStatic
+    fun setRecyclerViewMyBookingAdapter(
+        recyclerView: RecyclerView?,
+        layoutManager: LinearLayoutManager?,
+        contents: List<PojoMyBooking>,
+        onClickContent: OnClickMyBooking,
+        onScrollListener: RecyclerView.OnScrollListener?
+    ) {
+        if (recyclerView != null) {
+            if (recyclerView.adapter == null) {
+                recyclerView.layoutManager = layoutManager
+                val adapterContent = AdapterMyBookingsList(
+                    recyclerView.context, contents, onClickContent
+                )
+                recyclerView.adapter = adapterContent
+                if (onScrollListener != null) {
+                    recyclerView.addOnScrollListener(onScrollListener)
+                }
+            } else {
+                recyclerView.adapter!!.notifyDataSetChanged()
+            }
+        }
+    }
+
+
+
+
+
+
     @BindingAdapter("setSwipeRefreshing")
     @JvmStatic
     fun setSwipeRefreshing(swipeRefresh: SwipeRefreshLayout?, toRefresh: Boolean) {

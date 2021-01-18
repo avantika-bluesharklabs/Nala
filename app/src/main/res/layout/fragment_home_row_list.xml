@@ -1,8 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="layoutPosition"
+            type="Integer" />
+
+        <variable
+            name="vmHomeList"
+            type="com.nala.businesslogic.viewmodel.fragments.ViewModelHomeList" />
+
+        <variable
+            name="data"
+            type="com.nala.businesslogic.pojo.PojoHome" />
+
+        <variable
+            name="requestOptions"
+            type="com.bumptech.glide.request.RequestOptions" />
+
+        <variable
+            name="onContentClickListener"
+            type="com.nala.businesslogic.interfaces.OnClickHome" />
+
+    </data>
+
+<androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:focusable="true"
+    android:onClick="@{(v)->onContentClickListener.onClickHomeItem(v,layoutPosition,data)}">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/cl_top"
@@ -19,7 +51,7 @@
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/img_image"
+            android:id="@+id/con_image"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/curve_view_border_therapist_img"
@@ -29,7 +61,7 @@
 
 
             <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/appCompatImageView2"
+                android:id="@+id/img_user"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
@@ -53,14 +85,14 @@
             android:layout_marginTop="@dimen/margin_twenty"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/img_image"
+            app:layout_constraintStart_toEndOf="@+id/con_image"
             app:layout_constraintTop_toTopOf="parent">
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/txt_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/str_demo_name"
+                android:text="@{data.txt_name}"
                 android:textSize="@dimen/textsize_twenty"
                 app:layout_constraintBottom_toTopOf="@+id/txt_status"
                 app:layout_constraintStart_toStartOf="parent" />
@@ -70,19 +102,20 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/margin_twenty_five"
-                android:text="@string/str_demo_name"
+                android:text="@string/str_stu_add"
                 android:textColor="@color/colorOrange"
                 android:textSize="@dimen/textsize_sixteen"
                 app:layout_constraintBottom_toTopOf="@+id/ll_div"
                 app:layout_constraintStart_toStartOf="parent" />
 
 
-            <LinearLayout
+            <View
                 android:id="@+id/ll_div"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="@dimen/margin_one"
                 android:background="@color/colorGray"
-                android:orientation="vertical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -107,9 +140,23 @@
             android:id="@+id/txt_massage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/str_demo_name"
+            android:text="@string/str_service_pro"
             android:textSize="@dimen/textsize_sixteen"
+            android:textColor="@color/colorBlack"
+            android:textStyle="normal"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txt_massage_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="normal"
+            android:layout_marginLeft="10dp"
+            android:text="@string/str_demo_loca_value"
+            android:textSize="@dimen/textsize_sixteen"
+            app:layout_constraintStart_toEndOf="@+id/txt_massage"
             app:layout_constraintTop_toTopOf="parent" />
 
 
@@ -119,10 +166,25 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_five"
             android:layout_marginBottom="@dimen/margin_five"
-            android:text="@string/str_times"
-            android:textColor="@color/colorDarkBlue"
+            android:text="@string/str_techniques"
+            android:textColor="@color/colorBlack"
             android:textSize="@dimen/textsize_sixteen"
+            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txt_massage"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txt_tecniques_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_five"
+            android:layout_marginBottom="@dimen/margin_five"
+            android:text="@string/str_techniques_list"
+            android:textColor="@color/colorBlack"
+            android:layout_marginLeft="10dp"
+            android:textSize="@dimen/textsize_sixteen"
+            android:textStyle="normal"
+            app:layout_constraintStart_toEndOf="@+id/txt_tecniques"
             app:layout_constraintTop_toBottomOf="@id/txt_massage">
 
 
@@ -173,7 +235,6 @@
                 app:cardElevation="@dimen/margin_five"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-
                 app:layout_constraintTop_toTopOf="parent" />
 
             <androidx.appcompat.widget.AppCompatTextView
@@ -223,8 +284,8 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
 
-            <Button
-                android:id="@+id/btn_cancel"
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_book_now_f"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/margin_ten"
@@ -259,3 +320,5 @@
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
