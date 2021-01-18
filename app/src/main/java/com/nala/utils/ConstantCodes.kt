@@ -10,6 +10,8 @@ class ConstantCodes {
         const val INTENT_CHANNEL_NAME : String = "CHANNEL_NAME"
         const val DATE_FORMAT: String ="dd-mm-yyyy"
         const val TOTAL_RECORDS = 10
+        const val INTENT_Therapist_ID: String ="THERAPIST_ID"
+
 
         const val REQUEST_CAMERA_RESULT = 30
         const val REQUEST_PHOTOGALLERY_RESULT = 31

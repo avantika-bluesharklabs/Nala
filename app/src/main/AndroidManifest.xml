@@ -22,6 +22,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
+        <activity android:name=".view.activities.ActivityPastAppointmentInfo"></activity>
         <activity android:name=".view.activities.ActivityRateTherapist" />
         <activity android:name=".view.activities.ActivityChatting" />
         <activity android:name=".view.activities.ActivityBookingInfo" />

@@ -161,5 +161,6 @@
     <string name="str_write_review">Write your review…</string>
     <string name="str_no_tx">No Thanks</string>
     <string name="str_schedule">Schedule a Massage</string>
+    <string name="str_rateandreview"><![CDATA[Give Rate & Review]]></string>
 </resources>
 
