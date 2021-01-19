@@ -1,12 +1,8 @@
 package com.nala.view.activities
 
-import android.app.Dialog
 import android.content.Intent
 import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
-import android.view.View
-import android.view.Window
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.observe
 import com.nala.R
@@ -47,7 +43,7 @@ class ActivityLogin : ActivityBase() {
         })
 
         mViewModelLogin.getLiveEventBackPress().observe(this, {
-            startActivity(Intent(this, ActivityHomeDetails::class.java))
+            startActivity(Intent(this, ActivityServicePro::class.java))
 //            finishAffinity()
         })
 

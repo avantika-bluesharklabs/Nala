@@ -43,7 +43,7 @@ class ActivityForgotPassword : ActivityBase() {
         mViewModelForgotPass.getLiveEventForgotPass().observe(this, {
 
             if (it) {
-                startActivity(Intent(this, ActivityPhoneVerification::class.java))
+                startActivity(Intent(this, ActivitySignIn::class.java))
 
             }
 

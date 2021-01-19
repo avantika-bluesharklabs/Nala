@@ -1,7 +1,6 @@
 package com.nala.view.adapter
 
 import android.content.Context
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,11 +10,11 @@ import com.nala.R
 import com.nala.businesslogic.interfaces.OnClickHome
 import com.nala.businesslogic.pojo.PojoHome
 import com.nala.databinding.FragmentHomeRowListBinding
-import com.nala.view.activities.ActivityServicePro
 
-class AdapterHomeList(
+
+class AdapterHomeMap(
     var mContext: Context, var mArrayContent: List<PojoHome>,
-    var mOnClickHomeListener: OnClickHome
+    var mOnClickHomeMapListener: OnClickHome
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     val mViewTypeItem = 1
@@ -33,17 +32,7 @@ class AdapterHomeList(
 
             // binding.onContentClickListener = mOnClickHomeListListener
 
-            binding.setOnContentClickListener(mOnClickHomeListener)
-
-           binding.btnBookNowF.setOnClickListener {
-
-               val intent = Intent(mContext, ActivityServicePro::class.java)
-
-               mContext.startActivity(intent)
-
-
-
-           }
+            binding.setOnContentClickListener(mOnClickHomeMapListener)
 
             Viewholder(binding)
         } else {

@@ -95,6 +95,7 @@
     <string name="str_con_password_hint">Confirm Password</string>
     <string name="str_tb_desc"><![CDATA[Agree with Terms & Conditions and Privacy Policy]]></string>
     <string name="str_sign_up">Sign Up</string>
+    <string name="str_min">$25/30 min</string>
     <string name="str_add_photo">Add Photo</string>
     <string name="str_iam">I am</string>
     <string name="str_male">Male</string>
@@ -166,5 +167,7 @@
     <string name="str_no_tx">No Thanks</string>
     <string name="str_schedule">Schedule a Massage</string>
     <string name="str_rateandreview"><![CDATA[Give Rate & Review]]></string>
+    <string name="str_in_stuidio">In-studio</string>
+    <string name="str_city">New York</string>
 </resources>
 

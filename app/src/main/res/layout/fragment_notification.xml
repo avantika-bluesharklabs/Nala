@@ -1,64 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/colorWhite">
+    xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="vmNotification"
+            type="com.nala.businesslogic.viewmodel.fragments.ViewModelNotisfication" />
+
+
+        <variable
+            name="onContentClickListener"
+            type="com.nala.businesslogic.interfaces.OnClickNotification" />
+
+
+    </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/cl_toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite">
 
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:layout_width="wrap_content"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_toolbar"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/margin_twenty"
-            android:layout_marginTop="@dimen/margin_twenty"
-            android:layout_marginBottom="@dimen/margin_twenty"
-            android:text="@string/str_notification"
-            android:textColor="@color/colorBlack"
-            android:textSize="@dimen/textsize_twenty"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_twenty"
+                android:layout_marginTop="@dimen/margin_twenty"
+                android:layout_marginBottom="@dimen/margin_twenty"
+                android:text="@string/str_notification"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/textsize_twenty"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_div"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/margin_two"
+            android:background="@color/colorGray"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cl_toolbar" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@color/colorLightGrayUser"
+            android:paddingTop="@dimen/margin_ten"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@id/ll_div">
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <LinearLayout
-        android:id="@+id/ll_div"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/margin_two"
-        android:background="@color/colorGray"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/cl_toolbar" />
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:background="@color/colorLightGrayUser"
-        android:layout_height="wrap_content"
-        android:paddingTop="@dimen/margin_ten"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/ll_div">
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_noti_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:recyclerNotification="@{vmNotification.layoutManager}"
+                app:adapterNotification="@{vmNotification.observerContent}"
+                app:clickListenerNotification="@{onContentClickListener}"
+                app:scrollListenerNotification="@{vmNotification.scrollListener}"
+                />
 
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_noti_list"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            tools:listitem="@layout/adapter_notification_list" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

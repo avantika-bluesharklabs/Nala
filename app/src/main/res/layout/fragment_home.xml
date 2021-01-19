@@ -9,12 +9,18 @@
 
         <variable
             name="vmHomeList"
-            type="com.nala.businesslogic.viewmodel.activities.ViewModelHome" />
+            type="com.nala.businesslogic.viewmodel.fragments.ViewModelHome" />
+
+        <variable
+            name="vmHomeMap"
+            type="com.nala.businesslogic.viewmodel.fragments.ViewModelHomeMap" />
 
 
         <variable
             name="onContentClickListener"
             type="com.nala.businesslogic.interfaces.OnClickHome" />
+
+
 
     </data>
 
@@ -190,6 +196,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="@dimen/margin_twenty"
+                    app:recyclerHomeMap="@{vmHomeMap.layoutManager}"
+                    app:adapterHomeMap="@{vmHomeMap.observerContent}"
+                    app:clickListenerHomeMap="@{onContentClickListener}"
+                    app:scrollListenerHomeMap="@{vmHomeMap.scrollListener}"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent" />

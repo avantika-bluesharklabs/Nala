@@ -16,6 +16,10 @@
             type="com.nala.businesslogic.viewmodel.fragments.ViewModelHomeList" />
 
         <variable
+            name="vmHomeMap"
+            type="com.nala.businesslogic.viewmodel.fragments.ViewModelHomeMap" />
+
+        <variable
             name="data"
             type="com.nala.businesslogic.pojo.PojoHome" />
 
@@ -34,6 +38,7 @@
     android:layout_height="wrap_content"
     android:clickable="true"
     android:focusable="true"
+    android:padding="@dimen/margin_ten"
     android:onClick="@{(v)->onContentClickListener.onClickHomeItem(v,layoutPosition,data)}">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -288,11 +293,9 @@
                 android:id="@+id/btn_book_now_f"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/margin_ten"
                 android:background="@drawable/curve_view_360"
                 android:backgroundTint="@color/colorSemiLightGray"
-                android:paddingStart="@dimen/margin_fifteen"
-                android:paddingEnd="@dimen/margin_fifteen"
+                android:padding="15dp"
                 android:src="@drawable/ic_navigations"
                 android:text="@string/str_book_now"
                 android:textAllCaps="false"

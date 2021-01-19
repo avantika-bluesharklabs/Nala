@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="vmMessage"
+            type="com.nala.businesslogic.viewmodel.fragments.ViewModelMessage" />
+
+
+        <variable
+            name="onContentClickListener"
+            type="com.nala.businesslogic.interfaces.OnClickMessage" />
+
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite">
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txt_msg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="@string/str_messages"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/textsize_twenty"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/margin_one"
+            android:background="@color/colorGray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txt_msg" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_chat_list"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="10dp"
+            app:recyclerMessage="@{vmMessage.layoutManager}"
+            app:adapterMessage="@{vmMessage.observerContent}"
+            app:clickListenerMessage="@{onContentClickListener}"
+            app:scrollListenerMessage="@{vmMessage.scrollListener}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

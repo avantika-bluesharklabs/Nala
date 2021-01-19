@@ -1,21 +1,22 @@
 package com.nala.view.adapter
 
 import android.content.Context
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.nala.R
-import com.nala.businesslogic.interfaces.OnClickHome
-import com.nala.businesslogic.pojo.PojoHome
-import com.nala.databinding.FragmentHomeRowListBinding
-import com.nala.view.activities.ActivityServicePro
+import com.nala.businesslogic.interfaces.OnClickSchedualeAppoinment
+import com.nala.businesslogic.interfaces.OnClickSchedualeAppoinmentType
+import com.nala.businesslogic.pojo.PojoSchedualeAppoinment
+import com.nala.businesslogic.pojo.PojoSchedualeAppoinmentType
+import com.nala.databinding.ActivityScheduleAppointmentRowTimeBinding
+import com.nala.databinding.ActivityScheduleAppointmentRowTypeBinding
 
-class AdapterHomeList(
-    var mContext: Context, var mArrayContent: List<PojoHome>,
-    var mOnClickHomeListener: OnClickHome
+class AdapterSchedualeAppoinmentType(
+    var mContext: Context, var mArrayContent: List<PojoSchedualeAppoinmentType>,
+    var mOnClickSchedualeAppoinmentTypeListener: OnClickSchedualeAppoinmentType
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     val mViewTypeItem = 1
@@ -24,26 +25,16 @@ class AdapterHomeList(
 
         val layoutInflater = LayoutInflater.from(parent.context)
         return if (viewType == mViewTypeItem) {
-            val binding: FragmentHomeRowListBinding = DataBindingUtil.inflate(
+            val binding: ActivityScheduleAppointmentRowTypeBinding = DataBindingUtil.inflate(
                 layoutInflater,
-                R.layout.fragment_home_row_list,
+                R.layout.activity_schedule_appointment_row_type,
                 parent,
                 false
             )
 
             // binding.onContentClickListener = mOnClickHomeListListener
 
-            binding.setOnContentClickListener(mOnClickHomeListener)
-
-           binding.btnBookNowF.setOnClickListener {
-
-               val intent = Intent(mContext, ActivityServicePro::class.java)
-
-               mContext.startActivity(intent)
-
-
-
-           }
+            binding.setOnContentClickListener(mOnClickSchedualeAppoinmentTypeListener)
 
             Viewholder(binding)
         } else {
@@ -73,12 +64,12 @@ class AdapterHomeList(
     class ProgressViewHolder(v: View?) :
         RecyclerView.ViewHolder(v!!)
 
-    class Viewholder(binding: FragmentHomeRowListBinding) :
+    class Viewholder(binding: ActivityScheduleAppointmentRowTypeBinding) :
         RecyclerView.ViewHolder(binding.getRoot()) {
 
-        private val mBinding: FragmentHomeRowListBinding
+        private val mBinding: ActivityScheduleAppointmentRowTypeBinding
 
-        fun bind(data: PojoHome, position: Int) {
+        fun bind(data: PojoSchedualeAppoinmentType, position: Int) {
             mBinding.setData(data)
             mBinding.setLayoutPosition(position)
             mBinding.executePendingBindings()

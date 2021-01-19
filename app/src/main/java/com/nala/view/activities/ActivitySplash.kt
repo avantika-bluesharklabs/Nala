@@ -44,6 +44,8 @@ class ActivitySplash : ActivityBase() {
             "boolean is   " + mPreferences.getBoolean(R.string.pref_is_user_login)
         )
 
+
+
         if (mPreferences.getBoolean(R.string.pref_is_user_login)) {
 
           //  startActivity(Intent(this, ActivityRateTherapist::class.java))

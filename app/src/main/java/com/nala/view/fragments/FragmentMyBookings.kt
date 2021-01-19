@@ -4,16 +4,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.widget.AppCompatImageView
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.databinding.DataBindingUtil
-import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.nala.R
 import com.nala.businesslogic.interfaces.OnClickMyBooking
-import com.nala.businesslogic.pojo.PojoHome
 import com.nala.businesslogic.pojo.PojoMyBooking
-import com.nala.businesslogic.viewmodel.activities.ViewModelHome
 import com.nala.businesslogic.viewmodel.fragments.ViewModelMyBookings
 
 import com.nala.databinding.FragmentMyBookingsBinding
@@ -62,13 +57,7 @@ class FragmentMyBookings : FragmentBase(),OnClickMyBooking {
     }
 
 
-    companion object {
 
-        fun newInstance() =
-            FragmentMyBookings().apply {
-
-            }
-    }
 
     override fun onClickMyBookingItem(view: View?, layoutPosition: Int, data: PojoMyBooking) {
 

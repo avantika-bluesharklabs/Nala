@@ -3,38 +3,38 @@ package com.nala.businesslogic.viewmodel.activities
 import androidx.recyclerview.widget.RecyclerView
 import com.nala.businesslogic.interactors.SingleLiveEvent
 import com.nala.businesslogic.pojo.PojoCommonResponse
-import com.nala.businesslogic.pojo.PojoHome
 import com.nala.businesslogic.pojo.PojoSchedualeAppoinment
+import com.nala.businesslogic.pojo.PojoSchedualeAppoinmentType
 import com.nala.businesslogic.viewmodel.ViewModelRecyclerView
 import com.nala.view.MyApplication
 
-class ViewModelScheduleAppointment (myApplication: MyApplication, isToShowErrors: Boolean) :
-    ViewModelRecyclerView<PojoCommonResponse, PojoSchedualeAppoinment>(myApplication,false,false,
+class ViewModelSchedualeAppoinmenttype(myApplication: MyApplication, isToShowErrors: Boolean) :
+    ViewModelRecyclerView<PojoCommonResponse, PojoSchedualeAppoinmentType>(myApplication,false,false,
         0, RecyclerView.HORIZONTAL){
 
 
     private val liveEvent: SingleLiveEvent<Boolean> = SingleLiveEvent()
-    private val liveEventSuccess: SingleLiveEvent<PojoSchedualeAppoinment> = SingleLiveEvent()
+    private val liveEventSuccess: SingleLiveEvent<PojoSchedualeAppoinmentType> = SingleLiveEvent()
 
     init {
 
-        var pojo = PojoSchedualeAppoinment()
-        pojo.txt_time = "10:00 am"
+        var pojo = PojoSchedualeAppoinmentType()
+        pojo.txt_type = "In Studio"
 
         observerContent.add(pojo)
 
-        pojo = PojoSchedualeAppoinment()
-        pojo.txt_time = "10:30 am"
+        pojo = PojoSchedualeAppoinmentType()
+        pojo.txt_type = "Mobile Service With Table"
 
         observerContent.add(pojo)
 
-        pojo = PojoSchedualeAppoinment()
-        pojo.txt_time = "11:00 am"
+        pojo = PojoSchedualeAppoinmentType()
+        pojo.txt_type = "In Dount"
 
         observerContent.add(pojo)
 
-        pojo = PojoSchedualeAppoinment()
-        pojo.txt_time = "11:30 am"
+        pojo = PojoSchedualeAppoinmentType()
+        pojo.txt_type = "Services"
 
 
         observerContent.add(pojo)
@@ -48,7 +48,7 @@ class ViewModelScheduleAppointment (myApplication: MyApplication, isToShowErrors
         return liveEvent
     }
 
-    fun getLiveEventSuccess(): SingleLiveEvent<PojoSchedualeAppoinment> {
+    fun getLiveEventSuccess(): SingleLiveEvent<PojoSchedualeAppoinmentType> {
         return liveEventSuccess
     }
 

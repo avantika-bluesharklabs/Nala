@@ -25,9 +25,9 @@
 
     <fragment
         android:id="@+id/navigation_chat"
-        android:name="com.nala.view.fragments.FragmentChatting"
+        android:name="com.nala.view.fragments.FragmentMessage"
         android:label="@string/nav_chat"
-        tools:layout="@layout/fragment_chatting" />
+        tools:layout="@layout/fragment_message" />
 
 
     <fragment

@@ -3,38 +3,38 @@ package com.nala.businesslogic.viewmodel.activities
 import androidx.recyclerview.widget.RecyclerView
 import com.nala.businesslogic.interactors.SingleLiveEvent
 import com.nala.businesslogic.pojo.PojoCommonResponse
-import com.nala.businesslogic.pojo.PojoHome
 import com.nala.businesslogic.pojo.PojoSchedualeAppoinment
+import com.nala.businesslogic.pojo.PojoTechnique
 import com.nala.businesslogic.viewmodel.ViewModelRecyclerView
 import com.nala.view.MyApplication
 
-class ViewModelScheduleAppointment (myApplication: MyApplication, isToShowErrors: Boolean) :
-    ViewModelRecyclerView<PojoCommonResponse, PojoSchedualeAppoinment>(myApplication,false,false,
-        0, RecyclerView.HORIZONTAL){
+class ViewModelTechnique (myApplication: MyApplication, isToShowErrors: Boolean) :
+    ViewModelRecyclerView<PojoCommonResponse, PojoTechnique>(myApplication,false,true,
+        2, RecyclerView.VERTICAL){
 
 
     private val liveEvent: SingleLiveEvent<Boolean> = SingleLiveEvent()
-    private val liveEventSuccess: SingleLiveEvent<PojoSchedualeAppoinment> = SingleLiveEvent()
+    private val liveEventSuccess: SingleLiveEvent<PojoTechnique> = SingleLiveEvent()
 
     init {
 
-        var pojo = PojoSchedualeAppoinment()
-        pojo.txt_time = "10:00 am"
+        var pojo = PojoTechnique()
+        pojo.txt_status = "Deep Tissue"
 
         observerContent.add(pojo)
 
-        pojo = PojoSchedualeAppoinment()
-        pojo.txt_time = "10:30 am"
+        pojo = PojoTechnique()
+        pojo.txt_status = "Swedesi"
 
         observerContent.add(pojo)
 
-        pojo = PojoSchedualeAppoinment()
-        pojo.txt_time = "11:00 am"
+        pojo = PojoTechnique()
+        pojo.txt_status = "Sports"
 
         observerContent.add(pojo)
 
-        pojo = PojoSchedualeAppoinment()
-        pojo.txt_time = "11:30 am"
+        pojo = PojoTechnique()
+        pojo.txt_status = "Reflexology"
 
 
         observerContent.add(pojo)
@@ -48,7 +48,7 @@ class ViewModelScheduleAppointment (myApplication: MyApplication, isToShowErrors
         return liveEvent
     }
 
-    fun getLiveEventSuccess(): SingleLiveEvent<PojoSchedualeAppoinment> {
+    fun getLiveEventSuccess(): SingleLiveEvent<PojoTechnique> {
         return liveEventSuccess
     }
 

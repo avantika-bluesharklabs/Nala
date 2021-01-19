@@ -182,7 +182,7 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
                         app:spanCount="2"
-                        tools:listitem="@layout/adapter_techniques" />
+                        tools:listitem="@layout/activity_schedule_appointment_row_time" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 

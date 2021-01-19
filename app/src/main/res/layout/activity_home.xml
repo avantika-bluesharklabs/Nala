@@ -9,7 +9,7 @@
 
         <variable
             name="viewModel"
-            type="com.nala.businesslogic.viewmodel.activities.ViewModelHome" />
+            type="com.nala.businesslogic.viewmodel.fragments.ViewModelHome" />
 
         <!-- <variable
             name="onBottomItemSelectedListener"

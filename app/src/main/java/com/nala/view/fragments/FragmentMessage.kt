@@ -6,18 +6,19 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import com.nala.R
+import com.nala.businesslogic.interfaces.OnClickMessage
 import com.nala.businesslogic.interfaces.OnClickNotification
+import com.nala.businesslogic.pojo.PojoMessage
 import com.nala.businesslogic.pojo.PojoNotisfication
-import com.nala.businesslogic.viewmodel.fragments.ViewModelHomeMap
-import com.nala.businesslogic.viewmodel.fragments.ViewModelMyBookings
+import com.nala.businesslogic.viewmodel.fragments.ViewModelMessage
 import com.nala.businesslogic.viewmodel.fragments.ViewModelNotisfication
-import com.nala.databinding.FragmentHomeBinding
+import com.nala.databinding.FragmentMessageBinding
 import com.nala.databinding.FragmentNotificationBinding
 
-class FragmentNotification : FragmentBase(),OnClickNotification {
+class FragmentMessage : FragmentBase(), OnClickMessage {
 
-    private lateinit var mViewModelNotisfication: ViewModelNotisfication
-    private lateinit var mBinding: FragmentNotificationBinding
+    private lateinit var mViewModelMessage: ViewModelMessage
+    private lateinit var mBinding: FragmentMessageBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -26,10 +27,10 @@ class FragmentNotification : FragmentBase(),OnClickNotification {
     ): View? {
 
 
-        mBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_notification, container, false)
+        mBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_message, container, false)
 
-        mViewModelNotisfication = ViewModelNotisfication(mApplication,false)
-        mBinding.vmNotification = mViewModelNotisfication
+        mViewModelMessage = ViewModelMessage(mApplication,false)
+        mBinding.vmMessage = mViewModelMessage
         mBinding.onContentClickListener = this
 
 
@@ -43,9 +44,9 @@ class FragmentNotification : FragmentBase(),OnClickNotification {
 
     }
 
-    override fun onClickNotificationItem(view: View?, layoutPosition: Int, data: PojoNotisfication) {
 
 
+    override fun onClickMessageItem(view: View?, layoutPosition: Int, data: PojoMessage) {
 
     }
 

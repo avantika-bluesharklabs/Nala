@@ -10,13 +10,38 @@ import android.view.View
 import android.view.Window
 import androidx.annotation.RequiresApi
 import androidx.core.content.ContextCompat
+import androidx.databinding.DataBindingUtil
 import com.nala.R
+import com.nala.businesslogic.interfaces.OnClickSchedualeAppoinment
+import com.nala.businesslogic.interfaces.OnClickSchedualeAppoinmentType
+import com.nala.businesslogic.pojo.PojoSchedualeAppoinment
+import com.nala.businesslogic.pojo.PojoSchedualeAppoinmentType
+import com.nala.businesslogic.viewmodel.activities.ViewModelSchedualeAppoinmenttype
+import com.nala.businesslogic.viewmodel.activities.ViewModelScheduleAppointment
+import com.nala.businesslogic.viewmodel.fragments.ViewModelHome
+import com.nala.databinding.ActivityHomeBinding
+import com.nala.databinding.ActivityScheduleAppointmentBinding
 
-class ActivityScheduleAppointment : AppCompatActivity() {
+class ActivityScheduleAppointment : ActivityBase(),OnClickSchedualeAppoinment,OnClickSchedualeAppoinmentType {
+
+    private lateinit var mViewModelSchedualeAppoinment: ViewModelScheduleAppointment
+    private lateinit var mViewModelSchedualeAppoinmentType: ViewModelSchedualeAppoinmenttype
+    private lateinit var mBinding: ActivityScheduleAppointmentBinding
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         window.statusBarColor = ContextCompat.getColor(this, R.color.colorSemiLightGray);
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_schedule_appointment)
+
+        mBinding = DataBindingUtil.setContentView(this, R.layout.activity_schedule_appointment)
+        mViewModelSchedualeAppoinment = ViewModelScheduleAppointment(mApplication, false)
+        mViewModelSchedualeAppoinmentType = ViewModelSchedualeAppoinmenttype(mApplication, false)
+        mBinding.vmSchedualeMan = mViewModelSchedualeAppoinment
+        mBinding.vmSchedualeManType = mViewModelSchedualeAppoinmentType
+        mBinding.onContentClickListener = this
+        mBinding.onContentClickListenerType = this
+
+
         showDialog()
     }
 
@@ -37,6 +62,22 @@ class ActivityScheduleAppointment : AppCompatActivity() {
 //        }
 //        noBtn.setOnClickListener { dialog.dismiss() }
         dialog.show()
+
+    }
+
+    override fun onClickSchedualeAppoinmentItem(
+        view: View?,
+        layoutPosition: Int,
+        data: PojoSchedualeAppoinment
+    ) {
+
+    }
+
+    override fun onClickSchedualeAppoinmentTypeItem(
+        view: View?,
+        layoutPosition: Int,
+        data: PojoSchedualeAppoinmentType
+    ) {
 
     }
 }

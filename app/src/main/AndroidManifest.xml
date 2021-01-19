@@ -22,15 +22,19 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".view.activities.ActivityPastAppointmentInfo"></activity>
+        <activity android:name=".view.activities.ActivityPastAppointmentInfo"/>
         <activity android:name=".view.activities.ActivityRateTherapist" />
         <activity android:name=".view.activities.ActivityChatting" />
         <activity android:name=".view.activities.ActivityBookingInfo" />
         <activity android:name=".view.activities.ActivityScheduleAppointment" />
-        <activity android:name=".view.activities.ActivityHomeDetails" />
+        <activity android:name=".view.activities.ActivityServicePro" />
         <activity android:name=".view.activities.ActivityHome" />
         <activity android:name=".view.activities.ActivityPhoneVerification" />
-        <activity android:name=".view.activities.ActivityAddUserDetails" />
+        <activity android:name=".view.activities.ActivityAddUserDetails" >
+
+
+
+            </activity>
         <activity android:name=".view.activities.ActivitySignUp" />
         <activity android:name=".view.activities.ActivityForgotPassword" />
         <activity android:name=".view.activities.ActivitySignIn" />

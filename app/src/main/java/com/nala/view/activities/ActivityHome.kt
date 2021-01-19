@@ -9,7 +9,7 @@ import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.nala.R
-import com.nala.businesslogic.viewmodel.activities.ViewModelHome
+import com.nala.businesslogic.viewmodel.fragments.ViewModelHome
 import com.nala.databinding.ActivityHomeBinding
 
 class ActivityHome : ActivityBase(), BottomNavigationView.OnNavigationItemSelectedListener {
@@ -24,7 +24,11 @@ class ActivityHome : ActivityBase(), BottomNavigationView.OnNavigationItemSelect
         super.onCreate(savedInstanceState)
 
         mBinding = DataBindingUtil.setContentView(this, R.layout.activity_home)
-        mViewModelHome = ViewModelHome(mApplication, false)
+        mViewModelHome =
+            ViewModelHome(
+                mApplication,
+                false
+            )
         mBinding.viewModel = mViewModelHome
         mBinding.bottomNavigation.setOnNavigationItemSelectedListener(this)
         navController = findNavController(R.id.nav_tab_host_fragment)

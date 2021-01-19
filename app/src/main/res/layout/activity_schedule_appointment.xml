@@ -1,277 +1,306 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/colorgray_9"
-    tools:context=".view.activities.ActivityScheduleAppointment">
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="vmSchedualeMan"
+            type="com.nala.businesslogic.viewmodel.activities.ViewModelScheduleAppointment" />
+
+
+        <variable
+            name="vmSchedualeManType"
+            type="com.nala.businesslogic.viewmodel.activities.ViewModelSchedualeAppoinmenttype" />
+
+
+        <variable
+            name="onContentClickListener"
+            type="com.nala.businesslogic.interfaces.OnClickSchedualeAppoinment" />
+
+        <variable
+            name="onContentClickListenerType"
+            type="com.nala.businesslogic.interfaces.OnClickSchedualeAppoinmentType" />
+
+
+
+    </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/cl_toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="@dimen/margin_twenty"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="match_parent"
+        android:background="@color/colorgray_9">
 
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/card_back"
-            android:layout_width="wrap_content"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_toolbar"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            app:cardBackgroundColor="@color/colorWhite"
-            app:cardElevation="@dimen/margin_seven"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:padding="@dimen/margin_twenty"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
 
-            <androidx.appcompat.widget.AppCompatImageView
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_back"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_backs" />
+                android:layout_gravity="center_vertical"
+                app:cardBackgroundColor="@color/colorWhite"
+                app:cardElevation="@dimen/margin_seven"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
 
-        </androidx.cardview.widget.CardView>
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_backs" />
 
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/txt_toolbar_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/str_schedule"
-            android:textColor="@color/colorBlack"
-            android:textSize="@dimen/textsize_eighteen"
-            android:textStyle="bold"
-            android:visibility="visible"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            </androidx.cardview.widget.CardView>
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_top"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@id/cl_toolbar" />
-
-
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:fillViewport="true"
-        android:scrollbars="none"
-        android:background="@drawable/top_curve_view"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/cl_toolbar">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/cl_calender"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingBottom="@dimen/margin_twenty"
-            android:nestedScrollingEnabled="true">
-
-            <CalendarView
-                android:id="@+id/calender_view"
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txt_toolbar_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:dateTextAppearance="@style/CalenderViewDateCustomText"
-                android:theme="@style/CalenderViewCustom"
-                android:weekDayTextAppearance="@style/CalenderViewWeekCustomText"
+                android:text="@string/str_schedule"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/textsize_eighteen"
+                android:textStyle="bold"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
 
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/cl_toolbar" />
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@drawable/top_curve_view"
+            android:fillViewport="true"
+            android:scrollbars="none"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cl_toolbar">
+
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/cl_slots"
+                android:id="@+id/cl_calender"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/top_curve_view"
-                android:backgroundTint="@color/colorgray_8"
                 android:nestedScrollingEnabled="true"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/calender_view">
+                android:paddingBottom="@dimen/margin_twenty">
 
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/txt_available_slot"
+                <CalendarView
+                    android:id="@+id/calender_view"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/margin_twenty_five"
-                    android:layout_marginTop="@dimen/margin_ten"
-                    android:text="@string/str_choose_time"
-                    android:textColor="@color/colorBlack"
-                    android:textSize="@dimen/textsize_eighteen"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/constraint_recycler"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin_ten"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:paddingBottom="@dimen/margin_fifteen"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/txt_available_slot">
-
-
-                    <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/rv_slot"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:nestedScrollingEnabled="true"
-                        android:orientation="horizontal"
-                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        tools:listitem="@layout/adapter_techniques" />
-
-                    <androidx.appcompat.widget.AppCompatTextView
-                        style="@style/noRecordFound"
-                        android:text="@string/str_no_time_slot_available"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <ProgressBar
-                        style="@style/progressBarCentre"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <LinearLayout
-                android:id="@+id/ll_div"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_ten"
-                android:layout_marginBottom="@dimen/margin_ten"
-                android:orientation="horizontal"
-                app:layout_constraintTop_toBottomOf="@+id/cl_slots" />
-
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/cl_service"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/colorgray_8"
-                android:nestedScrollingEnabled="true"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/ll_div">
-
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/txt_massage_type"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/margin_twenty_five"
-                    android:layout_marginTop="@dimen/margin_ten"
-                    android:text="@string/str_massage_type"
-                    android:textColor="@color/colorBlack"
-                    android:textSize="@dimen/textsize_eighteen"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/constraint_recycler_bottom"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin_ten"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:paddingBottom="@dimen/margin_fifteen"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/txt_massage_type">
-
-
-                    <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/rv_type"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:nestedScrollingEnabled="true"
-                        android:orientation="horizontal"
-                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        tools:listitem="@layout/adapter_techniques" />
-
-                    <androidx.appcompat.widget.AppCompatTextView
-                        style="@style/noRecordFound"
-                        android:text="@string/str_no_time_slot_available"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <ProgressBar
-                        style="@style/progressBarCentre"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/bottom_curve_view"
-                android:nestedScrollingEnabled="true"
-                android:paddingBottom="@dimen/margin_thirty"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/cl_service">
-
-
-                <Button
-                    android:id="@+id/btn_signUp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/margin_twenty_five"
-                    android:layout_marginTop="@dimen/margin_thirty_five"
-                    android:layout_marginEnd="@dimen/margin_twenty_five"
-                    android:layout_marginBottom="@dimen/margin_twenty_five"
-                    android:background="@drawable/curve_view_360"
-                    android:backgroundTint="@color/colorBlueForButtons"
-
-                    android:text="@string/str_submit"
-                    android:textColor="@color/colorWhite"
-                    android:textSize="@dimen/textsize_eighteen"
+                    android:dateTextAppearance="@style/CalenderViewDateCustomText"
+                    android:theme="@style/CalenderViewCustom"
+                    android:weekDayTextAppearance="@style/CalenderViewWeekCustomText"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
 
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_slots"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/top_curve_view"
+                    android:backgroundTint="@color/colorgray_8"
+                    android:nestedScrollingEnabled="true"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/calender_view">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txt_available_slot"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_twenty_five"
+                        android:layout_marginTop="@dimen/margin_ten"
+                        android:text="@string/str_choose_time"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="@dimen/textsize_eighteen"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/constraint_recycler"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_ten"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:paddingBottom="@dimen/margin_fifteen"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/txt_available_slot">
+
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rv_slot"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:recyclerSchedualeTime="@{vmSchedualeMan.layoutManager}"
+                            app:adapterSchedualeTime="@{vmSchedualeMan.observerContent}"
+                            app:clickListenerSchedualeTime="@{onContentClickListener}"
+                            app:scrollListenerSchedualeTime="@{vmSchedualeMan.scrollListener}"
+                            android:nestedScrollingEnabled="true"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            style="@style/noRecordFound"
+                            android:text="@string/str_no_time_slot_available"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <ProgressBar
+                            style="@style/progressBarCentre"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_div"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_ten"
+                    android:layout_marginBottom="@dimen/margin_ten"
+                    android:orientation="horizontal"
+                    app:layout_constraintTop_toBottomOf="@+id/cl_slots" />
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_service"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorgray_8"
+                    android:nestedScrollingEnabled="true"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ll_div">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txt_massage_type"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_twenty_five"
+                        android:layout_marginTop="@dimen/margin_ten"
+                        android:text="@string/str_massage_type"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="@dimen/textsize_eighteen"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/constraint_recycler_bottom"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_ten"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:paddingBottom="@dimen/margin_fifteen"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/txt_massage_type">
+
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rv_type"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:recyclerSchedualeType="@{vmSchedualeManType.layoutManager}"
+                            app:adapterSchedualeType="@{vmSchedualeManType.observerContent}"
+                            app:clickListenerSchedualeType="@{onContentClickListenerType}"
+                            app:scrollListenerSchedualeType="@{vmSchedualeManType.scrollListener}"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            style="@style/noRecordFound"
+                            android:text="@string/str_no_time_slot_available"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <ProgressBar
+                            style="@style/progressBarCentre"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+    
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                    android:background="@drawable/bottom_curve_view"
+                    android:nestedScrollingEnabled="true"
+                    android:paddingBottom="@dimen/margin_thirty"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cl_service">
+
+
+                    <Button
+                        android:id="@+id/btn_signUp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_twenty_five"
+                        android:layout_marginTop="@dimen/margin_thirty_five"
+                        android:layout_marginEnd="@dimen/margin_twenty_five"
+                        android:layout_marginBottom="@dimen/margin_twenty_five"
+                        android:background="@drawable/curve_view_360"
+                        android:backgroundTint="@color/colorBlueForButtons"
+
+                        android:text="@string/str_submit"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="@dimen/textsize_eighteen"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </ScrollView>
 
 
-    </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -9,12 +9,12 @@
         <import type="android.view.View" />
 
         <variable
-            name="vmHomeDetails"
-            type="com.nala.businesslogic.viewmodel.activities.ViewModelHomeDetails" />
+            name="vmTechnique"
+            type="com.nala.businesslogic.viewmodel.activities.ViewModelTechnique" />
 
         <variable
             name="onContentClickListener"
-            type="com.nala.businesslogic.interfaces.OnClickHomeDetails" />
+            type="com.nala.businesslogic.interfaces.OnClickTechnique" />
 
     </data>
 
@@ -207,8 +207,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="@dimen/margin_five"
-                        android:text="@string/str_sign_up"
-                        android:textSize="@dimen/textsize_eighteen" />
+                        android:text="@string/str_min"
+                        android:textSize="@dimen/textsize_forteen" />
 
                 </androidx.cardview.widget.CardView>
 
@@ -229,8 +229,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="@dimen/margin_five"
-                        android:text="@string/str_sign_up"
-                        android:textSize="@dimen/textsize_eighteen" />
+                        android:text="@string/str_min"
+                        android:textSize="@dimen/textsize_forteen" />
 
                 </androidx.cardview.widget.CardView>
 
@@ -253,8 +253,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="@dimen/margin_five"
-                        android:text="@string/str_sign_up"
-                        android:textSize="@dimen/textsize_eighteen" />
+                        android:text="@string/str_min"
+                        android:textSize="@dimen/textsize_forteen" />
 
                 </androidx.cardview.widget.CardView>
 
@@ -275,8 +275,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="@dimen/margin_five"
-                        android:text="@string/str_sign_up"
-                        android:textSize="@dimen/textsize_eighteen" />
+                        android:text="@string/str_min"
+                        android:textSize="@dimen/textsize_forteen" />
 
                 </androidx.cardview.widget.CardView>
 
@@ -583,13 +583,14 @@
                         android:id="@+id/rv_techniques"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                        app:recyclerTechnique="@{vmTechnique.layoutManager}"
+                        app:adapterTechnique="@{vmTechnique.observerContent}"
+                        app:clickListenerTechnique="@{onContentClickListener}"
+                        app:scrollListenerTechnique="@{vmTechnique.scrollListener}"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:spanCount="2"
-                        tools:listitem="@layout/adapter_techniques" />
-
+                       />
 
                     <LinearLayout
                         android:id="@+id/ll_div"
