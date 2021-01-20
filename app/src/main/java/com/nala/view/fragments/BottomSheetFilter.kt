@@ -11,7 +11,7 @@ import androidx.appcompat.widget.AppCompatTextView
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.nala.R
 
-class BottomSheetFilter: BottomSheetDialogFragment() {
+class BottomSheetFilter: BottomSheetDialogFragment()  {
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -19,10 +19,7 @@ class BottomSheetFilter: BottomSheetDialogFragment() {
         savedInstanceState: Bundle?): View? {
 
 
-
         val v = inflater.inflate(R.layout.layout_my_booking_filters, container, false)
-   //     val txt_save = v.findViewById(R.id.txt_save) as AppCompatTextView
-
 
 
 

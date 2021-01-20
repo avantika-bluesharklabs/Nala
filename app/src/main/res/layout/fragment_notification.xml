@@ -77,8 +77,7 @@
                 app:recyclerNotification="@{vmNotification.layoutManager}"
                 app:adapterNotification="@{vmNotification.observerContent}"
                 app:clickListenerNotification="@{onContentClickListener}"
-                app:scrollListenerNotification="@{vmNotification.scrollListener}"
-                />
+                app:scrollListenerNotification="@{vmNotification.scrollListener}" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
