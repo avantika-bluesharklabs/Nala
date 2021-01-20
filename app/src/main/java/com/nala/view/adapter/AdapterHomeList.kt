@@ -11,7 +11,6 @@ import com.nala.R
 import com.nala.businesslogic.interfaces.OnClickHome
 import com.nala.businesslogic.pojo.PojoHome
 import com.nala.databinding.FragmentHomeRowListBinding
-import com.nala.view.activities.ActivityServicePro
 
 class AdapterHomeList(
     var mContext: Context, var mArrayContent: List<PojoHome>,
@@ -30,21 +29,7 @@ class AdapterHomeList(
                 parent,
                 false
             )
-
-            // binding.onContentClickListener = mOnClickHomeListListener
-
             binding.setOnContentClickListener(mOnClickHomeListener)
-
-           binding.btnBookNowF.setOnClickListener {
-
-               val intent = Intent(mContext, ActivityServicePro::class.java)
-
-               mContext.startActivity(intent)
-
-
-
-           }
-
             Viewholder(binding)
         } else {
             ProgressViewHolder(

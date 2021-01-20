@@ -50,7 +50,7 @@ class ActivitySignIn : ActivityBase() {
             Utils.hideKeyboard(this@ActivitySignIn)
             mApplication.showLogs("SignInCLick", "SignIn   " + it)
             if (it) {
-                startActivity(Intent(this, ActivityHome::class.java))
+                startActivity(Intent(this, ActivityMain::class.java))
                 finish()
 //                mViewModelSignIn.networkCallData()
             }

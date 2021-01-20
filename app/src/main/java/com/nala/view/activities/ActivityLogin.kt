@@ -43,8 +43,7 @@ class ActivityLogin : ActivityBase() {
         })
 
         mViewModelLogin.getLiveEventBackPress().observe(this, {
-            startActivity(Intent(this, ActivityServicePro::class.java))
-//            finishAffinity()
+           finish()
         })
 
         mViewModelLogin.getLiveEventSignInFacebook().observe(this, {

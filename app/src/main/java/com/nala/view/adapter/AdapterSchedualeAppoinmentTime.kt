@@ -7,14 +7,9 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.nala.R
-import com.nala.businesslogic.interfaces.OnClickHome
 import com.nala.businesslogic.interfaces.OnClickSchedualeAppoinment
-import com.nala.businesslogic.pojo.PojoHome
 import com.nala.businesslogic.pojo.PojoSchedualeAppoinment
-import com.nala.databinding.ActivityScheduleAppointmentBinding
-import com.nala.databinding.ActivityScheduleAppointmentRowTimeBinding
-import com.nala.databinding.FragmentHomeRowListBinding
-import com.nala.view.activities.ActivityScheduleAppointment
+import com.nala.databinding.FragmentScheduleAppointmentRowTimeBinding
 
 class AdapterSchedualeAppoinmentTime(
     var mContext: Context, var mArrayContent: List<PojoSchedualeAppoinment>,
@@ -27,9 +22,9 @@ class AdapterSchedualeAppoinmentTime(
 
         val layoutInflater = LayoutInflater.from(parent.context)
         return if (viewType == mViewTypeItem) {
-            val binding: ActivityScheduleAppointmentRowTimeBinding = DataBindingUtil.inflate(
+            val binding: FragmentScheduleAppointmentRowTimeBinding = DataBindingUtil.inflate(
                 layoutInflater,
-                R.layout.activity_schedule_appointment_row_time,
+                R.layout.fragment_schedule_appointment_row_time,
                 parent,
                 false
             )
@@ -66,10 +61,10 @@ class AdapterSchedualeAppoinmentTime(
     class ProgressViewHolder(v: View?) :
         RecyclerView.ViewHolder(v!!)
 
-    class Viewholder(binding: ActivityScheduleAppointmentRowTimeBinding) :
+    class Viewholder(binding: FragmentScheduleAppointmentRowTimeBinding) :
         RecyclerView.ViewHolder(binding.getRoot()) {
 
-        private val mBinding: ActivityScheduleAppointmentRowTimeBinding
+        private val mBinding: FragmentScheduleAppointmentRowTimeBinding
 
         fun bind(data: PojoSchedualeAppoinment, position: Int) {
             mBinding.setData(data)

@@ -9,11 +9,11 @@
 
         <variable
             name="vmTechnique"
-            type="com.nala.businesslogic.viewmodel.activities.ViewModelTechnique" />
+            type="com.nala.businesslogic.viewmodel.fragments.ViewModelTechnique" />
 
         <variable
             name="vmReview"
-            type="com.nala.businesslogic.viewmodel.activities.ViewModelReview" />
+            type="com.nala.businesslogic.viewmodel.fragments.ViewModelReview" />
 
         <variable
             name="onContentClickListener"
@@ -715,74 +715,74 @@
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-                  <!--  <androidx.constraintlayout.widget.ConstraintLayout
-                        android:id="@+id/cl_review"
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_marginTop="@dimen/margin_ten"
-                        android:background="@color/colorWhite"
-                        android:visibility="gone"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/cl_details_color_grey">
+                    <!--  <androidx.constraintlayout.widget.ConstraintLayout
+                          android:id="@+id/cl_review"
+                          android:layout_width="match_parent"
+                          android:layout_height="0dp"
+                          android:layout_marginTop="@dimen/margin_ten"
+                          android:background="@color/colorWhite"
+                          android:visibility="gone"
+                          app:layout_constraintEnd_toEndOf="parent"
+                          app:layout_constraintStart_toStartOf="parent"
+                          app:layout_constraintTop_toBottomOf="@+id/cl_details_color_grey">
 
 
-                        <androidx.constraintlayout.widget.ConstraintLayout
-                            android:id="@+id/cl_reviewer"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="@dimen/margin_twenty_five"
-                            android:layout_marginEnd="@dimen/margin_twenty_five"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent">
+                          <androidx.constraintlayout.widget.ConstraintLayout
+                              android:id="@+id/cl_reviewer"
+                              android:layout_width="match_parent"
+                              android:layout_height="wrap_content"
+                              android:layout_marginStart="@dimen/margin_twenty_five"
+                              android:layout_marginEnd="@dimen/margin_twenty_five"
+                              app:layout_constraintEnd_toEndOf="parent"
+                              app:layout_constraintStart_toStartOf="parent"
+                              app:layout_constraintTop_toTopOf="parent">
 
-                            <androidx.appcompat.widget.AppCompatTextView
-                                android:id="@+id/appCompatTextView"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="@dimen/margin_five"
-                                android:layout_marginBottom="@dimen/margin_five"
-                                android:text="@string/str_review"
-                                android:textColor="@color/colorBlueForButtons"
-                                android:textSize="@dimen/textsize_twenty"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent" />
-
-
-                            <androidx.appcompat.widget.AppCompatImageView
-                                android:id="@+id/img_star"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="@dimen/margin_five"
-                                android:layout_marginBottom="@dimen/margin_five"
-                                android:src="@drawable/ic_navigations"
-                                app:layout_constraintBottom_toBottomOf="parent"
-
-                                app:layout_constraintEnd_toStartOf="@+id/txt_rate"
-                                app:layout_constraintTop_toTopOf="parent" />
+                              <androidx.appcompat.widget.AppCompatTextView
+                                  android:id="@+id/appCompatTextView"
+                                  android:layout_width="wrap_content"
+                                  android:layout_height="wrap_content"
+                                  android:layout_marginTop="@dimen/margin_five"
+                                  android:layout_marginBottom="@dimen/margin_five"
+                                  android:text="@string/str_review"
+                                  android:textColor="@color/colorBlueForButtons"
+                                  android:textSize="@dimen/textsize_twenty"
+                                  app:layout_constraintBottom_toBottomOf="parent"
+                                  app:layout_constraintStart_toStartOf="parent"
+                                  app:layout_constraintTop_toTopOf="parent" />
 
 
-                            <androidx.appcompat.widget.AppCompatTextView
-                                android:id="@+id/txt_rate"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="@dimen/margin_five"
-                                android:layout_marginTop="@dimen/margin_five"
-                                android:layout_marginEnd="@dimen/margin_five"
-                                android:layout_marginBottom="@dimen/margin_five"
-                                android:text="@string/str_demo_rate"
-                                android:textColor="@color/colorBlueForButtons"
-                                android:textSize="@dimen/textsize_twenty"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintTop_toTopOf="parent" />
+                              <androidx.appcompat.widget.AppCompatImageView
+                                  android:id="@+id/img_star"
+                                  android:layout_width="wrap_content"
+                                  android:layout_height="wrap_content"
+                                  android:layout_marginTop="@dimen/margin_five"
+                                  android:layout_marginBottom="@dimen/margin_five"
+                                  android:src="@drawable/ic_navigations"
+                                  app:layout_constraintBottom_toBottomOf="parent"
 
-                        </androidx.constraintlayout.widget.ConstraintLayout>
+                                  app:layout_constraintEnd_toStartOf="@+id/txt_rate"
+                                  app:layout_constraintTop_toTopOf="parent" />
 
 
-                    </androidx.constraintlayout.widget.ConstraintLayout>-->
+                              <androidx.appcompat.widget.AppCompatTextView
+                                  android:id="@+id/txt_rate"
+                                  android:layout_width="wrap_content"
+                                  android:layout_height="wrap_content"
+                                  android:layout_marginStart="@dimen/margin_five"
+                                  android:layout_marginTop="@dimen/margin_five"
+                                  android:layout_marginEnd="@dimen/margin_five"
+                                  android:layout_marginBottom="@dimen/margin_five"
+                                  android:text="@string/str_demo_rate"
+                                  android:textColor="@color/colorBlueForButtons"
+                                  android:textSize="@dimen/textsize_twenty"
+                                  app:layout_constraintBottom_toBottomOf="parent"
+                                  app:layout_constraintEnd_toEndOf="parent"
+                                  app:layout_constraintTop_toTopOf="parent" />
+
+                          </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                      </androidx.constraintlayout.widget.ConstraintLayout>-->
 
 
                 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,23 +1,15 @@
 package com.nala.view.adapter
 
 import android.content.Context
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat.startActivity
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.nala.R
-import com.nala.businesslogic.interfaces.OnClickHome
 import com.nala.businesslogic.interfaces.OnClickMyBooking
-import com.nala.businesslogic.pojo.PojoHome
 import com.nala.businesslogic.pojo.PojoMyBooking
-import com.nala.databinding.FragmentHomeRowListBinding
 import com.nala.databinding.FragmentMyBookingsRowBinding
-import com.nala.view.activities.ActivityBookingInfo
-import com.nala.view.activities.ActivityServicePro
-import com.nala.view.activities.ActivitySignIn
 
 class AdapterMyBookingsList(
     var mContext: Context, var mArrayContent: List<PojoMyBooking>,
@@ -37,18 +29,6 @@ class AdapterMyBookingsList(
                 false
             )
 
-            // binding.onContentClickListener = mOnClickHomeListListener
-
-            binding.btnCancel.setOnClickListener {
-
-                val intent = Intent(mContext, ActivityBookingInfo::class.java)
-
-                mContext.startActivity(intent)
-
-
-
-            }
-
             binding.setOnContentClickListener(mOnClickmyBookingListener)
 
             Viewholder(binding)
@@ -67,7 +47,6 @@ class AdapterMyBookingsList(
             (holder as Viewholder).bind(mArrayContent[position], position)
         }
     }
-
 
     override fun getItemCount(): Int {
         return mArrayContent.size

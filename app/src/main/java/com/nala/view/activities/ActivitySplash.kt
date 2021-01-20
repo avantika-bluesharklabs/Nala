@@ -50,7 +50,7 @@ class ActivitySplash : ActivityBase() {
 
           //  startActivity(Intent(this, ActivityRateTherapist::class.java))
 
-            val intent = Intent(this, ActivityHome::class.java)
+            val intent = Intent(this, ActivityMain::class.java)
             startActivity(intent)
             finish()
 

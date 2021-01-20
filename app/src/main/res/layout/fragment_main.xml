@@ -4,24 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
         <import type="android.view.View" />
-
-        <variable
-            name="viewModel"
-            type="com.nala.businesslogic.viewmodel.fragments.ViewModelHome" />
-
-        <!-- <variable
-            name="onBottomItemSelectedListener"
-            type="com.google.android.material.bottomnavigation.BottomNavigationView.OnNavigationItemSelectedListener" />-->
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/colorWhite"
-        android:fitsSystemWindows="true"
-        tools:context=".view.activities.ActivityHome">
+        android:fitsSystemWindows="true">
 
 
         <fragment
@@ -49,7 +39,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:menu="@menu/bottom_navigation_menu" />
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

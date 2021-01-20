@@ -7,12 +7,10 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.nala.R
-import com.nala.businesslogic.interfaces.OnClickMessage
 import com.nala.businesslogic.interfaces.OnClickTechnique
 
 import com.nala.businesslogic.pojo.PojoTechnique
-import com.nala.databinding.ActivityServiceProRowTechniqueBinding
-import com.nala.databinding.FragmentMessageRowBinding
+import com.nala.databinding.FragmentServiceProRowTechniqueBinding
 
 class AdapterTechnique(
     var mContext: Context, var mArrayContent: List<PojoTechnique>,
@@ -25,9 +23,9 @@ class AdapterTechnique(
 
         val layoutInflater = LayoutInflater.from(parent.context)
         return if (viewType == mViewTypeItem) {
-            val binding: ActivityServiceProRowTechniqueBinding = DataBindingUtil.inflate(
+            val binding: FragmentServiceProRowTechniqueBinding = DataBindingUtil.inflate(
                 layoutInflater,
-                R.layout.activity_service_pro_row_technique,
+                R.layout.fragment_service_pro_row_technique,
                 parent,
                 false
             )
@@ -64,10 +62,10 @@ class AdapterTechnique(
     class ProgressViewHolder(v: View?) :
         RecyclerView.ViewHolder(v!!)
 
-    class Viewholder(binding: ActivityServiceProRowTechniqueBinding) :
+    class Viewholder(binding: FragmentServiceProRowTechniqueBinding) :
         RecyclerView.ViewHolder(binding.getRoot()) {
 
-        private val mBinding: ActivityServiceProRowTechniqueBinding
+        private val mBinding: FragmentServiceProRowTechniqueBinding
 
         fun bind(data: PojoTechnique, position: Int) {
             mBinding.setData(data)

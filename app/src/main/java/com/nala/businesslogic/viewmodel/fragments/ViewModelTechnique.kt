@@ -1,4 +1,4 @@
-package com.nala.businesslogic.viewmodel.activities
+package com.nala.businesslogic.viewmodel.fragments
 
 import androidx.recyclerview.widget.RecyclerView
 import com.nala.businesslogic.interactors.SingleLiveEvent

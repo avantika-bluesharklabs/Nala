@@ -1,40 +1,40 @@
-package com.nala.businesslogic.viewmodel.activities
+package com.nala.businesslogic.viewmodel.fragments
 
 import androidx.recyclerview.widget.RecyclerView
 import com.nala.businesslogic.interactors.SingleLiveEvent
 import com.nala.businesslogic.pojo.PojoCommonResponse
+import com.nala.businesslogic.pojo.PojoHome
 import com.nala.businesslogic.pojo.PojoSchedualeAppoinment
-import com.nala.businesslogic.pojo.PojoSchedualeAppoinmentType
 import com.nala.businesslogic.viewmodel.ViewModelRecyclerView
 import com.nala.view.MyApplication
 
-class ViewModelSchedualeAppoinmenttype(myApplication: MyApplication, isToShowErrors: Boolean) :
-    ViewModelRecyclerView<PojoCommonResponse, PojoSchedualeAppoinmentType>(myApplication,false,false,
+class ViewModelScheduleAppointmentTime (myApplication: MyApplication, isToShowErrors: Boolean) :
+    ViewModelRecyclerView<PojoCommonResponse, PojoSchedualeAppoinment>(myApplication,false,false,
         0, RecyclerView.HORIZONTAL){
 
 
     private val liveEvent: SingleLiveEvent<Boolean> = SingleLiveEvent()
-    private val liveEventSuccess: SingleLiveEvent<PojoSchedualeAppoinmentType> = SingleLiveEvent()
+    private val liveEventSuccess: SingleLiveEvent<PojoSchedualeAppoinment> = SingleLiveEvent()
 
     init {
 
-        var pojo = PojoSchedualeAppoinmentType()
-        pojo.txt_type = "In Studio"
+        var pojo = PojoSchedualeAppoinment()
+        pojo.txt_time = "10:00 am"
 
         observerContent.add(pojo)
 
-        pojo = PojoSchedualeAppoinmentType()
-        pojo.txt_type = "Mobile Service With Table"
+        pojo = PojoSchedualeAppoinment()
+        pojo.txt_time = "10:30 am"
 
         observerContent.add(pojo)
 
-        pojo = PojoSchedualeAppoinmentType()
-        pojo.txt_type = "In Dount"
+        pojo = PojoSchedualeAppoinment()
+        pojo.txt_time = "11:00 am"
 
         observerContent.add(pojo)
 
-        pojo = PojoSchedualeAppoinmentType()
-        pojo.txt_type = "Services"
+        pojo = PojoSchedualeAppoinment()
+        pojo.txt_time = "11:30 am"
 
 
         observerContent.add(pojo)
@@ -48,7 +48,7 @@ class ViewModelSchedualeAppoinmenttype(myApplication: MyApplication, isToShowErr
         return liveEvent
     }
 
-    fun getLiveEventSuccess(): SingleLiveEvent<PojoSchedualeAppoinmentType> {
+    fun getLiveEventSuccess(): SingleLiveEvent<PojoSchedualeAppoinment> {
         return liveEventSuccess
     }
 

@@ -8,11 +8,8 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.nala.R
 import com.nala.businesslogic.interfaces.OnClickReview
-import com.nala.businesslogic.interfaces.OnClickTechnique
 import com.nala.businesslogic.pojo.PojoReview
-import com.nala.businesslogic.pojo.PojoTechnique
-import com.nala.databinding.ActivityServiceProRowReviewBinding
-import com.nala.databinding.ActivityServiceProRowTechniqueBinding
+import com.nala.databinding.FragmentServiceProRowReviewBinding
 
 class AdapterReview(
     var mContext: Context, var mArrayContent: List<PojoReview>,
@@ -25,9 +22,9 @@ class AdapterReview(
 
         val layoutInflater = LayoutInflater.from(parent.context)
         return if (viewType == mViewTypeItem) {
-            val binding: ActivityServiceProRowReviewBinding = DataBindingUtil.inflate(
+            val binding: FragmentServiceProRowReviewBinding = DataBindingUtil.inflate(
                 layoutInflater,
-                R.layout.activity_service_pro_row_review,
+                R.layout.fragment_service_pro_row_review,
                 parent,
                 false
             )
@@ -64,10 +61,10 @@ class AdapterReview(
     class ProgressViewHolder(v: View?) :
         RecyclerView.ViewHolder(v!!)
 
-    class Viewholder(binding: ActivityServiceProRowReviewBinding) :
+    class Viewholder(binding: FragmentServiceProRowReviewBinding) :
         RecyclerView.ViewHolder(binding.getRoot()) {
 
-        private val mBinding: ActivityServiceProRowReviewBinding
+        private val mBinding: FragmentServiceProRowReviewBinding
 
         fun bind(data: PojoReview, position: Int) {
             mBinding.setData(data)

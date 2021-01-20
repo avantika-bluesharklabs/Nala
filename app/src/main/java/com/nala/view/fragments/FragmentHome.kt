@@ -1,10 +1,12 @@
 package com.nala.view.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
 import com.nala.R
 import com.nala.businesslogic.interfaces.OnClickHome
 import com.nala.businesslogic.pojo.PojoHome
@@ -17,9 +19,6 @@ class FragmentHome : FragmentBase(), OnClickHome {
     private lateinit var mViewModelHome: ViewModelHome
     private lateinit var mViewModelHomeMap: ViewModelHomeMap
     private lateinit var mBinding: FragmentHomeBinding
-
-
-
 
 
     override fun onCreateView(
@@ -66,6 +65,17 @@ class FragmentHome : FragmentBase(), OnClickHome {
       /*  val btn_book: AppCompatButton? = view?.findViewById(R.id.btn_book_now_f)
 
         btn_book?.setOnClickListener {   startActivity(Intent(mContext, ActivityHomeDetails::class.java)) }*/
+
+    }
+
+    override fun onClickHomeBookNow(view: View?, layoutPosition: Int, data: PojoHome) {
+
+        val fragment: Fragment = FragmentServicePro()
+        mMainActivity.addFragment(fragment, "FragmentServicePro", "FragmentServicePro")
+
+    }
+
+    override fun onClickHomeHeart(view: View?, layoutPosition: Int, data: PojoHome) {
 
     }
 

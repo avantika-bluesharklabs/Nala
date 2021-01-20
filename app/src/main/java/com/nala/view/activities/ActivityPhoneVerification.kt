@@ -45,7 +45,7 @@ class ActivityPhoneVerification : ActivityBase() {
 //        yesBtn.setOnClickListener {
 //            dialog.dismiss()
 //        }
-        body.setOnClickListener {  startActivity(Intent(this, ActivityHome::class.java))
+        body.setOnClickListener {  startActivity(Intent(this, ActivityMain::class.java))
             finish() }
         dialog.show()
 

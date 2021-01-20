@@ -7,12 +7,11 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.nala.R
-import com.nala.businesslogic.interfaces.OnClickSchedualeAppoinment
 import com.nala.businesslogic.interfaces.OnClickSchedualeAppoinmentType
-import com.nala.businesslogic.pojo.PojoSchedualeAppoinment
 import com.nala.businesslogic.pojo.PojoSchedualeAppoinmentType
-import com.nala.databinding.ActivityScheduleAppointmentRowTimeBinding
-import com.nala.databinding.ActivityScheduleAppointmentRowTypeBinding
+import com.nala.databinding.FragmentScheduleAppointmentRowTimeBinding
+import com.nala.databinding.FragmentScheduleAppointmentRowTypeBinding
+
 
 class AdapterSchedualeAppoinmentType(
     var mContext: Context, var mArrayContent: List<PojoSchedualeAppoinmentType>,
@@ -25,9 +24,9 @@ class AdapterSchedualeAppoinmentType(
 
         val layoutInflater = LayoutInflater.from(parent.context)
         return if (viewType == mViewTypeItem) {
-            val binding: ActivityScheduleAppointmentRowTypeBinding = DataBindingUtil.inflate(
+            val binding: FragmentScheduleAppointmentRowTypeBinding = DataBindingUtil.inflate(
                 layoutInflater,
-                R.layout.activity_schedule_appointment_row_type,
+                R.layout.fragment_schedule_appointment_row_type,
                 parent,
                 false
             )
@@ -64,10 +63,10 @@ class AdapterSchedualeAppoinmentType(
     class ProgressViewHolder(v: View?) :
         RecyclerView.ViewHolder(v!!)
 
-    class Viewholder(binding: ActivityScheduleAppointmentRowTypeBinding) :
+    class Viewholder(binding: FragmentScheduleAppointmentRowTypeBinding) :
         RecyclerView.ViewHolder(binding.getRoot()) {
 
-        private val mBinding: ActivityScheduleAppointmentRowTypeBinding
+        private val mBinding: FragmentScheduleAppointmentRowTypeBinding
 
         fun bind(data: PojoSchedualeAppoinmentType, position: Int) {
             mBinding.setData(data)

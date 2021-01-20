@@ -12,12 +12,12 @@
             type="Integer" />
 
         <variable
-            name="vmTechnique"
-            type="com.nala.businesslogic.viewmodel.activities.ViewModelTechnique" />
+            name="vmSchedualeAppoinmentType"
+            type="com.nala.businesslogic.viewmodel.fragments.ViewModelScheduleAppointmentType" />
 
         <variable
             name="data"
-            type="com.nala.businesslogic.pojo.PojoTechnique" />
+            type="com.nala.businesslogic.pojo.PojoSchedualeAppoinmentType" />
 
         <variable
             name="requestOptions"
@@ -25,22 +25,22 @@
 
         <variable
             name="onContentClickListener"
-            type="com.nala.businesslogic.interfaces.OnClickTechnique" />
+            type="com.nala.businesslogic.interfaces.OnClickSchedualeAppoinmentType" />
 
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
         android:clickable="true"
         android:focusable="true"
-        android:onClick="@{(v)->onContentClickListener.onClickTechniqueItem(v,layoutPosition,data)}">
+        android:layout_gravity="center"
+        android:onClick="@{(v)->onContentClickListener.onClickSchedualeAppoinmentTypeItem(v,layoutPosition,data)}">
 
 
         <androidx.cardview.widget.CardView
             android:id="@+id/card_technique"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:cardBackgroundColor="@color/colorWhite"
             app:cardCornerRadius="@dimen/margin_five"
@@ -52,15 +52,15 @@
 
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/txt_status"
+                android:id="@+id/txt_type"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/margin_twenty"
                 android:layout_marginTop="@dimen/margin_ten"
                 android:layout_marginEnd="@dimen/margin_twenty"
                 android:layout_marginBottom="@dimen/margin_ten"
-                android:text="@{data.txt_status}"
-                android:textSize="@dimen/textsize_sixteen" />
+                android:text="@{data.txt_type}"
+                android:textSize="@dimen/textsize_eighteen" />
 
         </androidx.cardview.widget.CardView>
 

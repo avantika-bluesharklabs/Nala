@@ -9,6 +9,7 @@ import com.nala.businesslogic.network.RetroFitInterface
 import com.nala.businesslogic.sharedpreference.UtilsSharedPreferences
 import com.nala.view.MyApplication
 import com.nala.view.activities.ActivityBase
+import com.nala.view.activities.ActivityMain
 import javax.inject.Inject
 
 /**
@@ -22,6 +23,7 @@ open class FragmentBase : Fragment() {
     @Inject
     lateinit var mRetroFitInterface: RetroFitInterface
 
+    protected lateinit var mMainActivity: ActivityMain
     protected lateinit var mApplication: MyApplication
     protected lateinit var mActivity: ActivityBase
     protected lateinit var mContext: Context
@@ -33,6 +35,7 @@ open class FragmentBase : Fragment() {
 
         super.onCreate(savedInstanceState)
         mActivity = activity as ActivityBase
+        mMainActivity = activity as ActivityMain
         mApplication = mActivity.mApplication
         mApplication.getAppComponent().inject(this)
         mContext = context as Context

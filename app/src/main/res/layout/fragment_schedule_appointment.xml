@@ -9,12 +9,12 @@
 
         <variable
             name="vmSchedualeMan"
-            type="com.nala.businesslogic.viewmodel.activities.ViewModelScheduleAppointment" />
+            type="com.nala.businesslogic.viewmodel.fragments.ViewModelScheduleAppointmentTime" />
 
 
         <variable
             name="vmSchedualeManType"
-            type="com.nala.businesslogic.viewmodel.activities.ViewModelSchedualeAppoinmenttype" />
+            type="com.nala.businesslogic.viewmodel.fragments.ViewModelScheduleAppointmentType" />
 
 
         <variable
@@ -261,11 +261,11 @@
 
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
-    
+
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                    android:layout_height="wrap_content"
                     android:background="@drawable/bottom_curve_view"
                     android:nestedScrollingEnabled="true"
                     android:paddingBottom="@dimen/margin_thirty"

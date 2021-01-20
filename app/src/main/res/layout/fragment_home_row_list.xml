@@ -300,6 +300,7 @@
                 android:text="@string/str_book_now"
                 android:textAllCaps="false"
                 android:textSize="@dimen/textsize_forteen"
+                android:onClick="@{(v)->onContentClickListener.onClickHomeBookNow(v,layoutPosition,data)}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@id/img_msg"
                 app:layout_constraintTop_toTopOf="parent" />

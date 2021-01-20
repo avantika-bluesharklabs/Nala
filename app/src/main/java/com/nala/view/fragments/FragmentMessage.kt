@@ -1,22 +1,16 @@
 package com.nala.view.fragments
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
 import com.nala.R
 import com.nala.businesslogic.interfaces.OnClickMessage
-import com.nala.businesslogic.interfaces.OnClickNotification
 import com.nala.businesslogic.pojo.PojoMessage
-import com.nala.businesslogic.pojo.PojoNotisfication
 import com.nala.businesslogic.viewmodel.fragments.ViewModelMessage
-import com.nala.businesslogic.viewmodel.fragments.ViewModelNotisfication
 import com.nala.databinding.FragmentMessageBinding
-import com.nala.databinding.FragmentNotificationBinding
-import com.nala.view.activities.ActivityChatting
-import com.nala.view.activities.ActivitySignIn
 
 class FragmentMessage : FragmentBase(), OnClickMessage {
 
@@ -54,7 +48,8 @@ class FragmentMessage : FragmentBase(), OnClickMessage {
 
     override fun onClickMessageItem(view: View?, layoutPosition: Int, data: PojoMessage) {
 
-        startActivity(Intent(context, ActivityChatting::class.java))
+        val fragment: Fragment = FragmentChat()
+        mMainActivity.addFragment(fragment, "FragmentChat", "FragmentChat")
 
     }
 

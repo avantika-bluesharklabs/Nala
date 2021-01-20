@@ -319,6 +319,7 @@
                 android:text="@string/str_cancel"
                 android:textAllCaps="false"
                 android:textSize="@dimen/textsize_sixteen"
+                android:onClick="@{(v)->onContentClickListener.onClickMyBookingCancel(v,layoutPosition,data)}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/card_msg"
                 app:layout_constraintStart_toStartOf="parent"
