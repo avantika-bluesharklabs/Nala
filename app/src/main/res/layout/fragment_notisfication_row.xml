@@ -66,9 +66,9 @@
 
 
             <androidx.appcompat.widget.AppCompatImageView
-                android:layout_width="@dimen/margin_fifty_five"
-                android:layout_height="@dimen/margin_fifty_five"
-                android:src="@drawable/img_forgot_password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_list_notification"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />

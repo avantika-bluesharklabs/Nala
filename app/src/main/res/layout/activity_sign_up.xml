@@ -34,8 +34,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                app:cardBackgroundColor="@color/colorWhite"
                 android:onClick="@{()->vmSignUp.clickBackPress()}"
+                app:cardBackgroundColor="@color/colorWhite"
                 app:cardElevation="@dimen/margin_seven"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -101,9 +101,9 @@
         <androidx.core.widget.NestedScrollView
             android:layout_width="0dp"
             android:layout_height="0dp"
+            android:background="@drawable/top_curve_view"
             android:fillViewport="true"
             android:scrollbars="none"
-            android:background="@drawable/top_curve_view"
             app:layout_constraintBottom_toTopOf="@id/guideline_bottom"
             app:layout_constraintLeft_toRightOf="@id/guideline_left"
             app:layout_constraintRight_toLeftOf="@id/guideline_right"
@@ -117,11 +117,12 @@
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/txt_fp"
+                    style="@style/bold"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/str_create_acc"
-                    android:textSize="@dimen/textsize_thirty_six"
                     android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/textsize_thirty_six"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -171,7 +172,7 @@
                             android:layout_marginTop="@dimen/margin_ten"
                             android:layout_marginEnd="@dimen/margin_five"
                             android:layout_marginBottom="@dimen/margin_ten"
-                            android:src="@drawable/client_icon"
+                            android:src="@drawable/ic_client"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toStartOf="@+id/txt_user_text"
                             app:layout_constraintStart_toStartOf="parent"
@@ -220,7 +221,7 @@
                             android:layout_marginTop="@dimen/margin_ten"
                             android:layout_marginEnd="@dimen/margin_five"
                             android:layout_marginBottom="@dimen/margin_ten"
-                            android:src="@drawable/therapist_icon"
+                            android:src="@drawable/ic_therapist"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toStartOf="@+id/txt_therapist_text"
                             app:layout_constraintStart_toStartOf="parent"
@@ -400,12 +401,12 @@
 
                     <Button
                         android:id="@+id/btn_signUp"
+                        style="@style/bold"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/margin_twenty"
                         android:layout_marginBottom="@dimen/margin_thirty"
-                        android:background="@drawable/curve_view_360"
-                        android:backgroundTint="@color/colorBlueForButtons"
+                        android:background="@drawable/btn_signup"
                         android:onClick="@{()->vmSignUp.clickSignUp()}"
                         android:text="@string/str_sign_up"
                         android:textAllCaps="false"

@@ -66,7 +66,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/margin_five"
-                android:src="@drawable/success"
+                android:src="@drawable/img_home_dummy"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -77,7 +77,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/margin_fifteen"
-                android:background="@drawable/curve_view_5"
+                android:background="@drawable/img_gender_bg"
                 android:backgroundTint="@color/colorBrown"
                 android:paddingStart="@dimen/margin_fifteen"
                 android:paddingTop="@dimen/margin_five"
@@ -184,12 +184,10 @@
                 android:id="@+id/img_clock"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_navigations"
-                app:cardCornerRadius="@dimen/margin_sixtysix"
-                app:cardElevation="@dimen/margin_five"
+                android:src="@drawable/ic_time_black"
+                android:padding="@dimen/margin_five"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-
                 app:layout_constraintTop_toTopOf="parent" />
 
             <androidx.appcompat.widget.AppCompatTextView
@@ -235,9 +233,8 @@
                 android:id="@+id/img_location"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_navigations"
-                app:cardCornerRadius="@dimen/margin_sixtysix"
-                app:cardElevation="@dimen/margin_five"
+                android:padding="@dimen/margin_five"
+                android:src="@drawable/ic_location_black"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -313,37 +310,31 @@
                 android:id="@+id/btn_cancel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/curve_view_360"
-                android:backgroundTint="@color/colorSemiLightGray"
-                android:src="@drawable/ic_navigations"
+                android:src="@drawable/btn_list_cancel"
                 android:text="@string/str_cancel"
                 android:textAllCaps="false"
                 android:textSize="@dimen/textsize_sixteen"
                 android:onClick="@{(v)->onContentClickListener.onClickMyBookingCancel(v,layoutPosition,data)}"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/card_msg"
+                app:layout_constraintEnd_toStartOf="@+id/img_comment"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/card_msg"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginStart="@dimen/margin_fifteen"
-                app:cardElevation="@dimen/margin_ten"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/btn_cancel"
-                app:layout_constraintTop_toTopOf="parent">
+
 
 
                 <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/img_comment"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/margin_ten"
-                    android:src="@drawable/ic_navigations" />
+                    android:src="@drawable/btn_list_comment"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/btn_cancel"
+                    app:layout_constraintTop_toTopOf="parent"/>
 
-            </androidx.cardview.widget.CardView>
+
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

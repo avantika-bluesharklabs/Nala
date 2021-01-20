@@ -31,6 +31,7 @@
             android:layout_height="wrap_content"
             android:padding="10dp"
             android:text="@string/str_messages"
+            style="@style/bold"
             android:textColor="@color/colorBlack"
             android:textSize="@dimen/textsize_twenty"
             app:layout_constraintStart_toStartOf="parent"
