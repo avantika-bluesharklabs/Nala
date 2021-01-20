@@ -98,7 +98,7 @@
                 android:background="@color/colorWhite">
 
 
-               
+
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/cl_plan"
