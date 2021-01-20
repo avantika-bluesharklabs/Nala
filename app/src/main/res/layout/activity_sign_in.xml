@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="vmSignIn"
+            type="com.nala.businesslogic.viewmodel.activities.ViewModelSignIn" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite"
+        tools:context=".view.activities.ActivitySignIn">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/margin_twenty"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                app:cardBackgroundColor="@color/colorWhite"
+                android:onClick="@{()->vmSignIn.clickBackPress()}"
+                app:cardElevation="@dimen/margin_seven"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_backs" />
+
+
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txt_toolbar_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/str_schedule"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/textsize_eighteen"
+                android:textStyle="bold"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/cl_toolbar" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_bottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_end="@dimen/margin_twenty" />
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/margin_twenty" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="@dimen/margin_twenty" />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/const_color"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@drawable/top_curve_view"
+            android:backgroundTint="@color/colorPrimary"
+            app:layout_constraintBottom_toTopOf="@+id/const_white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cl_toolbar" />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/const_white"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@color/colorWhite"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/const_color" />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_hower"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/curve_view"
+            app:layout_constraintBottom_toTopOf="@id/txt_tandc"
+            app:layout_constraintEnd_toStartOf="@id/guideline_right"
+            app:layout_constraintStart_toEndOf="@id/guideline_left"
+            app:layout_constraintTop_toBottomOf="@id/cl_toolbar">
+
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_inner_top"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_begin="@dimen/margin_twenty" />
+
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_inner_left"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="@dimen/margin_twenty" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_inner_right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="@dimen/margin_twenty" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txt_signin"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_ten"
+                android:text="@string/str_sign_in"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/textsize_thirty"
+                app:layout_constraintLeft_toRightOf="@id/guideline_inner_left"
+                app:layout_constraintRight_toLeftOf="@id/guideline_inner_right"
+                app:layout_constraintTop_toBottomOf="@id/guideline_inner_top" />
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textinputlayout_login_email"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_twenty"
+                app:errorEnabled="@{vmSignIn.observerErrorEnabledEmail}"
+                app:layout_constraintBottom_toTopOf="@+id/textinputlayout_login_password"
+                app:layout_constraintLeft_toRightOf="@id/guideline_inner_left"
+                app:layout_constraintRight_toLeftOf="@id/guideline_inner_right"
+                app:layout_constraintTop_toBottomOf="@+id/txt_signin"
+                app:setEnabledTIL="@{!vmSignIn.observerProgressBar}"
+                app:setError="@{vmSignIn.observerErrorEmail}">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edt_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:hint="@string/str_email_hint"
+                    android:inputType="textEmailAddress"
+                    android:text="@={vmSignIn.observerEmail}"
+                    android:textColor="@color/colorBlack" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textinputlayout_login_password"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_ten"
+                android:hint="@string/str_password_hint"
+                android:importantForAutofill="no"
+                android:textColorHint="@color/colorGray"
+                app:errorEnabled="@{vmSignIn.observerErrorEnabledPassword}"
+                app:layout_constraintBottom_toTopOf="@+id/cv_go"
+                app:layout_constraintLeft_toRightOf="@id/guideline_inner_left"
+                app:layout_constraintRight_toLeftOf="@id/guideline_inner_right"
+                app:layout_constraintTop_toBottomOf="@+id/textinputlayout_login_email"
+                app:setEnabledTIL="@{!vmSignIn.observerProgressBar}"
+                app:setError="@{vmSignIn.observerErrorPassword}">
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edt_pass"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionDone"
+                    android:inputType="textPassword"
+                    android:singleLine="true"
+                    android:text="@={vmSignIn.observerPassword}"
+                    android:textColor="@color/colorBlack" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_go"
+                android:layout_width="@dimen/margin_fifty_five"
+                android:layout_height="@dimen/margin_fifty_five"
+                android:layout_margin="@dimen/margin_twenty"
+                android:onClick="@{()->vmSignIn.clickSignIn()}"
+                app:cardBackgroundColor="@color/colorPrimary"
+                app:cardCornerRadius="@dimen/margin_threesixty"
+                app:cardElevation="@dimen/margin_five"
+                app:layout_constraintBottom_toTopOf="@+id/cl_forgot_pass"
+                app:layout_constraintLeft_toRightOf="@id/guideline_inner_left"
+                app:layout_constraintRight_toLeftOf="@id/guideline_inner_right"
+                app:layout_constraintTop_toBottomOf="@+id/textinputlayout_login_password">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_btn_go" />
+
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_forgot_pass"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin_fifty_five"
+                android:background="@drawable/bottom_curve_view"
+                android:backgroundTint="@color/colorBlueLight"
+                android:onClick="@{()->vmSignIn.clickForgotPass()}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cv_go">
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/str_forgot_pass"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/textsize_sixteen"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txt_tandc"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_twelve"
+            android:text="@string/str_tandc"
+            android:textAlignment="center"
+            android:textSize="@dimen/textsize_eighteen"
+            app:layout_constraintBottom_toTopOf="@+id/guideline_bottom"
+            app:layout_constraintLeft_toRightOf="@id/guideline_left"
+            app:layout_constraintRight_toLeftOf="@id/guideline_right"
+            app:layout_constraintTop_toBottomOf="@id/cl_hower" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

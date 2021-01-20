@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="vmLogin"
+            type="com.nala.businesslogic.viewmodel.activities.ViewModelLogin" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite"
+        tools:context=".view.activities.ActivityLogin">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/margin_eighty"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:layout_marginStart="@dimen/margin_twenty"
+                    android:onClick="@{()->vmLogin.clickBackPress()}"
+                    android:layout_gravity="center_vertical"
+                    app:cardBackgroundColor="@color/colorWhite"
+                    app:cardElevation="@dimen/margin_seven">
+
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_backs" />
+
+
+                </androidx.cardview.widget.CardView>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+
+
+                    <TextView
+                        android:id="@+id/txt_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="@dimen/textsize_eighteen"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+
+            </FrameLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@drawable/top_curve_view"
+            android:backgroundTint="@color/colorPrimary"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cl_toolbar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_top"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_begin="@dimen/margin_twenty" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_bottom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_end="@dimen/margin_twenty" />
+
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_left"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="@dimen/margin_twenty" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="@dimen/margin_twenty" />
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/curve_view"
+                app:layout_constraintBottom_toTopOf="@id/guideline_bottom"
+                app:layout_constraintEnd_toStartOf="@id/guideline_right"
+                app:layout_constraintStart_toEndOf="@id/guideline_left"
+                app:layout_constraintTop_toBottomOf="@id/guideline_top">
+
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline_inner_top"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_begin="@dimen/margin_twenty" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline_inner_bottom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_end="@dimen/margin_twenty" />
+
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline_inner_left"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_begin="@dimen/margin_twenty" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline_inner_right"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_end="@dimen/margin_twenty" />
+
+
+                <TextView
+                    android:id="@+id/txt_welcome"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/str_welcome"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/textsize_thirty"
+                    app:layout_constraintLeft_toRightOf="@id/guideline_inner_left"
+                    app:layout_constraintRight_toLeftOf="@id/guideline_inner_right"
+                    app:layout_constraintTop_toBottomOf="@id/guideline_inner_top" />
+
+
+                <Button
+                    android:id="@+id/btn_create_acc"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/margin_fifty_five"
+                    android:layout_marginTop="@dimen/margin_twelve"
+                    android:background="@drawable/curve_view_360"
+                    android:backgroundTint="@color/colorBlueLight"
+                    android:text="@string/str_create_acc"
+                    android:onClick="@{()->vmLogin.clickSignUp()}"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/textsize_sixteen"
+                    app:layout_constraintLeft_toRightOf="@id/guideline_inner_left"
+                    app:layout_constraintRight_toLeftOf="@id/guideline_inner_right"
+                    app:layout_constraintTop_toBottomOf="@id/txt_welcome" />
+
+                <Button
+                    android:id="@+id/btn_sign_in"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/margin_fifty_five"
+                    android:layout_marginTop="@dimen/margin_twelve"
+                    android:background="@drawable/curve_view_360"
+                    android:backgroundTint="@color/colorPrimary"
+                    android:text="@string/str_sign_in"
+                    android:onClick="@{()->vmLogin.clickSignIn()}"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/textsize_sixteen"
+                    app:layout_constraintLeft_toRightOf="@id/guideline_inner_left"
+                    app:layout_constraintRight_toLeftOf="@id/guideline_inner_right"
+                    app:layout_constraintTop_toBottomOf="@id/btn_create_acc" />
+
+                <Button
+                    android:id="@+id/btn_sign_fb"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/margin_fifty_five"
+                    android:layout_marginTop="@dimen/margin_twelve"
+                    android:background="@drawable/curve_view_360"
+                    android:backgroundTint="@color/colorBlue"
+                    android:drawableLeft="@drawable/fb_icon"
+                    android:padding="@dimen/margin_ten"
+                    android:onClick="@{()->vmLogin.clickSignInFacebook()}"
+                    android:text="@string/str_sign_fb"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/textsize_sixteen"
+                    app:layout_constraintLeft_toRightOf="@id/guideline_inner_left"
+                    app:layout_constraintRight_toLeftOf="@id/guideline_inner_right"
+                    app:layout_constraintTop_toBottomOf="@id/btn_sign_in" />
+
+
+                <Button
+                    android:id="@+id/btn_sign_apple"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/margin_fifty_five"
+                    android:layout_marginTop="@dimen/margin_twelve"
+                    android:background="@drawable/curve_view_360"
+                    android:backgroundTint="@color/colorDarkBlue"
+                    android:drawableLeft="@drawable/apple_icon"
+                    android:onClick="@{()->vmLogin.clickSignInApple()}"
+                    android:padding="@dimen/margin_ten"
+                    android:text="@string/str_sign_apple"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/textsize_sixteen"
+                    app:layout_constraintLeft_toRightOf="@id/guideline_inner_left"
+                    app:layout_constraintRight_toLeftOf="@id/guideline_inner_right"
+                    app:layout_constraintTop_toBottomOf="@id/btn_sign_fb" />
+
+
+                <Button
+                    android:id="@+id/btn_sign_google"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/margin_fifty_five"
+                    android:layout_marginTop="@dimen/margin_twelve"
+                    android:layout_marginBottom="@dimen/margin_twelve"
+                    android:background="@drawable/curve_view_360"
+                    android:backgroundTint="@color/colorWhite"
+                    android:drawableLeft="@drawable/google_icon"
+                    android:onClick="@{()->vmLogin.clickSignInGoogle()}"
+                    android:padding="@dimen/margin_ten"
+                    android:text="@string/str_sign_google"
+                    android:textColor="@color/colorOrange"
+                    android:textSize="@dimen/textsize_sixteen"
+                    app:layout_constraintLeft_toRightOf="@id/guideline_inner_left"
+                    app:layout_constraintRight_toLeftOf="@id/guideline_inner_right"
+                    app:layout_constraintTop_toBottomOf="@id/btn_sign_apple"
+                    app:layout_constraintBottom_toTopOf="@+id/guideline_inner_bottom" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

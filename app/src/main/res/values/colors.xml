@@ -1,25 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#00B2B7</color>
+    <color name="colorPrimary">#7CD9EA</color>
     <color name="colorPrimaryDark">#00B2B7</color>
     <color name="colorAccent">#00B2B7</color>
 
     <color name="colorYellow">#DBC923</color>
     <color name="colorDarkYellow">#F5A80A</color>
-    <color name="colorGreen">#92E883</color>
 
     <color name="colorBlack">#000000</color>
-    <color name="colorDarkBlue">#1F394E</color>
+    <color name="colorLightBlue">#80859b</color>
+    <color name="colorDarkBlue">#131121</color>
+    <color name="colorDarkCyan">#032335</color>
     <color name="colorWhite">#ffffff</color>
-    <color name="colorGray">#858585</color>
+    <color name="colorDarkGray">#605f69</color>
+    <color name="colorGray">#e6e6e8</color>
     <color name="colorLightGray">#f5f6f7</color>
+    <color name="colorLightGrayUser">#F0F1F3</color>
 
-    <color name="colorBrown">#5D3232</color>
+    <color name="colorBrown">#513D32</color>
     <color name="colorSemiLightGray">#DAD8D8</color>
 
     <color name="colorBgScreen">#EFF1F9</color>
     <color name="colorDarkGreen">#57B952</color>
+    <color name="colorGreen">#83fc31</color>
+    <color name="ColorLightGreen">#00f69b</color>
     <color name="colorSkyBlue">#00B2B7</color>
-    <color name="colorBlue">#9986EC</color>
+    <color name="colorBlueLight">#9986EC</color>
+    <color name="colorBlueForButtons">#8191CD</color>
+    <color name="colorBlue">#1d55f0</color>
+    <color name="colorOrange">#FA5434</color>
+    <color name="dark_pink">#F33F6C</color>
+    <color name="colorgray_9">#F9F9F9</color>
+    <color name="colorgray_8">#F8F8F8</color>
+    <color name="ColorTeal">#1EA996</color>
+
+
 
 </resources>

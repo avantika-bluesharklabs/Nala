@@ -21,16 +21,325 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.nala.R
 import com.nala.businesslogic.interactors.ObservableString
-import com.nala.businesslogic.interfaces.*
-import com.nala.businesslogic.pojo.*
 import com.nala.utils.Utils
 import com.nala.view.adapter.*
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
+import com.nala.businesslogic.interfaces.*
+import com.nala.businesslogic.pojo.*
 import java.io.ByteArrayOutputStream
 import java.io.File
 
 object BindingAdapterApp {
+
+    @BindingAdapter(
+        "recyclerHome",
+        "adapterHome",
+        "clickListenerHome",
+        "scrollListenerHome"
+    )
+    @JvmStatic
+    fun setRecyclerViewHomeAdapter(
+        recyclerView: RecyclerView?,
+        layoutManager: LinearLayoutManager?,
+        contents: List<PojoHome>,
+        onClickContent: OnClickHome,
+        onScrollListener: RecyclerView.OnScrollListener?
+    ) {
+        if (recyclerView != null) {
+            if (recyclerView.adapter == null) {
+                recyclerView.layoutManager = layoutManager
+                val adapterContent = AdapterHomeList(
+                    recyclerView.context, contents, onClickContent
+                )
+                recyclerView.adapter = adapterContent
+                if (onScrollListener != null) {
+                    recyclerView.addOnScrollListener(onScrollListener)
+                }
+            } else {
+                recyclerView.adapter!!.notifyDataSetChanged()
+            }
+        }
+    }
+
+
+    @BindingAdapter(
+        "recyclerMyBooking",
+        "adapterMyBooking",
+        "clickListenerMyBooking",
+        "scrollListenerMyBooking"
+    )
+    @JvmStatic
+    fun setRecyclerViewMyBookingAdapter(
+        recyclerView: RecyclerView?,
+        layoutManager: LinearLayoutManager?,
+        contents: List<PojoMyBooking>,
+        onClickContent: OnClickMyBooking,
+        onScrollListener: RecyclerView.OnScrollListener?
+    ) {
+        if (recyclerView != null) {
+            if (recyclerView.adapter == null) {
+                recyclerView.layoutManager = layoutManager
+                val adapterContent = AdapterMyBookingsList(
+                    recyclerView.context, contents, onClickContent
+                )
+                recyclerView.adapter = adapterContent
+                if (onScrollListener != null) {
+                    recyclerView.addOnScrollListener(onScrollListener)
+                }
+            } else {
+                recyclerView.adapter!!.notifyDataSetChanged()
+            }
+        }
+    }
+
+    @BindingAdapter(
+        "recyclerHomeMap",
+        "adapterHomeMap",
+        "clickListenerHomeMap",
+        "scrollListenerHomeMap"
+    )
+    @JvmStatic
+    fun setRecyclerViewHomeMapAdapter(
+        recyclerView: RecyclerView?,
+        layoutManager: LinearLayoutManager?,
+        contents: List<PojoHome>,
+        onClickContent: OnClickHome,
+        onScrollListener: RecyclerView.OnScrollListener?
+    ) {
+        if (recyclerView != null) {
+            if (recyclerView.adapter == null) {
+                recyclerView.layoutManager = layoutManager
+                val adapterContent = AdapterHomeMap(
+                    recyclerView.context, contents, onClickContent
+                )
+                recyclerView.adapter = adapterContent
+                if (onScrollListener != null) {
+                    recyclerView.addOnScrollListener(onScrollListener)
+                }
+            } else {
+                recyclerView.adapter!!.notifyDataSetChanged()
+            }
+        }
+    }
+
+    @BindingAdapter(
+        "recyclerSchedualeTime",
+        "adapterSchedualeTime",
+        "clickListenerSchedualeTime",
+        "scrollListenerSchedualeTime"
+    )
+    @JvmStatic
+    fun setRecyclerViewSchedualeTimeAdapter(
+        recyclerView: RecyclerView?,
+        layoutManager: LinearLayoutManager?,
+        contents: List<PojoSchedualeAppoinment>,
+        onClickContent: OnClickSchedualeAppoinment,
+        onScrollListener: RecyclerView.OnScrollListener?
+    ) {
+        if (recyclerView != null) {
+            if (recyclerView.adapter == null) {
+                recyclerView.layoutManager = layoutManager
+                val adapterContent = AdapterSchedualeAppoinmentTime(
+                    recyclerView.context, contents, onClickContent
+                )
+                recyclerView.adapter = adapterContent
+                if (onScrollListener != null) {
+                    recyclerView.addOnScrollListener(onScrollListener)
+                }
+            } else {
+                recyclerView.adapter!!.notifyDataSetChanged()
+            }
+        }
+    }
+
+    @BindingAdapter(
+        "recyclerSchedualeType",
+        "adapterSchedualeType",
+        "clickListenerSchedualeType",
+        "scrollListenerSchedualeType"
+    )
+    @JvmStatic
+    fun setRecyclerViewSchedualeTypeAdapter(
+        recyclerView: RecyclerView?,
+        layoutManager: LinearLayoutManager?,
+        contents: List<PojoSchedualeAppoinmentType>,
+        onClickContent: OnClickSchedualeAppoinmentType,
+        onScrollListener: RecyclerView.OnScrollListener?
+    ) {
+        if (recyclerView != null) {
+            if (recyclerView.adapter == null) {
+                recyclerView.layoutManager = layoutManager
+                val adapterContent = AdapterSchedualeAppoinmentType(
+                    recyclerView.context, contents, onClickContent
+                )
+                recyclerView.adapter = adapterContent
+                if (onScrollListener != null) {
+                    recyclerView.addOnScrollListener(onScrollListener)
+                }
+            } else {
+                recyclerView.adapter!!.notifyDataSetChanged()
+            }
+        }
+    }
+
+
+    @BindingAdapter(
+        "recyclerNotification",
+        "adapterNotification",
+        "clickListenerNotification",
+        "scrollListenerNotification"
+    )
+    @JvmStatic
+    fun setRecyclerViewNotificationAdapter(
+        recyclerView: RecyclerView?,
+        layoutManager: LinearLayoutManager?,
+        contents: List<PojoNotisfication>,
+        onClickContent: OnClickNotification,
+        onScrollListener: RecyclerView.OnScrollListener?
+    ) {
+        if (recyclerView != null) {
+            if (recyclerView.adapter == null) {
+                recyclerView.layoutManager = layoutManager
+                val adapterContent = AdapterNotification(
+                    recyclerView.context, contents, onClickContent
+                )
+                recyclerView.adapter = adapterContent
+                if (onScrollListener != null) {
+                    recyclerView.addOnScrollListener(onScrollListener)
+                }
+            } else {
+                recyclerView.adapter!!.notifyDataSetChanged()
+            }
+        }
+    }
+
+    @BindingAdapter(
+        "recyclerMessage",
+        "adapterMessage",
+        "clickListenerMessage",
+        "scrollListenerMessage"
+    )
+    @JvmStatic
+    fun setRecyclerViewMessageAdapter(
+        recyclerView: RecyclerView?,
+        layoutManager: LinearLayoutManager?,
+        contents: List<PojoMessage>,
+        onClickContent: OnClickMessage,
+        onScrollListener: RecyclerView.OnScrollListener?
+    ) {
+        if (recyclerView != null) {
+            if (recyclerView.adapter == null) {
+                recyclerView.layoutManager = layoutManager
+                val adapterContent = AdapterMessage(
+                    recyclerView.context, contents, onClickContent
+                )
+                recyclerView.adapter = adapterContent
+                if (onScrollListener != null) {
+                    recyclerView.addOnScrollListener(onScrollListener)
+                }
+            } else {
+                recyclerView.adapter!!.notifyDataSetChanged()
+            }
+        }
+    }
+
+
+    @BindingAdapter(
+        "recyclerTechnique",
+        "adapterTechnique",
+        "clickListenerTechnique",
+        "scrollListenerTechnique"
+    )
+    @JvmStatic
+    fun setRecyclerViewTechniqueAdapter(
+        recyclerView: RecyclerView?,
+        layoutManager: LinearLayoutManager?,
+        contents: List<PojoTechnique>,
+        onClickContent: OnClickTechnique,
+        onScrollListener: RecyclerView.OnScrollListener?
+    ) {
+        if (recyclerView != null) {
+            if (recyclerView.adapter == null) {
+                recyclerView.layoutManager = layoutManager
+                val adapterContent = AdapterTechnique(
+                    recyclerView.context, contents, onClickContent
+                )
+                recyclerView.adapter = adapterContent
+                if (onScrollListener != null) {
+                    recyclerView.addOnScrollListener(onScrollListener)
+                }
+            } else {
+                recyclerView.adapter!!.notifyDataSetChanged()
+            }
+        }
+    }
+
+    @BindingAdapter(
+        "recyclerfilter",
+        "adapterfilter",
+        "clickListenerfilter",
+        "scrollListenerfilter"
+    )
+    @JvmStatic
+    fun setRecyclerViewfilterAdapter(
+        recyclerView: RecyclerView?,
+        layoutManager: LinearLayoutManager?,
+        contents: List<PojoTechnique>,
+        onClickContent: OnClickTechnique,
+        onScrollListener: RecyclerView.OnScrollListener?
+    ) {
+        if (recyclerView != null) {
+            if (recyclerView.adapter == null) {
+                recyclerView.layoutManager = layoutManager
+                val adapterContent = AdapterTechnique(
+                    recyclerView.context, contents, onClickContent
+                )
+                recyclerView.adapter = adapterContent
+                if (onScrollListener != null) {
+                    recyclerView.addOnScrollListener(onScrollListener)
+                }
+            } else {
+                recyclerView.adapter!!.notifyDataSetChanged()
+            }
+        }
+    }
+
+    @BindingAdapter(
+        "recylerreview",
+        "adapterreview",
+        "clickListenerreview",
+        "scrollListenerreview"
+    )
+    @JvmStatic
+    fun setRecyclerViewreviewAdapter(
+        recyclerView: RecyclerView?,
+        layoutManager: LinearLayoutManager?,
+        contents: List<PojoReview>,
+        onClickContent: OnClickReview,
+        onScrollListener: RecyclerView.OnScrollListener?
+    ) {
+        if (recyclerView != null) {
+            if (recyclerView.adapter == null) {
+                recyclerView.layoutManager = layoutManager
+                val adapterContent = AdapterReview(
+                    recyclerView.context, contents, onClickContent
+                )
+                recyclerView.adapter = adapterContent
+                if (onScrollListener != null) {
+                    recyclerView.addOnScrollListener(onScrollListener)
+                }
+            } else {
+                recyclerView.adapter!!.notifyDataSetChanged()
+            }
+        }
+    }
+
+
+
+
+
+
     @BindingAdapter("setSwipeRefreshing")
     @JvmStatic
     fun setSwipeRefreshing(swipeRefresh: SwipeRefreshLayout?, toRefresh: Boolean) {
