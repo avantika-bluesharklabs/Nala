@@ -132,7 +132,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="@dimen/margin_five"
-                        android:src="@drawable/ic_navigations"
+                        android:src="@drawable/ic_calender_black"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -164,7 +164,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/margin_five"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -310,14 +310,13 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_twenty"
-                android:background="@drawable/curve_view_360"
-                android:backgroundTint="@color/colorBlueForButtons"
+                android:background="@drawable/btn_submit"
                 android:paddingStart="@dimen/margin_twenty_five"
                 android:paddingEnd="@dimen/margin_twenty_five"
                 android:text="@string/str_apply"
                 android:textAllCaps="false"
                 android:textColor="@color/colorWhite"
-                android:textSize="@dimen/textsize_forteen"
+                android:textSize="@dimen/textsize_eighteen"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

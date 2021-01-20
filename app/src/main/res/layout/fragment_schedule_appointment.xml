@@ -71,6 +71,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/str_schedule"
                 android:textColor="@color/colorBlack"
+                style="@style/bold"
                 android:textSize="@dimen/textsize_eighteen"
                 android:textStyle="bold"
                 android:visibility="visible"
@@ -110,7 +111,7 @@
 
                 <CalendarView
                     android:id="@+id/calender_view"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:dateTextAppearance="@style/CalenderViewDateCustomText"
                     android:theme="@style/CalenderViewCustom"
@@ -137,6 +138,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/margin_twenty_five"
                         android:layout_marginTop="@dimen/margin_ten"
+                        style="@style/medium"
                         android:text="@string/str_choose_time"
                         android:textColor="@color/colorBlack"
                         android:textSize="@dimen/textsize_eighteen"
@@ -157,7 +159,7 @@
 
                         <androidx.recyclerview.widget.RecyclerView
                             android:id="@+id/rv_slot"
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             app:recyclerSchedualeTime="@{vmSchedualeMan.layoutManager}"
                             app:adapterSchedualeTime="@{vmSchedualeMan.observerContent}"
@@ -211,6 +213,7 @@
                         android:id="@+id/txt_massage_type"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        style="@style/medium"
                         android:layout_marginStart="@dimen/margin_twenty_five"
                         android:layout_marginTop="@dimen/margin_ten"
                         android:text="@string/str_massage_type"
@@ -233,7 +236,7 @@
 
                         <androidx.recyclerview.widget.RecyclerView
                             android:id="@+id/rv_type"
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             app:recyclerSchedualeType="@{vmSchedualeManType.layoutManager}"
                             app:adapterSchedualeType="@{vmSchedualeManType.observerContent}"
@@ -282,10 +285,9 @@
                         android:layout_marginTop="@dimen/margin_thirty_five"
                         android:layout_marginEnd="@dimen/margin_twenty_five"
                         android:layout_marginBottom="@dimen/margin_twenty_five"
-                        android:background="@drawable/curve_view_360"
-                        android:backgroundTint="@color/colorBlueForButtons"
-
+                        android:background="@drawable/btn_submit"
                         android:text="@string/str_submit"
+                        style="@style/bold"
                         android:textColor="@color/colorWhite"
                         android:textSize="@dimen/textsize_eighteen"
                         app:layout_constraintEnd_toEndOf="parent"

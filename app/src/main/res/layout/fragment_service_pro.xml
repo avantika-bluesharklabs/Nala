@@ -94,11 +94,9 @@
                 android:id="@+id/cl_details"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:background="@color/colorWhite">
+                android:background="@color/colorWhite"
+                android:padding="10dp">
 
-
-               
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/cl_plan"
@@ -124,11 +122,7 @@
                             android:id="@+id/appCompatImageView2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="5dp"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginEnd="5dp"
-                            android:layout_marginBottom="5dp"
-                            android:src="@drawable/success"
+                            android:src="@drawable/img_home_dummy"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
@@ -139,7 +133,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="@dimen/margin_fifteen"
-                            android:background="@drawable/curve_view_5"
+                            android:background="@drawable/img_gender_bg"
                             android:backgroundTint="@color/colorBrown"
                             android:paddingStart="@dimen/margin_fifteen"
                             android:paddingTop="@dimen/margin_five"
@@ -263,12 +257,10 @@
 
                     <androidx.appcompat.widget.AppCompatImageView
                         android:id="@+id/img_rating"
-                        android:layout_width="@dimen/margin_fifty_five"
-                        android:layout_height="@dimen/margin_fifty_five"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_marginEnd="@dimen/margin_fifteen"
-                        android:background="@android:color/holo_purple"
-                        android:elevation="2dp"
-                        android:src="@drawable/ic_navigations"
+                        android:src="@drawable/ic_detail_star"
                         app:layout_constraintBottom_toTopOf="@+id/cl_demo"
                         app:layout_constraintEnd_toEndOf="@+id/cl_demo"
                         app:layout_constraintTop_toTopOf="@id/cl_demo" />
@@ -302,7 +294,8 @@
                             android:id="@+id/img_loca_image"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:src="@drawable/ic_navigations"
+                            android:padding="@dimen/margin_five"
+                            android:src="@drawable/ic_location"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintRight_toLeftOf="@+id/txt_location"
                             app:layout_constraintStart_toStartOf="parent"
@@ -371,6 +364,7 @@
 
                     <androidx.appcompat.widget.AppCompatTextView
                         android:id="@+id/txt_about"
+                        style="@style/medium"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/margin_twenty_five"
@@ -384,6 +378,7 @@
 
                     <androidx.appcompat.widget.AppCompatTextView
                         android:id="@+id/txt_about_desc"
+                        style="@style/regular"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/margin_twenty_five"
@@ -622,32 +617,24 @@
                             app:layout_constraintTop_toBottomOf="@id/ll_div">
 
 
-                            <androidx.cardview.widget.CardView
+                            <androidx.appcompat.widget.AppCompatImageView
                                 android:id="@+id/card_fav"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                app:cardElevation="@dimen/margin_five"
-                                app:cardUseCompatPadding="true"
+                                android:layout_margin="@dimen/margin_ten"
+                                android:src="@drawable/ic_detail_fav"
                                 app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintStart_toStartOf="parent">
-
-
-                                <androidx.appcompat.widget.AppCompatImageView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_margin="@dimen/margin_ten"
-                                    android:src="@drawable/ic_navigations" />
-
-
-                            </androidx.cardview.widget.CardView>
+                                app:layout_constraintStart_toStartOf="parent" />
 
 
                             <androidx.appcompat.widget.AppCompatButton
                                 android:id="@+id/btn_book_now"
+                                style="@style/bold"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:background="@drawable/curve_view_360"
-                                android:backgroundTint="@color/colorBlueForButtons"
+                                android:layout_marginStart="@dimen/margin_ten"
+                                android:layout_marginEnd="@dimen/margin_ten"
+                                android:background="@drawable/btn_detail_booknow"
                                 android:paddingStart="@dimen/margin_twenty_five"
                                 android:paddingEnd="@dimen/margin_twenty_five"
                                 android:text="@string/str_book_now"
@@ -661,25 +648,15 @@
                                 app:layout_constraintTop_toTopOf="@+id/card_fav" />
 
 
-                            <androidx.cardview.widget.CardView
+                            <androidx.appcompat.widget.AppCompatImageView
                                 android:id="@+id/card_msg"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                app:cardElevation="@dimen/margin_five"
-                                app:cardUseCompatPadding="true"
+                                android:layout_margin="@dimen/margin_ten"
                                 app:layout_constraintBottom_toBottomOf="@+id/card_fav"
                                 app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintTop_toTopOf="@+id/card_fav">
-
-
-                                <androidx.appcompat.widget.AppCompatImageView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_margin="@dimen/margin_ten"
-                                    android:src="@drawable/ic_navigations" />
-
-
-                            </androidx.cardview.widget.CardView>
+                                app:layout_constraintTop_toTopOf="@+id/card_fav"
+                                app:srcCompat="@drawable/ic_detail_comment" />
 
 
                         </androidx.constraintlayout.widget.ConstraintLayout>

@@ -38,6 +38,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/str_my_bookings"
+                style="@style/bold"
                 android:textColor="@color/colorBlack"
                 android:textSize="@dimen/textsize_twenty"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -49,7 +50,7 @@
                 android:id="@+id/img_filter"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/filter_icon"
+                android:src="@drawable/filter_round"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />

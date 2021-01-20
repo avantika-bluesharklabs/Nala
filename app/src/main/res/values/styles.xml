@@ -116,4 +116,30 @@
     </style>
 
 
+
+
+    <style name="regular" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:fontFamily">@font/archivo_regular</item>
+        <item name="fontFamily">@font/archivo_regular</item><!-- target android sdk versions < 26 and > 14 if theme other than AppCompat -->
+    </style>
+
+    <style name="bold" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:fontFamily">@font/archivo_bold</item>
+        <item name="fontFamily">@font/archivo_bold
+        </item> <!-- target android sdk versions < 26 and > 14 if theme other than AppCompat -->
+    </style>
+
+    <style name="semibold" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:fontFamily">@font/archivo_semibold</item>
+        <item name="fontFamily">@font/archivo_semibold
+        </item> <!-- target android sdk versions < 26 and > 14 if theme other than AppCompat -->
+    </style>
+
+    <style name="medium" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:fontFamily">@font/archivo_medium</item>
+        <item name="fontFamily">@font/archivo_medium
+        </item> <!-- target android sdk versions < 26 and > 14 if theme other than AppCompat -->
+    </style>
+
+
 </resources>

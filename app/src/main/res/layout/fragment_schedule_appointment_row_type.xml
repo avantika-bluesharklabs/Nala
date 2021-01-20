@@ -34,7 +34,6 @@
         android:layout_height="wrap_content"
         android:clickable="true"
         android:focusable="true"
-        android:layout_gravity="center"
         android:onClick="@{(v)->onContentClickListener.onClickSchedualeAppoinmentTypeItem(v,layoutPosition,data)}">
 
 

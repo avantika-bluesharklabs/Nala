@@ -144,6 +144,7 @@
     <string name="error_blank_address">Enter Address</string>
     <string name="error_blank_apt">Enter Apt</string>
     <string name="str_times">10:00 am</string>
+    <string name="review_count">4.5</string>
     <string name="str_bullet">•</string>
     <string name="str_cancel">Cancel</string>
     <string name="str_pending">Pending</string>
