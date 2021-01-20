@@ -17,11 +17,11 @@ class ActivityLogin : ActivityBase() {
     override fun onCreate(savedInstanceState: Bundle?) {
         window.statusBarColor = Color.WHITE
         super.onCreate(savedInstanceState)
+
         mBinding = DataBindingUtil.setContentView(this, R.layout.activity_login)
-        mViewModelLogin =
-            ViewModelLogin(
-                mApplication
-            )
+
+        mViewModelLogin = ViewModelLogin(mApplication)
+
         mBinding.vmLogin = mViewModelLogin
 
         observable()

@@ -110,6 +110,7 @@
                     android:layout_marginTop="@dimen/margin_ten"
                     android:text="@string/str_iam"
                     android:textSize="@dimen/textsize_eighteen"
+                    android:textColor="@color/colorBlack"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/cl_image" />

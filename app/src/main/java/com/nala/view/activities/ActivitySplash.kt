@@ -44,9 +44,11 @@ class ActivitySplash : ActivityBase() {
             "boolean is   " + mPreferences.getBoolean(R.string.pref_is_user_login)
         )
 
+        val intent = Intent(this, ActivityLogin::class.java)
+        startActivity(intent)
+        finish()
 
-
-        if (mPreferences.getBoolean(R.string.pref_is_user_login)) {
+       /* if (mPreferences.getBoolean(R.string.pref_is_user_login)) {
 
           //  startActivity(Intent(this, ActivityRateTherapist::class.java))
 
@@ -61,7 +63,7 @@ class ActivitySplash : ActivityBase() {
             finish()
 
 
-        }
+        }*/
     }
 
     private fun generateToken() {

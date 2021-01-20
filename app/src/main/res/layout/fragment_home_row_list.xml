@@ -46,10 +46,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:elevation="2dp"
-        android:paddingStart="@dimen/margin_fifteen"
+        android:paddingStart="@dimen/margin_ten"
         android:paddingTop="@dimen/margin_five"
-        android:paddingEnd="@dimen/margin_fifteen"
-        android:paddingBottom="@dimen/margin_fifteen"
+        android:paddingEnd="@dimen/margin_ten"
+        android:paddingBottom="@dimen/margin_ten"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">

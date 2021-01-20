@@ -16,15 +16,14 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/colorWhite"
-        tools:context=".view.activities.ActivitySignUp">
+        android:background="@color/colorWhite">
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/cl_toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="@dimen/margin_twenty"
+            android:layout_width="0dp"
+            android:layout_height="?attr/actionBarSize"
+            android:padding="@dimen/margin_ten"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -45,7 +44,7 @@
 
                 <androidx.appcompat.widget.AppCompatImageView
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:src="@drawable/ic_backs" />
 
 
@@ -81,7 +80,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_end="@dimen/margin_twenty" />
+            app:layout_constraintGuide_end="@dimen/margin_ten" />
 
 
         <androidx.constraintlayout.widget.Guideline
@@ -89,17 +88,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintGuide_begin="@dimen/margin_twenty" />
+            app:layout_constraintGuide_begin="@dimen/margin_ten" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline_right"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintGuide_end="@dimen/margin_twenty" />
+            app:layout_constraintGuide_end="@dimen/margin_ten" />
 
 
-        <ScrollView
+        <androidx.core.widget.NestedScrollView
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:fillViewport="true"
@@ -122,6 +121,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/str_create_acc"
                     android:textSize="@dimen/textsize_thirty_six"
+                    android:textColor="@color/colorBlack"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -132,6 +132,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/margin_eight"
                     android:text="@string/str_create_desc"
+                    android:textColor="@color/colorBlack"
                     android:textSize="@dimen/textsize_sixteen"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/txt_fp" />
@@ -407,6 +408,7 @@
                         android:backgroundTint="@color/colorBlueForButtons"
                         android:onClick="@{()->vmSignUp.clickSignUp()}"
                         android:text="@string/str_sign_up"
+                        android:textAllCaps="false"
                         android:textColor="@color/colorWhite"
                         android:textSize="@dimen/textsize_eighteen"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -418,7 +420,7 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-        </ScrollView>
+        </androidx.core.widget.NestedScrollView>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
