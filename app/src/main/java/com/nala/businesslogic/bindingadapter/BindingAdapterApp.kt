@@ -275,6 +275,66 @@ object BindingAdapterApp {
         }
     }
 
+    @BindingAdapter(
+        "recyclerfilter",
+        "adapterfilter",
+        "clickListenerfilter",
+        "scrollListenerfilter"
+    )
+    @JvmStatic
+    fun setRecyclerViewfilterAdapter(
+        recyclerView: RecyclerView?,
+        layoutManager: LinearLayoutManager?,
+        contents: List<PojoTechnique>,
+        onClickContent: OnClickTechnique,
+        onScrollListener: RecyclerView.OnScrollListener?
+    ) {
+        if (recyclerView != null) {
+            if (recyclerView.adapter == null) {
+                recyclerView.layoutManager = layoutManager
+                val adapterContent = AdapterTechnique(
+                    recyclerView.context, contents, onClickContent
+                )
+                recyclerView.adapter = adapterContent
+                if (onScrollListener != null) {
+                    recyclerView.addOnScrollListener(onScrollListener)
+                }
+            } else {
+                recyclerView.adapter!!.notifyDataSetChanged()
+            }
+        }
+    }
+
+    @BindingAdapter(
+        "recylerreview",
+        "adapterreview",
+        "clickListenerreview",
+        "scrollListenerreview"
+    )
+    @JvmStatic
+    fun setRecyclerViewreviewAdapter(
+        recyclerView: RecyclerView?,
+        layoutManager: LinearLayoutManager?,
+        contents: List<PojoReview>,
+        onClickContent: OnClickReview,
+        onScrollListener: RecyclerView.OnScrollListener?
+    ) {
+        if (recyclerView != null) {
+            if (recyclerView.adapter == null) {
+                recyclerView.layoutManager = layoutManager
+                val adapterContent = AdapterReview(
+                    recyclerView.context, contents, onClickContent
+                )
+                recyclerView.adapter = adapterContent
+                if (onScrollListener != null) {
+                    recyclerView.addOnScrollListener(onScrollListener)
+                }
+            } else {
+                recyclerView.adapter!!.notifyDataSetChanged()
+            }
+        }
+    }
+
 
 
 

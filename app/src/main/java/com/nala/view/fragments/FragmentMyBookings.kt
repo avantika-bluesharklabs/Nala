@@ -1,6 +1,8 @@
 package com.nala.view.fragments
 
 import android.os.Bundle
+import android.os.Parcel
+import android.os.Parcelable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,11 +16,14 @@ import com.nala.businesslogic.viewmodel.fragments.ViewModelMyBookings
 import com.nala.databinding.FragmentMyBookingsBinding
 
 
-
-class FragmentMyBookings : FragmentBase(),OnClickMyBooking {
+class FragmentMyBookings() : FragmentBase(),OnClickMyBooking {
 
     private lateinit var mViewModelMyBooking: ViewModelMyBookings
     private lateinit var mBinding: FragmentMyBookingsBinding
+
+    constructor(parcel: Parcel) : this() {
+
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -33,6 +38,13 @@ class FragmentMyBookings : FragmentBase(),OnClickMyBooking {
         mBinding.vmMyBooking = mViewModelMyBooking
         mBinding.onContentClickListener = this
 
+        mBinding.imgFilter.setOnClickListener {
+
+            BottomSheetFilter().show(mActivity.getSupportFragmentManager(), "Dialog")
+
+
+        }
+
 
 
         return mBinding.root
@@ -46,7 +58,7 @@ class FragmentMyBookings : FragmentBase(),OnClickMyBooking {
     }*/
 
 
-    fun openFilters() {
+    /*fun openFilters() {
         val btnsheet = layoutInflater.inflate(R.layout.layout_my_booking_filters, null)
         val dialog = BottomSheetDialog(this.requireContext())
         dialog.setContentView(btnsheet)
@@ -54,7 +66,7 @@ class FragmentMyBookings : FragmentBase(),OnClickMyBooking {
             dialog.dismiss()
         }
         dialog.show()
-    }
+    }*/
 
 
 
@@ -65,4 +77,8 @@ class FragmentMyBookings : FragmentBase(),OnClickMyBooking {
 
 
     }
+
+
+
+
 }

@@ -1,5 +1,6 @@
 package com.nala.view.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -14,6 +15,8 @@ import com.nala.businesslogic.viewmodel.fragments.ViewModelMessage
 import com.nala.businesslogic.viewmodel.fragments.ViewModelNotisfication
 import com.nala.databinding.FragmentMessageBinding
 import com.nala.databinding.FragmentNotificationBinding
+import com.nala.view.activities.ActivityChatting
+import com.nala.view.activities.ActivitySignIn
 
 class FragmentMessage : FragmentBase(), OnClickMessage {
 
@@ -35,6 +38,9 @@ class FragmentMessage : FragmentBase(), OnClickMessage {
 
 
 
+
+
+
         return mBinding.root
     }
 
@@ -47,6 +53,8 @@ class FragmentMessage : FragmentBase(), OnClickMessage {
 
 
     override fun onClickMessageItem(view: View?, layoutPosition: Int, data: PojoMessage) {
+
+        startActivity(Intent(context, ActivityChatting::class.java))
 
     }
 

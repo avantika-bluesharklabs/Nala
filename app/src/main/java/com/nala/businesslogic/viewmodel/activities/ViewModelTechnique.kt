@@ -20,23 +20,21 @@ class ViewModelTechnique (myApplication: MyApplication, isToShowErrors: Boolean)
 
         var pojo = PojoTechnique()
         pojo.txt_status = "Deep Tissue"
-
         observerContent.add(pojo)
+
 
         pojo = PojoTechnique()
         pojo.txt_status = "Swedesi"
-
         observerContent.add(pojo)
+
 
         pojo = PojoTechnique()
         pojo.txt_status = "Sports"
-
         observerContent.add(pojo)
+
 
         pojo = PojoTechnique()
         pojo.txt_status = "Reflexology"
-
-
         observerContent.add(pojo)
 
 

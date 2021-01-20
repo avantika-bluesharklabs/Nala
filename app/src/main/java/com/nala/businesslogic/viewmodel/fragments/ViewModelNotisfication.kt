@@ -76,7 +76,7 @@ class ViewModelNotisfication(myApplication: MyApplication, isToShowErrors: Boole
     }
 
     override fun sendResponseBodyList(list: PojoCommonResponse?) {
-        
+
     }
 
 

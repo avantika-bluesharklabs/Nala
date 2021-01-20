@@ -7,16 +7,16 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.nala.R
-import com.nala.businesslogic.interfaces.OnClickMessage
-import com.nala.businesslogic.interfaces.OnClickNotification
-import com.nala.businesslogic.pojo.PojoMessage
-import com.nala.businesslogic.pojo.PojoNotisfication
-import com.nala.databinding.FragmentMessageRowBinding
-import com.nala.databinding.FragmentNotisficationRowBinding
+import com.nala.businesslogic.interfaces.OnClickReview
+import com.nala.businesslogic.interfaces.OnClickTechnique
+import com.nala.businesslogic.pojo.PojoReview
+import com.nala.businesslogic.pojo.PojoTechnique
+import com.nala.databinding.ActivityServiceProRowReviewBinding
+import com.nala.databinding.ActivityServiceProRowTechniqueBinding
 
-class AdapterMessage(
-    var mContext: Context, var mArrayContent: List<PojoMessage>,
-    var mOnClickMessageListener: OnClickMessage
+class AdapterReview(
+    var mContext: Context, var mArrayContent: List<PojoReview>,
+    var mOnClickReviewListener: OnClickReview
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     val mViewTypeItem = 1
@@ -25,17 +25,23 @@ class AdapterMessage(
 
         val layoutInflater = LayoutInflater.from(parent.context)
         return if (viewType == mViewTypeItem) {
-            val binding: FragmentMessageRowBinding = DataBindingUtil.inflate(layoutInflater, R.layout.fragment_message_row, parent, false)
+            val binding: ActivityServiceProRowReviewBinding = DataBindingUtil.inflate(
+                layoutInflater,
+                R.layout.activity_service_pro_row_review,
+                parent,
+                false
+            )
+
+            binding.onContentClickListener = mOnClickReviewListener
 
 
-
-            binding.setOnContentClickListener(mOnClickMessageListener)
-
-            binding
 
             Viewholder(binding)
         } else {
-            ProgressViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.layout_progress, parent, false))
+            ProgressViewHolder(
+                LayoutInflater.from(parent.context)
+                    .inflate(R.layout.layout_progress, parent, false)
+            )
         }
 
     }
@@ -58,12 +64,12 @@ class AdapterMessage(
     class ProgressViewHolder(v: View?) :
         RecyclerView.ViewHolder(v!!)
 
-    class Viewholder(binding: FragmentMessageRowBinding) :
+    class Viewholder(binding: ActivityServiceProRowReviewBinding) :
         RecyclerView.ViewHolder(binding.getRoot()) {
 
-        private val mBinding: FragmentMessageRowBinding
+        private val mBinding: ActivityServiceProRowReviewBinding
 
-        fun bind(data: PojoMessage, position: Int) {
+        fun bind(data: PojoReview, position: Int) {
             mBinding.setData(data)
             mBinding.setLayoutPosition(position)
             mBinding.executePendingBindings()
