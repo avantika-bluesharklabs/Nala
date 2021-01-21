@@ -59,7 +59,9 @@
                 android:layout_marginEnd="@dimen/margin_twenty"
                 android:layout_marginBottom="@dimen/margin_ten"
                 android:text="@{data.txt_type}"
-                android:textSize="@dimen/textsize_eighteen" />
+                style="@style/medium"
+                android:textColor="@color/colorDarkGray"
+                android:textSize="@dimen/textsize_sixteen" />
 
         </androidx.cardview.widget.CardView>
 

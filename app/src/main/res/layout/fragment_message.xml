@@ -27,11 +27,11 @@
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/txt_msg"
+            style="@style/bold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="10dp"
+            android:padding="15dp"
             android:text="@string/str_messages"
-            style="@style/bold"
             android:textColor="@color/colorBlack"
             android:textSize="@dimen/textsize_twenty"
             app:layout_constraintStart_toStartOf="parent"
@@ -41,7 +41,7 @@
         <View
             android:id="@+id/view"
             android:layout_width="wrap_content"
-            android:layout_height="@dimen/margin_one"
+            android:layout_height="1dp"
             android:background="@color/colorGray"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -53,14 +53,14 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginTop="10dp"
-            app:recyclerMessage="@{vmMessage.layoutManager}"
             app:adapterMessage="@{vmMessage.observerContent}"
             app:clickListenerMessage="@{onContentClickListener}"
-            app:scrollListenerMessage="@{vmMessage.scrollListener}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/view" />
+            app:layout_constraintTop_toBottomOf="@+id/view"
+            app:recyclerMessage="@{vmMessage.layoutManager}"
+            app:scrollListenerMessage="@{vmMessage.scrollListener}" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

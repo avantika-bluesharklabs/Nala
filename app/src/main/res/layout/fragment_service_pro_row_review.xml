@@ -31,7 +31,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:clickable="true"
         android:focusable="true"
         android:onClick="@{(v)->onContentClickListener.onClickReviewItem(v,layoutPosition,data)}"
@@ -47,19 +47,19 @@
             app:layout_constraintTop_toTopOf="parent">
 
 
-            <!-- <androidx.appcompat.widget.AppCompatImageView
-                 android:id="@+id/img_user"
-                 android:layout_width="wrap_content"
-                 android:layout_height="wrap_content"
-
-                 app:layout_constraintStart_toStartOf="parent"
-                 app:layout_constraintTop_toTopOf="parent" />-->
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img_user"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/img_home_dummy"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/img_user"
                 app:layout_constraintTop_toTopOf="parent">
 
 
@@ -70,19 +70,9 @@
                     android:text="@{data.txt_name}"
                     android:textColor="@color/colorBlack"
                     android:textSize="@dimen/textsize_eighteen"
-                    android:textStyle="bold"
-                    app:layout_constraintEnd_toStartOf="@+id/txt_post_time"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/txt_post_time"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@{data.txt_post_time}"
-                    android:textColor="@color/colorGray"
-                    android:textSize="@dimen/textsize_forteen"
+                    style="@style/bold"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
 
@@ -92,8 +82,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
                     android:text="@{data.txt_msg}"
-                    android:textColor="@color/colorGray"
+                    android:textColor="@color/colorBlack"
                     android:textSize="@dimen/textsize_twelve"
+                    style="@style/regular"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/txt_name" />
 

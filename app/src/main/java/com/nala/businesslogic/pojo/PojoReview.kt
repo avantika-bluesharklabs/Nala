@@ -13,9 +13,9 @@ class PojoReview:PojoCommonResponse() {
     @Expose
     var txt_msg: String? = null
 
-    @SerializedName("txt_post_time")
+   /* @SerializedName("txt_post_time")
     @Expose
-    var txt_post_time: String? = null
+    var txt_post_time: String? = null*/
 
 
 

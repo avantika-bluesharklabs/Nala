@@ -58,8 +58,10 @@
                 android:layout_marginTop="@dimen/margin_ten"
                 android:layout_marginEnd="@dimen/margin_twenty"
                 android:layout_marginBottom="@dimen/margin_ten"
+                style="@style/medium"
+                android:textColor="@color/colorDarkGray"
                 android:text="@{data.txt_time}"
-                android:textSize="@dimen/textsize_eighteen" />
+                android:textSize="@dimen/textsize_sixteen" />
 
         </androidx.cardview.widget.CardView>
 

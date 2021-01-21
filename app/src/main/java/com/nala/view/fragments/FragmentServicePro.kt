@@ -17,6 +17,7 @@ import com.nala.businesslogic.viewmodel.fragments.ViewModelReview
 import com.nala.businesslogic.viewmodel.fragments.ViewModelTechnique
 import com.nala.databinding.FragmentServiceProBinding
 
+
 class FragmentServicePro : FragmentBase(), OnClickTechnique, OnClickReview {
 
 
@@ -39,6 +40,15 @@ class FragmentServicePro : FragmentBase(), OnClickTechnique, OnClickReview {
         mBinding.onContentClickListener = this
         mBinding.onContentClickListenerReview = this
 
+        mBinding.rvReviews.visibility = View.GONE
+        mBinding.rvTechniques.visibility = View.VISIBLE
+
+
+        mBinding.txtReview.setTextColor(ContextCompat.getColor(requireContext(),R.color.colorSemiLightGray))
+        mBinding.llReviewDiv.setBackgroundColor(ContextCompat.getColor(requireContext(),R.color.colorSemiLightGray))
+
+        mBinding.txtTech.setTextColor(ContextCompat.getColor(requireContext(),R.color.colorPrimary))
+        mBinding.llTechDiv.setBackgroundColor(ContextCompat.getColor(requireContext(),R.color.colorPrimary))
 
 
 

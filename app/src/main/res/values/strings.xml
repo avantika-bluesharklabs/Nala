@@ -82,9 +82,9 @@
     <string name="str_email_hint">Email</string>
     <string name="str_password_hint">Password</string>
     <string name="str_forgot_pass">Forgot Password?</string>
-    <string name="str_tandc"><![CDATA[By continuing you agree to Terms & Conditions and Privacy Policy]]></string>
+    <string name="str_tandc"><![CDATA[By continuing you agree to \n Terms & Conditions and Privacy Policy]]></string>
     <string name="str_forgot_password">Forgot Password</string>
-    <string name="str_forgot_password_desc">Please enter your registerd email address and we\'ll send you password reset instructions</string>
+    <string name="str_forgot_password_desc">Please enter your registerd email \n address and we\'ll send you password \n reset instructions</string>
     <string name="str_submit">Submit</string>
     <string name="str_back_to_sign">Back to sign in</string>
     <string name="str_create_desc">You can registered as a Therapist or User</string>
@@ -105,9 +105,10 @@
     <string name="str_long_text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</string>
     <string name="str_max_char">Max 150 characters</string>
     <string name="str_stu_add">My Studio Address</string>
+    <string name="str_year">5 Year of experience</string>
     <string name="str_address">Address</string>
     <string name="str_apt">APT #</string>
-    <string name="str_add_desc">Your address is never disclosed to anyone except your client who books an In-studio appointment</string>
+    <string name="str_add_desc">Your address is never disclosed to anyone except \n your client who books an In-studio appointment</string>
     <string name="str_phone_vari">Phone Varification</string>
     <string name="str_enter_code">Enter 4 digit code</string>
     <string name="str_code_not_receive">Didn\'t Receive the code</string>
@@ -116,6 +117,7 @@
     <string name="str_success_text_desc">Congratulations! Your account has been successfully created.</string>
     <string name="nav_home">Home</string>
     <string name="str_demo_name">Jessica Marcel</string>
+    <string name="str_review_rating">4.5 Reviews</string>
     <string name="str_demo_exp">5 years of experience</string>
     <string name="str_demo_loca">Service Location:</string>
     <string name="str_demo_loca_value">In-studio</string>
@@ -129,6 +131,7 @@
     <string name="str_near">Who near by you</string>
     <string name="str_map_view">Demo Map VIew</string>
     <string name="str_service_pro">Service Pro</string>
+    <string name="str_service_loc">Service Location:</string>
     <string name="str_demo_intensity">Intensity Range: Medium</string>
     <string name="str_techniques">Techniques:</string>
     <string name="str_techniques_list">Deep Tissue,Swedish,Sports</string>
@@ -140,10 +143,12 @@
     <string name="str_success_desc_2">The therapist will reah out and suggest another time if they cannot at this day and time.</string>
     <string name="str_booking_req">See Booking Request</string>
     <string name="str_my_bookings">My Bookings</string>
+    <string name="str_bookings_info">Bookings Info</string>
+    <string name="str_verification_msg">We have Sent you an verification code \n to 123 123 1234</string>
     <string name="str_booking_id">Booking ID: 1256</string>
     <string name="error_blank_address">Enter Address</string>
     <string name="error_blank_apt">Enter Apt</string>
-    <string name="str_times">10:00 am</string>
+    <string name="str_times">10:00 am - 11:00am</string>
     <string name="review_count">4.5</string>
     <string name="str_bullet">•</string>
     <string name="str_cancel">Cancel</string>
@@ -159,6 +164,7 @@
     <string name="str_apply">Apply</string>
     <string name="str_filter">Filter</string>
     <string name="str_reset">Reset</string>
+    <string name="dummy_date">12 June,2020</string>
     <string name="str_messages">Messages</string>
     <string name="str_notification">Notification</string>
     <string name="str_write_here">Write here…</string>
@@ -170,5 +176,13 @@
     <string name="str_rateandreview"><![CDATA[Give Rate & Review]]></string>
     <string name="str_in_stuidio">In-studio</string>
     <string name="str_city">New York</string>
+    <string name="str_msg_type">Message type</string>
+    <string name="str_deep_tisue">Deep Tissue</string>
+    <string name="price">Price</string>
+    <string name="dummy_min">120 min</string>
+    <string name="dummy_dollar">$75.00</string>
+    <string name="duration">Duration</string>
+    <string name="location">Location</string>
+    <string name="dummy_location">145,NewYork Streets,NewYork</string>
 </resources>
 

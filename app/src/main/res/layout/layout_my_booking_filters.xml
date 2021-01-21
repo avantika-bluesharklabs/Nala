@@ -9,42 +9,30 @@
     android:backgroundTint="@color/colorPrimary">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/cl_toolbar"
+        android:id="@+id/const_toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="?attr/actionBarSize"
+        android:padding="@dimen/margin_ten"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/card_back"
+
+        <androidx.appcompat.widget.AppCompatImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginStart="@dimen/margin_twenty"
-            android:layout_marginTop="@dimen/margin_twenty"
-            android:layout_marginBottom="@dimen/margin_twenty"
-            app:cardBackgroundColor="@color/colorWhite"
-            app:cardElevation="@dimen/margin_seven"
+            android:padding="@dimen/margin_five"
+            android:src="@drawable/ic_back"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_backs" />
-
-        </androidx.cardview.widget.CardView>
+            app:layout_constraintTop_toTopOf="parent" />
 
 
         <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_twenty"
-            android:layout_marginBottom="@dimen/margin_twenty"
             android:text="@string/str_filter"
-            android:textColor="@color/colorBlack"
+            android:textColor="@color/colorWhite"
             android:textSize="@dimen/textsize_twenty"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -55,19 +43,20 @@
         <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_twenty"
-            android:layout_marginEnd="@dimen/margin_twenty"
-            android:layout_marginBottom="@dimen/margin_twenty"
             android:text="@string/str_reset"
-            android:textColor="@color/colorBlack"
+            android:padding="@dimen/margin_five"
+            android:textColor="@color/colorWhite"
             android:textSize="@dimen/textsize_eighteen"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <ScrollView
+
+
+    <androidx.core.widget.NestedScrollView
         android:id="@+id/scrollView2"
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -76,23 +65,21 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/cl_toolbar">
+        app:layout_constraintTop_toBottomOf="@id/const_toolbar">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/cl_details"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/colorWhite"
-            android:paddingStart="@dimen/margin_twenty"
-            android:paddingTop="@dimen/margin_twenty_five"
-            android:paddingEnd="@dimen/margin_twenty"
-            android:paddingBottom="@dimen/margin_thirty">
+            android:padding="@dimen/margin_ten">
 
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/cl_by_date"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:padding="@dimen/margin_ten"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
@@ -105,6 +92,7 @@
                     android:text="@string/str_by_d_date"
                     android:textColor="@color/colorBlueForButtons"
                     android:textSize="@dimen/textsize_eighteen"
+                    style="@style/medium"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -160,6 +148,7 @@
                     android:text="@string/str_by_type"
                     android:textColor="@color/colorBlueForButtons"
                     android:textSize="@dimen/textsize_eighteen"
+                    style="@style/medium"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -200,6 +189,7 @@
                     android:text="@string/str_by_status"
                     android:textColor="@color/colorBlueForButtons"
                     android:textSize="@dimen/textsize_eighteen"
+                    style="@style/medium"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -221,7 +211,7 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent">
 
-                        <Button
+                        <androidx.appcompat.widget.AppCompatButton
                             android:id="@+id/btn_pending"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
@@ -235,7 +225,7 @@
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
-                        <Button
+                        <androidx.appcompat.widget.AppCompatButton
                             android:id="@+id/btn_accepted"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
@@ -263,7 +253,7 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/cl_top_btn">
 
-                        <Button
+                        <androidx.appcompat.widget.AppCompatButton
                             android:id="@+id/btn_cancelled"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
@@ -280,7 +270,7 @@
                             app:layout_constraintTop_toTopOf="parent" />
 
 
-                        <Button
+                        <androidx.appcompat.widget.AppCompatButton
                             android:id="@+id/btn_completed"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
@@ -307,10 +297,10 @@
 
             <Button
                 android:id="@+id/btn_apply"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_twenty"
-                android:background="@drawable/btn_submit"
+                android:background="@drawable/btn_detail_booknow"
                 android:paddingStart="@dimen/margin_twenty_five"
                 android:paddingEnd="@dimen/margin_twenty_five"
                 android:text="@string/str_apply"
@@ -325,7 +315,7 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-    </ScrollView>
+    </androidx.core.widget.NestedScrollView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

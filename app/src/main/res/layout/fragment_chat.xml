@@ -17,6 +17,61 @@
     android:layout_height="match_parent">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/const_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:padding="@dimen/margin_ten"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/margin_five"
+            android:src="@drawable/ic_back"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img_pro_pic"
+                android:layout_width="@dimen/margin_thirty"
+                android:layout_height="@dimen/margin_thirty"
+                android:src="@drawable/img_forgot_password"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_ten"
+                android:text="@string/str_demo_name"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/textsize_twenty"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/img_pro_pic"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+   <!-- <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/cl_toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -76,10 +131,10 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>-->
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -90,7 +145,7 @@
         android:paddingTop="@dimen/margin_fifteen"
         app:layout_constraintBottom_toTopOf="@id/ll_div"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/cl_toolbar">
+        app:layout_constraintTop_toBottomOf="@id/const_toolbar">
 
         <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"

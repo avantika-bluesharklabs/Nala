@@ -23,7 +23,11 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
         <activity android:name=".view.activities.ActivityMain"/>
-        <activity android:name=".view.activities.ActivityPhoneVerification" />
+        <activity android:name=".view.activities.ActivityPhoneVerification" >
+
+
+
+        </activity>
         <activity android:name=".view.activities.ActivityAddUserDetails"/>
         <activity android:name=".view.activities.ActivitySignUp" />
         <activity android:name=".view.activities.ActivityForgotPassword" />

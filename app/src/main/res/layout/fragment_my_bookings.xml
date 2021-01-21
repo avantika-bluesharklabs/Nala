@@ -27,7 +27,7 @@
             android:id="@+id/ll_toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="@dimen/margin_fifteen"
+            android:padding="@dimen/margin_ten"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -46,14 +46,25 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
 
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/img_filter"
-                android:layout_width="wrap_content"
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_filter"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:src="@drawable/filter_round"
+                app:cardCornerRadius="@dimen/margin_ten"
+                app:cardElevation="@dimen/margin_five"
+                android:layout_margin="@dimen/margin_five"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/img_filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_home_filter" />
+
+
+            </androidx.cardview.widget.CardView>
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

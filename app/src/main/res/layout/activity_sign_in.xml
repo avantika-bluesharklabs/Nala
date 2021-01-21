@@ -19,8 +19,8 @@
         android:background="@color/colorWhite">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/cl_toolbar"
-            android:layout_width="0dp"
+            android:id="@+id/const_toolbar"
+            android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:padding="@dimen/margin_ten"
             app:layout_constraintEnd_toEndOf="parent"
@@ -28,41 +28,17 @@
             app:layout_constraintTop_toTopOf="parent">
 
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/card_back"
+            <androidx.appcompat.widget.AppCompatImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:onClick="@{()->vmSignIn.clickBackPress()}"
-                app:cardBackgroundColor="@color/colorWhite"
-                app:cardElevation="@dimen/margin_seven"
+                android:padding="@dimen/margin_five"
+                android:src="@drawable/ic_back"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_backs" />
-
-
-            </androidx.cardview.widget.CardView>
-
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/txt_toolbar_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/str_schedule"
-                android:textColor="@color/colorBlack"
-                android:textSize="@dimen/textsize_eighteen"
-                android:textStyle="bold"
-                android:visibility="gone"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
+
+
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -72,7 +48,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintTop_toBottomOf="@id/cl_toolbar" />
+            app:layout_constraintTop_toBottomOf="@id/const_toolbar" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline_bottom"
@@ -103,16 +79,18 @@
             android:layout_height="0dp"
             android:background="@drawable/top_curve_view"
             android:backgroundTint="@color/colorPrimary"
+            app:layout_constraintVertical_weight="3"
             app:layout_constraintBottom_toTopOf="@+id/const_white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cl_toolbar" />
+            app:layout_constraintTop_toBottomOf="@+id/const_toolbar" />
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/const_white"
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            app:layout_constraintVertical_weight="7"
             android:background="@color/colorWhite"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -128,7 +106,7 @@
             app:layout_constraintBottom_toTopOf="@id/txt_tandc"
             app:layout_constraintEnd_toStartOf="@id/guideline_right"
             app:layout_constraintStart_toEndOf="@id/guideline_left"
-            app:layout_constraintTop_toBottomOf="@id/cl_toolbar">
+            app:layout_constraintTop_toBottomOf="@id/const_toolbar">
 
 
             <androidx.constraintlayout.widget.Guideline
@@ -187,6 +165,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:hint="@string/str_email_hint"
+                    android:textColorHint="@color/colorGray"
                     android:inputType="textEmailAddress"
                     android:text="@={vmSignIn.observerEmail}"
                     android:textColor="@color/colorBlack" />
@@ -217,6 +196,7 @@
                     android:imeOptions="actionDone"
                     android:inputType="textPassword"
                     android:singleLine="true"
+                    android:textColorHint="@color/colorGray"
                     android:text="@={vmSignIn.observerPassword}"
                     android:textColor="@color/colorBlack" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -242,7 +222,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/margin_fifty_five"
                 android:background="@drawable/bottom_curve_view"
-                android:backgroundTint="@color/colorBlueLight"
+                android:backgroundTint="@color/colorBlueForButtons"
+                android:layout_marginTop="@dimen/margin_ten"
                 android:onClick="@{()->vmSignIn.clickForgotPass()}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -256,7 +237,7 @@
                     android:text="@string/str_forgot_pass"
                     android:textColor="@color/colorWhite"
                     android:textSize="@dimen/textsize_sixteen"
-                    style="@style/medium"
+                    style="@style/bold"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -271,11 +252,11 @@
             android:id="@+id/txt_tandc"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_twelve"
             android:text="@string/str_tandc"
-            android:textAlignment="center"
+            android:gravity="center"
             style="@style/regular"
-            android:textSize="@dimen/textsize_eighteen"
+            android:textSize="@dimen/textsize_sixteen"
+            android:textColor="@color/colorLightBlue"
             app:layout_constraintBottom_toTopOf="@+id/guideline_bottom"
             app:layout_constraintLeft_toRightOf="@id/guideline_left"
             app:layout_constraintRight_toLeftOf="@id/guideline_right"

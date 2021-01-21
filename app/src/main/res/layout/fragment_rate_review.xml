@@ -26,26 +26,17 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/card_back"
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img_back"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_marginStart="@dimen/margin_twenty"
-                android:layout_marginTop="@dimen/margin_twenty"
-                android:layout_marginBottom="@dimen/margin_twenty"
-                app:cardBackgroundColor="@color/colorWhite"
-                app:cardElevation="@dimen/margin_seven"
+                android:elevation="@dimen/margin_one"
+                android:padding="@dimen/margin_five"
+                android:src="@drawable/ic_back"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_backs" />
-
-            </androidx.cardview.widget.CardView>
+                app:layout_constraintTop_toTopOf="parent" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -129,9 +120,9 @@
 
                     <androidx.appcompat.widget.AppCompatTextView
                         android:id="@+id/txt_name"
+                        style="@style/regular"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        style="@style/regular"
                         android:layout_marginStart="@dimen/margin_twenty"
                         android:layout_marginTop="@dimen/margin_eighty"
                         android:layout_marginEnd="@dimen/margin_twenty"
@@ -144,10 +135,12 @@
 
                     <androidx.appcompat.widget.AppCompatTextView
                         android:id="@+id/txt_rating_text"
+                        style="@style/regular"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/margin_twenty"
                         android:text="@string/str_rating"
+                        android:textColor="@color/colorDarkGray"
                         android:textSize="@dimen/textsize_eighteen"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -195,12 +188,12 @@
 
                     <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/btn_submit"
+                        style="@style/bold"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="@dimen/margin_twenty"
-                        android:background="@drawable/btn_submit"
+                        android:background="@drawable/btn_signup"
                         android:text="@string/str_submit"
-                        style="@style/bold"
                         android:textColor="@color/colorWhite"
                         android:textSize="@dimen/textsize_eighteen"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -209,11 +202,12 @@
 
                     <androidx.appcompat.widget.AppCompatTextView
                         android:id="@+id/txt_no_tx"
+                        style="@style/regular"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/margin_twenty"
                         android:text="@string/str_no_tx"
-                        style="@style/regular"
+                        android:textColor="@color/colorDarkGray"
                         android:textSize="@dimen/textsize_eighteen"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"

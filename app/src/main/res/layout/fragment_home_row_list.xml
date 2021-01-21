@@ -33,296 +33,290 @@
 
     </data>
 
-<androidx.constraintlayout.widget.ConstraintLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:clickable="true"
-    android:focusable="true"
-    android:padding="@dimen/margin_ten"
-    android:onClick="@{(v)->onContentClickListener.onClickHomeItem(v,layoutPosition,data)}">
-
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/cl_top"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:elevation="2dp"
-        android:paddingStart="@dimen/margin_ten"
-        android:paddingTop="@dimen/margin_five"
-        android:paddingEnd="@dimen/margin_ten"
-        android:paddingBottom="@dimen/margin_ten"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
+        android:clickable="true"
+        android:focusable="true"
+        android:onClick="@{(v)->onContentClickListener.onClickHomeItem(v,layoutPosition,data)}"
+        android:padding="@dimen/margin_five">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/con_image"
-            android:layout_width="wrap_content"
+            android:id="@+id/cl_top"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/curve_view_border_therapist_img"
-            android:elevation="@dimen/margin_two"
+            android:elevation="2dp"
+            android:padding="@dimen/margin_ten"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
+
+
+            <!-- <androidx.constraintlayout.widget.ConstraintLayout
+                 android:id="@+id/con_image"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:background="@drawable/curve_view_border_therapist_img"
+
+                 app:layout_constraintStart_toStartOf="parent"
+                 app:layout_constraintTop_toTopOf="parent">-->
 
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/img_user"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginEnd="5dp"
-                android:layout_marginBottom="5dp"
+                android:elevation="@dimen/margin_two"
                 android:src="@drawable/img_home_dummy"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+            <!--  </androidx.constraintlayout.widget.ConstraintLayout>-->
 
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginStart="@dimen/margin_ten"
-            android:layout_marginTop="@dimen/margin_twenty"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/con_image"
-            app:layout_constraintTop_toTopOf="parent">
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/txt_name"
+                style="@style/bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_fifteen"
+                android:layout_marginTop="40dp"
                 android:text="@{data.txt_name}"
-                android:textSize="@dimen/textsize_twenty"
-                app:layout_constraintBottom_toTopOf="@+id/txt_status"
-                app:layout_constraintStart_toStartOf="parent" />
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/textsize_eighteen"
+                app:layout_constraintStart_toEndOf="@+id/img_user"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/txt_status"
+                style="@style/medium"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/margin_twenty_five"
-                android:text="@string/str_stu_add"
+                android:layout_marginStart="@dimen/margin_fifteen"
+                android:text="@string/str_year"
                 android:textColor="@color/colorOrange"
-                android:textSize="@dimen/textsize_sixteen"
-                app:layout_constraintBottom_toTopOf="@+id/ll_div"
-                app:layout_constraintStart_toStartOf="parent" />
+                android:textSize="@dimen/textsize_forteen"
+                app:layout_constraintStart_toEndOf="@+id/img_user"
+                app:layout_constraintTop_toBottomOf="@+id/txt_name" />
 
 
             <View
                 android:id="@+id/ll_div"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="@dimen/margin_one"
                 android:background="@color/colorGray"
-                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent" />
+                app:layout_constraintStart_toEndOf="@+id/img_user"
+                app:layout_constraintTop_toBottomOf="@+id/img_user" />
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/cl_middle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:elevation="2dp"
-        android:paddingStart="@dimen/margin_fifteen"
-        android:paddingTop="@dimen/margin_five"
-        android:paddingEnd="@dimen/margin_fifteen"
-        android:paddingBottom="@dimen/margin_fifteen"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/cl_top">
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/txt_massage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/str_service_pro"
-            android:textSize="@dimen/textsize_sixteen"
-            android:textColor="@color/colorBlack"
-            android:textStyle="normal"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/txt_massage_value"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/colorPrimary"
-            android:textStyle="normal"
-            android:layout_marginLeft="10dp"
-            android:text="@string/str_demo_loca_value"
-            android:textSize="@dimen/textsize_sixteen"
-            app:layout_constraintStart_toEndOf="@+id/txt_massage"
-            app:layout_constraintTop_toTopOf="parent" />
-
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/txt_tecniques"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_five"
-            android:layout_marginBottom="@dimen/margin_five"
-            android:text="@string/str_techniques"
-            android:textColor="@color/colorBlack"
-            android:textSize="@dimen/textsize_sixteen"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/txt_massage"/>
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/txt_tecniques_value"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_five"
-            android:layout_marginBottom="@dimen/margin_five"
-            android:text="@string/str_techniques_list"
-            android:textColor="@color/colorBlack"
-            android:layout_marginLeft="10dp"
-            android:textSize="@dimen/textsize_sixteen"
-            android:textStyle="normal"
-            app:layout_constraintStart_toEndOf="@+id/txt_tecniques"
-            app:layout_constraintTop_toBottomOf="@id/txt_massage">
-
-
-        </androidx.appcompat.widget.AppCompatTextView>
-
-
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_middle"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/margin_one"
-            android:layout_marginTop="@dimen/margin_fifteen"
-            android:background="@color/colorGray"
-            android:orientation="vertical"
+            android:layout_height="wrap_content"
+            android:elevation="2dp"
+            android:padding="@dimen/margin_five"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/txt_tecniques" />
+            app:layout_constraintTop_toBottomOf="@id/cl_top">
 
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/cl_bottom"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:elevation="2dp"
-        android:paddingStart="@dimen/margin_fifteen"
-        android:paddingTop="@dimen/margin_five"
-        android:paddingEnd="@dimen/margin_fifteen"
-        android:paddingBottom="@dimen/margin_fifteen"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/cl_middle">
-
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/cl_time"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/img_clock"
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txt_massage"
+                style="@style/regular"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_home_star"
-                app:cardCornerRadius="@dimen/margin_sixtysix"
-                app:cardElevation="@dimen/margin_five"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:text="@string/str_service_loc"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/textsize_forteen"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/txt_time"
+                android:id="@+id/txt_massage_value"
+                style="@style/medium"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/margin_ten"
+                android:layout_marginLeft="10dp"
+                android:text="@string/str_demo_loca_value"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/textsize_forteen"
+                app:layout_constraintStart_toEndOf="@+id/txt_massage"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txt_tecniques"
+                style="@style/bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_five"
                 android:layout_marginBottom="@dimen/margin_five"
-                android:text="@string/review_count"
-                android:textColor="@color/colorDarkBlue"
-                android:textSize="@dimen/textsize_sixteen"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@id/img_clock"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:text="@string/str_techniques"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/textsize_forteen"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txt_massage" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txt_tecniques_value"
+                style="@style/regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="@dimen/margin_five"
+                android:layout_marginBottom="@dimen/margin_five"
+                android:text="@string/str_techniques_list"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/textsize_forteen"
+                app:layout_constraintStart_toEndOf="@+id/txt_tecniques"
+                app:layout_constraintTop_toBottomOf="@id/txt_massage">
+
+
+            </androidx.appcompat.widget.AppCompatTextView>
+
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/margin_one"
+                android:layout_marginTop="@dimen/margin_fifteen"
+                android:background="@color/colorGray"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txt_tecniques" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/cl_btns"
-            android:layout_width="wrap_content"
+            android:id="@+id/cl_bottom"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:elevation="2dp"
+            android:padding="@dimen/margin_ten"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cl_middle">
 
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/img_fav"
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/btn_list_comment"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/img_clock"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_home_star"
+                    app:cardCornerRadius="@dimen/margin_sixtysix"
+                    app:cardElevation="@dimen/margin_five"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt_time"
+                    style="@style/bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_ten"
+                    android:layout_marginTop="@dimen/margin_five"
+                    android:layout_marginBottom="@dimen/margin_five"
+                    android:text="@string/review_count"
+                    android:textColor="@color/colorDarkYellow"
+                    android:textSize="@dimen/textsize_sixteen"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/img_clock"
+                    app:layout_constraintTop_toTopOf="parent" />
 
 
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/img_msg"
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_btns"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/margin_ten"
-                android:src="@drawable/btn_list_comment"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/img_fav"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/img_fav"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_detail_unfav"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btn_book_now_f"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="15dp"
-                style="@style/bold"
-                android:layout_marginStart="@dimen/margin_ten"
-                android:src="@drawable/btn_list_cancel"
-                android:text="@string/str_book_now"
-                android:textAllCaps="false"
-                android:textSize="@dimen/textsize_forteen"
-                android:onClick="@{(v)->onContentClickListener.onClickHomeBookNow(v,layoutPosition,data)}"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@id/img_msg"
-                app:layout_constraintTop_toTopOf="parent" />
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/img_msg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/margin_five"
+                    android:src="@drawable/btn_list_comment"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/img_fav"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_book_now_f"
+                    style="@style/bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/btn_detail_booknow"
+                    android:onClick="@{(v)->onContentClickListener.onClickHomeBookNow(v,layoutPosition,data)}"
+                    android:text="@string/str_book_now"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/textsize_forteen"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/img_msg"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/margin_thirty_five"
+            android:background="@drawable/curve_view"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+      <!--  <androidx.cardview.widget.CardView
+            android:id="@+id/card_bg"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginLeft="@dimen/margin_ten"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="@dimen/margin_ten"
+            android:layout_marginRight="@dimen/margin_ten"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="@dimen/margin_five"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />-->
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginTop="@dimen/margin_thirty_five"
-        android:background="@drawable/curve_view"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

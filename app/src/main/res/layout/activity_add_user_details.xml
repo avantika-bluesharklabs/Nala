@@ -20,35 +20,26 @@
         android:background="@color/colorWhite">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/cl_toolbar"
+            android:id="@+id/const_toolbar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="10dp"
+            android:layout_height="?attr/actionBarSize"
+            android:padding="@dimen/margin_ten"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/card_back"
+            <androidx.appcompat.widget.AppCompatImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:onClick="@{()->vmAddDetails.clickBackPress()}"
-                app:cardBackgroundColor="@color/colorWhite"
-                app:cardElevation="@dimen/margin_seven"
+                android:padding="@dimen/margin_five"
+                android:src="@drawable/ic_back"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+                app:layout_constraintTop_toTopOf="parent" />
 
 
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_backs" />
 
-
-            </androidx.cardview.widget.CardView>
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -58,10 +49,10 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:background="@drawable/top_curve_view"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/cl_toolbar"
-            app:layout_constraintBottom_toBottomOf="parent">
+            app:layout_constraintTop_toBottomOf="@id/const_toolbar">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -73,7 +64,6 @@
                     android:id="@+id/cl_image"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin_twenty"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
@@ -92,12 +82,13 @@
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/txt_iam"
+                    style="@style/semibold"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/margin_ten"
                     android:text="@string/str_iam"
-                    android:textSize="@dimen/textsize_eighteen"
                     android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/textsize_eighteen"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/cl_image" />
@@ -113,6 +104,7 @@
 
                     <androidx.appcompat.widget.AppCompatTextView
                         android:id="@+id/txt_male"
+                        style="@style/regular"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:background="@drawable/curve_view_360_left_half_with_border"
@@ -130,6 +122,7 @@
 
                     <androidx.appcompat.widget.AppCompatTextView
                         android:id="@+id/txt_female"
+                        style="@style/regular"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:background="@drawable/curve_view_360_right_half_with_border"
@@ -150,10 +143,12 @@
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/txt_about"
+                    style="@style/bold"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/margin_thirty_five"
                     android:text="@string/str_aboutme"
+                    android:textColor="@color/colorBlack"
                     android:textSize="@dimen/textsize_eighteen"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/cl_gender" />
@@ -190,10 +185,12 @@
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/txt_stu_add"
+                    style="@style/bold"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/margin_ten"
                     android:text="@string/str_stu_add"
+                    android:textColor="@color/colorBlack"
                     android:textSize="@dimen/textsize_eighteen"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textinputlayout_about" />
@@ -247,6 +244,7 @@
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/txt_add_desc"
+                    style="@style/regular"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/margin_ten"
@@ -254,13 +252,15 @@
                     android:layout_marginEnd="@dimen/margin_ten"
                     android:text="@string/str_add_desc"
                     android:textAlignment="center"
+                    android:textColor="@color/colorDarkGray"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textinputlayout_apt" />
 
 
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btn_submit"
+                    style="@style/bold"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/margin_twenty"
@@ -268,12 +268,13 @@
                     android:background="@drawable/btn_signup"
                     android:onClick="@{()->vmAddDetails.clickSubmit()}"
                     android:text="@string/str_submit"
+                    android:textAllCaps="false"
                     android:textColor="@color/colorWhite"
                     android:textSize="@dimen/textsize_eighteen"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/txt_add_desc"
-                    app:layout_constraintBottom_toBottomOf="parent"/>
+                    app:layout_constraintTop_toBottomOf="@+id/txt_add_desc" />
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>

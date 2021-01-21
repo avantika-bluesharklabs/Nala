@@ -21,6 +21,32 @@
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/const_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:padding="@dimen/margin_ten"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/margin_five"
+                android:src="@drawable/ic_back"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <!--<androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/cl_toolbar"
             android:layout_width="0dp"
             android:layout_height="?attr/actionBarSize"
@@ -67,7 +93,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>-->
 
 
         <androidx.core.widget.NestedScrollView
@@ -78,7 +104,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cl_toolbar">
+            app:layout_constraintTop_toBottomOf="@+id/const_toolbar">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -106,7 +132,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/margin_twenty"
                     android:text="@string/str_phone_vari"
-                    android:textSize="@dimen/textsize_twenty_four"
+                    android:textSize="@dimen/textsize_thirty"
+                    android:textColor="@color/colorBlack"
+                    style="@style/bold"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/img_vari_image" />
@@ -117,7 +145,10 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/margin_twelve"
                     android:textAlignment="center"
-                    android:textSize="@dimen/textsize_eighteen"
+                    android:textSize="@dimen/textsize_sixteen"
+                    android:text="@string/str_verification_msg"
+                    style="@style/medium"
+                    android:textColor="@color/colorDarkGray"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/txt_pv" />
@@ -132,7 +163,9 @@
                     android:layout_marginEnd="@dimen/margin_twenty_five"
                     android:text="@string/str_enter_code"
                     android:textAlignment="center"
-                    android:textSize="@dimen/textsize_eighteen"
+                    style="@style/regular"
+                    android:textColor="@color/colorDarkGray"
+                    android:textSize="@dimen/textsize_sixteen"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/txt_pv_desc" />
@@ -156,6 +189,7 @@
                         android:gravity="center_horizontal"
                         android:inputType="numberPassword"
                         android:maxLength="1"
+                        style="@style/bold"
                         android:textColor="@color/colorBlack"
                         app:layout_constraintEnd_toStartOf="@+id/edt_otp_two"
                         app:layout_constraintStart_toStartOf="parent"
@@ -170,6 +204,7 @@
                         android:gravity="center_horizontal"
                         android:inputType="numberPassword"
                         android:maxLength="1"
+                        style="@style/bold"
                         android:textColor="@color/colorBlack"
                         app:layout_constraintEnd_toStartOf="@+id/edt_otp_three"
                         app:layout_constraintStart_toEndOf="@+id/edt_otp_one"
@@ -184,6 +219,7 @@
                         android:gravity="center_horizontal"
                         android:inputType="numberPassword"
                         android:maxLength="1"
+                        style="@style/bold"
                         android:textColor="@color/colorBlack"
                         app:layout_constraintEnd_toStartOf="@+id/edt_otp_four"
                         app:layout_constraintStart_toEndOf="@+id/edt_otp_two"
@@ -198,6 +234,7 @@
                         android:gravity="center_horizontal"
                         android:inputType="numberPassword"
                         android:maxLength="1"
+                        style="@style/bold"
                         android:textColor="@color/colorBlack"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/edt_otp_three"
@@ -207,7 +244,7 @@
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btn_submit"
                     android:layout_width="0dp"
                     android:layout_height="@dimen/margin_fifty_five"
@@ -249,11 +286,8 @@
                         android:id="@+id/img_user_image"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/margin_ten"
-                        android:layout_marginTop="@dimen/margin_ten"
-                        android:layout_marginEnd="@dimen/margin_five"
-                        android:layout_marginBottom="@dimen/margin_ten"
-                        android:src="@drawable/ic_resend_code"
+                       android:layout_margin="@dimen/margin_ten"
+                        android:src="@drawable/ic_resend"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -263,9 +297,9 @@
                         android:id="@+id/txt_resend"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/margin_ten"
-                        android:layout_marginEnd="@dimen/margin_ten"
-                        android:layout_marginBottom="@dimen/margin_ten"
+                       android:layout_margin="@dimen/margin_ten"
+                        style="@style/regular"
+                        android:textColor="@color/colorBlueForButtons"
                         android:text="@string/str_code_not_receive"
                         android:textSize="@dimen/textsize_eighteen"
                         app:layout_constraintBottom_toBottomOf="parent"

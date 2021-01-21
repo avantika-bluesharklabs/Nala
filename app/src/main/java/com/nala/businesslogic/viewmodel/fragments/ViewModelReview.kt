@@ -22,25 +22,25 @@ class ViewModelReview(myApplication: MyApplication, isToShowErrors: Boolean) :
         var pojoreview =PojoReview()
         pojoreview.txt_name = "Jason M"
         pojoreview.txt_msg = "Lorem ipsum dolor sit amet"
-        pojoreview.txt_post_time = "2d Ago"
+      //  pojoreview.txt_post_time = "2d Ago"
         observerContent.add(pojoreview)
 
         pojoreview =PojoReview()
         pojoreview.txt_name = "Micheal Jacson"
         pojoreview.txt_msg = "Lorem ipsum dolor sit amet"
-        pojoreview.txt_post_time = "2d Ago"
+      //  pojoreview.txt_post_time = "2d Ago"
         observerContent.add(pojoreview)
 
         pojoreview =PojoReview()
         pojoreview.txt_name = "Kevin Lord"
         pojoreview.txt_msg = "Lorem ipsum dolor sit amet"
-        pojoreview.txt_post_time = "2d Ago"
+      //  pojoreview.txt_post_time = "2d Ago"
         observerContent.add(pojoreview)
 
         pojoreview =PojoReview()
         pojoreview.txt_name = "Billl Clinton"
         pojoreview.txt_msg = "Lorem ipsum dolor sit amet"
-        pojoreview.txt_post_time = "2d Ago"
+      //  pojoreview.txt_post_time = "2d Ago"
         observerContent.add(pojoreview)
 
 

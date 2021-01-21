@@ -20,8 +20,8 @@
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/cl_toolbar"
-            android:layout_width="0dp"
+            android:id="@+id/const_toolbar"
+            android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:padding="@dimen/margin_ten"
             app:layout_constraintEnd_toEndOf="parent"
@@ -29,41 +29,17 @@
             app:layout_constraintTop_toTopOf="parent">
 
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/card_back"
+            <androidx.appcompat.widget.AppCompatImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:onClick="@{()->vmSignUp.clickBackPress()}"
-                app:cardBackgroundColor="@color/colorWhite"
-                app:cardElevation="@dimen/margin_seven"
+                android:padding="@dimen/margin_five"
+                android:src="@drawable/ic_back"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/ic_backs" />
-
-
-            </androidx.cardview.widget.CardView>
-
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/txt_toolbar_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/str_schedule"
-                android:textColor="@color/colorBlack"
-                android:textSize="@dimen/textsize_eighteen"
-                android:textStyle="bold"
-                android:visibility="gone"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
+
+
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -73,7 +49,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintTop_toBottomOf="@id/cl_toolbar" />
+            app:layout_constraintTop_toBottomOf="@id/const_toolbar" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline_bottom"
@@ -102,12 +78,10 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:background="@drawable/top_curve_view"
-            android:fillViewport="true"
-            android:scrollbars="none"
             app:layout_constraintBottom_toTopOf="@id/guideline_bottom"
             app:layout_constraintLeft_toRightOf="@id/guideline_left"
             app:layout_constraintRight_toLeftOf="@id/guideline_right"
-            app:layout_constraintTop_toBottomOf="@id/cl_toolbar">
+            app:layout_constraintTop_toBottomOf="@id/const_toolbar">
 
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -122,7 +96,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/str_create_acc"
                     android:textColor="@color/colorBlack"
-                    android:textSize="@dimen/textsize_thirty_six"
+                    android:textSize="@dimen/textsize_thirty"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -133,20 +107,56 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/margin_eight"
                     android:text="@string/str_create_desc"
-                    android:textColor="@color/colorBlack"
+                    android:textColor="@color/colorLightBlue"
                     android:textSize="@dimen/textsize_sixteen"
+                    style="@style/regular"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/txt_fp" />
 
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/cl_select_user"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin_twenty"
+                    android:layout_marginTop="@dimen/margin_fifteen"
+                    app:layout_constraintHorizontal_chainStyle="packed"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/txt_fp_desc">
+
+
+                  <!--  <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_client"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/margin_ten"
+                        android:onClick="@{()->vmSignUp.clickUser()}"
+                        android:drawableStart="@drawable/ic_client"
+                        android:text="@string/str_client"
+                        android:gravity="center"
+                        style="@style/semibold"
+                        android:textSize="@dimen/textsize_eighteen"
+                        android:layout_marginRight="@dimen/margin_ten"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/btn_therapist"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"/>
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_therapist"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/margin_ten"
+                        style="@style/semibold"
+                        android:onClick="@{()->vmSignUp.clickUser()}"
+                        android:drawableStart="@drawable/ic_therapist"
+                        android:text="@string/str_therapist"
+                        android:layout_marginRight="@dimen/margin_ten"
+                        android:textSize="@dimen/textsize_eighteen"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/btn_client"
+                        app:layout_constraintTop_toTopOf="parent"/>-->
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/cl_user"
@@ -187,6 +197,7 @@
                             android:layout_marginEnd="@dimen/margin_ten"
                             android:layout_marginBottom="@dimen/margin_ten"
                             android:text="@string/str_client"
+                            style="@style/semibold"
                             android:textSize="@dimen/textsize_eighteen"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
@@ -235,6 +246,7 @@
                             android:layout_marginEnd="@dimen/margin_ten"
                             android:layout_marginBottom="@dimen/margin_ten"
                             android:text="@string/str_therapist"
+                            style="@style/semibold"
                             android:textSize="@dimen/textsize_eighteen"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
@@ -243,6 +255,7 @@
 
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
+
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -389,7 +402,9 @@
                             android:gravity="start"
                             android:onClick="@{()->vmSignUp.clickCheckbox()}"
                             android:text="@string/str_tb_desc"
-                            android:textSize="@dimen/textsize_eighteen"
+                            android:textSize="@dimen/textsize_sixteen"
+                            style="@style/regular"
+                            android:textColor="@color/colorLightBlue"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
@@ -399,7 +414,7 @@
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/btn_signUp"
                         style="@style/bold"
                         android:layout_width="match_parent"

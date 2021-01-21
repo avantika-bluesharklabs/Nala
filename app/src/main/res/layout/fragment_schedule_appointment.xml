@@ -35,8 +35,8 @@
         android:background="@color/colorgray_9">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/cl_toolbar"
-            android:layout_width="0dp"
+            android:id="@+id/const_toolbar"
+            android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:padding="@dimen/margin_ten"
             app:layout_constraintEnd_toEndOf="parent"
@@ -44,37 +44,24 @@
             app:layout_constraintTop_toTopOf="parent">
 
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/card_back"
+            <androidx.appcompat.widget.AppCompatImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                app:cardBackgroundColor="@color/colorWhite"
-                app:cardElevation="@dimen/margin_seven"
+                android:padding="@dimen/margin_five"
+                android:src="@drawable/ic_back"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_backs" />
-
-
-            </androidx.cardview.widget.CardView>
+                app:layout_constraintTop_toTopOf="parent" />
 
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/txt_toolbar_title"
+                android:id="@+id/txt_title"
+                style="@style/bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/str_schedule"
                 android:textColor="@color/colorBlack"
-                style="@style/bold"
                 android:textSize="@dimen/textsize_eighteen"
-                android:textStyle="bold"
-                android:visibility="visible"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -83,12 +70,7 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline_top"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintTop_toBottomOf="@id/cl_toolbar" />
+
 
 
         <androidx.core.widget.NestedScrollView
@@ -100,7 +82,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/cl_toolbar">
+            app:layout_constraintTop_toBottomOf="@id/const_toolbar">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/cl_calender"
@@ -134,11 +116,10 @@
 
                     <androidx.appcompat.widget.AppCompatTextView
                         android:id="@+id/txt_available_slot"
+                        style="@style/medium"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/margin_twenty_five"
-                        android:layout_marginTop="@dimen/margin_ten"
-                        style="@style/medium"
                         android:text="@string/str_choose_time"
                         android:textColor="@color/colorBlack"
                         android:textSize="@dimen/textsize_eighteen"
@@ -285,7 +266,7 @@
                         android:layout_marginTop="@dimen/margin_thirty_five"
                         android:layout_marginEnd="@dimen/margin_twenty_five"
                         android:layout_marginBottom="@dimen/margin_twenty_five"
-                        android:background="@drawable/btn_submit"
+                        android:background="@drawable/btn_signup"
                         android:text="@string/str_submit"
                         style="@style/bold"
                         android:textColor="@color/colorWhite"

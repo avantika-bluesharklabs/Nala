@@ -18,8 +18,7 @@ import com.nala.databinding.ActivitySignUpBinding
 import com.nala.utils.Utils
 import kotlinx.android.synthetic.main.activity_add_user_details.*
 import kotlinx.android.synthetic.main.activity_sign_up.*
-import kotlinx.android.synthetic.main.activity_sign_up.img_user_image
-import kotlinx.android.synthetic.main.activity_sign_up.txt_user_text
+
 
 class ActivityAddUserDetails : ActivityBase() {
 

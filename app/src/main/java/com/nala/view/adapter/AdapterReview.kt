@@ -11,6 +11,7 @@ import com.nala.businesslogic.interfaces.OnClickReview
 import com.nala.businesslogic.pojo.PojoReview
 import com.nala.databinding.FragmentServiceProRowReviewBinding
 
+
 class AdapterReview(
     var mContext: Context, var mArrayContent: List<PojoReview>,
     var mOnClickReviewListener: OnClickReview

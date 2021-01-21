@@ -20,8 +20,8 @@
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/cl_toolbar"
-            android:layout_width="0dp"
+            android:id="@+id/const_toolbar"
+            android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:padding="@dimen/margin_ten"
             app:layout_constraintEnd_toEndOf="parent"
@@ -29,181 +29,184 @@
             app:layout_constraintTop_toTopOf="parent">
 
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/card_back"
+            <androidx.appcompat.widget.AppCompatImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                app:cardBackgroundColor="@color/colorWhite"
-                app:cardElevation="@dimen/margin_seven"
+                android:padding="@dimen/margin_five"
+                android:src="@drawable/ic_back"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+                app:layout_constraintTop_toTopOf="parent" />
 
 
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_backs" />
-
-
-            </androidx.cardview.widget.CardView>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txt_title"
+                style="@style/bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/str_bookings_info"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/textsize_eighteen"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
+
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:fillViewport="true"
-            android:scrollbars="none"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/cl_toolbar">
+            app:layout_constraintTop_toBottomOf="@+id/const_toolbar">
 
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="match_parent">
+
 
                 <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/cl_top"
+                    android:id="@+id/const_top"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:elevation="2dp"
-                    android:paddingStart="@dimen/margin_fifteen"
-                    android:paddingTop="@dimen/margin_ten"
-                    android:paddingEnd="@dimen/margin_fifteen"
-                    android:paddingBottom="@dimen/margin_ten"
+                    android:layout_height="0dp"
+                    app:layout_constraintBottom_toTopOf="@+id/cons_middle"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_weight="1" />
 
 
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:id="@+id/img_image"
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_twenty"
+                    app:cardCornerRadius="@dimen/margin_ten"
+                    app:layout_constraintBottom_toTopOf="@id/cons_middle"
+                    app:layout_constraintStart_toStartOf="@id/cons_middle"
+                    app:layout_constraintTop_toTopOf="@id/cons_middle">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/img_user"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/curve_view_border_therapist_img"
-                        android:elevation="@dimen/margin_two"
+                        android:src="@drawable/img_home_dummy"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent">
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <!-- <androidx.appcompat.widget.AppCompatTextView
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:background="@drawable/img_gender_bg"
+                         android:backgroundTint="@color/colorBrown"
+                         android:text="@string/str_female"
+                         android:textColor="@color/colorWhite"
+                         app:layout_constraintBottom_toBottomOf="@id/img_user"
+                         app:layout_constraintEnd_toEndOf="parent"
+                         app:layout_constraintStart_toStartOf="parent" />-->
 
 
-                        <androidx.appcompat.widget.AppCompatImageView
-                            android:id="@+id/appCompatImageView2"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/img_home_dummy"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
+                </androidx.cardview.widget.CardView>
 
 
-                        <androidx.appcompat.widget.AppCompatTextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="@dimen/margin_fifteen"
-                            android:background="@drawable/img_gender_bg"
-                            android:backgroundTint="@color/colorBrown"
-                            android:paddingStart="@dimen/margin_fifteen"
-                            android:paddingTop="@dimen/margin_five"
-                            android:paddingEnd="@dimen/margin_fifteen"
-                            android:paddingBottom="@dimen/margin_five"
-                            android:text="@string/str_female"
-                            android:textColor="@color/colorWhite"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent" />
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt_booking_id"
+                    style="@style/regular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="@dimen/margin_ten"
+                    android:elevation="@dimen/margin_two"
+                    android:text="@string/str_booking_id"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/textsize_forteen"
+                    app:layout_constraintStart_toEndOf="@+id/card_image"
+                    app:layout_constraintTop_toTopOf="@id/cons_middle" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt_name"
+                    style="@style/bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_ten"
+                    android:layout_marginTop="@dimen/margin_five"
+                    android:elevation="@dimen/margin_two"
+                    android:text="@string/str_demo_name"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/textsize_twenty"
+                    app:layout_constraintStart_toEndOf="@+id/card_image"
+                    app:layout_constraintTop_toBottomOf="@id/txt_booking_id" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt_status"
+                    style="@style/medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_ten"
+                    android:layout_marginTop="@dimen/margin_five"
+                    android:elevation="@dimen/margin_two"
+                    android:text="@string/str_review_rating"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/textsize_sixteen"
+                    app:layout_constraintStart_toEndOf="@id/card_image"
+                    app:layout_constraintTop_toBottomOf="@id/txt_name" />
 
 
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_marginStart="@dimen/margin_ten"
-                        app:layout_constraintBottom_toBottomOf="@+id/img_image"
-                        app:layout_constraintStart_toEndOf="@+id/img_image">
-
-                        <androidx.appcompat.widget.AppCompatTextView
-                            android:id="@+id/txt_booking_id"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/str_demo_name"
-                            android:textColor="@color/colorWhite"
-                            android:textSize="@dimen/textsize_sixteen"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
-
-                        <androidx.appcompat.widget.AppCompatTextView
-                            android:id="@+id/txt_name"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/margin_five"
-                            android:text="@string/str_demo_name"
-                            android:textColor="@color/colorWhite"
-                            android:textSize="@dimen/textsize_twenty"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@id/txt_booking_id" />
-
-                        <androidx.appcompat.widget.AppCompatTextView
-                            android:id="@+id/txt_status"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/margin_five"
-                            android:text="@string/str_demo_name"
-                            android:textColor="@color/colorOrange"
-                            android:textSize="@dimen/textsize_sixteen"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@id/txt_name" />
-
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cons_middle"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:background="@drawable/top_curve_view"
+                    android:backgroundTint="@color/colorPrimary"
+                    app:layout_constraintBottom_toTopOf="@+id/cons_last"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/const_top"
+                    app:layout_constraintVertical_weight="1.5" />
 
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/top_curve_view"
-                    android:elevation="@dimen/margin_two"
-                    android:paddingStart="@dimen/margin_twenty_five"
-                    android:paddingTop="@dimen/margin_twenty"
-                    android:paddingEnd="@dimen/margin_twenty"
-                    android:paddingBottom="@dimen/margin_twenty_five"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/cl_top">
+                    android:elevation="@dimen/margin_one"
+                    android:padding="@dimen/margin_ten"
+                    app:layout_constraintEnd_toEndOf="@+id/cons_last"
+                    app:layout_constraintStart_toStartOf="@id/cons_last"
+                    app:layout_constraintTop_toTopOf="@id/cons_last">
 
 
                     <androidx.appcompat.widget.AppCompatTextView
                         android:id="@+id/txt_m_status"
+                        style="@style/regular"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:elevation="@dimen/margin_one"
                         android:text="@string/str_pending"
-                        android:textColor="@color/colorOrange"
+                        android:textColor="@color/colorDarkYellow"
                         android:textSize="@dimen/textsize_sixteen"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
+
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/cl_details"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/margin_five"
+                        android:layout_marginTop="@dimen/margin_ten"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/txt_m_status">
 
                         <androidx.appcompat.widget.AppCompatTextView
                             android:id="@+id/txt_date"
+                            style="@style/bold"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/str_pending"
+                            android:text="@string/dummy_date"
                             android:textColor="@color/colorBlack"
                             android:textSize="@dimen/textsize_twenty_two"
                             app:layout_constraintStart_toStartOf="parent"
@@ -220,15 +223,15 @@
                                 android:id="@+id/img_clock"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:padding="@dimen/margin_five"
                                 android:src="@drawable/ic_time_black"
-                              android:padding="@dimen/margin_five"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintStart_toStartOf="parent"
-
                                 app:layout_constraintTop_toTopOf="parent" />
 
                             <androidx.appcompat.widget.AppCompatTextView
                                 android:id="@+id/txt_time"
+                                style="@style/bold"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="@dimen/margin_five"
@@ -244,23 +247,15 @@
                         </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-                        <androidx.cardview.widget.CardView
-                            android:id="@+id/card_msg"
+                        <androidx.appcompat.widget.AppCompatImageView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginEnd="@dimen/margin_five"
+                            android:src="@drawable/btn_list_comment"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintTop_toTopOf="parent">
+                            app:layout_constraintTop_toTopOf="parent" />
 
-
-                            <androidx.appcompat.widget.AppCompatImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_margin="@dimen/margin_ten"
-                                android:src="@drawable/btn_list_comment" />
-
-                        </androidx.cardview.widget.CardView>
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -269,9 +264,9 @@
                         android:id="@+id/cl_massage_type"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/margin_twenty"
+                        android:layout_marginTop="@dimen/margin_ten"
                         android:background="@drawable/curve_view_border"
-                        android:padding="@dimen/margin_twenty"
+                        android:padding="@dimen/margin_ten"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/cl_details">
@@ -279,20 +274,24 @@
 
                         <androidx.appcompat.widget.AppCompatTextView
                             android:id="@+id/txt_maasage_type"
+                            style="@style/regular"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/str_demo_name"
+                            android:layout_marginStart="@dimen/margin_ten"
+                            android:layout_marginTop="@dimen/margin_ten"
+                            android:text="@string/str_msg_type"
                             android:textColor="@color/colorPrimary"
-                            android:textSize="@dimen/textsize_forteen"
+                            android:textSize="@dimen/textsize_sixteen"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
                         <androidx.appcompat.widget.AppCompatTextView
                             android:id="@+id/txt_massage"
+                            style="@style/bold"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/margin_five"
-                            android:text="@string/str_demo_name"
+                            android:layout_margin="@dimen/margin_ten"
+                            android:text="@string/str_deep_tisue"
                             android:textColor="@color/colorBlack"
                             android:textSize="@dimen/textsize_twenty"
                             app:layout_constraintStart_toStartOf="parent"
@@ -301,35 +300,40 @@
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
+
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/cl_duration"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/margin_twenty"
+                        android:layout_marginTop="@dimen/margin_ten"
+                        android:layout_marginEnd="@dimen/margin_ten"
                         android:background="@drawable/curve_view_border"
-                        android:padding="@dimen/margin_twenty"
+                        android:padding="@dimen/margin_fifteen"
+                        app:layout_constraintEnd_toStartOf="@+id/cl_price"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/cl_massage_type">
 
 
                         <androidx.appcompat.widget.AppCompatTextView
                             android:id="@+id/txt_duration_text"
+                            style="@style/regular"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/str_demo_name"
+                            android:text="@string/duration"
                             android:textColor="@color/colorPrimary"
-                            android:textSize="@dimen/textsize_forteen"
+                            android:textSize="@dimen/textsize_twenty"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
                         <androidx.appcompat.widget.AppCompatTextView
                             android:id="@+id/txt_duration"
+                            style="@style/bold"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="@dimen/margin_five"
-                            android:text="@string/str_demo_name"
+                            android:text="@string/dummy_min"
                             android:textColor="@color/colorBlack"
-                            android:textSize="@dimen/textsize_sixteen"
+                            android:textSize="@dimen/textsize_twenty"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@id/txt_duration_text" />
 
@@ -338,57 +342,60 @@
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/cl_price"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/margin_twenty"
+                        android:layout_marginTop="@dimen/margin_ten"
                         android:background="@drawable/curve_view_border"
-                        android:padding="@dimen/margin_twenty"
+                        android:padding="18dp"
                         app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/cl_duration"
                         app:layout_constraintTop_toBottomOf="@+id/cl_massage_type">
 
 
                         <androidx.appcompat.widget.AppCompatTextView
                             android:id="@+id/txt_price_text"
+                            style="@style/regular"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/str_demo_name"
+                            android:text="@string/price"
                             android:textColor="@color/colorPrimary"
-                            android:textSize="@dimen/textsize_forteen"
+                            android:textSize="@dimen/textsize_sixteen"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
                         <androidx.appcompat.widget.AppCompatTextView
                             android:id="@+id/txt_price"
+                            style="@style/bold"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="@dimen/margin_five"
-                            android:text="@string/str_demo_name"
+                            android:text="@string/dummy_dollar"
                             android:textColor="@color/colorBlack"
-                            android:textSize="@dimen/textsize_sixteen"
+                            android:textSize="@dimen/textsize_twenty"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@id/txt_price_text" />
 
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
-
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/cl_map"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:paddingTop="@dimen/margin_twenty"
-                        android:paddingBottom="@dimen/margin_twenty"
+                        android:layout_marginTop="@dimen/margin_twenty"
+                        android:layout_marginBottom="@dimen/margin_twenty"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/cl_duration">
 
 
                         <androidx.appcompat.widget.AppCompatTextView
                             android:id="@+id/txt_map_text"
+                            style="@style/regular"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/str_demo_name"
+                            android:text="@string/location"
                             android:textColor="@color/colorPrimary"
-                            android:textSize="@dimen/textsize_forteen"
+                            android:textSize="@dimen/textsize_sixteen"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
@@ -409,6 +416,7 @@
 
                     <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/btn_cancel"
+                        style="@style/bold"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/margin_fifteen"
@@ -427,16 +435,17 @@
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-                <LinearLayout
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cons_last"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_marginTop="@dimen/margin_fifty"
-                    android:background="@drawable/curve_view"
-                    android:backgroundTint="@color/colorPrimary"
+                    android:background="@drawable/top_curve_view"
+                    android:backgroundTint="@color/colorWhite"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toBottomOf="@+id/cons_middle"
+                    app:layout_constraintVertical_weight="7" />
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -445,5 +454,6 @@
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 </layout>
