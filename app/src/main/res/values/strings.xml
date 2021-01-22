@@ -114,7 +114,7 @@
     <string name="str_code_not_receive">Didn\'t Receive the code</string>
     <string name="str_verify">Verify</string>
     <string name="str_success">Success!</string>
-    <string name="str_success_text_desc">Congratulations! Your account has been successfully created.</string>
+    <string name="str_success_text_desc">Congratulations! Your account has \n been successfully created.</string>
     <string name="nav_home">Home</string>
     <string name="str_demo_name">Jessica Marcel</string>
     <string name="str_review_rating">4.5 Reviews</string>
