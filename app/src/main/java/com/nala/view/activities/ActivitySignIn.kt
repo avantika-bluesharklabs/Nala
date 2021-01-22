@@ -29,6 +29,8 @@ class ActivitySignIn : ActivityBase() {
             )
         mBinding.vmSignIn = mViewModelSignIn
 
+        mBinding.imgBack.setOnClickListener { finish() }
+
         observable()
     }
 

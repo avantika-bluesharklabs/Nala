@@ -13,8 +13,8 @@ import androidx.lifecycle.observe
 import com.nala.R
 import com.nala.businesslogic.viewmodel.activities.ViewModelSignIn
 import com.nala.businesslogic.viewmodel.activities.ViewModelSignUp
-import com.nala.databinding.ActivitySignInBinding
 import com.nala.databinding.ActivitySignUpBinding
+
 import com.nala.utils.Utils
 import kotlinx.android.synthetic.main.activity_sign_up.*
 
@@ -35,6 +35,9 @@ class ActivitySignUp : ActivityBase() {
                 true
             )
         mBinding.vmSignUp = mViewModelSignUp
+
+
+        mBinding.imgBack.setOnClickListener { finish() }
 
         observable()
         selectUser()

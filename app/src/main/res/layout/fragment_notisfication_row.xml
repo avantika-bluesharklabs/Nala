@@ -116,7 +116,7 @@
         <View
             android:layout_width="wrap_content"
             android:layout_height="8dp"
-            android:layout_marginTop="@dimen/margin_fifteen"
+            android:layout_marginTop="25dp"
             android:background="@color/colorGray"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

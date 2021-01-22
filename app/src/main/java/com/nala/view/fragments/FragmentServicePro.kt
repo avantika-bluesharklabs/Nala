@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.observe
 import com.nala.R
 import com.nala.businesslogic.interfaces.OnClickReview
 import com.nala.businesslogic.interfaces.OnClickTechnique
@@ -39,6 +40,8 @@ class FragmentServicePro : FragmentBase(), OnClickTechnique, OnClickReview {
         mBinding.vmReview = mViewModelReview
         mBinding.onContentClickListener = this
         mBinding.onContentClickListenerReview = this
+
+        observer()
 
         mBinding.rvReviews.visibility = View.GONE
         mBinding.rvTechniques.visibility = View.VISIBLE
@@ -97,6 +100,17 @@ class FragmentServicePro : FragmentBase(), OnClickTechnique, OnClickReview {
     }
 
     override fun onClickReviewItem(view: View?, layoutPosition: Int, data: PojoReview) {
+
+    }
+
+
+    fun observer() {
+
+
+        mViewModelTechnique.getEventBack().observe(mActivity) {
+            mMainActivity.onBackPressed()
+        }
+
 
     }
 }

@@ -42,6 +42,16 @@ class ViewModelScheduleAppointmentTime (myApplication: MyApplication, isToShowEr
 
     }
 
+    private val eventClickBack: SingleLiveEvent<Boolean> = SingleLiveEvent()
+    fun getEventBack(): SingleLiveEvent<Boolean> {
+        return eventClickBack
+    }
+
+    fun clickBack() {
+        eventClickBack.value = true
+    }
+
+
 
 
     fun getLiveEvent(): SingleLiveEvent<Boolean> {

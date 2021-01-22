@@ -47,6 +47,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/margin_five"
+                android:onClick="@{()->vmTechnique.clickBack()}"
                 android:src="@drawable/ic_back"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -101,7 +102,6 @@
                         android:id="@+id/img_image"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/curve_view_border_therapist_img"
                         android:elevation="@dimen/margin_two"
                         app:layout_constraintBottom_toTopOf="@+id/cl_demo"
                         app:layout_constraintStart_toStartOf="parent"
@@ -119,7 +119,7 @@
                             app:layout_constraintTop_toTopOf="parent" />
 
 
-                        <androidx.appcompat.widget.AppCompatTextView
+                      <!--  <androidx.appcompat.widget.AppCompatTextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="@dimen/margin_fifteen"
@@ -134,7 +134,7 @@
                             android:textColor="@color/colorWhite"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent" />
+                            app:layout_constraintStart_toStartOf="parent" />-->
 
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -562,8 +562,8 @@
 
                             <androidx.recyclerview.widget.RecyclerView
                                 android:id="@+id/rv_techniques"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
                                 android:visibility="gone"
                                 app:adapterTechnique="@{vmTechnique.observerContent}"
                                 app:clickListenerTechnique="@{onContentClickListener}"

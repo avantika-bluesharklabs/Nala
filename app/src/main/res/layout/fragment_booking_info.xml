@@ -16,6 +16,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
         android:background="@color/colorLightGrayUser">
 
 
@@ -30,9 +31,11 @@
 
 
             <androidx.appcompat.widget.AppCompatImageView
+                android:id="@id/img_back"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/margin_five"
+                android:onClick="@{()->vmBookingInfo.clickBack()}"
                 android:src="@drawable/ic_back"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -99,16 +102,7 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
-                    <!-- <androidx.appcompat.widget.AppCompatTextView
-                         android:layout_width="wrap_content"
-                         android:layout_height="wrap_content"
-                         android:background="@drawable/img_gender_bg"
-                         android:backgroundTint="@color/colorBrown"
-                         android:text="@string/str_female"
-                         android:textColor="@color/colorWhite"
-                         app:layout_constraintBottom_toBottomOf="@id/img_user"
-                         app:layout_constraintEnd_toEndOf="parent"
-                         app:layout_constraintStart_toStartOf="parent" />-->
+
 
 
                 </androidx.cardview.widget.CardView>
@@ -402,10 +396,9 @@
 
                         <androidx.appcompat.widget.AppCompatImageView
                             android:id="@+id/img_location"
-                            android:layout_width="match_parent"
+                            android:layout_width="0dp"
                             android:layout_height="@dimen/margin_hundred_and_fifty"
                             android:layout_marginTop="@dimen/margin_ten"
-                            android:scaleType="centerCrop"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@id/txt_map_text" />
@@ -420,6 +413,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/margin_fifteen"
+                        android:visibility="gone"
                         android:layout_marginBottom="@dimen/margin_fifteen"
                         android:background="@drawable/curve_view_360_border"
                         android:text="@string/str_cancel_booking"
@@ -430,6 +424,42 @@
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/cl_map" />
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/cosnt_rate_review"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:visibility="visible"
+                        android:background="@drawable/top_curve_view"
+                        android:backgroundTint="@color/colorBlueForButtons"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/txt_rate_review"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/str_rateandreview"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="@dimen/textsize_eighteen"
+                            style="@style/bold"
+                            android:padding="@dimen/margin_twenty"
+                            android:drawablePadding="@dimen/margin_ten"
+                            android:drawableStart="@drawable/give_rate_review"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
 
 
                 </androidx.constraintlayout.widget.ConstraintLayout>

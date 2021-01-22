@@ -32,129 +32,127 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_ten"
         android:clickable="true"
         android:focusable="true"
         android:onClick="@{(v)->onContentClickListener.onClickMyBookingItem(v,layoutPosition,data)}">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/cl_top"
-            android:layout_width="0dp"
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_bg"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginLeft="@dimen/margin_ten"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="@dimen/margin_ten"
+            android:layout_marginBottom="20dp"
+            android:background="@color/colorWhite"
+            app:cardCornerRadius="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_image"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:elevation="6dp"
-            android:padding="@dimen/margin_five"
-            app:layout_constraintEnd_toEndOf="@id/card_bg"
+            android:layout_marginStart="@dimen/margin_twenty"
+            android:layout_marginTop="-40dp"
+            app:cardCornerRadius="@dimen/margin_ten"
             app:layout_constraintStart_toStartOf="@id/card_bg"
             app:layout_constraintTop_toTopOf="parent">
-
-
-            <!-- <androidx.constraintlayout.widget.ConstraintLayout
-                 android:id="@+id/img_image"
-                 android:layout_width="wrap_content"
-                 android:layout_height="wrap_content"
-                 android:background="@drawable/curve_view_border_therapist_img"
-                 android:elevation="@dimen/margin_two"
-                 app:layout_constraintStart_toStartOf="parent"
-                 app:layout_constraintTop_toTopOf="parent">-->
-
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/img_user"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/margin_ten"
-                android:layout_marginTop="@dimen/margin_fifteen"
                 android:src="@drawable/img_home_dummy"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
 
-            <!--    <androidx.appcompat.widget.AppCompatTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/margin_fifteen"
-                    android:background="@drawable/img_gender_bg"
-                    android:backgroundTint="@color/colorBrown"
-                    android:paddingStart="@dimen/margin_fifteen"
-                    android:paddingTop="@dimen/margin_five"
-                    android:paddingEnd="@dimen/margin_fifteen"
-                    android:paddingBottom="@dimen/margin_five"
-                    android:text="@string/str_female"
-                    android:textColor="@color/colorWhite"
-                    app:layout_constraintBottom_toBottomOf="@id/img_user"
-                    app:layout_constraintEnd_toEndOf="@id/img_user"
-                    app:layout_constraintStart_toStartOf="@id/img_user" />-->
+        </androidx.cardview.widget.CardView>
 
 
-            <!-- </androidx.constraintlayout.widget.ConstraintLayout>-->
 
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="0dp"
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/const_top"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_ten"
+            android:layout_marginTop="@dimen/margin_ten"
+            android:layout_marginEnd="@dimen/margin_ten"
+            android:elevation="@dimen/margin_two"
+            app:layout_constraintEnd_toEndOf="@id/card_bg"
+            app:layout_constraintStart_toEndOf="@+id/card_image"
+            app:layout_constraintTop_toTopOf="@+id/card_bg">
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txt_booking_id"
+                style="@style/medium"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/margin_ten"
-                android:layout_marginTop="@dimen/margin_twenty"
-                android:elevation="6dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/img_user"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/txt_booking_id"
-                    style="@style/medium"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:text="@string/str_booking_id"
-                    android:textColor="@color/colorDarkGray"
-                    android:textSize="@dimen/textsize_forteen"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/txt_name"
-                    style="@style/bold"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@{data.txt_name}"
-                    android:textColor="@color/colorBlack"
-                    android:textSize="@dimen/textsize_eighteen"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/txt_booking_id" />
-
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/txt_status"
-                    style="@style/medium"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@{data.txt_status}"
-                    android:textColor="@color/colorDarkYellow"
-                    android:textSize="@dimen/textsize_forteen"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/txt_name" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                android:text="@string/str_booking_id"
+                android:textColor="@color/colorDarkGray"
+                android:textSize="@dimen/textsize_forteen"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/margin_one"
-                android:layout_marginTop="@dimen/margin_ten"
-                android:background="@color/colorGray"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/img_user" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txt_name"
+                style="@style/bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{data.txt_name}"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/textsize_eighteen"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_booking_id" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txt_status"
+                style="@style/medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{data.txt_status}"
+                android:textColor="@color/colorDarkYellow"
+                android:textSize="@dimen/textsize_forteen"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txt_name" />
+
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@color/colorGray"
+            android:elevation="2dp"
+            android:layout_marginTop="@dimen/margin_fifteen"
+            android:layout_marginEnd="@dimen/margin_ten"
+            app:layout_constraintTop_toBottomOf="@+id/card_image"
+            app:layout_constraintStart_toStartOf="@+id/card_image"
+            app:layout_constraintEnd_toEndOf="@id/card_bg"/>
+
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/cl_middle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:elevation="6dp"
-            android:padding="@dimen/margin_five"
+            android:layout_marginEnd="@dimen/margin_ten"
+            android:layout_marginTop="@dimen/margin_ten"
+            android:elevation="2dp"
             app:layout_constraintEnd_toEndOf="@id/card_bg"
-            app:layout_constraintStart_toStartOf="@id/card_bg"
-            app:layout_constraintTop_toBottomOf="@id/cl_top">
+            app:layout_constraintStart_toStartOf="@id/card_image"
+            app:layout_constraintTop_toBottomOf="@id/view">
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/txt_massage"
@@ -257,7 +255,7 @@
             <View
                 android:layout_width="0dp"
                 android:layout_height="@dimen/margin_one"
-                android:layout_marginTop="@dimen/margin_five"
+                android:layout_marginTop="@dimen/margin_ten"
                 android:background="@color/colorGray"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -266,15 +264,18 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/cl_bottom"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/margin_ten"
-            android:elevation="6dp"
+            android:elevation="2dp"
+            android:layout_marginTop="@dimen/margin_ten"
+            android:layout_marginEnd="@dimen/margin_ten"
             app:layout_constraintBottom_toBottomOf="@+id/card_bg"
             app:layout_constraintEnd_toEndOf="@id/card_bg"
-            app:layout_constraintStart_toStartOf="@id/card_bg"
+            app:layout_constraintStart_toStartOf="@id/card_image"
             app:layout_constraintTop_toBottomOf="@id/cl_middle">
 
 
@@ -283,7 +284,7 @@
                 style="@style/bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/margin_ten"
+                android:layout_marginStart="@dimen/margin_ten"
                 android:text="@string/str_booking_min"
                 android:textColor="@color/colorPrimary"
                 android:textSize="@dimen/textsize_eighteen"
@@ -296,7 +297,6 @@
                 android:id="@+id/cl_btns"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="@dimen/margin_ten"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
@@ -306,6 +306,7 @@
                     style="@style/semibold"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/margin_ten"
                     android:onClick="@{(v)->onContentClickListener.onClickMyBookingCancel(v,layoutPosition,data)}"
                     android:src="@drawable/btn_list_cancel"
                     android:text="@string/str_cancel"
@@ -334,20 +335,6 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/card_bg"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginLeft="@dimen/margin_ten"
-            android:layout_marginTop="40dp"
-            android:layout_marginBottom="@dimen/margin_ten"
-            android:layout_marginRight="@dimen/margin_ten"
-            app:cardCornerRadius="10dp"
-            app:cardElevation="@dimen/margin_five"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

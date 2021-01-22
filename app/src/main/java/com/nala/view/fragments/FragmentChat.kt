@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.observe
 import com.nala.R
 import com.nala.businesslogic.interfaces.OnClickMessage
 import com.nala.businesslogic.viewmodel.fragments.ViewModelChat
@@ -30,6 +31,17 @@ class FragmentChat : FragmentBase() {
         mBinding.vmChat = mViewModelChat
 
 
+        observer()
+
+
         return mBinding.root
+    }
+
+    fun observer() {
+
+
+        mViewModelChat.getEventBack().observe(mActivity) {
+            mMainActivity.onBackPressed()
+        }
     }
 }

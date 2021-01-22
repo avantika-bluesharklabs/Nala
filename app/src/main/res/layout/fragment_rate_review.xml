@@ -16,12 +16,15 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/colorPrimary">
+        android:fitsSystemWindows="true">
+
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/cl_toolbar"
-            android:layout_width="0dp"
+            android:id="@+id/const_toolbar"
+            android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            android:padding="@dimen/margin_ten"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -31,8 +34,8 @@
                 android:id="@+id/img_back"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:elevation="@dimen/margin_one"
                 android:padding="@dimen/margin_five"
+                android:onClick="@{()->vmRateReview.clickBack()}"
                 android:src="@drawable/ic_back"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -42,185 +45,170 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-        <androidx.core.widget.NestedScrollView
+        <!-- <androidx.core.widget.NestedScrollView
+             android:layout_width="match_parent"
+             android:layout_height="0dp"
+             app:layout_constraintBottom_toBottomOf="parent"
+             app:layout_constraintEnd_toEndOf="parent"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintTop_toBottomOf="@+id/const_toolbar">
+
+
+         <androidx.constraintlayout.widget.ConstraintLayout
+             android:layout_width="match_parent"
+             android:layout_height="match_parent">-->
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/const_top"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:fillViewport="true"
-            android:scrollbars="none"
+            android:background="@color/colorPrimary"
+            app:layout_constraintBottom_toTopOf="@+id/cons_middle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/const_toolbar"
+            app:layout_constraintVertical_weight="1.5" />
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="@dimen/margin_ten"
+            app:layout_constraintBottom_toTopOf="@id/cons_middle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/cons_middle"
+            app:layout_constraintTop_toTopOf="@id/cons_middle">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img_user"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/img_home_dummy"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txt_name"
+            style="@style/medium"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_fifteen"
+            android:elevation="@dimen/margin_one"
+            android:text="@string/str_rate_service"
+            android:textAlignment="center"
+            android:textSize="@dimen/textsize_twenty_four"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/card_image" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txt_rating_text"
+            style="@style/regular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_twenty"
+            android:elevation="@dimen/margin_one"
+            android:text="@string/str_rating"
+            android:textColor="@color/colorDarkGray"
+            android:textSize="@dimen/textsize_eighteen"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txt_name" />
+
+
+        <com.willy.ratingbar.ScaleRatingBar
+            android:id="@+id/simpleRatingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_ten"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txt_rating_text"
+            app:srb_clearRatingEnabled="true"
+            app:srb_clickable="true"
+            android:elevation="@dimen/margin_one"
+            app:srb_drawableEmpty="@drawable/ic_rating_unselect"
+            app:srb_drawableFilled="@drawable/ic_rating_select"
+            app:srb_isIndicator="false"
+            app:srb_minimumStars="1"
+            app:srb_numStars="5"
+            app:srb_rating="2"
+            app:srb_scrollable="true"
+            app:srb_starHeight="0dp"
+            app:srb_starPadding="0dp"
+            app:srb_starWidth="0dp"
+            app:srb_stepSize="1" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/ed_review"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_twenty"
+            android:layout_marginTop="@dimen/margin_twenty"
+            android:layout_marginEnd="@dimen/margin_twenty"
+            android:background="@drawable/bg_edittext"
+            android:gravity="top"
+            android:hint="@string/str_write_review"
+            android:elevation="@dimen/margin_one"
+            android:inputType="textMultiLine"
+            android:lines="4"
+            android:maxLines="4"
+            app:layout_constraintTop_toBottomOf="@id/simpleRatingBar" />
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_submit"
+            style="@style/bold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_twenty"
+            android:background="@drawable/btn_signup"
+            android:text="@string/str_submit"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/textsize_eighteen"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ed_review" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txt_no_tx"
+            style="@style/regular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_twenty"
+            android:text="@string/str_no_tx"
+            android:elevation="@dimen/margin_one"
+            android:textColor="@color/colorDarkGray"
+            android:textSize="@dimen/textsize_eighteen"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_submit" />
+
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cons_middle"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@drawable/top_curve_view"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/cl_toolbar">
+            app:layout_constraintTop_toBottomOf="@+id/const_top"
+            app:layout_constraintVertical_weight="8.5" />
 
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_ten">
+        <!--  </androidx.constraintlayout.widget.ConstraintLayout>
 
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/img_image"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/curve_view_border_therapist_img"
-                    android:elevation="@dimen/margin_two"
-                    app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/constraintLayout2">
+          </androidx.core.widget.NestedScrollView>-->
 
 
-                    <androidx.appcompat.widget.AppCompatImageView
-                        android:id="@+id/appCompatImageView2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/margin_five"
-                        android:layout_marginTop="@dimen/margin_ten"
-                        android:layout_marginEnd="@dimen/margin_five"
-                        android:layout_marginBottom="@dimen/margin_five"
-                        android:src="@drawable/img_home_dummy"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-
-                    <androidx.appcompat.widget.AppCompatTextView
-                        android:id="@+id/txt_gender"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="@dimen/margin_fifteen"
-                        android:background="@drawable/img_gender_bg"
-                        android:backgroundTint="@color/colorBrown"
-                        android:paddingStart="@dimen/margin_fifteen"
-                        android:paddingTop="@dimen/margin_five"
-                        android:paddingEnd="@dimen/margin_fifteen"
-                        android:paddingBottom="@dimen/margin_five"
-                        android:text="@string/str_female"
-                        android:textColor="@color/colorWhite"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent" />
-
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/constraintLayout2"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="@dimen/margin_eighty"
-                    android:background="@drawable/top_curve_view"
-                    android:paddingBottom="@dimen/margin_thirty_five"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent">
-
-
-                    <androidx.appcompat.widget.AppCompatTextView
-                        android:id="@+id/txt_name"
-                        style="@style/regular"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/margin_twenty"
-                        android:layout_marginTop="@dimen/margin_eighty"
-                        android:layout_marginEnd="@dimen/margin_twenty"
-                        android:text="@string/str_rate_service"
-                        android:textAlignment="center"
-                        android:textSize="@dimen/textsize_twenty_four"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <androidx.appcompat.widget.AppCompatTextView
-                        android:id="@+id/txt_rating_text"
-                        style="@style/regular"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/margin_twenty"
-                        android:text="@string/str_rating"
-                        android:textColor="@color/colorDarkGray"
-                        android:textSize="@dimen/textsize_eighteen"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/txt_name" />
-
-
-                    <com.willy.ratingbar.ScaleRatingBar
-                        android:id="@+id/simpleRatingBar"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/margin_ten"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/txt_rating_text"
-                        app:srb_clearRatingEnabled="true"
-                        app:srb_clickable="true"
-                        app:srb_drawableEmpty="@drawable/ic_rating_unselect"
-                        app:srb_drawableFilled="@drawable/ic_rating_select"
-                        app:srb_isIndicator="false"
-                        app:srb_minimumStars="1"
-                        app:srb_numStars="5"
-                        app:srb_rating="2"
-                        app:srb_scrollable="true"
-                        app:srb_starHeight="0dp"
-                        app:srb_starPadding="0dp"
-                        app:srb_starWidth="0dp"
-                        app:srb_stepSize="1" />
-
-
-                    <androidx.appcompat.widget.AppCompatEditText
-                        android:id="@+id/ed_review"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/margin_twenty"
-                        android:layout_marginTop="@dimen/margin_twenty"
-                        android:layout_marginEnd="@dimen/margin_twenty"
-                        android:background="@drawable/bg_edittext"
-                        android:gravity="top"
-                        android:hint="@string/str_write_review"
-                        android:inputType="textMultiLine"
-                        android:lines="4"
-                        android:maxLines="4"
-                        app:layout_constraintTop_toBottomOf="@id/simpleRatingBar" />
-
-
-                    <androidx.appcompat.widget.AppCompatButton
-                        android:id="@+id/btn_submit"
-                        style="@style/bold"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="@dimen/margin_twenty"
-                        android:background="@drawable/btn_signup"
-                        android:text="@string/str_submit"
-                        android:textColor="@color/colorWhite"
-                        android:textSize="@dimen/textsize_eighteen"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/ed_review" />
-
-                    <androidx.appcompat.widget.AppCompatTextView
-                        android:id="@+id/txt_no_tx"
-                        style="@style/regular"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/margin_twenty"
-                        android:text="@string/str_no_tx"
-                        android:textColor="@color/colorDarkGray"
-                        android:textSize="@dimen/textsize_eighteen"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/btn_submit" />
-
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-        </androidx.core.widget.NestedScrollView>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

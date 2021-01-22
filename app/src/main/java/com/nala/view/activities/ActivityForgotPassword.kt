@@ -27,6 +27,8 @@ class ActivityForgotPassword : ActivityBase() {
             )
         mBinding.vmForgotPass = mViewModelForgotPass
 
+        mBinding.imgBack.setOnClickListener { finish() }
+
         observable()
     }
 

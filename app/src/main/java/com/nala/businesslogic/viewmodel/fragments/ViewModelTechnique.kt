@@ -41,6 +41,15 @@ class ViewModelTechnique (myApplication: MyApplication, isToShowErrors: Boolean)
     }
 
 
+    private val eventClickBack: SingleLiveEvent<Boolean> = SingleLiveEvent()
+    fun getEventBack(): SingleLiveEvent<Boolean> {
+        return eventClickBack
+    }
+
+    fun clickBack() {
+        eventClickBack.value = true
+    }
+
 
     fun getLiveEvent(): SingleLiveEvent<Boolean> {
         return liveEvent

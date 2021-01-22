@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.nala.R
 import com.nala.businesslogic.interfaces.OnClickMyBooking
 import com.nala.businesslogic.pojo.PojoMyBooking
@@ -33,8 +34,15 @@ class FragmentMyBookings() : FragmentBase(),OnClickMyBooking {
 
         mBinding.imgFilter.setOnClickListener {
 
-            BottomSheetFilter().show(mActivity.getSupportFragmentManager(), "Dialog")
+            //FragmentBottomsheetFilter().show(mActivity.getSupportFragmentManager(), "Dialog")
 
+            val dialog = BottomSheetDialog(mContext)
+            val bottomSheet = layoutInflater.inflate(R.layout.layout_my_booking_filters, null)
+
+         //   bottomSheet.buttonSubmit.setOnClickListener { dialog.dismiss() }
+
+            dialog.setContentView(bottomSheet)
+            dialog.show()
         }
 
 

@@ -139,8 +139,8 @@
     <string name="str_choose_time">Choose a time</string>
     <string name="str_no_time_slot_available">No any time available</string>
     <string name="str_massage_type">Massage Type</string>
-    <string name="str_success_desc">Your massage has been successfully booked!</string>
-    <string name="str_success_desc_2">The therapist will reah out and suggest another time if they cannot at this day and time.</string>
+    <string name="str_success_desc">Your massage has been \n successfully booked!</string>
+    <string name="str_success_desc_2">The therapist will reah out \n and suggest another time if they \n cannot at this day and time.</string>
     <string name="str_booking_req">See Booking Request</string>
     <string name="str_my_bookings">My Bookings</string>
     <string name="str_bookings_info">Bookings Info</string>
@@ -168,7 +168,7 @@
     <string name="str_messages">Messages</string>
     <string name="str_notification">Notification</string>
     <string name="str_write_here">Write here…</string>
-    <string name="str_rate_service">How was Jessica Marcer\'s Service?</string>
+    <string name="str_rate_service">How was Jessica Marcer  \n Service?</string>
     <string name="str_rating">Excellent Rating!</string>
     <string name="str_write_review">Write your review…</string>
     <string name="str_no_tx">No Thanks</string>
@@ -184,5 +184,9 @@
     <string name="duration">Duration</string>
     <string name="location">Location</string>
     <string name="dummy_location">145,NewYork Streets,NewYork</string>
+    <string name="dummy_email">abc@gmail.com</string>
+    <string name="dummy_no">1231231232</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
 

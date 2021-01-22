@@ -37,6 +37,8 @@ class ActivityAddUserDetails : ActivityBase() {
             )
         mBinding.vmAddDetails = mViewModelAddDetails
 
+        mBinding.imgBack.setOnClickListener { finish() }
+
         observable();
         selectMale()
     }

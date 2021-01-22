@@ -1,357 +1,390 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:fillViewport="true"
-    android:scrollbars="none"
-    android:layout_height="match_parent">
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="vmProfile"
+            type="com.nala.businesslogic.viewmodel.fragments.ViewModelProfile" />
+
+
+        <variable
+            name="onContentClickListener"
+            type="com.nala.businesslogic.interfaces.OnClickMyBooking" />
+
+    </data>
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingTop="@dimen/margin_twenty">
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:background="@color/colorLightGrayUser">
+
+        <!-- <androidx.core.widget.NestedScrollView
+             android:layout_width="match_parent"
+             android:layout_height="0dp"
+             app:layout_constraintBottom_toBottomOf="parent"
+             app:layout_constraintEnd_toEndOf="parent"
+             app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintTop_toTopOf="parent">
+
+
+             <androidx.constraintlayout.widget.ConstraintLayout
+                 android:layout_width="match_parent"
+                 android:layout_height="match_parent">-->
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/img_image"
+            android:id="@+id/const_top"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/cons_middle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_weight="1" />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/const_horz"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:elevation="@dimen/margin_two"
-            app:layout_constraintBottom_toTopOf="@+id/cl_main"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/cl_main">
+            app:layout_constraintBottom_toTopOf="@id/cons_middle"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="@id/cons_middle"
+            app:layout_constraintTop_toTopOf="@id/cons_middle">
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_setting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="@dimen/margin_ten"
+                app:layout_constraintEnd_toStartOf="@+id/img_profile"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/img_setting"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/profile_seting" />
+
+
+            </androidx.cardview.widget.CardView>
 
 
             <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/img_setting"
-                android:layout_width="@dimen/margin_fifty_five"
-                android:layout_height="@dimen/margin_fifty_five"
-                android:src="@drawable/profile_seting"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/cl_pro_pic"
+                android:id="@+id/img_profile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/add_photo"
+                app:layout_constraintEnd_toStartOf="@+id/card_edit"
+                app:layout_constraintStart_toEndOf="@+id/card_setting"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_edit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="@dimen/margin_ten"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/img_profile"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/img_edit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/profile_edit" />
+
+
+            </androidx.cardview.widget.CardView>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txt_gender"
+            style="@style/regular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/curve_view_border_blue_360"
+            android:text="@string/str_female"
+            android:layout_marginTop="@dimen/margin_ten"
+            android:padding="@dimen/margin_ten"
+            android:elevation="@dimen/margin_two"
+            android:textColor="@color/colorBlueForButtons"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintTop_toBottomOf="@+id/const_horz" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txt_name"
+            style="@style/bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:elevation="@dimen/margin_two"
+            android:padding="@dimen/margin_five"
+            android:text="@string/str_demo_name"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/textsize_twenty"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txt_gender" />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cons_middle"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@drawable/top_curve_view"
+            android:backgroundTint="@color/colorWhite"
+            app:layout_constraintBottom_toTopOf="@+id/cons_last"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/const_top"
+            app:layout_constraintVertical_weight="2" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txt_about"
+            style="@style/medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:elevation="@dimen/margin_two"
+            android:layout_margin="@dimen/margin_ten"
+            android:text="@string/str_aboutme"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/textsize_eighteen"
+            app:layout_constraintStart_toStartOf="@+id/cons_last"
+            app:layout_constraintTop_toTopOf="@+id/cons_last" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txt_about_desc"
+            style="@style/medium"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:inputType="textMultiLine"
+            android:lines="3"
+            android:layout_marginTop="@dimen/margin_ten"
+            android:layout_marginBottom="@dimen/margin_ten"
+            android:maxLines="3"
+            android:singleLine="false"
+            android:elevation="@dimen/margin_two"
+            android:text="@string/str_long_text"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/textsize_eighteen"
+            app:layout_constraintEnd_toEndOf="@+id/cons_last"
+            app:layout_constraintStart_toStartOf="@+id/txt_about"
+            app:layout_constraintTop_toBottomOf="@+id/txt_about" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cons_last"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@drawable/top_curve_view"
+            android:backgroundTint="@color/colorBlueForButtons"
+            app:layout_constraintBottom_toTopOf="@id/constraint_bottom"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cons_middle"
+            app:layout_constraintVertical_weight="1.5" />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cosnt_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_ten"
+            android:layout_marginEnd="@dimen/margin_ten"
+            android:layout_marginTop="@dimen/margin_fifteen"
+            android:elevation="@dimen/margin_two"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/constraint_bottom">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txt_email"
+                style="@style/regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/str_email_hint"
+                android:textColor="@color/colorDarkGray"
+                android:textSize="@dimen/textsize_eighteen"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/cl_pro_pic"
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txt_email_id"
+                style="@style/bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/img_edit"
-                app:layout_constraintStart_toEndOf="@id/img_setting"
-                app:layout_constraintTop_toTopOf="parent">
+                android:layout_marginTop="@dimen/margin_ten"
+                android:text="@string/dummy_email"
+                android:drawableStart="@drawable/ic_email"
+                android:drawablePadding="@dimen/margin_ten"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/textsize_eighteen"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_email" />
 
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:id="@+id/img_pro_pic"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/img_home_dummy"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/img_edit"
-                android:layout_width="@dimen/margin_fifty_five"
-                android:layout_height="@dimen/margin_fifty_five"
-                android:src="@drawable/profile_edit"
-                app:layout_constraintBottom_toBottomOf="parent"
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/colorGray"
+                android:layout_marginTop="@dimen/margin_ten"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/cl_pro_pic"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toBottomOf="@+id/txt_email_id"/>
+
+
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/cl_main"
+            android:id="@+id/cosnt_phone_no"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_eighty"
-            android:background="@drawable/curve_view"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="@dimen/margin_ten"
+            android:layout_marginEnd="@dimen/margin_ten"
+            android:layout_marginTop="@dimen/margin_fifteen"
+            android:elevation="@dimen/margin_two"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cosnt_email">
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/txt_gender"
+                android:id="@+id/txt_phone_no"
+                style="@style/regular"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_eighty"
-                android:background="@drawable/curve_view_border_blue_360"
-                android:paddingStart="@dimen/margin_twenty"
-                android:paddingTop="@dimen/margin_ten"
-                android:paddingEnd="@dimen/margin_twenty"
-                style="@style/regular"
-                android:paddingBottom="@dimen/margin_ten"
-                android:text="@string/str_female"
-                android:textColor="@color/colorBlueForButtons"
-                app:layout_constraintEnd_toEndOf="parent"
+                android:text="@string/str_phone_hint"
+                android:textColor="@color/colorDarkGray"
+                android:textSize="@dimen/textsize_eighteen"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
 
+
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/txt_name"
+                android:id="@+id/txt_phone_number"
+                style="@style/bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_five"
-                android:paddingStart="@dimen/margin_twenty"
-                android:paddingTop="@dimen/margin_ten"
-                android:paddingEnd="@dimen/margin_twenty"
-                android:paddingBottom="@dimen/margin_ten"
-                android:text="@string/str_demo_name"
-                style="@style/bold"
+                android:layout_marginTop="@dimen/margin_ten"
+                android:text="@string/dummy_no"
+                android:drawableStart="@drawable/ic_number"
+                android:drawablePadding="@dimen/margin_ten"
                 android:textColor="@color/colorBlack"
-                android:textSize="@dimen/textsize_twenty"
-                app:layout_constraintEnd_toEndOf="parent"
+                android:textSize="@dimen/textsize_eighteen"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/txt_gender" />
+                app:layout_constraintTop_toBottomOf="@+id/txt_phone_no" />
 
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_twenty"
-                android:background="@drawable/curve_view"
-                android:backgroundTint="@color/colorBlueForButtons"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/colorGray"
+                android:layout_marginTop="@dimen/margin_ten"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/txt_name">
-
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/txt_about"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/margin_twenty"
-                    android:layout_marginTop="@dimen/margin_twenty"
-                    android:layout_marginEnd="@dimen/margin_twenty"
-                    android:text="@string/str_aboutme"
-                    style="@style/medium"
-                    android:textColor="@color/colorWhite"
-                    android:textSize="@dimen/textsize_eighteen"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_phone_number"/>
 
 
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/txt_about_desc"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/margin_twenty"
-                    android:layout_marginTop="@dimen/margin_ten"
-                    android:layout_marginEnd="@dimen/margin_twenty"
-                    android:inputType="textMultiLine"
-                    android:lines="3"
-                    style="@style/regular"
-                    android:maxLines="3"
-                    android:scrollbars="vertical"
-                    android:singleLine="false"
-                    android:text="@string/str_long_text"
-                    android:textColor="@color/colorWhite"
-                    android:textSize="@dimen/textsize_eighteen"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/txt_about" />
 
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin_twenty"
-                    android:background="@drawable/curve_view"
-                    android:paddingStart="@dimen/margin_twenty"
-                    android:paddingTop="@dimen/margin_twenty"
-                    android:paddingEnd="@dimen/margin_twenty"
-                    android:paddingBottom="@dimen/margin_thirty"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/txt_about_desc">
-
-                    <androidx.appcompat.widget.AppCompatTextView
-                        android:id="@+id/txt_date"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/str_email_hint"
-                        style="@style/regular"
-                        android:textColor="@color/colorDarkGray"
-                        android:textSize="@dimen/textsize_eighteen"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:id="@+id/cl_email"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/margin_five"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/txt_date">
-
-                        <androidx.appcompat.widget.AppCompatImageView
-                            android:id="@+id/img_clock"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/ic_email"
-                            app:cardCornerRadius="@dimen/margin_sixtysix"
-                            app:cardElevation="@dimen/margin_five"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
-
-                        <androidx.appcompat.widget.AppCompatTextView
-                            android:id="@+id/txt_time"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="@dimen/margin_five"
-                            android:layout_marginTop="@dimen/margin_five"
-                            android:layout_marginBottom="@dimen/margin_five"
-                            android:text="@string/str_email_hint"
-                            style="@style/bold"
-                            android:textColor="@color/colorBlack"
-                            android:textSize="@dimen/textsize_sixteen"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintStart_toEndOf="@id/img_clock"
-                            app:layout_constraintTop_toTopOf="parent" />
-
-
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-
-                    <LinearLayout
-                        android:id="@+id/ll_div1"
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:layout_marginTop="@dimen/margin_fifteen"
-                        android:background="@color/colorGray"
-                        android:orientation="vertical"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/cl_email" />
-
-
-                    <androidx.appcompat.widget.AppCompatTextView
-                        android:id="@+id/txt_phone_text"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/margin_fifteen"
-                        android:text="@string/str_phone_hint"
-                        style="@style/regular"
-                        android:textColor="@color/colorDarkGray"
-                        android:textSize="@dimen/textsize_eighteen"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/ll_div1" />
-
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:id="@+id/cl_phone"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/margin_five"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/txt_phone_text">
-
-                        <androidx.appcompat.widget.AppCompatImageView
-                            android:id="@+id/img_phone"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/ic_number"
-                            app:cardCornerRadius="@dimen/margin_sixtysix"
-                            app:cardElevation="@dimen/margin_five"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
-
-                        <androidx.appcompat.widget.AppCompatTextView
-                            android:id="@+id/txt_phone"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="@dimen/margin_five"
-                            android:layout_marginTop="@dimen/margin_five"
-                            android:layout_marginBottom="@dimen/margin_five"
-                            android:text="@string/str_email_hint"
-                            style="@style/bold"
-                            android:textColor="@color/colorBlack"
-                            android:textSize="@dimen/textsize_sixteen"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintStart_toEndOf="@id/img_phone"
-                            app:layout_constraintTop_toTopOf="parent" />
-
-
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-
-                    <LinearLayout
-                        android:id="@+id/ll_div2"
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:layout_marginTop="@dimen/margin_fifteen"
-                        android:background="@color/colorGray"
-                        android:orientation="vertical"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/cl_phone" />
-
-
-                    <androidx.appcompat.widget.AppCompatTextView
-                        android:id="@+id/txt_address_text"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/margin_fifteen"
-                        android:text="@string/str_stu_add"
-                        style="@style/regular"
-                        android:textColor="@color/colorDarkGray"
-                        android:textSize="@dimen/textsize_eighteen"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/ll_div2" />
-
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:id="@+id/cl_address"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/margin_five"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/txt_address_text">
-
-                        <androidx.appcompat.widget.AppCompatImageView
-                            android:id="@+id/img_address"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/ic_location_black"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
-
-                        <androidx.appcompat.widget.AppCompatTextView
-                            android:id="@+id/txt_address"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="@dimen/margin_five"
-                            android:layout_marginTop="@dimen/margin_five"
-                            android:layout_marginBottom="@dimen/margin_five"
-                            android:text="@string/str_email_hint"
-                            style="@style/bold"
-                            android:textColor="@color/colorBlack"
-                            android:textSize="@dimen/textsize_sixteen"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintStart_toEndOf="@id/img_address"
-                            app:layout_constraintTop_toTopOf="parent" />
-
-
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cosnt_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_ten"
+            android:layout_marginEnd="@dimen/margin_ten"
+            android:layout_marginTop="@dimen/margin_fifteen"
+            android:elevation="@dimen/margin_two"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cosnt_phone_no">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txt_address_title"
+                style="@style/regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/str_stu_add"
+                android:textColor="@color/colorDarkGray"
+                android:textSize="@dimen/textsize_eighteen"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txt_address"
+                style="@style/bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_ten"
+                android:text="@string/dummy_location"
+                android:drawableStart="@drawable/ic_location_black"
+                android:drawablePadding="@dimen/margin_ten"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/textsize_eighteen"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_address_title" />
+
+
+
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraint_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@drawable/curve_view"
+            android:backgroundTint="@color/colorWhite"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cons_last"
+            app:layout_constraintVertical_weight="4" />
+
+
+
+
+
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
-</ScrollView>
+
+
+
+
+</layout>

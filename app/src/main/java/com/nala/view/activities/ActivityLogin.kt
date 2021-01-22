@@ -47,15 +47,15 @@ class ActivityLogin : ActivityBase() {
         })
 
         mViewModelLogin.getLiveEventSignInFacebook().observe(this, {
-            mApplication!!.showLogs("LoginCLick", "Facebook CLicked")
+            mApplication.showLogs("LoginCLick", "Facebook CLicked")
         })
 
         mViewModelLogin.getLiveEventSignInApple().observe(this, {
-            mApplication!!.showLogs("LoginCLick", "Apple CLicked")
+            mApplication.showLogs("LoginCLick", "Apple CLicked")
         })
 
         mViewModelLogin.getLiveEventSignInGoogle().observe(this, {
-            mApplication!!.showLogs("LoginCLick", "Google CLicked")
+            mApplication.showLogs("LoginCLick", "Google CLicked")
         })
     }
 

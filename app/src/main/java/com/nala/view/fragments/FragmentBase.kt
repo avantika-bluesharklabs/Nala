@@ -30,8 +30,11 @@ open class FragmentBase : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
-        requireActivity().window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LAYOUT_STABLE or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN or View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
+        requireActivity().window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
+       // requireActivity().window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LAYOUT_STABLE or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN or View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
         requireActivity().window.statusBarColor = Color.TRANSPARENT
+
+
 
         super.onCreate(savedInstanceState)
         mActivity = activity as ActivityBase

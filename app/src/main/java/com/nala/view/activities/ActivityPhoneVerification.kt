@@ -28,6 +28,9 @@ class ActivityPhoneVerification : ActivityBase() {
         mViewModelPhoneVerification = ViewModelPhoneVerification(mApplication, true)
         mBinding.vmVerifyMobile = mViewModelPhoneVerification
 
+
+        mBinding.imgBack.setOnClickListener { finish() }
+
         observable()
     }
 
