@@ -4,15 +4,15 @@ import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
+import android.location.Address
+import android.location.Geocoder
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.widget.AppCompatImageView
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import com.google.android.gms.location.LocationRequest
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
@@ -21,12 +21,13 @@ import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.nala.R
-
 import com.nala.businesslogic.interfaces.OnClickHome
 import com.nala.businesslogic.pojo.PojoHome
 import com.nala.businesslogic.viewmodel.fragments.ViewModelHome
 import com.nala.businesslogic.viewmodel.fragments.ViewModelHomeMap
 import com.nala.databinding.FragmentHomeBinding
+
+import java.util.*
 
 
 class FragmentHome : FragmentBase(), OnClickHome, OnMapReadyCallback {
@@ -142,11 +143,24 @@ class FragmentHome : FragmentBase(), OnClickHome, OnMapReadyCallback {
             val latitude = intent.getDoubleExtra(mContext.resources.getString(R.string.bundleLocationLatitude),0.0)
             val longitude = intent.getDoubleExtra(mContext.resources.getString(R.string.bundleLocationLongitude),0.0)
 
-
+            Log.d("TAG","city"+latitude)
 
             mViewModelHomeMap.user_lat = latitude
+
             mViewModelHomeMap.user_long = longitude
 
+            val geocoder = Geocoder(mContext, Locale.getDefault())
+            val addresses: List<Address> = geocoder.getFromLocation(latitude, longitude, 1)
+            val cityName: String = addresses[0].getAddressLine(0)
+            val stateName: String = addresses[0].getAddressLine(1)
+            val countryName: String = addresses[0].getAddressLine(2)
+
+            mViewModelHomeMap.city_name = cityName
+
+
+            Log.d("TAG","city"+cityName)
+            Log.d("TAG","city"+stateName)
+            Log.d("TAG","city"+countryName)
 //
 //            mViewModelWeatherForcast.user_lat = 36.7783
 //            mViewModelWeatherForcast.user_long = 119.4179

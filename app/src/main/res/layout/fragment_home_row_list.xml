@@ -38,7 +38,6 @@
         android:layout_height="wrap_content"
         android:clickable="true"
         android:focusable="true"
-        android:layout_marginTop="@dimen/margin_ten"
         android:onClick="@{(v)->onContentClickListener.onClickHomeItem(v,layoutPosition,data)}">
 
 
@@ -101,7 +100,7 @@
                 android:elevation="@dimen/margin_two"
                 android:text="@{data.txt_name}"
                 android:textColor="@color/colorBlack"
-                android:textSize="@dimen/textsize_eighteen"
+                android:textSize="@dimen/textsize_sixteen"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -111,11 +110,10 @@
                 style="@style/medium"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_five"
                 android:elevation="@dimen/margin_two"
                 android:text="@string/str_year"
                 android:textColor="@color/colorOrange"
-                android:textSize="@dimen/textsize_forteen"
+                android:textSize="@dimen/textsize_twelve"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txt_name" />
 
@@ -138,12 +136,12 @@
             android:id="@+id/cl_middle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_ten"
+            android:layout_marginTop="@dimen/margin_five"
             android:layout_marginEnd="@dimen/margin_ten"
             android:elevation="2dp"
             app:layout_constraintEnd_toEndOf="@id/card_bg"
             app:layout_constraintStart_toStartOf="@+id/card_image"
-            app:layout_constraintTop_toBottomOf="@id/const_top">
+            app:layout_constraintTop_toBottomOf="@id/card_image">
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/txt_massage"
@@ -174,7 +172,6 @@
                 style="@style/bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_five"
                 android:layout_marginBottom="@dimen/margin_five"
                 android:text="@string/str_techniques"
                 android:textColor="@color/colorBlack"
@@ -188,7 +185,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
-                android:layout_marginTop="@dimen/margin_five"
                 android:layout_marginBottom="@dimen/margin_five"
                 android:text="@string/str_techniques_list"
                 android:textColor="@color/colorBlack"
@@ -214,9 +210,9 @@
             android:id="@+id/cl_bottom"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_ten"
+            android:layout_marginTop="@dimen/margin_five"
             android:layout_marginEnd="@dimen/margin_ten"
-            android:layout_marginBottom="@dimen/margin_ten"
+            android:layout_marginBottom="@dimen/margin_five"
             android:elevation="2dp"
             app:layout_constraintBottom_toBottomOf="@id/card_bg"
             app:layout_constraintEnd_toEndOf="@id/card_bg"
@@ -238,12 +234,12 @@
                     style="@style/bold"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/margin_ten"
+                    android:layout_margin="@dimen/margin_five"
                     android:drawableStart="@drawable/ic_home_star"
                     android:drawablePadding="@dimen/margin_five"
                     android:text="@string/review_count"
                     android:textColor="@color/colorDarkYellow"
-                    android:textSize="@dimen/textsize_eighteen"
+                    android:textSize="@dimen/textsize_sixteen"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -265,7 +261,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/btn_list_comment"
-                    android:padding="@dimen/margin_five"
+                    android:padding="@dimen/margin_two"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -275,7 +271,7 @@
                     android:id="@+id/img_msg"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="@dimen/margin_five"
+                    android:padding="@dimen/margin_two"
                     android:src="@drawable/btn_list_comment"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/img_fav"

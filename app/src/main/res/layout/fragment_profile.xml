@@ -88,10 +88,12 @@
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/img_profile"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:clickable="true"
                 android:focusable="true"
+                glideRequestOptions="@{requestOptions}"
+                glideUrl="@{vmProfile.observerPicUri}"
                 android:src="@drawable/add_photo"
                 app:layout_constraintEnd_toStartOf="@+id/card_edit"
                 app:layout_constraintStart_toEndOf="@+id/card_setting"
@@ -175,7 +177,7 @@
             android:layout_margin="@dimen/margin_ten"
             android:text="@string/str_aboutme"
             android:textColor="@color/colorWhite"
-            android:textSize="@dimen/textsize_eighteen"
+            android:textSize="@dimen/textsize_sixteen"
             app:layout_constraintStart_toStartOf="@+id/cons_last"
             app:layout_constraintTop_toTopOf="@+id/cons_last" />
 
@@ -194,7 +196,7 @@
             android:elevation="@dimen/margin_two"
             android:text="@string/str_long_text"
             android:textColor="@color/colorWhite"
-            android:textSize="@dimen/textsize_sixteen"
+            android:textSize="@dimen/textsize_forteen"
             app:layout_constraintEnd_toEndOf="@+id/cons_last"
             app:layout_constraintStart_toStartOf="@+id/txt_about"
             app:layout_constraintTop_toBottomOf="@+id/txt_about" />
@@ -218,7 +220,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin_ten"
             android:layout_marginEnd="@dimen/margin_ten"
-            android:layout_marginTop="@dimen/margin_fifteen"
+            android:layout_marginTop="@dimen/margin_ten"
             android:elevation="@dimen/margin_two"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -231,7 +233,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/str_email_hint"
                 android:textColor="@color/colorDarkGray"
-                android:textSize="@dimen/textsize_eighteen"
+                android:textSize="@dimen/textsize_forteen"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -242,12 +244,12 @@
                 style="@style/bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_ten"
+                android:layout_marginTop="@dimen/margin_five"
                 android:text="@string/dummy_email"
                 android:drawableStart="@drawable/ic_email"
                 android:drawablePadding="@dimen/margin_ten"
                 android:textColor="@color/colorBlack"
-                android:textSize="@dimen/textsize_eighteen"
+                android:textSize="@dimen/textsize_sixteen"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txt_email" />
 
@@ -286,7 +288,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/str_phone_hint"
                 android:textColor="@color/colorDarkGray"
-                android:textSize="@dimen/textsize_eighteen"
+                android:textSize="@dimen/textsize_forteen"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -297,12 +299,12 @@
                 style="@style/bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_ten"
+                android:layout_marginTop="@dimen/margin_five"
                 android:text="@string/dummy_no"
                 android:drawableStart="@drawable/ic_number"
                 android:drawablePadding="@dimen/margin_ten"
                 android:textColor="@color/colorBlack"
-                android:textSize="@dimen/textsize_eighteen"
+                android:textSize="@dimen/textsize_sixteen"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txt_phone_no" />
 
@@ -341,7 +343,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/str_stu_add"
                 android:textColor="@color/colorDarkGray"
-                android:textSize="@dimen/textsize_eighteen"
+                android:textSize="@dimen/textsize_forteen"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -352,12 +354,12 @@
                 style="@style/bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_ten"
+                android:layout_marginTop="@dimen/margin_five"
                 android:text="@string/dummy_location"
                 android:drawableStart="@drawable/ic_location_black"
                 android:drawablePadding="@dimen/margin_ten"
                 android:textColor="@color/colorBlack"
-                android:textSize="@dimen/textsize_eighteen"
+                android:textSize="@dimen/textsize_sixteen"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txt_address_title" />
 

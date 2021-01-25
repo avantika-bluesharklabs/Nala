@@ -35,7 +35,7 @@
             android:layout_height="wrap_content"
             android:text="@string/str_filter"
             android:textColor="@color/colorWhite"
-            android:textSize="@dimen/textsize_twenty"
+            android:textSize="@dimen/textsize_eighteen"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -49,7 +49,7 @@
             android:padding="@dimen/margin_five"
             android:text="@string/str_reset"
             android:textColor="@color/colorWhite"
-            android:textSize="@dimen/textsize_eighteen"
+            android:textSize="@dimen/textsize_forteen"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -96,7 +96,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/str_by_d_date"
                 android:textColor="@color/colorBlueForButtons"
-                android:textSize="@dimen/textsize_eighteen"
+                android:textSize="@dimen/textsize_forteen"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -152,7 +152,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/str_by_type"
                 android:textColor="@color/colorBlueForButtons"
-                android:textSize="@dimen/textsize_eighteen"
+                android:textSize="@dimen/textsize_forteen"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -186,7 +186,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/str_by_status"
                 android:textColor="@color/colorBlueForButtons"
-                android:textSize="@dimen/textsize_eighteen"
+                android:textSize="@dimen/textsize_forteen"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -216,6 +216,7 @@
                         android:layout_marginEnd="@dimen/margin_five"
                         android:background="@drawable/curve_view_border_yellow"
                         android:text="@string/str_pending"
+                        android:textAllCaps="false"
                         android:textColor="@color/colorDarkYellow"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toStartOf="@+id/btn_accepted"
@@ -231,6 +232,7 @@
                         android:background="@drawable/curve_view_border_blue"
                         android:paddingStart="@dimen/margin_twenty"
                         android:paddingEnd="@dimen/margin_twenty"
+                        android:textAllCaps="false"
                         android:text="@string/str_accepted"
                         android:textColor="@color/colorBlueForButtons"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -258,6 +260,7 @@
                         android:layout_marginEnd="@dimen/margin_five"
                         android:background="@drawable/curve_view_border_pink"
                         android:paddingStart="@dimen/margin_twenty"
+                        android:textAllCaps="false"
                         android:paddingEnd="@dimen/margin_twenty"
                         android:text="@string/str_cancelled"
                         android:textColor="@color/dark_pink"
@@ -276,6 +279,7 @@
                         android:background="@drawable/curve_view_border_teal"
                         android:paddingStart="@dimen/margin_twenty"
                         android:paddingEnd="@dimen/margin_twenty"
+                        android:textAllCaps="false"
                         android:text="@string/str_completed"
                         android:textColor="@color/ColorTeal"
                         app:layout_constraintEnd_toEndOf="parent"

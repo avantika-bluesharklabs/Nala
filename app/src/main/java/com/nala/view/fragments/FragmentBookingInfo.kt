@@ -16,17 +16,13 @@ class FragmentBookingInfo : FragmentBase() {
     private lateinit var mViewModelBookingInfo: ViewModelBookingInfo
     private lateinit var mBinding: FragmentBookingInfoBinding
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
 
-        mBinding =
-            DataBindingUtil.inflate(inflater, R.layout.fragment_booking_info, container, false)
+        mBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_booking_info, container, false)
 
         mViewModelBookingInfo = ViewModelBookingInfo(mApplication, false)
+
         mBinding.vmBookingInfo = mViewModelBookingInfo
 
 
@@ -37,6 +33,7 @@ class FragmentBookingInfo : FragmentBase() {
 
             val fragment: Fragment = FragmentRateReview()
             mMainActivity?.addFragment(fragment, "FragmentRateReview", "FragmentRateReview")
+
         }
 
         return mBinding.root

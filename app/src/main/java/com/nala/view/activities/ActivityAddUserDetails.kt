@@ -39,6 +39,8 @@ class ActivityAddUserDetails : ActivityBase() {
         mBinding = DataBindingUtil.setContentView(this, R.layout.activity_add_user_details)
         mViewModelAddDetails = ViewModelAddDetails(mApplication, true)
         mBinding.vmAddDetails = mViewModelAddDetails
+        
+        mBinding.requestOptions = mApplication.glideCenterCircle(R.drawable.add_photo)
 
         mBroadcastManager.registerReceiver(mReceiverImageResult, IntentFilter(resources.getString(R.string.broadcastImageResult)))
 
@@ -46,6 +48,10 @@ class ActivityAddUserDetails : ActivityBase() {
 
         observable();
         selectMale()
+
+       // mBinding.set(mApplication.glideCenterCircle(R.drawable.add_photo))
+
+
 
         mBinding.imgUserImage.setOnClickListener {
 

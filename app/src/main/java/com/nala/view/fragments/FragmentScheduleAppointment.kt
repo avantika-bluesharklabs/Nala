@@ -1,16 +1,14 @@
 package com.nala.view.fragments
 
+import android.R.layout
+import android.app.ActionBar
 import android.app.Dialog
-import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import android.view.Window
+import android.view.*
+import android.widget.PopupWindow
 import androidx.appcompat.widget.AppCompatButton
-import androidx.appcompat.widget.AppCompatImageView
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.observe
@@ -22,7 +20,7 @@ import com.nala.businesslogic.pojo.PojoSchedualeAppoinmentType
 import com.nala.businesslogic.viewmodel.fragments.ViewModelScheduleAppointmentTime
 import com.nala.businesslogic.viewmodel.fragments.ViewModelScheduleAppointmentType
 import com.nala.databinding.FragmentScheduleAppointmentBinding
-import com.nala.view.activities.ActivityMain
+
 
 class FragmentScheduleAppointment : FragmentBase(), OnClickSchedualeAppoinment,
     OnClickSchedualeAppoinmentType {
@@ -77,15 +75,17 @@ class FragmentScheduleAppointment : FragmentBase(), OnClickSchedualeAppoinment,
 
     fun observer() {
 
-
         mViewModelSchedualeAppoinment.getEventBack().observe(mActivity) {
             mMainActivity?.onBackPressed()
+
         }
     }
 
 
     private fun showDialog() {
         val dialog = Dialog(mContext)
+
+
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
         dialog.getWindow()?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT));
         dialog.setCancelable(true)

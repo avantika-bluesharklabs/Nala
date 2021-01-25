@@ -730,7 +730,7 @@ open class FragmentBase : Fragment(), LocationListener {
         }
     }
 
-    private fun getLastLocation() {
+  /*  private fun getLastLocation() {
 
         if ((ContextCompat.checkSelfPermission(
                 mActivity,
@@ -763,12 +763,96 @@ open class FragmentBase : Fragment(), LocationListener {
                         )
                         mPreferences.setString(PREF_GPS_ALTITUDE, mLastLocation?.altitude.toString())
 
-                        /* mPreferences.setString(R.string.pref_gps_lat,ConstantCodes.USER_LATITUDE)
-                         mPreferences.setString(R.string.pref_gps_lng,ConstantCodes.USER_LONGITUDE)*/
+                        *//* mPreferences.setString(R.string.pref_gps_lat,ConstantCodes.USER_LATITUDE)
+                         mPreferences.setString(R.string.pref_gps_lng,ConstantCodes.USER_LONGITUDE)*//*
                     }
                 }
         }
+    }*/
+
+    private fun getLastLocation() {
+
+        if ((ContextCompat.checkSelfPermission(
+                mActivity,
+                Manifest.permission.ACCESS_FINE_LOCATION
+            ) != PackageManager.PERMISSION_GRANTED)
+        ) {
+            ActivityCompat.requestPermissions(
+                mActivity,
+                arrayOf(Manifest.permission.ACCESS_FINE_LOCATION,Manifest.permission.ACCESS_BACKGROUND_LOCATION),
+                REQUEST_LOCATION_PERMISSION
+            )
+        } else {
+
+
+            mFusedLocationClient!!.lastLocation.addOnSuccessListener { location : Location? ->
+                Log.e(
+                    "TAGsas",
+                    "=====>" + "isSuccessful: " + location?.latitude + " , result: " + location?.longitude
+                )
+                mBroadcastManager.sendBroadcast(
+                    Intent(mContext.resources.getString(com.nala.R.string.broadcastLocationResult))
+                        .putExtra(
+                            mContext.resources.getString(com.nala.R.string.bundleLocationLatitude),
+                            location?.latitude
+                        )
+                        .putExtra(
+                            mContext.resources.getString(com.nala.R.string.bundleLocationLongitude),
+                            location?.longitude
+                        )
+                )
+                // Got last known location. In some rare situations this can be null.
+            }
+
+//
+//            mFusedLocationClient!!.lastLocation
+//                .addOnCompleteListener(mActivity) { task ->
+//
+//
+//                    Log.e(
+//                        "TAGsas",
+//                        "=====>" + "isSuccessful: " + task.isSuccessful + " , result: " + task.result
+//                    )
+//
+//                    if (task.isSuccessful && task.result != null) {
+//                        mLastLocation = task.result
+//
+//                        Log.d(
+//                            "TAG",
+//                            "=====>" + "Latitudee: " + mLastLocation?.latitude + " , Longitude: " + mLastLocation?.longitude
+//                        )
+//
+//
+//                        mPreferences.setString(
+//                            PREF_GPS_LATITUDE,
+//                            mLastLocation?.latitude.toString()
+//                        )
+//                        mPreferences.setString(
+//                            PREF_GPS_LONGITUDE,
+//                            mLastLocation?.longitude.toString()
+//                        )
+//                        mPreferences.setString(
+//                            PREF_GPS_ALTITUDE,
+//                            mLastLocation?.altitude.toString()
+//                        )
+//
+//
+//
+//
+//
+//                        /* mPreferences.setString(R.string.pref_gps_lat,ConstantCodes.USER_LATITUDE)
+//                         mPreferences.setString(R.string.pref_gps_lng,ConstantCodes.USER_LONGITUDE)*/
+//                    }
+//                }
+
+        }
     }
+
+
+
+
+
+
 
 
     override fun onLocationChanged(location: Location?) {

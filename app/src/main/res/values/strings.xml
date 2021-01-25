@@ -140,7 +140,7 @@
     <string name="str_no_time_slot_available">No any time available</string>
     <string name="str_massage_type">Massage Type</string>
     <string name="str_success_desc">Your massage has been \n successfully booked!</string>
-    <string name="str_success_desc_2">The therapist will reah out \n and suggest another time if they \n cannot at this day and time.</string>
+    <string name="str_success_desc_2">The therapist will reach out \n and suggest another time if they \n cannot at this day and time.</string>
     <string name="str_booking_req">See Booking Request</string>
     <string name="str_my_bookings">My Bookings</string>
     <string name="str_bookings_info">Bookings Info</string>

@@ -3,7 +3,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="@dimen/margin_ten"
     android:background="@color/colorBlueForButtons">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -41,7 +40,7 @@
             android:text="@string/str_success_desc"
             android:textAlignment="center"
             android:textColor="@color/colorDarkGray"
-            android:textSize="@dimen/textsize_eighteen"
+            android:textSize="@dimen/textsize_sixteen"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/txt_success_text" />
@@ -61,12 +60,13 @@
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/txt_success_desc2"
             style="@style/regular"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_twenty"
             android:text="@string/str_success_desc_2"
             android:textAlignment="center"
-            android:textSize="@dimen/textsize_eighteen"
+            android:textSize="@dimen/textsize_forteen"
+            android:textColor="@color/colorDarkGray"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/ll_div" />
@@ -97,11 +97,10 @@
                 style="@style/bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_five"
                 android:text="@string/str_deep_tisue"
                 android:textAlignment="center"
                 android:textColor="@color/colorPrimary"
-                android:textSize="@dimen/textsize_eighteen"
+                android:textSize="@dimen/textsize_sixteen"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/img_therapist_image" />
@@ -111,11 +110,10 @@
                 style="@style/semibold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_five"
                 android:text="@string/dummy_date"
                 android:textAlignment="center"
                 android:textColor="@color/colorBlack"
-                android:textSize="@dimen/textsize_twenty_four"
+                android:textSize="@dimen/textsize_eighteen"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/txt_massage_name" />
@@ -125,12 +123,11 @@
                 style="@style/semibold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_five"
                 android:layout_marginBottom="@dimen/margin_ten"
                 android:text="@string/str_times"
                 android:textAlignment="center"
                 android:textColor="@color/colorBlack"
-                android:textSize="@dimen/textsize_eighteen"
+                android:textSize="@dimen/textsize_sixteen"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/txt_massage_date" />
@@ -160,8 +157,9 @@
         android:background="@drawable/btn_submit"
         android:text="@string/str_booking_req"
         android:textAllCaps="false"
+        style="@style/bold"
         android:textColor="@color/colorWhite"
-        android:textSize="@dimen/textsize_twenty"
+        android:textSize="@dimen/textsize_sixteen"
         app:layout_constraintEnd_toEndOf="@+id/cl_msg"
         app:layout_constraintStart_toStartOf="@+id/cl_msg"
         app:layout_constraintTop_toBottomOf="@id/cl_msg" />

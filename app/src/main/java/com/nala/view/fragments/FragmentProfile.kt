@@ -11,6 +11,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.RequiresApi
 import androidx.databinding.DataBindingUtil
+import com.bumptech.glide.request.RequestOptions
 import com.nala.R
 import com.nala.businesslogic.interfaces.OnClickMyBooking
 import com.nala.businesslogic.interfaces.OnClickProfile
@@ -39,6 +40,8 @@ class FragmentProfile : FragmentBase(), OnClickProfile {
         mViewModelprofile = ViewModelProfile(mApplication,false)
         mBinding.vmProfile = mViewModelprofile
         mBinding.onContentClickListener = this
+
+        mBinding.setRequestOptions(mApplication.glideCenterCircle(R.drawable.add_photo))
 
         mBroadcastManager.registerReceiver(mReceiverImageResult, IntentFilter(resources.getString(R.string.broadcastImageResult)))
 

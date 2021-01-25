@@ -14,6 +14,8 @@ class ViewModelHomeMap(myApplication: MyApplication, isToShowErrors: Boolean) :
 
     var user_lat = 0.000
     var user_long = 0.000
+    var city_name = ""
+
 
     private val liveEvent: SingleLiveEvent<Boolean> = SingleLiveEvent()
     private val liveEventSuccess: SingleLiveEvent<PojoHome> = SingleLiveEvent()

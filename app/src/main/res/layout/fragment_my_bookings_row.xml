@@ -32,7 +32,6 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_ten"
         android:clickable="true"
         android:focusable="true"
         android:onClick="@{(v)->onContentClickListener.onClickMyBookingItem(v,layoutPosition,data)}">
@@ -84,7 +83,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin_ten"
-            android:layout_marginTop="@dimen/margin_ten"
+            android:layout_marginTop="@dimen/margin_seven"
             android:layout_marginEnd="@dimen/margin_ten"
             android:elevation="@dimen/margin_two"
             app:layout_constraintEnd_toEndOf="@id/card_bg"
@@ -148,7 +147,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/margin_ten"
-            android:layout_marginTop="@dimen/margin_ten"
+            android:layout_marginTop="@dimen/margin_five"
             android:elevation="2dp"
             app:layout_constraintEnd_toEndOf="@id/card_bg"
             app:layout_constraintStart_toStartOf="@id/card_image"
@@ -161,7 +160,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/str_in_stuidio"
                 android:textColor="@color/colorDarkGray"
-                android:textSize="@dimen/textsize_forteen"
+                android:textSize="@dimen/textsize_twelve"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -170,7 +169,7 @@
                 android:id="@+id/cl_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_five"
+                android:layout_marginTop="@dimen/margin_two"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/txt_massage">
 
@@ -193,7 +192,7 @@
                     android:layout_marginBottom="@dimen/margin_five"
                     android:text="@string/str_times"
                     android:textColor="@color/colorBlack"
-                    android:textSize="@dimen/textsize_sixteen"
+                    android:textSize="@dimen/textsize_forteen"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toEndOf="@id/img_clock"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -207,7 +206,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/margin_fifteen"
-                android:layout_marginTop="@dimen/margin_five"
+                android:layout_marginTop="@dimen/margin_two"
                 android:text="@string/str_bullet"
                 android:textSize="@dimen/textsize_twenty_eight"
                 app:layout_constraintBottom_toBottomOf="@id/cl_time"
@@ -220,7 +219,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/margin_fifteen"
-                android:layout_marginTop="@dimen/margin_five"
+                android:layout_marginTop="@dimen/margin_two"
                 app:layout_constraintStart_toEndOf="@id/txt_bullet"
                 app:layout_constraintTop_toBottomOf="@id/txt_massage">
 
@@ -243,7 +242,7 @@
                     android:layout_marginBottom="@dimen/margin_five"
                     android:text="@string/str_city"
                     android:textColor="@color/colorBlack"
-                    android:textSize="@dimen/textsize_sixteen"
+                    android:textSize="@dimen/textsize_forteen"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toEndOf="@id/img_location"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -271,7 +270,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/margin_ten"
             android:elevation="2dp"
-            android:layout_marginTop="@dimen/margin_ten"
+            android:layout_marginTop="@dimen/margin_five"
             android:layout_marginEnd="@dimen/margin_ten"
             app:layout_constraintBottom_toBottomOf="@+id/card_bg"
             app:layout_constraintEnd_toEndOf="@id/card_bg"
@@ -287,7 +286,7 @@
                 android:layout_marginStart="@dimen/margin_ten"
                 android:text="@string/str_booking_min"
                 android:textColor="@color/colorPrimary"
-                android:textSize="@dimen/textsize_eighteen"
+                android:textSize="@dimen/textsize_sixteen"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -301,17 +300,35 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
-                <androidx.appcompat.widget.AppCompatButton
+                <!--<androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btn_cancel"
                     style="@style/semibold"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="@dimen/margin_ten"
                     android:onClick="@{(v)->onContentClickListener.onClickMyBookingCancel(v,layoutPosition,data)}"
-                    android:src="@drawable/btn_list_cancel"
+
                     android:text="@string/str_cancel"
                     android:textAllCaps="false"
                     android:textSize="@dimen/textsize_sixteen"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/img_comment"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />-->
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/btn_cancel"
+                    style="@style/semibold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/margin_ten"
+                    android:onClick="@{(v)->onContentClickListener.onClickMyBookingCancel(v,layoutPosition,data)}"
+                    android:background="@drawable/curve_view_360"
+                    android:backgroundTint="@color/colorGray"
+                    android:text="@string/str_cancel"
+                    android:textAllCaps="false"
+
+                    android:textSize="@dimen/textsize_twelve"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/img_comment"
                     app:layout_constraintStart_toStartOf="parent"
