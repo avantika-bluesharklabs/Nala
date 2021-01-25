@@ -5,6 +5,7 @@ import com.nala.businesslogic.pojo.PojoNotisfication
 import com.nala.businesslogic.pojo.PojoSchedualeAppoinment
 
 interface OnClickNotification {
+
     fun onClickNotificationItem(view: View?, layoutPosition: Int, data: PojoNotisfication)
 
 }

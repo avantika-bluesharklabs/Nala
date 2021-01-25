@@ -21,7 +21,6 @@
             type="com.nala.businesslogic.interfaces.OnClickHome" />
 
 
-
     </data>
 
 
@@ -43,9 +42,9 @@
                 android:id="@+id/card_search"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_five"
                 app:cardCornerRadius="@dimen/margin_five"
                 app:cardElevation="@dimen/margin_five"
-                android:layout_margin="@dimen/margin_five"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@id/card_filter"
                 app:layout_constraintStart_toStartOf="parent"
@@ -54,8 +53,8 @@
                 <androidx.appcompat.widget.AppCompatImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="@dimen/margin_five"
                     android:layout_gravity="center_vertical"
+                    android:padding="@dimen/margin_five"
                     android:src="@drawable/ic_home_location" />
 
 
@@ -65,8 +64,8 @@
                 android:id="@+id/card_filter"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                app:cardCornerRadius="@dimen/margin_five"
                 android:layout_margin="@dimen/margin_five"
+                app:cardCornerRadius="@dimen/margin_five"
                 app:cardElevation="@dimen/margin_five"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -80,9 +79,6 @@
 
 
             </androidx.cardview.widget.CardView>
-
-
-
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -108,10 +104,10 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/bold"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/str_near"
-                    style="@style/bold"
                     android:textColor="@color/colorDarkBlue"
                     android:textSize="@dimen/textsize_eighteen"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -124,9 +120,9 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/curve_view"
                     android:padding="@dimen/margin_five"
-                    app:layout_constraintHorizontal_chainStyle="packed"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_chainStyle="packed"
                     app:layout_constraintTop_toTopOf="parent">
 
 
@@ -134,12 +130,12 @@
                         android:id="@+id/img_users"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:padding="@dimen/margin_ten"
                         android:layout_margin="@dimen/margin_five"
-                        app:layout_constraintTop_toTopOf="parent"
+                        android:padding="@dimen/margin_ten"
+                        android:src="@drawable/home_mapview_icon"
                         app:layout_constraintEnd_toStartOf="@+id/view"
                         app:layout_constraintStart_toStartOf="parent"
-                        android:src="@drawable/home_mapview_icon" />
+                        app:layout_constraintTop_toTopOf="parent" />
 
 
                     <View
@@ -147,10 +143,10 @@
                         android:layout_width="1dp"
                         android:layout_height="0dp"
                         android:background="@color/colorGray"
-                        app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/img_map"
                         app:layout_constraintStart_toEndOf="@+id/img_users"
-                        app:layout_constraintEnd_toStartOf="@+id/img_map"/>
+                        app:layout_constraintTop_toTopOf="parent" />
 
 
                     <androidx.appcompat.widget.AppCompatImageView
@@ -160,59 +156,57 @@
                         android:layout_gravity="center"
                         android:layout_margin="@dimen/margin_five"
                         android:padding="@dimen/margin_ten"
-                        app:layout_constraintTop_toTopOf="parent"
+                        android:src="@drawable/home_list_icon_selected"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/view"
-                        android:src="@drawable/home_list_icon_selected" />
-
-
+                        app:layout_constraintTop_toTopOf="parent" />
 
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-              <!--  <androidx.cardview.widget.CardView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:cardCornerRadius="@dimen/margin_sixtysix"
-                    app:cardElevation="@dimen/margin_five"
-                   >
+                <!--  <androidx.cardview.widget.CardView
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      app:cardCornerRadius="@dimen/margin_sixtysix"
+                      app:cardElevation="@dimen/margin_five"
+                     >
 
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:paddingStart="@dimen/margin_fifteen"
-                        android:paddingTop="@dimen/margin_seven"
-                        android:paddingEnd="@dimen/margin_fifteen"
-                        android:paddingBottom="@dimen/margin_seven">
+                      <LinearLayout
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:orientation="horizontal"
+                          android:paddingStart="@dimen/margin_fifteen"
+                          android:paddingTop="@dimen/margin_seven"
+                          android:paddingEnd="@dimen/margin_fifteen"
+                          android:paddingBottom="@dimen/margin_seven">
 
-                        <androidx.appcompat.widget.AppCompatImageView
-                            android:id="@+id/img_users"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            app:srcCompat="@drawable/home_mapview_icon" />
-
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:layout_marginStart="@dimen/margin_five"
-                            android:layout_marginEnd="@dimen/margin_five"
-                            android:background="@color/colorGray" />
-
-                        <androidx.appcompat.widget.AppCompatImageView
-                            android:id="@+id/img_map"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            app:srcCompat="@drawable/home_list_icon_selected" />
-
-                    </LinearLayout>
+                          <androidx.appcompat.widget.AppCompatImageView
+                              android:id="@+id/img_users"
+                              android:layout_width="wrap_content"
+                              android:layout_height="wrap_content"
+                              android:layout_gravity="center"
+                              app:srcCompat="@drawable/home_mapview_icon" />
 
 
-                </androidx.cardview.widget.CardView>-->
+                          <LinearLayout
+                              android:layout_width="wrap_content"
+                              android:layout_height="match_parent"
+                              android:layout_marginStart="@dimen/margin_five"
+                              android:layout_marginEnd="@dimen/margin_five"
+                              android:background="@color/colorGray" />
+
+                          <androidx.appcompat.widget.AppCompatImageView
+                              android:id="@+id/img_map"
+                              android:layout_width="wrap_content"
+                              android:layout_height="wrap_content"
+                              android:layout_gravity="center"
+                              app:srcCompat="@drawable/home_list_icon_selected" />
+
+                      </LinearLayout>
+
+
+                  </androidx.cardview.widget.CardView>-->
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -222,13 +216,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:visibility="gone"
-                app:recyclerHome="@{vmHomeList.layoutManager}"
                 app:adapterHome="@{vmHomeList.observerContent}"
                 app:clickListenerHome="@{onContentClickListener}"
-                app:scrollListenerHome="@{vmHomeList.scrollListener}"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/cl_toggleview"
-                app:layout_constraintBottom_toBottomOf="parent"/>
+                app:recyclerHome="@{vmHomeList.layoutManager}"
+                app:scrollListenerHome="@{vmHomeList.scrollListener}" />
 
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -240,29 +234,31 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/cl_toggleview">
 
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:id="@+id/img_home_map"
+
+              <!--  <fragment
+                    android:id="@+id/map"
+                    android:name="com.google.android.gms.maps.SupportMapFragment"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
                     android:layout_marginTop="@dimen/margin_ten"
-                    android:background="@drawable/img_forgot_password"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent" />-->
+
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rv_home_hori_list"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="@dimen/margin_twenty"
-                    app:recyclerHomeMap="@{vmHomeMap.layoutManager}"
                     app:adapterHomeMap="@{vmHomeMap.observerContent}"
                     app:clickListenerHomeMap="@{onContentClickListener}"
-                    app:scrollListenerHomeMap="@{vmHomeMap.scrollListener}"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent" />
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:recyclerHomeMap="@{vmHomeMap.layoutManager}"
+                    app:scrollListenerHomeMap="@{vmHomeMap.scrollListener}" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
