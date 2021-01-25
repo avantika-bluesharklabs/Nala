@@ -36,7 +36,7 @@ class FragmentRateReview: FragmentBase() {
 
 
         mViewModelRateReview.getEventBack().observe(mActivity) {
-            mMainActivity.onBackPressed()
+            mMainActivity?.onBackPressed()
         }
 
 

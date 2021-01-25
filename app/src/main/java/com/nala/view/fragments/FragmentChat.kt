@@ -41,7 +41,7 @@ class FragmentChat : FragmentBase() {
 
 
         mViewModelChat.getEventBack().observe(mActivity) {
-            mMainActivity.onBackPressed()
+            mMainActivity?.onBackPressed()
         }
     }
 }

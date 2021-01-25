@@ -12,6 +12,9 @@ class ViewModelHomeMap(myApplication: MyApplication, isToShowErrors: Boolean) :
         0, RecyclerView.HORIZONTAL){
 
 
+    var user_lat = 0.000
+    var user_long = 0.000
+
     private val liveEvent: SingleLiveEvent<Boolean> = SingleLiveEvent()
     private val liveEventSuccess: SingleLiveEvent<PojoHome> = SingleLiveEvent()
 

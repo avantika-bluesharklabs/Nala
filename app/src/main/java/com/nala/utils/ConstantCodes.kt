@@ -12,6 +12,10 @@ class ConstantCodes {
         const val TOTAL_RECORDS = 10
         const val INTENT_Therapist_ID: String ="THERAPIST_ID"
 
+        const val PREF_GPS_LATITUDE: String = "latitude"
+        const val PREF_GPS_LONGITUDE: String = "longitude"
+        const val PREF_GPS_ALTITUDE: String = "altitude"
+
 
         const val REQUEST_CAMERA_RESULT = 30
         const val REQUEST_PHOTOGALLERY_RESULT = 31

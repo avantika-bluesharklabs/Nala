@@ -1,11 +1,16 @@
 package com.nala.view.activities
 
+import android.content.BroadcastReceiver
+import android.content.Context
 import android.content.Intent
+import android.content.IntentFilter
 import android.content.res.ColorStateList
 import android.graphics.Color
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.annotation.RequiresApi
 import androidx.core.content.ContextCompat
 import androidx.core.widget.ImageViewCompat
 import androidx.databinding.DataBindingUtil
@@ -18,6 +23,7 @@ import com.nala.databinding.ActivitySignUpBinding
 import com.nala.utils.Utils
 import kotlinx.android.synthetic.main.activity_add_user_details.*
 import kotlinx.android.synthetic.main.activity_sign_up.*
+import java.io.ByteArrayOutputStream
 
 
 class ActivityAddUserDetails : ActivityBase() {
@@ -26,21 +32,27 @@ class ActivityAddUserDetails : ActivityBase() {
     private lateinit var mBinding: ActivityAddUserDetailsBinding
 
 
+    @RequiresApi(Build.VERSION_CODES.M)
     override fun onCreate(savedInstanceState: Bundle?) {
         window.statusBarColor = Color.WHITE
         super.onCreate(savedInstanceState)
         mBinding = DataBindingUtil.setContentView(this, R.layout.activity_add_user_details)
-        mViewModelAddDetails =
-            ViewModelAddDetails(
-                mApplication,
-                true
-            )
+        mViewModelAddDetails = ViewModelAddDetails(mApplication, true)
         mBinding.vmAddDetails = mViewModelAddDetails
+
+        mBroadcastManager.registerReceiver(mReceiverImageResult, IntentFilter(resources.getString(R.string.broadcastImageResult)))
 
         mBinding.imgBack.setOnClickListener { finish() }
 
         observable();
         selectMale()
+
+        mBinding.imgUserImage.setOnClickListener {
+
+            imageChooser(true)
+
+
+        }
     }
 
     override fun onBackPressed() {
@@ -113,5 +125,23 @@ class ActivityAddUserDetails : ActivityBase() {
         txt_female.setBackgroundResource(R.drawable.curve_view_360_right_half_with_border_selected)
         txt_male.setBackgroundResource(R.drawable.curve_view_360_left_half_with_border)
 
+    }
+
+
+    private val mReceiverImageResult: BroadcastReceiver = object : BroadcastReceiver() {
+        override fun onReceive(context: Context, intent: Intent) {
+            val byteArray =
+                intent.getByteArrayExtra(mContext.resources.getString(R.string.bundleImageResultStream))
+            val outputStream = ByteArrayOutputStream(byteArray.size)
+            outputStream.write(byteArray, 0, byteArray.size)
+            mViewModelAddDetails.observerStreamPic.set(outputStream)
+            mViewModelAddDetails.observerPicUri.set(
+                intent.getStringExtra(
+                    mContext.resources.getString(
+                        R.string.bundleImageResultUri
+                    )
+                )
+            )
+        }
     }
 }

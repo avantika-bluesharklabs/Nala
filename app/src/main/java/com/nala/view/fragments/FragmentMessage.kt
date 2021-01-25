@@ -49,7 +49,7 @@ class FragmentMessage : FragmentBase(), OnClickMessage {
     override fun onClickMessageItem(view: View?, layoutPosition: Int, data: PojoMessage) {
 
         val fragment: Fragment = FragmentChat()
-        mMainActivity.addFragment(fragment, "FragmentChat", "FragmentChat")
+        mMainActivity?.addFragment(fragment, "FragmentChat", "FragmentChat")
 
     }
 

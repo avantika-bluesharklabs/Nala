@@ -86,7 +86,7 @@ class FragmentServicePro : FragmentBase(), OnClickTechnique, OnClickReview {
 
 
             val fragment: Fragment = FragmentScheduleAppointment()
-            mMainActivity.addFragment(fragment, "FragmentScheduleAppointment", "FragmentScheduleAppointment")
+            mMainActivity?.addFragment(fragment, "FragmentScheduleAppointment", "FragmentScheduleAppointment")
 
         }
 
@@ -108,7 +108,7 @@ class FragmentServicePro : FragmentBase(), OnClickTechnique, OnClickReview {
 
 
         mViewModelTechnique.getEventBack().observe(mActivity) {
-            mMainActivity.onBackPressed()
+            mMainActivity?.onBackPressed()
         }
 
 

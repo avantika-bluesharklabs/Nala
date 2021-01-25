@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/top_curve_view">
+    android:background="@drawable/top_curve_view_20">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/const_toolbar"
@@ -19,6 +19,7 @@
 
 
         <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/img_cross"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="@dimen/margin_five"
@@ -29,12 +30,12 @@
 
 
         <androidx.appcompat.widget.AppCompatTextView
+            style="@style/bold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/str_filter"
             android:textColor="@color/colorWhite"
             android:textSize="@dimen/textsize_twenty"
-            style="@style/bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -42,11 +43,11 @@
 
 
         <androidx.appcompat.widget.AppCompatTextView
+            style="@style/medium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="@dimen/margin_five"
             android:text="@string/str_reset"
-            style="@style/medium"
             android:textColor="@color/colorWhite"
             android:textSize="@dimen/textsize_eighteen"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -55,6 +56,17 @@
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--<androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/const_toolbar">-->
+
+
+
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -148,7 +160,7 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_service_type"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_height="150dp"
                 android:layout_marginTop="@dimen/margin_five"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

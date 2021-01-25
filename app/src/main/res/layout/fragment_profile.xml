@@ -11,10 +11,14 @@
             name="vmProfile"
             type="com.nala.businesslogic.viewmodel.fragments.ViewModelProfile" />
 
+        <variable
+            name="requestOptions"
+            type="com.bumptech.glide.request.RequestOptions" />
+
 
         <variable
             name="onContentClickListener"
-            type="com.nala.businesslogic.interfaces.OnClickMyBooking" />
+            type="com.nala.businesslogic.interfaces.OnClickProfile" />
 
     </data>
 
@@ -84,8 +88,10 @@
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/img_profile"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:clickable="true"
+                android:focusable="true"
                 android:src="@drawable/add_photo"
                 app:layout_constraintEnd_toStartOf="@+id/card_edit"
                 app:layout_constraintStart_toEndOf="@+id/card_setting"

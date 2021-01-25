@@ -186,7 +186,12 @@
     <string name="dummy_location">145,NewYork Streets,NewYork</string>
     <string name="dummy_email">abc@gmail.com</string>
     <string name="dummy_no">1231231232</string>
-    <!-- TODO: Remove or change this placeholder text -->
+
+    <string name="broadcastLocationResult">broadcastLocationResult</string>
+    <string name="bundleLocationLatitude">bundleLocationLatitude</string>
+    <string name="bundleLocationLongitude">bundleLocationLongitude</string>
+
+
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
 

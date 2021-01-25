@@ -39,7 +39,7 @@ class FragmentMyBookings() : FragmentBase(),OnClickMyBooking {
             val dialog = BottomSheetDialog(mContext)
             val bottomSheet = layoutInflater.inflate(R.layout.layout_my_booking_filters, null)
 
-         //   bottomSheet.buttonSubmit.setOnClickListener { dialog.dismiss() }
+          //  bottomSheet.img.setOnClickListener { dialog.dismiss() }
 
             dialog.setContentView(bottomSheet)
             dialog.show()
@@ -50,30 +50,8 @@ class FragmentMyBookings() : FragmentBase(),OnClickMyBooking {
         return mBinding.root
     }
 
-    /*override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-       // img_filter.setOnClickListener(View.OnClickListener { openFilters() })
-
-    }*/
-
-
-    /*fun openFilters() {
-        val btnsheet = layoutInflater.inflate(R.layout.layout_my_booking_filters, null)
-        val dialog = BottomSheetDialog(this.requireContext())
-        dialog.setContentView(btnsheet)
-        btnsheet.setOnClickListener {
-            dialog.dismiss()
-        }
-        dialog.show()
-    }*/
-
-
-
 
     override fun onClickMyBookingItem(view: View?, layoutPosition: Int, data: PojoMyBooking) {
-
-
 
 
     }
@@ -81,7 +59,7 @@ class FragmentMyBookings() : FragmentBase(),OnClickMyBooking {
     override fun onClickMyBookingCancel(view: View?, layoutPosition: Int, data: PojoMyBooking) {
 
         val fragment: Fragment = FragmentBookingInfo()
-        mMainActivity.addFragment(fragment, "FragmentBookingInfo", "FragmentBookingInfo")
+        mMainActivity?.addFragment(fragment, "FragmentBookingInfo", "FragmentBookingInfo")
 
     }
 

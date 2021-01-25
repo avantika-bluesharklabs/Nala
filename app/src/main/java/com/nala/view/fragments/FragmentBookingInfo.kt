@@ -36,7 +36,7 @@ class FragmentBookingInfo : FragmentBase() {
         mBinding.cosntRateReview.setOnClickListener {
 
             val fragment: Fragment = FragmentRateReview()
-            mMainActivity.addFragment(fragment, "FragmentRateReview", "FragmentRateReview")
+            mMainActivity?.addFragment(fragment, "FragmentRateReview", "FragmentRateReview")
         }
 
         return mBinding.root
@@ -47,7 +47,7 @@ class FragmentBookingInfo : FragmentBase() {
 
 
         mViewModelBookingInfo.getEventBack().observe(mActivity) {
-            mMainActivity.onBackPressed()
+            mMainActivity?.onBackPressed()
         }
 
 

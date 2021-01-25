@@ -79,7 +79,7 @@ class FragmentScheduleAppointment : FragmentBase(), OnClickSchedualeAppoinment,
 
 
         mViewModelSchedualeAppoinment.getEventBack().observe(mActivity) {
-            mMainActivity.onBackPressed()
+            mMainActivity?.onBackPressed()
         }
     }
 
@@ -97,7 +97,7 @@ class FragmentScheduleAppointment : FragmentBase(), OnClickSchedualeAppoinment,
             dialog.dismiss()
 
             val fragment: Fragment = FragmentMyBookings()
-            mMainActivity.addFragment(fragment, "FragmentMyBooking", "FragmentMyBooking")
+            mMainActivity?.addFragment(fragment, "FragmentMyBooking", "FragmentMyBooking")
 
 
         }
