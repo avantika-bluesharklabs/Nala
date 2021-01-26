@@ -4,8 +4,6 @@ import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
-import android.location.Address
-import android.location.Geocoder
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -27,14 +25,14 @@ import com.nala.businesslogic.viewmodel.fragments.ViewModelHome
 import com.nala.businesslogic.viewmodel.fragments.ViewModelHomeMap
 import com.nala.databinding.FragmentHomeBinding
 
-import java.util.*
-
 
 class FragmentHome : FragmentBase(), OnClickHome, OnMapReadyCallback {
 
     private lateinit var mViewModelHome: ViewModelHome
     private lateinit var mViewModelHomeMap: ViewModelHomeMap
     private lateinit var mBinding: FragmentHomeBinding
+
+    private var date: String? = null
 
     var mapFragment: SupportMapFragment? = null
 
@@ -55,30 +53,56 @@ class FragmentHome : FragmentBase(), OnClickHome, OnMapReadyCallback {
         mBinding.vmHomeMap = mViewModelHomeMap
         mBinding.onContentClickListener = this
 
+
         mBroadcastManager.registerReceiver(mReceiverLocationResult, IntentFilter(resources.getString(R.string.broadcastLocationResult)))
+        getLocation()
+
 
 
         mBinding.imgFilter.setOnClickListener {
 
-            //FragmentBottomsheetFilter().show(mActivity.getSupportFragmentManager(), "Dialog")
 
-            val dialog = BottomSheetDialog(mContext)
-            val bottomSheet = layoutInflater.inflate(R.layout.layout_my_booking_filters, null)
 
-           // val img_cross:AppCompatImageView = findviewById
 
-             //  bottomSheet.buttonSubmit.setOnClickListener { dialog.dismiss() }
+            val view: View = layoutInflater.inflate(R.layout.layout_my_booking_filters, null)
+            val dialog = BottomSheetDialog(mContext, R.style.BottomSheetDialogTheme) // Style here
 
-            dialog.setContentView(bottomSheet)
+            dialog.setContentView(view)
             dialog.show()
+
+
+
+
+
+
+            /* img_date.setOnClickListener {
+
+                 val c = Calendar.getInstance()
+                 val year = c.get(Calendar.YEAR)
+                 val month = c.get(Calendar.MONTH)
+                 val day = c.get(Calendar.DAY_OF_MONTH)
+
+
+
+                 val datePickerDialog = DatePickerDialog(mContext, DatePickerDialog.OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
+
+                     txt_select.setText(year.toString() + "-" + (monthOfYear + 1) + "-" + dayOfMonth.toString())
+
+                     date = year.toString() + "-" + (monthOfYear + 1) + "-" + dayOfMonth.toString()
+
+                 }, year, month, day
+                 )
+                 datePickerDialog.show()
+
+             }*/
+
+
         }
 
 
-      /*  mapFragment =
-            activity?.supportFragmentManager?.findFragmentById(R.id.map) as SupportMapFragment
+        val mapFragment = childFragmentManager.findFragmentById(R.id.map) as SupportMapFragment
 
-        mapFragment?.getMapAsync(this)*/
-
+        mapFragment.getMapAsync(this)
 
 
 
@@ -127,7 +151,14 @@ class FragmentHome : FragmentBase(), OnClickHome, OnMapReadyCallback {
 
     }
 
+
     override fun onMapReady(googleMap: GoogleMap?) {
+
+
+        googleMap?.getUiSettings()?.setMyLocationButtonEnabled(false);
+       // googleMap?.isMyLocationEnabled = true
+
+
 
 
         val sydney = LatLng((-34).toDouble(), 151.0)
@@ -140,37 +171,38 @@ class FragmentHome : FragmentBase(), OnClickHome, OnMapReadyCallback {
     private val mReceiverLocationResult: BroadcastReceiver = object : BroadcastReceiver() {
         override fun onReceive(context: Context, intent: Intent) {
 
-            val latitude = intent.getDoubleExtra(mContext.resources.getString(R.string.bundleLocationLatitude),0.0)
-            val longitude = intent.getDoubleExtra(mContext.resources.getString(R.string.bundleLocationLongitude),0.0)
+            val latitude = intent.getDoubleExtra(
+                mContext.resources.getString(R.string.bundleLocationLatitude),
+                0.0
+            )
+            val longitude = intent.getDoubleExtra(
+                mContext.resources.getString(R.string.bundleLocationLongitude),
+                0.0
+            )
 
-            Log.d("TAG","city"+latitude)
+            Log.d("TAG", "city" + latitude)
 
             mViewModelHomeMap.user_lat = latitude
 
             mViewModelHomeMap.user_long = longitude
 
-            val geocoder = Geocoder(mContext, Locale.getDefault())
+           /* val geocoder = Geocoder(mContext, Locale.getDefault())
             val addresses: List<Address> = geocoder.getFromLocation(latitude, longitude, 1)
             val cityName: String = addresses[0].getAddressLine(0)
             val stateName: String = addresses[0].getAddressLine(1)
-            val countryName: String = addresses[0].getAddressLine(2)
+            val countryName: String = addresses[0].getAddressLine(2)*/
 
-            mViewModelHomeMap.city_name = cityName
+          //  mViewModelHomeMap.city_name = cityName
 
+            Log.d("TAG", "latitude" + latitude)
+            Log.d("TAG", "longitude" + longitude)
+          //  Log.d("TAG", "city" + countryName)
 
-            Log.d("TAG","city"+cityName)
-            Log.d("TAG","city"+stateName)
-            Log.d("TAG","city"+countryName)
-//
-//            mViewModelWeatherForcast.user_lat = 36.7783
-//            mViewModelWeatherForcast.user_long = 119.4179
 
             mViewModelHomeMap.networkCallList()
 
 
-            Log.e(
-                "MYTAGS",
-                "onLocationChanged" + "Latitudee: " + latitude+ "   Longitude: " + longitude)
+            Log.e("MYTAGS", "onLocationChanged" + "Latitudee: " + latitude + "   Longitude: " + longitude)
 
         }
     }

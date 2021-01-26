@@ -121,7 +121,7 @@
                     android:text="@string/str_welcome"
                     android:textAlignment="center"
                     android:textColor="@color/colorBlack"
-                    android:textSize="@dimen/textsize_thirty"
+                    android:textSize="@dimen/textsize_twenty_four"
                     app:layout_constraintLeft_toRightOf="@id/guideline_inner_left"
                     app:layout_constraintRight_toLeftOf="@id/guideline_inner_right"
                     app:layout_constraintTop_toBottomOf="@id/guideline_inner_top" />
@@ -137,7 +137,7 @@
                     android:text="@string/str_create_acc"
                     android:textColor="@color/colorWhite"
                     style="@style/medium"
-                    android:textSize="@dimen/textsize_eighteen"
+                    android:textSize="@dimen/textsize_sixteen"
                     app:layout_constraintLeft_toRightOf="@id/guideline_inner_left"
                     app:layout_constraintRight_toLeftOf="@id/guideline_inner_right"
                     app:layout_constraintTop_toBottomOf="@id/txt_welcome" />
@@ -152,7 +152,7 @@
                     android:text="@string/str_sign_in"
                     android:textColor="@color/colorWhite"
                     style="@style/medium"
-                    android:textSize="@dimen/textsize_eighteen"
+                    android:textSize="@dimen/textsize_sixteen"
                     app:layout_constraintLeft_toRightOf="@id/guideline_inner_left"
                     app:layout_constraintRight_toLeftOf="@id/guideline_inner_right"
                     app:layout_constraintTop_toBottomOf="@id/btn_create_acc" />
@@ -168,7 +168,7 @@
                     android:text="@string/str_sign_fb"
                     android:textColor="@color/colorWhite"
                     style="@style/medium"
-                    android:textSize="@dimen/textsize_eighteen"
+                    android:textSize="@dimen/textsize_sixteen"
                     app:layout_constraintLeft_toRightOf="@id/guideline_inner_left"
                     app:layout_constraintRight_toLeftOf="@id/guideline_inner_right"
                     app:layout_constraintTop_toBottomOf="@id/btn_sign_in" />
@@ -185,7 +185,7 @@
                     style="@style/medium"
                     android:text="@string/str_sign_apple"
                     android:textColor="@color/colorWhite"
-                    android:textSize="@dimen/textsize_eighteen"
+                    android:textSize="@dimen/textsize_sixteen"
                     app:layout_constraintLeft_toRightOf="@id/guideline_inner_left"
                     app:layout_constraintRight_toLeftOf="@id/guideline_inner_right"
                     app:layout_constraintTop_toBottomOf="@id/btn_sign_fb" />
@@ -202,7 +202,7 @@
                     android:padding="@dimen/margin_ten"
                     android:text="@string/str_sign_google"
                     android:textColor="@color/colorOrange"
-                    android:textSize="@dimen/textsize_eighteen"
+                    android:textSize="@dimen/textsize_sixteen"
                     style="@style/medium"
                     app:layout_constraintBottom_toTopOf="@+id/guideline_inner_bottom"
                     app:layout_constraintLeft_toRightOf="@id/guideline_inner_left"

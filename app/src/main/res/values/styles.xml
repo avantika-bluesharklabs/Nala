@@ -7,10 +7,14 @@
       </style>-->
 
     <style name="AppTheme" parent="AppTheme.Base">
+
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+
     </style>
+
+
 
 
     <style name="AppThemeChip" parent="Theme.MaterialComponents.Light.NoActionBar">
@@ -52,6 +56,8 @@
         <item name="android:layout_height">@dimen/progressbar_center</item>
         <item name="android:visibility">gone</item>
     </style>
+
+
 
 
     <style name="noRecordFound">
@@ -116,7 +122,11 @@
     </style>
 
 
-
+    <style name="regular_navigation" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:fontFamily">@font/archivo_regular</item>
+        <item name="android:textSize">@dimen/textsize_ten</item>
+        <item name="fontFamily">@font/archivo_regular</item><!-- target android sdk versions < 26 and > 14 if theme other than AppCompat -->
+    </style>
 
     <style name="regular" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:fontFamily">@font/archivo_regular</item>
@@ -140,6 +150,25 @@
         <item name="fontFamily">@font/archivo_medium
         </item> <!-- target android sdk versions < 26 and > 14 if theme other than AppCompat -->
     </style>
+
+
+
+    <style name="BottomSheet" parent="@style/Widget.Design.BottomSheet.Modal">
+
+        <item name="android:typeface">monospace</item>
+        <item name="android:background">@drawable/drawable_filter</item>
+    </style>
+
+    <style name="BaseBottomSheetDialog" parent="@style/Theme.Design.Light.BottomSheetDialog">
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:typeface">monospace</item>
+        <item name="bottomSheetStyle">@style/BottomSheet</item>
+    </style>
+
+    <style name="BottomSheetDialogTheme" parent="BaseBottomSheetDialog" />
+
+
+
 
 
 </resources>

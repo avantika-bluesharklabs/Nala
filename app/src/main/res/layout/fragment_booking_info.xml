@@ -62,6 +62,7 @@
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            android:fillViewport="true"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -132,7 +133,7 @@
                     android:elevation="@dimen/margin_two"
                     android:text="@string/str_demo_name"
                     android:textColor="@color/colorWhite"
-                    android:textSize="@dimen/textsize_twenty"
+                    android:textSize="@dimen/textsize_eighteen"
                     app:layout_constraintStart_toEndOf="@+id/card_image"
                     app:layout_constraintTop_toBottomOf="@id/txt_booking_id" />
 
@@ -146,7 +147,7 @@
                     android:elevation="@dimen/margin_two"
                     android:text="@string/str_review_rating"
                     android:textColor="@color/colorWhite"
-                    android:textSize="@dimen/textsize_sixteen"
+                    android:textSize="@dimen/textsize_forteen"
                     app:layout_constraintStart_toEndOf="@id/card_image"
                     app:layout_constraintTop_toBottomOf="@id/txt_name" />
 
@@ -182,7 +183,7 @@
                         android:elevation="@dimen/margin_one"
                         android:text="@string/str_pending"
                         android:textColor="@color/colorDarkYellow"
-                        android:textSize="@dimen/textsize_sixteen"
+                        android:textSize="@dimen/textsize_forteen"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -191,7 +192,7 @@
                         android:id="@+id/cl_details"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/margin_ten"
+                        android:layout_marginTop="@dimen/margin_five"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/txt_m_status">
 
@@ -202,7 +203,7 @@
                             android:layout_height="wrap_content"
                             android:text="@string/dummy_date"
                             android:textColor="@color/colorBlack"
-                            android:textSize="@dimen/textsize_twenty_two"
+                            android:textSize="@dimen/textsize_twenty"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
@@ -232,7 +233,7 @@
                                 android:layout_marginBottom="@dimen/margin_five"
                                 android:text="@string/str_times"
                                 android:textColor="@color/colorBlack"
-                                android:textSize="@dimen/textsize_sixteen"
+                                android:textSize="@dimen/textsize_forteen"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintStart_toEndOf="@id/img_clock"
                                 app:layout_constraintTop_toTopOf="parent" />
@@ -258,7 +259,7 @@
                         android:id="@+id/cl_massage_type"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/margin_ten"
+                        android:layout_marginTop="@dimen/margin_five"
                         android:background="@drawable/curve_view_border"
                         android:padding="@dimen/margin_ten"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -272,7 +273,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="@dimen/margin_ten"
-                            android:layout_marginTop="@dimen/margin_ten"
+                            android:layout_marginTop="@dimen/margin_five"
                             android:text="@string/str_msg_type"
                             android:textColor="@color/colorPrimary"
                             android:textSize="@dimen/textsize_sixteen"
@@ -284,11 +285,14 @@
                             style="@style/bold"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_margin="@dimen/margin_ten"
+                            android:layout_marginStart="@dimen/margin_ten"
+                            android:layout_marginTop="@dimen/margin_five"
+                            android:layout_marginBottom="@dimen/margin_five"
                             android:text="@string/str_deep_tisue"
                             android:textColor="@color/colorBlack"
                             android:textSize="@dimen/textsize_twenty"
                             app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintTop_toBottomOf="@id/txt_maasage_type" />
 
 
@@ -376,9 +380,10 @@
                         android:id="@+id/cl_map"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/margin_twenty"
+                        android:layout_marginTop="@dimen/margin_ten"
                         android:layout_marginBottom="@dimen/margin_twenty"
                         app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/cl_duration">
 
 
@@ -389,7 +394,7 @@
                             android:layout_height="wrap_content"
                             android:text="@string/location"
                             android:textColor="@color/colorPrimary"
-                            android:textSize="@dimen/textsize_sixteen"
+                            android:textSize="@dimen/textsize_forteen"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
@@ -426,37 +431,7 @@
                         app:layout_constraintTop_toBottomOf="@+id/cl_map" />
 
 
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:id="@+id/cosnt_rate_review"
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:visibility="visible"
-                        android:background="@drawable/top_curve_view"
-                        android:backgroundTint="@color/colorBlueForButtons"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintBottom_toBottomOf="parent">
 
-                        <androidx.appcompat.widget.AppCompatTextView
-                            android:id="@+id/txt_rate_review"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/str_rateandreview"
-                            android:textColor="@color/colorWhite"
-                            android:textSize="@dimen/textsize_eighteen"
-                            style="@style/bold"
-                            android:padding="@dimen/margin_twenty"
-                            android:drawablePadding="@dimen/margin_ten"
-                            android:drawableStart="@drawable/give_rate_review"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintBottom_toBottomOf="parent"/>
-
-
-
-
-                    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 
@@ -475,7 +450,39 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/cons_middle"
-                    app:layout_constraintVertical_weight="7" />
+                    app:layout_constraintVertical_weight="7.5" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cosnt_rate_review"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:visibility="visible"
+                    android:background="@drawable/top_curve_view"
+                    android:backgroundTint="@color/colorBlueForButtons"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txt_rate_review"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/str_rateandreview"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="@dimen/textsize_sixteen"
+                        style="@style/bold"
+                        android:padding="@dimen/margin_twenty"
+                        android:drawablePadding="@dimen/margin_ten"
+                        android:drawableStart="@drawable/give_rate_review"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>

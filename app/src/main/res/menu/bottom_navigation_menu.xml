@@ -4,27 +4,27 @@
     <item
         android:id="@+id/navigation_specialist"
         android:icon="@drawable/tab_home"
-        android:title="@string/nav_home" />
+        android:title="" />
 
     <item
         android:id="@+id/navigation_booking"
         android:icon="@drawable/tab_my_booking"
-        android:title="@string/nav_booking" />
+        android:title="" />
 
     <item
         android:id="@+id/navigation_notification"
         android:icon="@drawable/tab_search"
-        android:title="@string/nav_notification" />
+        android:title="" />
 
     <item
         android:id="@+id/navigation_chat"
         android:icon="@drawable/tab_chat"
-        android:title="@string/nav_chat" />
+        android:title="" />
 
     <item
         android:id="@+id/navigation_profile"
         android:icon="@drawable/tab_profile"
-        android:title="@string/nav_profile" />
+        android:title="" />
 
 
 

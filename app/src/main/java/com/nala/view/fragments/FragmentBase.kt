@@ -29,6 +29,7 @@ import androidx.core.content.FileProvider
 import androidx.fragment.app.Fragment
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import com.google.android.gms.location.FusedLocationProviderClient
+import com.google.android.gms.location.LocationServices
 import com.nala.BuildConfig
 import com.nala.businesslogic.network.RetroFitInterface
 import com.nala.businesslogic.sharedpreference.UtilsSharedPreferences
@@ -100,6 +101,8 @@ open class FragmentBase : Fragment(), LocationListener {
         mApplication = mActivity.mApplication
         mApplication.getAppComponent().inject(this)
         mContext = context as Context
+        locationManager = mContext.getSystemService(Context.LOCATION_SERVICE) as LocationManager;
+        mFusedLocationClient = LocationServices.getFusedLocationProviderClient(mActivity)
     }
 
     @RequiresApi(Build.VERSION_CODES.M)
@@ -804,46 +807,7 @@ open class FragmentBase : Fragment(), LocationListener {
                 // Got last known location. In some rare situations this can be null.
             }
 
-//
-//            mFusedLocationClient!!.lastLocation
-//                .addOnCompleteListener(mActivity) { task ->
-//
-//
-//                    Log.e(
-//                        "TAGsas",
-//                        "=====>" + "isSuccessful: " + task.isSuccessful + " , result: " + task.result
-//                    )
-//
-//                    if (task.isSuccessful && task.result != null) {
-//                        mLastLocation = task.result
-//
-//                        Log.d(
-//                            "TAG",
-//                            "=====>" + "Latitudee: " + mLastLocation?.latitude + " , Longitude: " + mLastLocation?.longitude
-//                        )
-//
-//
-//                        mPreferences.setString(
-//                            PREF_GPS_LATITUDE,
-//                            mLastLocation?.latitude.toString()
-//                        )
-//                        mPreferences.setString(
-//                            PREF_GPS_LONGITUDE,
-//                            mLastLocation?.longitude.toString()
-//                        )
-//                        mPreferences.setString(
-//                            PREF_GPS_ALTITUDE,
-//                            mLastLocation?.altitude.toString()
-//                        )
-//
-//
-//
-//
-//
-//                        /* mPreferences.setString(R.string.pref_gps_lat,ConstantCodes.USER_LATITUDE)
-//                         mPreferences.setString(R.string.pref_gps_lng,ConstantCodes.USER_LONGITUDE)*/
-//                    }
-//                }
+
 
         }
     }

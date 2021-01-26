@@ -91,7 +91,7 @@
                 android:layout_marginTop="@dimen/margin_three"
                 android:layout_marginEnd="@dimen/margin_twenty"
                 android:text="@{data.txt_status}"
-                android:textColor="@color/colorBlack"
+                android:textColor="@color/colorDarkGray"
                 android:textSize="@dimen/textsize_forteen"
                 app:layout_constrainedWidth="true"
                 app:layout_constraintStart_toStartOf="parent"

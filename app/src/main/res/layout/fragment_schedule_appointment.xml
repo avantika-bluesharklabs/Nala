@@ -124,6 +124,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/margin_twenty_five"
                         android:text="@string/str_choose_time"
+                        android:layout_marginTop="@dimen/textsize_ten"
                         android:textColor="@color/colorDarkGray"
                         android:textSize="@dimen/textsize_sixteen"
                         app:layout_constraintStart_toStartOf="parent"

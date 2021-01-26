@@ -66,11 +66,10 @@ class FragmentScheduleAppointment : FragmentBase(), OnClickSchedualeAppoinment,
 
     }
 
-    override fun onClickSchedualeAppoinmentTypeItem(
-        view: View?,
-        layoutPosition: Int,
-        data: PojoSchedualeAppoinmentType
-    ) {
+    override fun onClickSchedualeAppoinmentTypeItem(view: View?, layoutPosition: Int, data: PojoSchedualeAppoinmentType) {
+
+
+
     }
 
     fun observer() {
@@ -83,8 +82,7 @@ class FragmentScheduleAppointment : FragmentBase(), OnClickSchedualeAppoinment,
 
 
     private fun showDialog() {
-        val dialog = Dialog(mContext)
-
+        val dialog = Dialog(mContext,android.R.style.Theme_Black_NoTitleBar_Fullscreen)
 
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
         dialog.getWindow()?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT));

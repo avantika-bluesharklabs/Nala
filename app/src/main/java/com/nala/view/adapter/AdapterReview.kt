@@ -23,18 +23,12 @@ class AdapterReview(
 
         val layoutInflater = LayoutInflater.from(parent.context)
         return if (viewType == mViewTypeItem) {
-            val binding: FragmentServiceProRowReviewBinding = DataBindingUtil.inflate(
-                layoutInflater,
-                R.layout.fragment_service_pro_row_review,
-                parent,
-                false
-            )
+            val binding: FragmentServiceProRowReviewBinding = DataBindingUtil.inflate(layoutInflater, R.layout.fragment_service_pro_row_review, parent, false)
 
             binding.onContentClickListener = mOnClickReviewListener
 
-
-
             Viewholder(binding)
+
         } else {
             ProgressViewHolder(
                 LayoutInflater.from(parent.context)

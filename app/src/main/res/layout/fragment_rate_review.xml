@@ -102,7 +102,7 @@
             android:elevation="@dimen/margin_one"
             android:text="@string/str_rate_service"
             android:textAlignment="center"
-            android:textSize="@dimen/textsize_twenty_four"
+            android:textSize="@dimen/textsize_twenty"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/card_image" />
@@ -112,11 +112,11 @@
             style="@style/regular"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_twenty"
+            android:layout_marginTop="@dimen/margin_fifteen"
             android:elevation="@dimen/margin_one"
             android:text="@string/str_rating"
             android:textColor="@color/colorDarkGray"
-            android:textSize="@dimen/textsize_eighteen"
+            android:textSize="@dimen/textsize_sixteen"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/txt_name" />
@@ -171,7 +171,7 @@
             android:background="@drawable/btn_signup"
             android:text="@string/str_submit"
             android:textColor="@color/colorWhite"
-            android:textSize="@dimen/textsize_eighteen"
+            android:textSize="@dimen/textsize_sixteen"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/ed_review" />
@@ -185,7 +185,7 @@
             android:text="@string/str_no_tx"
             android:elevation="@dimen/margin_one"
             android:textColor="@color/colorDarkGray"
-            android:textSize="@dimen/textsize_eighteen"
+            android:textSize="@dimen/textsize_sixteen"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/btn_submit" />

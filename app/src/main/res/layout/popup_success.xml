@@ -5,6 +5,30 @@
     android:layout_height="match_parent"
     android:background="@color/colorBlueForButtons">
 
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/const_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:padding="@dimen/margin_ten"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/img_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_back"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/cl_msg"
         android:layout_width="match_parent"
@@ -50,7 +74,7 @@
             android:id="@+id/ll_div"
             android:layout_width="@dimen/margin_eighty"
             android:layout_height="1dp"
-            android:layout_marginTop="@dimen/margin_twenty"
+            android:layout_marginTop="@dimen/margin_fifteen"
             android:background="@color/colorGray"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -62,11 +86,11 @@
             style="@style/regular"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_twenty"
+            android:layout_marginTop="@dimen/margin_fifteen"
             android:text="@string/str_success_desc_2"
             android:textAlignment="center"
-            android:textSize="@dimen/textsize_forteen"
             android:textColor="@color/colorDarkGray"
+            android:textSize="@dimen/textsize_forteen"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/ll_div" />
@@ -128,6 +152,7 @@
                 android:textAlignment="center"
                 android:textColor="@color/colorBlack"
                 android:textSize="@dimen/textsize_sixteen"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/txt_massage_date" />
@@ -151,19 +176,18 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_see_request"
+        style="@style/bold"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_twenty"
         android:background="@drawable/btn_submit"
         android:text="@string/str_booking_req"
         android:textAllCaps="false"
-        style="@style/bold"
         android:textColor="@color/colorWhite"
         android:textSize="@dimen/textsize_sixteen"
         app:layout_constraintEnd_toEndOf="@+id/cl_msg"
         app:layout_constraintStart_toStartOf="@+id/cl_msg"
         app:layout_constraintTop_toBottomOf="@id/cl_msg" />
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
