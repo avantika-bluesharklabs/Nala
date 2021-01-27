@@ -23,7 +23,6 @@
             android:id="@+id/const_toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:padding="@dimen/margin_ten"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -33,7 +32,7 @@
                 android:id="@+id/img_back"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="@dimen/margin_five"
+                android:padding="@dimen/margin_ten"
                 android:src="@drawable/ic_back"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -61,165 +60,338 @@
 
 
         <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline_left"
+            android:id="@+id/guideline_start"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             app:layout_constraintGuide_begin="@dimen/margin_ten" />
 
         <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline_right"
+            android:id="@+id/guideline_end"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             app:layout_constraintGuide_end="@dimen/margin_ten" />
 
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/const_color"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:background="@drawable/top_curve_view"
-            android:backgroundTint="@color/colorPrimary"
-            app:layout_constraintVertical_weight="3"
-            app:layout_constraintBottom_toTopOf="@+id/const_white"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/const_toolbar" />
-
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/const_white"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            app:layout_constraintVertical_weight="7"
-            android:background="@color/colorWhite"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/const_color" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txt_signin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_five"
+            android:text="@string/str_sign_in"
+            style="@style/bold"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/textsize_twenty_four"
+            app:layout_constraintStart_toStartOf="@+id/guideline_start"
+            app:layout_constraintTop_toBottomOf="@id/const_toolbar" />
 
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/cl_hower"
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_facebook"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:background="@drawable/curve_view"
-            app:layout_constraintBottom_toTopOf="@id/txt_tandc"
-            app:layout_constraintEnd_toStartOf="@id/guideline_right"
-            app:layout_constraintStart_toEndOf="@id/guideline_left"
-            app:layout_constraintTop_toBottomOf="@id/const_toolbar">
+            android:layout_marginTop="@dimen/margin_twenty"
+            android:background="@drawable/ic_create_ac"
+            android:text="@string/str_sign_fb"
+            android:textColor="@color/colorWhite"
+            style="@style/bold"
+            android:textSize="@dimen/textsize_sixteen"
+            app:layout_constraintStart_toStartOf="@id/guideline_start"
+            app:layout_constraintEnd_toEndOf="@id/guideline_end"
+            app:layout_constraintTop_toBottomOf="@+id/txt_signin"/>
 
 
-            <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/guideline_inner_top"
-                android:layout_width="wrap_content"
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_apple"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_ten"
+            android:background="@drawable/ic_create_ac"
+            android:text="@string/str_sign_apple"
+            android:textColor="@color/colorWhite"
+            style="@style/bold"
+            android:textSize="@dimen/textsize_sixteen"
+            app:layout_constraintStart_toStartOf="@id/guideline_start"
+            app:layout_constraintEnd_toEndOf="@id/guideline_end"
+            app:layout_constraintTop_toBottomOf="@+id/btn_facebook"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_google"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_ten"
+            android:background="@drawable/ic_create_ac"
+            android:text="@string/str_sign_google"
+            android:textColor="@color/colorWhite"
+            style="@style/bold"
+            android:textSize="@dimen/textsize_sixteen"
+            app:layout_constraintStart_toStartOf="@id/guideline_start"
+            app:layout_constraintEnd_toEndOf="@id/guideline_end"
+            app:layout_constraintTop_toBottomOf="@+id/btn_apple"/>
+
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txt_or"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/or"
+            android:background="@color/colorLightGray"
+            android:textAllCaps="true"
+            android:layout_marginTop="@dimen/margin_fifteen"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_google"/>
+
+
+        <View
+            android:layout_width="50dp"
+            android:layout_height="1dp"
+            android:background="@color/colorGray"
+            app:layout_constraintTop_toTopOf="@+id/txt_or"
+            app:layout_constraintEnd_toStartOf="@+id/txt_or"
+            app:layout_constraintBottom_toBottomOf="@+id/txt_or"/>
+
+
+        <View
+            android:layout_width="50dp"
+            android:layout_height="1dp"
+            android:background="@color/colorGray"
+            app:layout_constraintTop_toTopOf="@+id/txt_or"
+            app:layout_constraintStart_toEndOf="@+id/txt_or"
+            app:layout_constraintBottom_toBottomOf="@+id/txt_or"/>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textinputlayout_login_email"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_twenty"
+            android:textColorHint="@color/colorDarkGray"
+            app:errorEnabled="@{vmSignIn.observerErrorEnabledEmail}"
+            app:layout_constraintStart_toStartOf="@+id/guideline_start"
+            app:layout_constraintEnd_toEndOf="@+id/guideline_end"
+            app:layout_constraintTop_toBottomOf="@+id/txt_or"
+            app:setEnabledTIL="@{!vmSignIn.observerProgressBar}"
+            app:setError="@{vmSignIn.observerErrorEmail}">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_email"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                app:layout_constraintGuide_begin="@dimen/margin_twenty" />
+                android:layout_gravity="center_vertical"
+                android:hint="@string/str_email_hint"
+                android:inputType="textEmailAddress"
+                android:text="@={vmSignIn.observerEmail}"
+                android:textColor="@color/colorBlack" />
+        </com.google.android.material.textfield.TextInputLayout>
 
 
-            <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/guideline_inner_left"
-                android:layout_width="wrap_content"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textinputlayout_login_password"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_ten"
+            android:hint="@string/str_password_hint"
+            android:importantForAutofill="no"
+            android:textColorHint="@color/colorDarkGray"
+            app:errorEnabled="@{vmSignIn.observerErrorEnabledPassword}"
+            app:layout_constraintStart_toStartOf="@+id/guideline_start"
+            app:layout_constraintEnd_toEndOf="@+id/guideline_end"
+
+            app:layout_constraintTop_toBottomOf="@+id/textinputlayout_login_email"
+            app:setEnabledTIL="@{!vmSignIn.observerProgressBar}"
+            app:setError="@{vmSignIn.observerErrorPassword}">
+
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_pass"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                app:layout_constraintGuide_begin="@dimen/margin_twenty" />
-
-            <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/guideline_inner_right"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                app:layout_constraintGuide_end="@dimen/margin_twenty" />
+                android:imeOptions="actionDone"
+                android:inputType="textPassword"
+                android:singleLine="true"
+                android:text="@={vmSignIn.observerPassword}"
+                android:textColor="@color/colorBlack" />
+        </com.google.android.material.textfield.TextInputLayout>
 
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/txt_signin"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/margin_ten"
-                android:text="@string/str_sign_in"
-                style="@style/bold"
-                android:textColor="@color/colorBlack"
-                android:textSize="@dimen/textsize_thirty"
-                app:layout_constraintLeft_toRightOf="@id/guideline_inner_left"
-                app:layout_constraintRight_toLeftOf="@id/guideline_inner_right"
-                app:layout_constraintTop_toBottomOf="@id/guideline_inner_top" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txt_forgot_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/str_forgot_pass"
+            android:textColor="@color/colorBlack"
+            style="@style/medium"
+            android:layout_marginTop="@dimen/margin_fifteen"
+            app:layout_constraintEnd_toEndOf="@id/guideline_end"
+            app:layout_constraintTop_toBottomOf="@+id/textinputlayout_login_password"/>
 
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/textinputlayout_login_email"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_twenty"
-                app:errorEnabled="@{vmSignIn.observerErrorEnabledEmail}"
-                app:layout_constraintBottom_toTopOf="@+id/textinputlayout_login_password"
-                app:layout_constraintLeft_toRightOf="@id/guideline_inner_left"
-                app:layout_constraintRight_toLeftOf="@id/guideline_inner_right"
-                app:layout_constraintTop_toBottomOf="@+id/txt_signin"
-                app:setEnabledTIL="@{!vmSignIn.observerProgressBar}"
-                app:setError="@{vmSignIn.observerErrorEmail}">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/edt_email"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:hint="@string/str_email_hint"
-                    android:textColorHint="@color/colorGray"
-                    android:inputType="textEmailAddress"
-                    android:text="@={vmSignIn.observerEmail}"
-                    android:textColor="@color/colorBlack" />
-            </com.google.android.material.textfield.TextInputLayout>
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_submit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_twenty"
+            android:background="@drawable/btn_submit"
+            android:text="@string/str_sign_in"
+            style="@style/bold"
+            android:textAllCaps="false"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/textsize_eighteen"
+            app:layout_constraintEnd_toEndOf="@id/guideline_end"
+            app:layout_constraintStart_toStartOf="@id/guideline_start"
+            app:layout_constraintTop_toBottomOf="@id/txt_forgot_password" />
 
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/textinputlayout_login_password"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_ten"
-                android:hint="@string/str_password_hint"
-                android:importantForAutofill="no"
-                android:textColorHint="@color/colorGray"
-                app:errorEnabled="@{vmSignIn.observerErrorEnabledPassword}"
-                app:layout_constraintBottom_toTopOf="@+id/img_next"
-                app:layout_constraintLeft_toRightOf="@id/guideline_inner_left"
-                app:layout_constraintRight_toLeftOf="@id/guideline_inner_right"
-                app:layout_constraintTop_toBottomOf="@+id/textinputlayout_login_email"
-                app:setEnabledTIL="@{!vmSignIn.observerProgressBar}"
-                app:setError="@{vmSignIn.observerErrorPassword}">
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txt_don_have_accnt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dont_have_account"
+            android:textColor="@color/colorDarkGray"
+            style="@style/medium"
+            android:layout_marginTop="@dimen/margin_twenty"
+            app:layout_constraintEnd_toEndOf="@id/guideline_end"
+            app:layout_constraintStart_toStartOf="@id/guideline_start"
+            app:layout_constraintTop_toBottomOf="@+id/btn_submit"/>
 
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/edt_pass"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:imeOptions="actionDone"
-                    android:inputType="textPassword"
-                    android:singleLine="true"
-                    android:textColorHint="@color/colorGray"
-                    android:text="@={vmSignIn.observerPassword}"
-                    android:textColor="@color/colorBlack" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:id="@+id/img_next"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_next"
-                    android:onClick="@{()-> vmSignIn.clickSignIn()}"
-                    android:layout_marginTop="@dimen/margin_thirty"
-                    app:layout_constraintBottom_toTopOf="@+id/cl_forgot_pass"
-                    app:layout_constraintLeft_toRightOf="@id/guideline_inner_left"
-                    app:layout_constraintRight_toLeftOf="@id/guideline_inner_right"
-                    app:layout_constraintTop_toBottomOf="@+id/textinputlayout_login_password"/>
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txt_create_one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/str_create_one"
+            android:textColor="@color/colorBlueForButtons"
+            style="@style/bold"
+            android:layout_marginTop="@dimen/margin_ten"
+            app:layout_constraintEnd_toEndOf="@id/guideline_end"
+            app:layout_constraintStart_toStartOf="@id/guideline_start"
+            app:layout_constraintTop_toBottomOf="@+id/txt_don_have_accnt"/>
 
 
 
 
-            <androidx.constraintlayout.widget.ConstraintLayout
+
+        <!--  <androidx.constraintlayout.widget.ConstraintLayout
+              android:id="@+id/cl_hower"
+              android:layout_width="0dp"
+              android:layout_height="wrap_content"
+              android:background="@drawable/curve_view"
+              app:layout_constraintBottom_toTopOf="@id/txt_tandc"
+              app:layout_constraintEnd_toStartOf="@id/guideline_right"
+              app:layout_constraintStart_toEndOf="@id/guideline_left"
+              app:layout_constraintTop_toBottomOf="@id/const_toolbar">
+
+
+              <androidx.constraintlayout.widget.Guideline
+                  android:id="@+id/guideline_inner_top"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:orientation="horizontal"
+                  app:layout_constraintGuide_begin="@dimen/margin_twenty" />
+
+
+              <androidx.constraintlayout.widget.Guideline
+                  android:id="@+id/guideline_inner_left"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:orientation="vertical"
+                  app:layout_constraintGuide_begin="@dimen/margin_twenty" />
+
+              <androidx.constraintlayout.widget.Guideline
+                  android:id="@+id/guideline_inner_right"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:orientation="vertical"
+                  app:layout_constraintGuide_end="@dimen/margin_twenty" />
+
+
+             &lt;!&ndash; <androidx.appcompat.widget.AppCompatTextView
+                  android:id="@+id/txt_signin"
+                  android:layout_width="0dp"
+                  android:layout_height="wrap_content"
+                  android:layout_margin="@dimen/margin_ten"
+                  android:text="@string/str_sign_in"
+                  style="@style/bold"
+                  android:textColor="@color/colorBlack"
+                  android:textSize="@dimen/textsize_thirty"
+                  app:layout_constraintLeft_toRightOf="@id/guideline_inner_left"
+                  app:layout_constraintRight_toLeftOf="@id/guideline_inner_right"
+                  app:layout_constraintTop_toBottomOf="@id/guideline_inner_top" />&ndash;&gt;
+
+
+              <com.google.android.material.textfield.TextInputLayout
+                  android:id="@+id/textinputlayout_login_email"
+                  android:layout_width="0dp"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="@dimen/margin_twenty"
+                  app:errorEnabled="@{vmSignIn.observerErrorEnabledEmail}"
+                  app:layout_constraintBottom_toTopOf="@+id/textinputlayout_login_password"
+                  app:layout_constraintLeft_toRightOf="@id/guideline_inner_left"
+                  app:layout_constraintRight_toLeftOf="@id/guideline_inner_right"
+                  app:layout_constraintTop_toBottomOf="@+id/txt_signin"
+                  app:setEnabledTIL="@{!vmSignIn.observerProgressBar}"
+                  app:setError="@{vmSignIn.observerErrorEmail}">
+
+                  <com.google.android.material.textfield.TextInputEditText
+                      android:id="@+id/edt_email"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:layout_gravity="center_vertical"
+                      android:hint="@string/str_email_hint"
+                      android:textColorHint="@color/colorGray"
+                      android:inputType="textEmailAddress"
+                      android:text="@={vmSignIn.observerEmail}"
+                      android:textColor="@color/colorBlack" />
+              </com.google.android.material.textfield.TextInputLayout>
+
+
+              <com.google.android.material.textfield.TextInputLayout
+                  android:id="@+id/textinputlayout_login_password"
+                  android:layout_width="0dp"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="@dimen/margin_ten"
+                  android:hint="@string/str_password_hint"
+                  android:importantForAutofill="no"
+                  android:textColorHint="@color/colorGray"
+                  app:errorEnabled="@{vmSignIn.observerErrorEnabledPassword}"
+                  app:layout_constraintBottom_toTopOf="@+id/img_next"
+                  app:layout_constraintLeft_toRightOf="@id/guideline_inner_left"
+                  app:layout_constraintRight_toLeftOf="@id/guideline_inner_right"
+                  app:layout_constraintTop_toBottomOf="@+id/textinputlayout_login_email"
+                  app:setEnabledTIL="@{!vmSignIn.observerProgressBar}"
+                  app:setError="@{vmSignIn.observerErrorPassword}">
+
+
+                  <com.google.android.material.textfield.TextInputEditText
+                      android:id="@+id/edt_pass"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:imeOptions="actionDone"
+                      android:inputType="textPassword"
+                      android:singleLine="true"
+                      android:textColorHint="@color/colorGray"
+                      android:text="@={vmSignIn.observerPassword}"
+                      android:textColor="@color/colorBlack" />
+              </com.google.android.material.textfield.TextInputLayout>
+
+
+                  <androidx.appcompat.widget.AppCompatImageView
+                      android:id="@+id/img_next"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:src="@drawable/ic_next"
+                      android:onClick="@{()-> vmSignIn.clickSignIn()}"
+                      android:layout_marginTop="@dimen/margin_thirty"
+                      app:layout_constraintBottom_toTopOf="@+id/cl_forgot_pass"
+                      app:layout_constraintLeft_toRightOf="@id/guideline_inner_left"
+                      app:layout_constraintRight_toLeftOf="@id/guideline_inner_right"
+                      app:layout_constraintTop_toBottomOf="@+id/textinputlayout_login_password"/>
+
+  -->
+
+
+           <!-- <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/cl_forgot_pass"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/margin_fifty_five"
@@ -248,9 +420,9 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
+-->
 
-
-        <androidx.appcompat.widget.AppCompatTextView
+       <!-- <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/txt_tandc"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -262,7 +434,7 @@
             app:layout_constraintBottom_toTopOf="@+id/guideline_bottom"
             app:layout_constraintLeft_toRightOf="@id/guideline_left"
             app:layout_constraintRight_toLeftOf="@id/guideline_right"
-            app:layout_constraintTop_toBottomOf="@id/cl_hower" />
+            app:layout_constraintTop_toBottomOf="@id/cl_hower" />-->
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

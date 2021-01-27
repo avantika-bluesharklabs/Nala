@@ -11,7 +11,7 @@ import com.nala.businesslogic.interfaces.OnClickMyBooking
 import com.nala.businesslogic.pojo.PojoMyBooking
 import com.nala.databinding.FragmentMyBookingsRowBinding
 
-class AdapterMyBookingsList(
+class AdapterMyBookings(
     var mContext: Context, var mArrayContent: List<PojoMyBooking>,
     var mOnClickmyBookingListener: OnClickMyBooking
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {

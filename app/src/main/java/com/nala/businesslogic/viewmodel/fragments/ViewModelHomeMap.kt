@@ -1,6 +1,7 @@
 package com.nala.businesslogic.viewmodel.fragments
 
 import androidx.recyclerview.widget.RecyclerView
+import com.nala.businesslogic.interactors.ObservableString
 import com.nala.businesslogic.interactors.SingleLiveEvent
 import com.nala.businesslogic.pojo.PojoCommonResponse
 import com.nala.businesslogic.pojo.PojoHome
@@ -15,6 +16,8 @@ class ViewModelHomeMap(myApplication: MyApplication, isToShowErrors: Boolean) :
     var user_lat = 0.000
     var user_long = 0.000
     var city_name = ""
+
+    var observerCityName: ObservableString = ObservableString("")
 
 
     private val liveEvent: SingleLiveEvent<Boolean> = SingleLiveEvent()

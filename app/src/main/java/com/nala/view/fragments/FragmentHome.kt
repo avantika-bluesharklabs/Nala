@@ -4,6 +4,8 @@ import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
+import android.location.Address
+import android.location.Geocoder
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -24,6 +26,7 @@ import com.nala.businesslogic.pojo.PojoHome
 import com.nala.businesslogic.viewmodel.fragments.ViewModelHome
 import com.nala.businesslogic.viewmodel.fragments.ViewModelHomeMap
 import com.nala.databinding.FragmentHomeBinding
+import java.util.*
 
 
 class FragmentHome : FragmentBase(), OnClickHome, OnMapReadyCallback {
@@ -180,29 +183,33 @@ class FragmentHome : FragmentBase(), OnClickHome, OnMapReadyCallback {
                 0.0
             )
 
-            Log.d("TAG", "city" + latitude)
+
 
             mViewModelHomeMap.user_lat = latitude
 
             mViewModelHomeMap.user_long = longitude
 
-           /* val geocoder = Geocoder(mContext, Locale.getDefault())
+            val geocoder = Geocoder(mContext, Locale.getDefault())
             val addresses: List<Address> = geocoder.getFromLocation(latitude, longitude, 1)
-            val cityName: String = addresses[0].getAddressLine(0)
-            val stateName: String = addresses[0].getAddressLine(1)
-            val countryName: String = addresses[0].getAddressLine(2)*/
+            val cityName: String =addresses[0].getAddressLine(0)
+           // val stateName: String = addresses[0].getAddressLine(1)
+                //   val countryName: String = addresses[0].getAddressLine(2)
 
-          //  mViewModelHomeMap.city_name = cityName
+            mViewModelHomeMap.city_name = cityName
+            mViewModelHomeMap.observerCityName.set(cityName)
 
             Log.d("TAG", "latitude" + latitude)
             Log.d("TAG", "longitude" + longitude)
-          //  Log.d("TAG", "city" + countryName)
+            Log.d("TAG", "cityName" +  mViewModelHomeMap.city_name)
+        //    Log.d("TAG", "stateName" +  addresses[0].getAddressLine(1))
+         //   Log.d("TAG", "countryName" +  addresses[0].getAddressLine(2))
 
 
-            mViewModelHomeMap.networkCallList()
+
+          //  mViewModelHomeMap.networkCallList()
 
 
-            Log.e("MYTAGS", "onLocationChanged" + "Latitudee: " + latitude + "   Longitude: " + longitude)
+       //     Log.e("MYTAGS", "onLocationChanged" + "Latitudee: " + latitude + "   Longitude: " + longitude)
 
         }
     }

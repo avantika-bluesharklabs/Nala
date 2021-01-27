@@ -53,19 +53,19 @@ class ViewModelHome(myApplication: MyApplication,isToShowErrors: Boolean) :
     }
 
     override fun refreshListUpdate() {
-        TODO("Not yet implemented")
+
     }
 
     override fun networkCallList() {
-        TODO("Not yet implemented")
+
     }
 
     override fun offlineDataList() {
-        TODO("Not yet implemented")
+
     }
 
     override fun sendResponseBodyList(list: PojoCommonResponse?) {
-        TODO("Not yet implemented")
+
     }
 
 

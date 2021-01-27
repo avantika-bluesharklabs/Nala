@@ -40,7 +40,7 @@ class ActivitySignUp : ActivityBase() {
         mBinding.imgBack.setOnClickListener { finish() }
 
         observable()
-        selectUser()
+
     }
 
     override fun onBackPressed() {
@@ -56,15 +56,7 @@ class ActivitySignUp : ActivityBase() {
 
 
         mViewModelSignUp.getLiveEventUser().observe(this, {
-            if (it != 0) {
 
-//                startActivity(Intent(this, ActivityAddUserDetails::class.java))
-//                finish()
-
-                selectTherapist()
-            } else {
-                selectUser()
-            }
         })
 
 
@@ -83,58 +75,5 @@ class ActivitySignUp : ActivityBase() {
     }
 
 
-    private fun selectUser() {
-        ImageViewCompat.setImageTintList(
-            img_therapist_image, ColorStateList.valueOf(
-                ContextCompat.getColor(this@ActivitySignUp, R.color.colorBlack)
-            )
-        )
-        ImageViewCompat.setImageTintList(
-            img_user_image, ColorStateList.valueOf(
-                ContextCompat.getColor(this@ActivitySignUp, R.color.colorWhite)
-            )
-        )
 
-        txt_therapist_text.setTextColor(
-            ColorStateList.valueOf(
-                ContextCompat.getColor(this@ActivitySignUp, R.color.colorBlack)
-            )
-        )
-        txt_user_text.setTextColor(
-            ColorStateList.valueOf(
-                ContextCompat.getColor(this@ActivitySignUp, R.color.colorWhite)
-            )
-        )
-
-        cl_user.setBackgroundResource(R.drawable.curve_view_selected)
-        cl_therapist.setBackgroundResource(R.drawable.curve_view_unselected)
-    }
-
-    private fun selectTherapist() {
-        ImageViewCompat.setImageTintList(
-            img_therapist_image, ColorStateList.valueOf(
-                ContextCompat.getColor(this@ActivitySignUp, R.color.colorWhite)
-            )
-        )
-        ImageViewCompat.setImageTintList(
-            img_user_image, ColorStateList.valueOf(
-                ContextCompat.getColor(this@ActivitySignUp, R.color.colorBlack)
-            )
-        )
-
-        txt_therapist_text.setTextColor(
-            ColorStateList.valueOf(
-                ContextCompat.getColor(this@ActivitySignUp, R.color.colorWhite)
-            )
-        )
-        txt_user_text.setTextColor(
-            ColorStateList.valueOf(
-                ContextCompat.getColor(this@ActivitySignUp, R.color.colorBlack)
-            )
-        )
-
-        cl_therapist.setBackgroundResource(R.drawable.curve_view_selected)
-        cl_user.setBackgroundResource(R.drawable.curve_view_unselected)
-
-    }
 }

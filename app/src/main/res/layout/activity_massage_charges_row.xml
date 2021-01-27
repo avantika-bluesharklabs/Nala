@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="layoutPosition"
+            type="Integer" />
+
+        <variable
+            name="vmMassageCharges"
+            type="com.nala.businesslogic.viewmodel.activities.ViewModelMassagesCharges" />
+
+
+        <variable
+            name="data"
+            type="com.nala.businesslogic.pojo.PojoMassageCharges" />
+
+        <variable
+            name="requestOptions"
+            type="com.bumptech.glide.request.RequestOptions" />
+
+        <variable
+            name="onContentClickListener"
+            type="com.nala.businesslogic.interfaces.OnClickMassageCharges" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_five"
+        android:clickable="true"
+        android:focusable="true"
+        android:onClick="@{(v)->onContentClickListener.onClickMassageChargesItem(v,layoutPosition,data)}">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/const_therapist"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_ten"
+            android:background="@drawable/therapist_bg"
+            android:padding="@dimen/margin_twenty"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img_left_arrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@{data.img_left_arrow}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/consy_price_time"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/consy_price_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/img_right_arrow"
+                app:layout_constraintStart_toEndOf="@+id/img_left_arrow"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt_doller"
+                    style="@style/bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{data.txt_doller}"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/textsize_sixteen"
+                    app:layout_constraintBottom_toBottomOf="@+id/txt_price"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/txt_price" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt_price"
+                    style="@style/bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_three"
+                    android:text="@{data.txt_price}"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/textsize_thirty_six"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/txt_doller"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/txt_time"
+                    style="@style/bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_three"
+                    android:text="@{data.txt_time}"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/textsize_sixteen"
+                    app:layout_constraintBottom_toBottomOf="@id/txt_price"
+                    app:layout_constraintStart_toEndOf="@+id/txt_price"
+                    app:layout_constraintTop_toTopOf="@id/txt_price" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img_right_arrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@{data.img_right_arrow}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/consy_price_time"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

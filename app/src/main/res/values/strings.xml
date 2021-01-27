@@ -35,6 +35,7 @@
     <string name="message_camera_unabletocapture">Unable to capture from camera</string>
     <string name="message_camera_unabletoopen">Unable to open camera</string>
     <string name="text_storage">Storage</string>
+    <string name="txt_create_accnt_des">By providing your mobile number to Nala,you \n agree that Nala and pros may use that number to \n communicate with you via call and text messages \n (including automatically dialed calls and texts) \n regarding your appoinments and account.</string>
 
     <string name="permission_camera">Camera permission is needed to capture image</string>
     <string name="permission_location">Location permission is needed to fetch current location</string>
@@ -93,7 +94,7 @@
     <string name="str_name_hint">Name</string>
     <string name="str_phone_hint">Phone Number</string>
     <string name="str_con_password_hint">Confirm Password</string>
-    <string name="str_tb_desc"><![CDATA[Agree with Terms & Conditions and Privacy Policy]]></string>
+    <string name="str_tb_desc"><![CDATA[Agree with Terms & Conditions and \n Privacy Policy]]></string>
     <string name="str_sign_up">Sign Up</string>
     <string name="str_min">$25/30 min</string>
     <string name="str_add_photo">Add Photo</string>
@@ -193,5 +194,22 @@
 
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="or">or</string>
+    <string name="dont_have_account">Do not have an account?</string>
+    <string name="str_create_one">Create One</string>
+    <string name="str_continue_as">Continue as a</string>
+    <string name="str_msg_technique">Massage Techniques</string>
+    <string name="txt_massage_location">Massage Location</string>
+    <string name="str_at_stuidio">At Studio</string>
+    <string name="str_mob_table">Mobile Service with Table</string>
+    <string name="str_type_massage">Type Of Massages</string>
+    <string name="btn_continue">Continue</string>
+    <string name="str_msg_charges">Set Massage Charges</string>
+    <string name="dummy_number">25</string>
+    <string name="dummy_slas_min">/30 min</string>
+    <string name="str_add_license">Add License</string>
+    <string name="str_license_name">Licence_1.jpg</string>
+    <string name="dummy_city">California</string>
+    <string name="str_add_yor_license">Add Your License</string>
 </resources>
 

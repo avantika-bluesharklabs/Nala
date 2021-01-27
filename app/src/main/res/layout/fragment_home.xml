@@ -76,7 +76,7 @@
                     android:singleLine="true"
                     android:textColor="@color/colorBlack"
                     android:textSize="@dimen/textsize_forteen"
-                    android:text="@{vmHomeMap.city_name}"
+                    android:text="@{vmHomeMap.observerCityName}"
                     android:background="@android:color/transparent"
                     app:layout_constraintStart_toEndOf="@+id/img_search"
                     app:layout_constraintEnd_toEndOf="parent"

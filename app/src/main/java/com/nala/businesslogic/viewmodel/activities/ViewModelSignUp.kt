@@ -78,14 +78,7 @@ class ViewModelSignUp(
         liveEventBackPress.value = true
     }
 
-    fun clickUser() {
-        liveEventUser.value = 0
-    }
 
-
-    fun clickTherapist() {
-        liveEventUser.value = 1
-    }
 
 
     private fun validateName(): Boolean {
