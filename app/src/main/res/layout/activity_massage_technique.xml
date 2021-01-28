@@ -203,7 +203,7 @@
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_continue"
             style="@style/bold"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_ten"
             android:background="@drawable/btn_signup"
@@ -212,8 +212,8 @@
             android:textColor="@color/colorWhite"
             android:textSize="@dimen/textsize_eighteen"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintEnd_toEndOf="@id/guideline_end"
+            app:layout_constraintStart_toStartOf="@id/guideline_start" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

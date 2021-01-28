@@ -26,22 +26,22 @@ class ViewModelHomeMap(myApplication: MyApplication, isToShowErrors: Boolean) :
     init {
 
         var pojohome = PojoHome()
-        pojohome.txt_name = "Rahul Dravid"
+        pojohome.txt_user_name = "Rahul Dravid"
 
         observerContent.add(pojohome)
 
         pojohome = PojoHome()
-        pojohome.txt_name = "Sachin Tendulkar"
+        pojohome.txt_user_name = "Sachin Tendulkar"
 
         observerContent.add(pojohome)
 
         pojohome = PojoHome()
-        pojohome.txt_name = "Hanuma  Vihari"
+        pojohome.txt_user_name = "Hanuma  Vihari"
 
         observerContent.add(pojohome)
 
         pojohome = PojoHome()
-        pojohome.txt_name ="Jessica lawrence"
+        pojohome.txt_user_name ="Jessica lawrence"
 
         observerContent.add(pojohome)
 

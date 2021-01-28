@@ -8,9 +8,12 @@
         <import type="android.view.View" />
 
         <variable
-            name="vmBookingInfo"
-            type="com.nala.businesslogic.viewmodel.fragments.ViewModelBookingInfo" />
+            name="vmMassageCharges"
+            type="com.nala.businesslogic.viewmodel.activities.ViewModelMassagesCharges" />
 
+        <variable
+            name="onContentClickListener"
+            type="com.nala.businesslogic.interfaces.OnClickMassageCharges" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -83,20 +86,6 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="@id/cons_middle" />
 
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/txt_booking_id"
-                    style="@style/bold"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/margin_ten"
-                    android:layout_marginTop="@dimen/margin_ten"
-                    android:elevation="@dimen/margin_two"
-                    android:text="@string/str_booking_id"
-                    android:textColor="@color/colorWhite"
-                    android:textSize="@dimen/textsize_forteen"
-                    app:layout_constraintStart_toEndOf="@+id/img_user"
-                    app:layout_constraintTop_toTopOf="@+id/img_user" />
-
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/txt_name"
@@ -109,8 +98,9 @@
                     android:text="@string/str_demo_name"
                     android:textColor="@color/colorWhite"
                     android:textSize="@dimen/textsize_eighteen"
+                    app:layout_constraintBottom_toBottomOf="@+id/img_user"
                     app:layout_constraintStart_toEndOf="@+id/img_user"
-                   app:layout_constraintTop_toBottomOf="@+id/txt_booking_id" />
+                    app:layout_constraintTop_toTopOf="@+id/img_user" />
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/txt_status"
@@ -124,8 +114,7 @@
                     android:textColor="@color/colorWhite"
                     android:textSize="@dimen/textsize_forteen"
                     app:layout_constraintStart_toEndOf="@id/img_user"
-                    app:layout_constraintTop_toBottomOf="@id/txt_name"
-                    app:layout_constraintBottom_toBottomOf="@+id/img_user"/>
+                    app:layout_constraintTop_toBottomOf="@id/txt_name" />
 
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -400,18 +389,17 @@
 
 
                     <androidx.appcompat.widget.AppCompatButton
-                        android:id="@+id/btn_cancel"
+                        android:id="@+id/btn_reject"
                         style="@style/bold"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/margin_fifteen"
                         android:layout_marginBottom="@dimen/margin_fifteen"
                         android:background="@drawable/btn_detail_booknow"
-                        android:backgroundTint="@color/colorGray"
-                        android:text="@string/str_cancel"
+                        android:backgroundTint="@color/ColorRed"
+                        android:text="@string/btn_reject"
                         android:textAllCaps="false"
-                        android:visibility="visible"
-                        android:textColor="@color/colorDarkGray"
+                        android:textColor="@color/colorWhite"
                         android:textSize="@dimen/textsize_eighteen"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toStartOf="@+id/btn_aceept"
@@ -427,54 +415,14 @@
                         android:layout_marginTop="@dimen/margin_fifteen"
                         android:layout_marginBottom="@dimen/margin_fifteen"
                         android:background="@drawable/btn_detail_booknow"
-                        android:backgroundTint="@color/colorPrimary"
-                        android:text="@string/btn_start"
+                        android:backgroundTint="@color/ColorGreen"
+                        android:text="@string/btn_accept"
                         android:textAllCaps="false"
-                        android:visibility="gone"
                         android:textColor="@color/colorWhite"
                         android:textSize="@dimen/textsize_eighteen"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="@+id/btn_cancel"
-                        app:layout_constraintTop_toBottomOf="@+id/cl_map" />
-
-
-                    <androidx.appcompat.widget.AppCompatButton
-                        android:id="@+id/btn_cancel_booking"
-                        style="@style/semibold"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/margin_fifteen"
-                        android:layout_marginBottom="@dimen/margin_fifteen"
-                        android:background="@drawable/btn_signup"
-                        android:backgroundTint="@color/colorGray"
-                        android:text="@string/str_cancel_booking"
-                        android:textAllCaps="false"
-                        android:visibility="visible"
-                        android:textColor="@color/colorDarkGray"
-                        android:textSize="@dimen/textsize_sixteen"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/cl_map" />
-
-                    <androidx.appcompat.widget.AppCompatButton
-                        android:id="@+id/btn_complete_service"
-                        style="@style/semibold"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/margin_fifteen"
-                        android:layout_marginBottom="@dimen/margin_fifteen"
-                        android:background="@drawable/btn_signup"
-                        android:backgroundTint="@color/ColorGreen"
-                        android:text="@string/btn_complete_ser"
-                        android:textAllCaps="false"
-                        android:visibility="gone"
-                        android:textColor="@color/colorWhite"
-                        android:textSize="@dimen/textsize_sixteen"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/btn_reject"
                         app:layout_constraintTop_toBottomOf="@+id/cl_map" />
 
 
@@ -500,39 +448,5 @@
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-    <!--<androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/cosnt_rate_review"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:visibility="visible"
-        android:background="@drawable/top_curve_view"
-        android:backgroundTint="@color/colorBlueForButtons"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent">
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/txt_rate_review"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/str_rateandreview"
-            android:textColor="@color/colorWhite"
-            android:textSize="@dimen/textsize_sixteen"
-            style="@style/bold"
-            android:padding="@dimen/margin_twenty"
-            android:drawablePadding="@dimen/margin_ten"
-            android:drawableStart="@drawable/give_rate_review"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"/>
-
-    </androidx.constraintlayout.widget.ConstraintLayout>-->
-
-
-
-
-
-
 
 </layout>

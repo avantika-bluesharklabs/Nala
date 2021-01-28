@@ -3,12 +3,11 @@ package com.nala.businesslogic.pojo
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
-class PojoHome : PojoCommonResponse() {
+class PojoWeeklyTimeSchedule : PojoCommonResponse() {
 
-
-    @SerializedName("txt_user_name")
+    @SerializedName("txt_time_slot")
     @Expose
-    var txt_user_name: String? = null
+    var txt_time_slot: String? = null
 
 
 }

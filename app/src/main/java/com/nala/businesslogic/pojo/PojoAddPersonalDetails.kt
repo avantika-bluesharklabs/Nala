@@ -1,6 +1,6 @@
 package com.nala.businesslogic.pojo
 
-class PojoAddPersonalDetails {
+class PojoAddPersonalDetails:PojoCommonResponse() {
 
 
 

@@ -398,6 +398,68 @@ object BindingAdapterApp {
     }
 
 
+    @BindingAdapter(
+        "recyclerWeeklyDaySchedule",
+        "adapterWeeklyDaySchedule",
+        "clickListenerWeeklyDaySchedule",
+        "scrollListenerWeeklyDaySchedule"
+    )
+    @JvmStatic
+    fun setRecyclerViewWeeklyDayScheduleAdapter(
+        recyclerView: RecyclerView?,
+        layoutManager: LinearLayoutManager?,
+        contents: List<PojoWeeklyDaySchedule>,
+        onClickContent: OnClickWeeklyDaySchedule,
+        onScrollListener: RecyclerView.OnScrollListener?
+    ) {
+        if (recyclerView != null) {
+            if (recyclerView.adapter == null) {
+                recyclerView.layoutManager = layoutManager
+                val adapterContent = AdapterWeeklyDaySchedule(
+                    recyclerView.context, contents, onClickContent
+                )
+                recyclerView.adapter = adapterContent
+                if (onScrollListener != null) {
+                    recyclerView.addOnScrollListener(onScrollListener)
+                }
+            } else {
+                recyclerView.adapter!!.notifyDataSetChanged()
+            }
+        }
+    }
+
+
+    @BindingAdapter(
+        "recyclerWeeklyTimeSchedule",
+        "adapterWeeklyTimeSchedule",
+        "clickListenerWeeklyTimeSchedule",
+        "scrollListenerWeeklyTimeSchedule"
+    )
+    @JvmStatic
+    fun setRecyclerViewWeeklyTimeScheduleAdapter(
+        recyclerView: RecyclerView?,
+        layoutManager: LinearLayoutManager?,
+        contents: List<PojoWeeklyTimeSchedule>,
+        onClickContent: OnClickWeeklyTimeSchedule,
+        onScrollListener: RecyclerView.OnScrollListener?
+    ) {
+        if (recyclerView != null) {
+            if (recyclerView.adapter == null) {
+                recyclerView.layoutManager = layoutManager
+                val adapterContent = AdapterWeeklyTimeSchedule(
+                    recyclerView.context, contents, onClickContent
+                )
+                recyclerView.adapter = adapterContent
+                if (onScrollListener != null) {
+                    recyclerView.addOnScrollListener(onScrollListener)
+                }
+            } else {
+                recyclerView.adapter!!.notifyDataSetChanged()
+            }
+        }
+    }
+
+
 
 
 

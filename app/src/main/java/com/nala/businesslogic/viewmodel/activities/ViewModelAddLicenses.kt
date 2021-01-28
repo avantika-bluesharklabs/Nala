@@ -20,26 +20,26 @@ class ViewModelAddLicenses (myApplication: MyApplication, isToShowErrors: Boolea
     init {
 
         var pojo = PojoAddLicenses()
-        pojo.txt_city_name = "Vadodara"
+
         pojo.txt_document_name = "Licence_1.jpg"
 
 
         observerContent.add(pojo)
 
         pojo = PojoAddLicenses()
-        pojo.txt_city_name = "Ahmedabad"
+
         pojo.txt_document_name = "Licence_1.jpg"
 
         observerContent.add(pojo)
 
         pojo = PojoAddLicenses()
-        pojo.txt_city_name = "Dahod"
+
         pojo.txt_document_name = "Licence_1.jpg"
 
         observerContent.add(pojo)
 
         pojo = PojoAddLicenses()
-        pojo.txt_city_name = "Surat"
+
         pojo.txt_document_name = "Licence_1.jpg"
 
         observerContent.add(pojo)

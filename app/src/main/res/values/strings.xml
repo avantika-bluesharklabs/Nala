@@ -183,7 +183,7 @@
     <string name="dummy_min">120 min</string>
     <string name="dummy_dollar">$75.00</string>
     <string name="duration">Duration</string>
-    <string name="location">Location</string>
+    <string name="location">Location Type</string>
     <string name="dummy_location">145,NewYork Streets,NewYork</string>
     <string name="dummy_email">abc@gmail.com</string>
     <string name="dummy_no">1231231232</string>
@@ -211,5 +211,29 @@
     <string name="str_license_name">Licence_1.jpg</string>
     <string name="dummy_city">California</string>
     <string name="str_add_yor_license">Add Your License</string>
+    <string name="btn_set_scheduale">Set Schedule</string>
+    <string name="str_set_weekly_schd">Set Your Weekly Schedule</string>
+    <string name="dummy_long_date">1 Jan,2021 to 7 Jan,2021</string>
+    <string name="str_from">From</string>
+    <string name="dummy_time">9:00 am</string>
+    <string name="txt_add_alot">Add Slot</string>
+    <string name="str_wed_slot">Wednesday Slot</string>
+    <string name="str_repeat_weekly">Repeat Weekly</string>
+    <string name="dummy_su">Su</string>
+    <string name="dummy_time_alot">9:00 am - 11:00 am</string>
+    <string name="str_schedule_txt">Schedule</string>
+    <string name="dummy_month">January,2021</string>
+    <string name="btn_clear_schedule">Clear Schedule</string>
+    <string name="str_service_need">Service need at</string>
+    <string name="btn_reject">Reject</string>
+    <string name="btn_accept">Accept</string>
+    <string name="btn_start">Start</string>
+    <string name="btn_complete">Complete</string>
+    <string name="btn_complete_ser">Complete Service</string>
+    <string name="txt_accnt_setting">Account Settings</string>
+    <string name="msg_charges">Massage Charges</string>
+    <string name="massage_license">Massage License</string>
+    <string name="txt_weekly_schedule">Weekly Schedule</string>
+    <string name="txt_msg_request">Massage requests</string>
 </resources>
 

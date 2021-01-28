@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="vmMassageCharges"
+            type="com.nala.businesslogic.viewmodel.activities.ViewModelMassagesCharges" />
+
+        <variable
+            name="onContentClickListener"
+            type="com.nala.businesslogic.interfaces.OnClickMassageCharges" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorcardbg">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/const_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/margin_ten"
+                android:src="@drawable/ic_back"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/const_calender"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/top_curve_view"
+            android:backgroundTint="@color/colorWhite"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/const_toolbar">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img_calender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/profile_edit"
+                android:padding="@dimen/margin_five"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txt_scheduale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/str_schedule_txt"
+                android:textSize="@dimen/textsize_forteen"
+                android:textColor="@color/colorDarkGray"
+                style="@style/medium"
+                android:layout_marginTop="@dimen/margin_five"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/img_calender"/>
+
+
+            <!--<androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txt_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/dummy_month"
+                android:textSize="@dimen/textsize_eighteen"
+                android:textColor="@color/colorBlack"
+                style="@style/medium"
+                android:layout_marginTop="@dimen/margin_five"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_scheduale"/>-->
+
+            <View
+                android:id="@+id/view_month"
+                android:layout_width="wrap_content"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="@dimen/margin_ten"
+                android:background="@color/colorGray"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_scheduale"/>
+
+            <CalendarView
+                android:id="@+id/calender_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:dateTextAppearance="@style/CalenderViewDateCustomText"
+                android:theme="@style/CalenderViewCustom"
+                android:weekDayTextAppearance="@style/CalenderViewWeekCustomText"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintTop_toBottomOf="@+id/view_month" />
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/therapist_bg"
+            android:layout_margin="@dimen/margin_ten"
+            android:textAllCaps="false"
+            style="@style/bold"
+            android:textColor="@color/colorPrimary"
+            android:text="@string/btn_clear_schedule"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

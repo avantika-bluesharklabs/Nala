@@ -56,7 +56,7 @@ class ActivitySplash : ActivityBase() {
 
         } else {
 
-            val intent = Intent(this, ActivityLogin::class.java)
+            val intent = Intent(this, ActivitySignIn::class.java)
             startActivity(intent)
             finish()
 

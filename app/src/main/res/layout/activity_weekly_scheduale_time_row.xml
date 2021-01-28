@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="layoutPosition"
+            type="Integer" />
+
+
+        <variable
+            name="onContentClickTimeListener"
+            type="com.nala.businesslogic.interfaces.OnClickWeeklyTimeSchedule" />
+
+        <variable
+            name="data"
+            type="com.nala.businesslogic.pojo.PojoWeeklyTimeSchedule" />
+
+        <variable
+            name="requestOptions"
+            type="com.bumptech.glide.request.RequestOptions" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        android:padding="@dimen/margin_five"
+        android:onClick="@{(v)->onContentClickTimeListener.onClickWeeklyTimeScheduleItem(v,layoutPosition,data)}"
+        android:background="@drawable/bg_weekly_time">
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txt_time_slot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/textsize_twelve"
+            android:textColor="@color/colorWhite"
+            style="@style/medium"
+            android:layout_margin="@dimen/margin_ten"
+            android:text="@{data.txt_time_slot}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+       <!-- <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/img_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/filter_cancel"
+            android:padding="@dimen/margin_two"
+            app:layout_constraintStart_toEndOf="@+id/txt_time_slot"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>-->
+
+
+
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

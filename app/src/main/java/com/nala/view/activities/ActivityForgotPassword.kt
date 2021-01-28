@@ -20,11 +20,7 @@ class ActivityForgotPassword : ActivityBase() {
         window.statusBarColor = Color.WHITE
         super.onCreate(savedInstanceState)
         mBinding = DataBindingUtil.setContentView(this, R.layout.activity_forgot_password)
-        mViewModelForgotPass =
-            ViewModelForgotPassword(
-                mApplication,
-                true
-            )
+        mViewModelForgotPass = ViewModelForgotPassword(mApplication, true)
         mBinding.vmForgotPass = mViewModelForgotPass
 
         mBinding.imgBack.setOnClickListener { finish() }

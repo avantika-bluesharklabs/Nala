@@ -86,7 +86,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_marginTop="@dimen/margin_five"
-                app:cardBackgroundColor="@color/colorBgScreen"
+                app:cardBackgroundColor="#EFEFF3"
                 app:cardCornerRadius="@dimen/margin_five"
                 app:cardElevation="@dimen/margin_five"
                 app:cardUseCompatPadding="true"
@@ -94,35 +94,18 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/img_document">
 
-                <androidx.constraintlayout.widget.ConstraintLayout
+
+                <Spinner
+                    android:id="@+id/spinner_muscle_name"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:overlapAnchor="false"
+                    android:padding="@dimen/margin_twenty"
+                    android:textColor="@color/colorWhite"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-
-                    <androidx.appcompat.widget.AppCompatTextView
-                        android:id="@+id/txt_city_name"
-                        style="@style/medium"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="@dimen/margin_ten"
-                        android:text="@{data.txt_city_name}"
-                        android:textColor="@color/colorBlack"
-                        android:textSize="@dimen/textsize_sixteen"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <androidx.appcompat.widget.AppCompatImageView
-                        android:id="@+id/img_arrow"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="@dimen/margin_ten"
-                        android:src="@drawable/profile_edit"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
 
             </androidx.cardview.widget.CardView>
 

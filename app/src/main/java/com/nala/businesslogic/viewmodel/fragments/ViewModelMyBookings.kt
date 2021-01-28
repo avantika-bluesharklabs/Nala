@@ -19,27 +19,30 @@ class ViewModelMyBookings(myApplication: MyApplication, isToShowErrors: Boolean)
     init {
 
         var pojoMyBooking = PojoMyBooking()
-        pojoMyBooking.txt_name = "Rahul Dravid"
+        pojoMyBooking.txt_user_name = "Rahul Dravid"
         pojoMyBooking.txt_status = "Pending"
+        pojoMyBooking.txt_massagee = "Deep tissue,Swedish"
 
         observerContent.add(pojoMyBooking)
 
         pojoMyBooking = PojoMyBooking()
-        pojoMyBooking.txt_name = "Sachin Tendulkar"
+        pojoMyBooking.txt_user_name = "Sachin Tendulkar"
         pojoMyBooking.txt_status = "Accepted"
+        pojoMyBooking.txt_massagee = "Deep tissue,Swedish"
 
         observerContent.add(pojoMyBooking)
 
         pojoMyBooking =  PojoMyBooking()
-        pojoMyBooking.txt_name = "Hanuma  Vihari"
+        pojoMyBooking.txt_user_name = "Hanuma  Vihari"
         pojoMyBooking.txt_status = "Rejected"
+        pojoMyBooking.txt_massagee = "Deep tissue,Swedish"
 
         observerContent.add(pojoMyBooking)
 
         pojoMyBooking =  PojoMyBooking()
-        pojoMyBooking.txt_name = "Pant Rishabh"
+        pojoMyBooking.txt_user_name = "Pant Rishabh"
         pojoMyBooking.txt_status ="Pending"
-
+        pojoMyBooking.txt_massagee = "Deep tissue,Swedish"
         observerContent.add(pojoMyBooking)
 
 

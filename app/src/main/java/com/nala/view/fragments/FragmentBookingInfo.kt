@@ -29,12 +29,12 @@ class FragmentBookingInfo : FragmentBase() {
         observer()
 
 
-        mBinding.cosntRateReview.setOnClickListener {
+      /*  mBinding.cosntRateReview.setOnClickListener {
 
             val fragment: Fragment = FragmentRateReview()
             mMainActivity?.addFragment(fragment, "FragmentRateReview", "FragmentRateReview")
 
-        }
+        }*/
 
         return mBinding.root
     }

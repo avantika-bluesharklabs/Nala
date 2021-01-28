@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="layoutPosition"
+            type="Integer" />
+
+
+        <variable
+            name="onContentClickListener"
+            type="com.nala.businesslogic.interfaces.OnClickWeeklyDaySchedule" />
+
+        <variable
+            name="data"
+            type="com.nala.businesslogic.pojo.PojoWeeklyDaySchedule" />
+
+        <variable
+            name="requestOptions"
+            type="com.bumptech.glide.request.RequestOptions" />
+
+
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/margin_five"
+        android:clickable="true"
+        android:focusable="true"
+        android:onClick="@{(v)->onContentClickListener.onClickWeeklyDayScheduleItem(v,layoutPosition,data)}">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/margin_ten"
+            android:background="@drawable/bg_weekly_day"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txt_day"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{data.txt_day}"
+                android:textColor="@color/colorBlueForButtons"
+                android:textSize="@dimen/textsize_sixteen"
+                style="@style/semibold"
+                android:padding="@dimen/margin_ten"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

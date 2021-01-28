@@ -27,66 +27,32 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/colorWhite">
+        android:background="@color/colorcardbg">
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/ll_toolbar"
+            android:id="@+id/const_toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="@dimen/margin_ten"
+            android:padding="@dimen/margin_five"
+            android:background="@color/colorWhite"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/card_search"
-                android:layout_width="0dp"
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txt_continue"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/margin_five"
-                app:cardCornerRadius="@dimen/margin_five"
-                app:cardElevation="@dimen/margin_five"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/card_filter"
+                android:text="@string/txt_msg_request"
+                style="@style/bold"
+                android:layout_marginStart="@dimen/margin_ten"
+                android:textSize="@dimen/textsize_twenty_four"
+                android:textColor="@color/colorBlack"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
 
 
-
-
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:id="@+id/img_search"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:padding="@dimen/margin_five"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    android:src="@drawable/ic_home_location" />
-
-
-                <androidx.appcompat.widget.AppCompatEditText
-                    android:id="@+id/edt_search"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:padding="@dimen/margin_five"
-                    android:singleLine="true"
-                    android:textColor="@color/colorBlack"
-                    android:textSize="@dimen/textsize_forteen"
-                    android:text="@{vmHomeMap.observerCityName}"
-                    android:background="@android:color/transparent"
-                    app:layout_constraintStart_toEndOf="@+id/img_search"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"/>
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-            </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/card_filter"
@@ -111,144 +77,42 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
+        <View
+            android:id="@+id/view"
+            android:layout_width="wrap_content"
+            android:layout_height="0.5dp"
+            android:background="@color/colorGray"
+            android:layout_marginTop="@dimen/margin_five"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/const_toolbar"/>
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txt_msg_req"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_msg_request"
+            android:textColor="@color/colorDarkGray"
+            style="@style/semibold"
+            android:layout_margin="@dimen/margin_ten"
+            android:textSize="@dimen/textsize_sixteen"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view"/>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_home"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:background="@drawable/top_curve_view"
-            android:backgroundTint="@color/colorLightGray"
+            android:layout_marginTop="@dimen/margin_five"
+            android:layout_marginBottom="@dimen/margin_five"
+            app:adapterHome="@{vmHomeList.observerContent}"
+            app:clickListenerHome="@{onContentClickListener}"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ll_toolbar">
-
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/cl_toggleview"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/margin_ten"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <androidx.appcompat.widget.AppCompatTextView
-                    style="@style/bold"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/str_near"
-                    android:textColor="@color/colorDarkBlue"
-                    android:textSize="@dimen/textsize_eighteen"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/curve_view"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_chainStyle="packed"
-                    app:layout_constraintTop_toTopOf="parent">
-
-
-                    <androidx.appcompat.widget.AppCompatImageView
-                        android:id="@+id/img_users"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="@dimen/margin_five"
-                        android:padding="@dimen/margin_ten"
-                        android:src="@drawable/home_mapview_icon"
-                        app:layout_constraintEnd_toStartOf="@+id/view"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-
-                    <View
-                        android:id="@+id/view"
-                        android:layout_width="1dp"
-                        android:layout_height="0dp"
-                        android:background="@color/colorGray"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toStartOf="@+id/img_map"
-                        app:layout_constraintStart_toEndOf="@+id/img_users"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-
-                    <androidx.appcompat.widget.AppCompatImageView
-                        android:id="@+id/img_map"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_margin="@dimen/margin_five"
-                        android:padding="@dimen/margin_ten"
-                        android:src="@drawable/home_list_icon_selected"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="@+id/view"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_home_list"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:visibility="gone"
-                app:adapterHome="@{vmHomeList.observerContent}"
-                app:clickListenerHome="@{onContentClickListener}"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/cl_toggleview"
-                app:recyclerHome="@{vmHomeList.layoutManager}"
-                app:scrollListenerHome="@{vmHomeList.scrollListener}" />
-
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/cl_constraint"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:visibility="gone"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/cl_toggleview">
-
-
-                <fragment
-                    android:id="@+id/map"
-                    android:name="com.google.android.gms.maps.SupportMapFragment"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_marginTop="@dimen/margin_ten"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rv_home_hori_list"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/margin_twenty"
-                    app:adapterHomeMap="@{vmHomeMap.observerContent}"
-                    app:clickListenerHomeMap="@{onContentClickListener}"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:recyclerHomeMap="@{vmHomeMap.layoutManager}"
-                    app:scrollListenerHomeMap="@{vmHomeMap.scrollListener}" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
+            app:layout_constraintTop_toBottomOf="@+id/txt_msg_req"
+            app:recyclerHome="@{vmHomeList.layoutManager}"
+            app:scrollListenerHome="@{vmHomeList.scrollListener}" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

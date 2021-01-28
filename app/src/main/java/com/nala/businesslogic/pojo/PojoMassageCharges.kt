@@ -3,7 +3,7 @@ package com.nala.businesslogic.pojo
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
-class PojoMassageCharges {
+class PojoMassageCharges:PojoCommonResponse() {
 
     @SerializedName("txt_price")
     @Expose

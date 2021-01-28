@@ -12,17 +12,18 @@
     <color name="colorDarkBlue">#131121</color>
     <color name="colorDarkCyan">#032335</color>
     <color name="colorWhite">#ffffff</color>
+    <color name="colorcardbg">#eff1f2</color>
     <color name="colorDarkGray">#605f69</color>
     <color name="colorGray">#e6e6e8</color>
     <color name="colorLightGray">#f5f6f7</color>
     <color name="colorLightGrayUser">#F0F1F3</color>
 
     <color name="colorBrown">#513D32</color>
-    <color name="colorSemiLightGray">#DAD8D8</color>
+    <color name="colorSemiLightGray">#EFE9E9</color>
 
     <color name="colorBgScreen">#EFF1F9</color>
     <color name="colorDarkGreen">#57B952</color>
-    <color name="colorGreen">#83fc31</color>
+    <color name="colorLime">#83fc31</color>
     <color name="ColorLightGreen">#00f69b</color>
     <color name="colorSkyBlue">#00B2B7</color>
     <color name="colorBlueLight">#9986EC</color>
@@ -33,6 +34,8 @@
     <color name="colorgray_9">#F9F9F9</color>
     <color name="colorgray_8">#F8F8F8</color>
     <color name="ColorTeal">#1EA996</color>
+    <color name="ColorRed">#FF0000</color>
+    <color name="ColorGreen">#008000</color>
 
 
 

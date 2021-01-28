@@ -23,16 +23,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".view.activities.ActivityAddLicenses">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".view.activities.ActivityMassageCharges">
+        <activity android:name=".view.activities.ActivityCalender"></activity>
+        <activity android:name=".view.activities.ActivityWeeklyScheduale">
 
         </activity>
+        <activity android:name=".view.activities.ActivityAddLicenses"></activity>
+        <activity android:name=".view.activities.ActivityMassageCharges" />
         <activity android:name=".view.activities.ActivityMassageTechnique" />
         <activity android:name=".view.activities.ActivityContinueAs" />
 
@@ -73,13 +69,11 @@
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
 
-            <!--
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-            -->
         </activity>
 
         <provider
