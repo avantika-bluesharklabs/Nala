@@ -11,59 +11,60 @@
             name="layoutPosition"
             type="Integer" />
 
+        <variable
+            name="vmMassageTechnique"
+            type="com.nala.businesslogic.viewmodel.activities.ViewModelMassageTechnique" />
 
         <variable
             name="onContentClickListener"
-            type="com.nala.businesslogic.interfaces.OnClickWeeklyDaySchedule" />
+            type="com.nala.businesslogic.interfaces.OnClickMassageType" />
 
         <variable
             name="data"
-            type="com.nala.businesslogic.pojo.PojoWeeklyDaySchedule" />
+            type="com.nala.businesslogic.pojo.PojoMassageType" />
 
         <variable
             name="requestOptions"
             type="com.bumptech.glide.request.RequestOptions" />
 
 
-
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="@dimen/margin_five"
         android:clickable="true"
         android:focusable="true"
-        android:onClick="@{(v)->onContentClickListener.onClickWeeklyDayScheduleItem(v,layoutPosition,data)}">
+        android:onClick="@{(v)->onContentClickListener.onClickMassageTypeItem(v,layoutPosition,data)}">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="wrap_content"
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_technique"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="@dimen/margin_ten"
-            android:background="@drawable/bg_weekly_day"
-            app:layout_constraintStart_toStartOf="parent"
+            app:cardBackgroundColor="@color/colorWhite"
+            app:cardCornerRadius="@dimen/margin_five"
+            app:cardElevation="@dimen/margin_five"
+            app:cardUseCompatPadding="true"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent">
 
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/txt_day"
+                android:id="@+id/txt_type"
+                style="@style/medium"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@{data.txt_day}"
-                android:textColor="@color/colorBlueForButtons"
-                android:textSize="@dimen/textsize_twelve"
-                style="@style/semibold"
                 android:padding="@dimen/margin_ten"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"/>
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:text="@{data.txt_type}"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/textsize_twelve" />
 
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
+        </androidx.cardview.widget.CardView>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

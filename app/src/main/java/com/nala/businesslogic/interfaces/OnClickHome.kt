@@ -6,6 +6,6 @@ import com.nala.businesslogic.pojo.PojoHome
 interface OnClickHome {
 
     fun onClickHomeItem(view: View?, layoutPosition: Int, data: PojoHome)
-    fun onClickHomeBookNow(view: View?, layoutPosition: Int, data: PojoHome)
-    fun onClickHomeHeart(view: View?, layoutPosition: Int, data: PojoHome)
+
+
 }

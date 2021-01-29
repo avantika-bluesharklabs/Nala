@@ -19,6 +19,7 @@ class ViewModelSignIn(
     private val liveEventSignIn: SingleLiveEvent<Boolean> = SingleLiveEvent()
     private val liveEventForgotPass: SingleLiveEvent<Boolean> = SingleLiveEvent()
     private val liveEventBackPress: SingleLiveEvent<Boolean> = SingleLiveEvent()
+    private val liveEventCreateOne: SingleLiveEvent<Boolean> = SingleLiveEvent()
 
 
     var observerEmail: ObservableString = ObservableString("")
@@ -43,6 +44,10 @@ class ViewModelSignIn(
         return liveEventForgotPass
     }
 
+    fun getLiveEventCreateOne(): SingleLiveEvent<Boolean> {
+        return liveEventCreateOne
+    }
+
 
     fun clickSignIn() {
         val validateEmail = validateUserData()
@@ -56,6 +61,10 @@ class ViewModelSignIn(
 
     fun clickForgotPass() {
         liveEventForgotPass.value = true
+    }
+
+    fun clickCreateOne() {
+        liveEventCreateOne.value = true
     }
 
 

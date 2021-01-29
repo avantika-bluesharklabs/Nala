@@ -11,15 +11,15 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.RequiresApi
 import androidx.databinding.DataBindingUtil
-import com.bumptech.glide.request.RequestOptions
 import com.nala.R
-import com.nala.businesslogic.interfaces.OnClickMyBooking
 import com.nala.businesslogic.interfaces.OnClickProfile
 import com.nala.businesslogic.pojo.PojoCommonResponse
-import com.nala.businesslogic.viewmodel.fragments.ViewModelMyBookings
 import com.nala.businesslogic.viewmodel.fragments.ViewModelProfile
-import com.nala.databinding.FragmentMyBookingsBinding
 import com.nala.databinding.FragmentProfileBinding
+import com.nala.view.activities.ActivityAddLicenses
+import com.nala.view.activities.ActivityMassageCharges
+import com.nala.view.activities.ActivityMassageTechnique
+import com.nala.view.activities.ActivityWeeklyScheduale
 import java.io.ByteArrayOutputStream
 
 class FragmentProfile : FragmentBase(), OnClickProfile {
@@ -48,7 +48,33 @@ class FragmentProfile : FragmentBase(), OnClickProfile {
         mBinding.imgProfile.setOnClickListener {
 
            imageChooser()
+        }
 
+        mBinding.constMsgTcnq.setOnClickListener {
+
+            val i = Intent(activity, ActivityMassageTechnique::class.java)
+            getActivity()?.startActivity(i)
+
+        }
+
+        mBinding.constMasageCharge.setOnClickListener {
+
+            val i = Intent(activity, ActivityMassageCharges::class.java)
+            getActivity()?.startActivity(i)
+
+        }
+
+        mBinding.constMassageLicense.setOnClickListener {
+
+            val i = Intent(activity, ActivityAddLicenses::class.java)
+            getActivity()?.startActivity(i)
+
+        }
+
+        mBinding.constWeeklySchedule.setOnClickListener {
+
+            val i = Intent(activity, ActivityWeeklyScheduale::class.java)
+            getActivity()?.startActivity(i)
 
         }
 

@@ -8,18 +8,16 @@
         <import type="android.view.View" />
 
         <variable
-            name="vmMassageCharges"
-            type="com.nala.businesslogic.viewmodel.activities.ViewModelMassagesCharges" />
+            name="vmMsgInfo"
+            type="com.nala.businesslogic.viewmodel.fragments.ViewModelMassageRquestInfo" />
 
-        <variable
-            name="onContentClickListener"
-            type="com.nala.businesslogic.interfaces.OnClickMassageCharges" />
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/colorLightGrayUser"
+        android:background="@color/colorgray_9"
         android:fitsSystemWindows="true">
 
 
@@ -28,6 +26,7 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:padding="@dimen/margin_ten"
+            android:onClick="@{()->vmMsgInfo.clickBack()}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -93,11 +92,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/margin_ten"
-                    android:layout_marginTop="@dimen/margin_five"
                     android:elevation="@dimen/margin_two"
                     android:text="@string/str_demo_name"
                     android:textColor="@color/colorWhite"
-                    android:textSize="@dimen/textsize_eighteen"
+                    android:textSize="@dimen/textsize_sixteen"
                     app:layout_constraintBottom_toBottomOf="@+id/img_user"
                     app:layout_constraintStart_toEndOf="@+id/img_user"
                     app:layout_constraintTop_toTopOf="@+id/img_user" />
@@ -108,7 +106,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/margin_ten"
-                    android:layout_marginTop="@dimen/margin_five"
                     android:elevation="@dimen/margin_two"
                     android:text="@string/str_review_rating"
                     android:textColor="@color/colorWhite"
@@ -168,7 +165,7 @@
                             android:layout_height="wrap_content"
                             android:text="@string/dummy_date"
                             android:textColor="@color/colorBlack"
-                            android:textSize="@dimen/textsize_twenty"
+                            android:textSize="@dimen/textsize_sixteen"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
@@ -241,7 +238,7 @@
                             android:layout_marginTop="@dimen/margin_five"
                             android:text="@string/str_msg_type"
                             android:textColor="@color/colorPrimary"
-                            android:textSize="@dimen/textsize_sixteen"
+                            android:textSize="@dimen/textsize_forteen"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
@@ -251,11 +248,10 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="@dimen/margin_ten"
-                            android:layout_marginTop="@dimen/margin_five"
                             android:layout_marginBottom="@dimen/margin_five"
                             android:text="@string/str_deep_tisue"
                             android:textColor="@color/colorBlack"
-                            android:textSize="@dimen/textsize_twenty"
+                            android:textSize="@dimen/textsize_sixteen"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@id/txt_maasage_type" />
@@ -284,7 +280,7 @@
                             android:layout_height="wrap_content"
                             android:text="@string/duration"
                             android:textColor="@color/colorPrimary"
-                            android:textSize="@dimen/textsize_twenty"
+                            android:textSize="@dimen/textsize_forteen"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
@@ -293,10 +289,9 @@
                             style="@style/bold"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/margin_five"
                             android:text="@string/dummy_min"
                             android:textColor="@color/colorBlack"
-                            android:textSize="@dimen/textsize_twenty"
+                            android:textSize="@dimen/textsize_sixteen"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@id/txt_duration_text" />
 
@@ -322,7 +317,7 @@
                             android:layout_height="wrap_content"
                             android:text="@string/price"
                             android:textColor="@color/colorPrimary"
-                            android:textSize="@dimen/textsize_sixteen"
+                            android:textSize="@dimen/textsize_forteen"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
@@ -331,10 +326,9 @@
                             style="@style/bold"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/margin_five"
                             android:text="@string/dummy_dollar"
                             android:textColor="@color/colorBlack"
-                            android:textSize="@dimen/textsize_twenty"
+                            android:textSize="@dimen/textsize_sixteen"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@id/txt_price_text" />
 
@@ -344,10 +338,9 @@
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/cl_map"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="0dp"
                         android:layout_marginTop="@dimen/margin_ten"
-                        android:layout_marginBottom="@dimen/margin_twenty"
-                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:layout_marginBottom="@dimen/margin_ten"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/cl_duration">
 
@@ -370,7 +363,7 @@
                             android:layout_height="wrap_content"
                             android:text="@string/str_mob_table"
                             android:textColor="@color/colorBlack"
-                            android:textSize="@dimen/textsize_eighteen"
+                            android:textSize="@dimen/textsize_sixteen"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/txt_map_text" />
 
@@ -400,7 +393,7 @@
                         android:text="@string/btn_reject"
                         android:textAllCaps="false"
                         android:textColor="@color/colorWhite"
-                        android:textSize="@dimen/textsize_eighteen"
+                        android:textSize="@dimen/textsize_sixteen"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toStartOf="@+id/btn_aceept"
                         app:layout_constraintStart_toStartOf="parent"
@@ -419,7 +412,7 @@
                         android:text="@string/btn_accept"
                         android:textAllCaps="false"
                         android:textColor="@color/colorWhite"
-                        android:textSize="@dimen/textsize_eighteen"
+                        android:textSize="@dimen/textsize_sixteen"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/btn_reject"

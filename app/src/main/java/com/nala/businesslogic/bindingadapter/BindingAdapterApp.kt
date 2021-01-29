@@ -459,6 +459,37 @@ object BindingAdapterApp {
         }
     }
 
+    @BindingAdapter(
+        "recyclerMassageType",
+        "adapterMassageType",
+        "clickListenerMassageType",
+        "scrollListenerMassageType"
+    )
+    @JvmStatic
+    fun setRecyclerViewMassageTypeAdapter(
+        recyclerView: RecyclerView?,
+        layoutManager: LinearLayoutManager?,
+        contents: List<PojoMassageType>,
+        onClickContent: OnClickMassageType,
+        onScrollListener: RecyclerView.OnScrollListener?
+    ) {
+        if (recyclerView != null) {
+            if (recyclerView.adapter == null) {
+                recyclerView.layoutManager = layoutManager
+                val adapterContent = AdapterMassageType(
+                    recyclerView.context, contents, onClickContent
+                )
+                recyclerView.adapter = adapterContent
+                if (onScrollListener != null) {
+                    recyclerView.addOnScrollListener(onScrollListener)
+                }
+            } else {
+                recyclerView.adapter!!.notifyDataSetChanged()
+            }
+        }
+    }
+
+
 
 
 
@@ -588,13 +619,14 @@ object BindingAdapterApp {
         }
     }*/
     @BindingAdapter(
-        value = ["arrayStringData", "arrayData", "arrayPosition"],
+        value = ["arrayStringData", "arrayData", "arrayPosition","isSelectRequired"],
         requireAll = false
     )
     @JvmStatic
     fun setSpinner(
         spinner: Spinner?, arrayData: Array<String?>?, arrayList: List<String>?,
-        position: Int
+        position: Int,
+        isSelectRequired : Boolean
     ) {
         if (spinner != null) {
             if (arrayData != null) {
@@ -605,6 +637,8 @@ object BindingAdapterApp {
             } else {
                 val arrayString: MutableList<String> = ArrayList()
                 if (arrayList != null) {
+                    if(isSelectRequired)
+                        arrayString.add("Select")
                     arrayString.addAll(arrayList)
                 } /*else if (arrayTime != null) {
                     for (i in arrayTime.indices) {

@@ -90,22 +90,23 @@
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/txt_iam"
-                    style="@style/semibold"
+                    style="@style/medium"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/margin_ten"
-                    android:text="@string/str_iam"
+                    android:text="@string/str_my_gender"
                     android:textColor="@color/colorBlack"
-                    android:textSize="@dimen/textsize_eighteen"
+                    android:textSize="@dimen/textsize_forteen"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/cl_image" />
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/cl_gender"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/margin_ten"
+                    app:layout_constraintHorizontal_chainStyle="packed"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/txt_iam">
@@ -113,37 +114,54 @@
                     <androidx.appcompat.widget.AppCompatTextView
                         android:id="@+id/txt_male"
                         style="@style/regular"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
                         android:background="@drawable/curve_view_360_left_half_with_border"
                         android:gravity="center"
                         android:onClick="@{()->vmAddDetails.clickMale()}"
                         android:singleLine="true"
                         android:text="@string/str_male"
                         android:textAlignment="center"
-                        android:textSize="@dimen/textsize_forteen"
+                        android:textSize="@dimen/textsize_twelve"
+                        app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toStartOf="@+id/txt_female"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
+                        app:layout_constraintEnd_toStartOf="@+id/txt_female"/>
 
                     <androidx.appcompat.widget.AppCompatTextView
                         android:id="@+id/txt_female"
                         style="@style/regular"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:background="@drawable/curve_view_360_right_half_with_border"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/curve_veiw_rectangle"
                         android:gravity="center"
                         android:onClick="@{()->vmAddDetails.clickFemale()}"
                         android:singleLine="true"
                         android:text="@string/str_female"
                         android:textAlignment="center"
-                        android:textSize="@dimen/textsize_forteen"
+                        android:textSize="@dimen/textsize_twelve"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/txt_male"
+                        app:layout_constraintEnd_toStartOf="@+id/txt_not_specified"/>
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/txt_not_specified"
+                        style="@style/regular"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/curve_view_360_right_half_with_border"
+                        android:gravity="center"
+                        android:onClick="@{()->vmAddDetails.clickNotSpecified()}"
+                        android:singleLine="true"
+                        android:text="@string/str_not_specified"
+                        android:textAlignment="center"
+                        android:textSize="@dimen/textsize_twelve"
+                        app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="@+id/txt_male"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        app:layout_constraintStart_toEndOf="@id/txt_female"/>
 
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
@@ -157,7 +175,7 @@
                     android:layout_marginTop="@dimen/margin_thirty_five"
                     android:text="@string/str_aboutme"
                     android:textColor="@color/colorBlack"
-                    android:textSize="@dimen/textsize_eighteen"
+                    android:textSize="@dimen/textsize_forteen"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/cl_gender" />
 
@@ -180,6 +198,7 @@
                         android:background="@drawable/bg_edittext"
                         android:gravity="top"
                         android:hint="@string/str_max_char"
+                        android:textSize="@dimen/textsize_twelve"
                         android:inputType="textMultiLine"
                         android:lines="3"
                         android:maxLength="150"
@@ -199,7 +218,7 @@
                     android:layout_marginTop="@dimen/margin_ten"
                     android:text="@string/str_stu_add"
                     android:textColor="@color/colorBlack"
-                    android:textSize="@dimen/textsize_eighteen"
+                    android:textSize="@dimen/textsize_forteen"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textinputlayout_about" />
 
@@ -221,6 +240,7 @@
                         android:layout_gravity="center_vertical"
                         android:background="@drawable/bg_edittext"
                         android:hint="@string/str_address"
+                        android:textSize="@dimen/textsize_twelve"
                         android:inputType="text"
                         android:scrollbars="vertical"
                         android:text="@={vmAddDetails.observerAddress}"
@@ -244,6 +264,7 @@
                         android:layout_gravity="center_vertical"
                         android:background="@drawable/bg_edittext"
                         android:hint="@string/str_apt"
+                        android:textSize="@dimen/textsize_twelve"
                         android:inputType="text"
                         android:scrollbars="vertical"
                         android:text="@={vmAddDetails.observerApt}"
@@ -260,6 +281,7 @@
                     android:layout_marginEnd="@dimen/margin_ten"
                     android:text="@string/str_add_desc"
                     android:textAlignment="center"
+                    android:textSize="@dimen/textsize_twelve"
                     android:textColor="@color/colorDarkGray"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -275,10 +297,10 @@
                     android:layout_marginBottom="@dimen/margin_twenty"
                     android:background="@drawable/btn_signup"
                     android:onClick="@{()->vmAddDetails.clickSubmit()}"
-                    android:text="@string/str_submit"
+                    android:text="@string/btn_continue"
                     android:textAllCaps="false"
                     android:textColor="@color/colorWhite"
-                    android:textSize="@dimen/textsize_eighteen"
+                    android:textSize="@dimen/textsize_sixteen"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"

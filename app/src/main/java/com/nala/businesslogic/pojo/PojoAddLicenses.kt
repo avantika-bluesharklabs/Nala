@@ -9,6 +9,8 @@ class PojoAddLicenses :PojoCommonResponse(){
     @Expose
     var txt_document_name: String? = null
 
+    var data:ArrayList<String>? = null
+
 
 
 

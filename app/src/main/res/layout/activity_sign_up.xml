@@ -47,7 +47,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/str_sign_up"
                 android:textColor="@color/colorBlack"
-                android:textSize="@dimen/textsize_twenty_four"
+                android:textSize="@dimen/textsize_twenty"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -110,8 +110,9 @@
                     android:layout_marginTop="@dimen/margin_twenty"
                     android:background="@drawable/ic_create_ac"
                     android:text="@string/str_sign_fb"
+                    android:backgroundTint="@color/colorPrimary"
                     android:textColor="@color/colorWhite"
-                    android:textSize="@dimen/textsize_sixteen"
+                    android:textSize="@dimen/textsize_forteen"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -125,8 +126,9 @@
                     android:layout_marginTop="@dimen/margin_ten"
                     android:background="@drawable/ic_create_ac"
                     android:text="@string/str_sign_apple"
+                    android:backgroundTint="@color/colorPrimary"
                     android:textColor="@color/colorWhite"
-                    android:textSize="@dimen/textsize_sixteen"
+                    android:textSize="@dimen/textsize_forteen"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/btn_facebook" />
@@ -137,10 +139,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/margin_ten"
+                    android:backgroundTint="@color/colorPrimary"
                     android:background="@drawable/ic_create_ac"
                     android:text="@string/str_sign_google"
                     android:textColor="@color/colorWhite"
-                    android:textSize="@dimen/textsize_sixteen"
+                    android:textSize="@dimen/textsize_forteen"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/btn_apple" />
@@ -152,6 +155,7 @@
                     android:layout_marginTop="@dimen/margin_fifteen"
                     android:background="@color/colorLightGray"
                     android:text="@string/or"
+                    android:textSize="@dimen/textsize_twelve"
                     android:textAllCaps="true"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -203,6 +207,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
                             android:hint="@string/str_name_hint"
+                            android:textSize="@dimen/textsize_forteen"
                             android:inputType="text"
                             android:text="@={vmSignUp.observerName}"
                             android:textColor="@color/colorBlack" />
@@ -226,6 +231,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
                             android:hint="@string/str_email_hint"
+                            android:textSize="@dimen/textsize_forteen"
                             android:inputType="textEmailAddress"
                             android:text="@={vmSignUp.observerEmail}"
                             android:textColor="@color/colorBlack" />
@@ -249,6 +255,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
                             android:hint="@string/str_password_hint"
+                            android:textSize="@dimen/textsize_forteen"
                             android:inputType="textPassword"
                             android:text="@={vmSignUp.observerPassword}"
                             android:textColor="@color/colorBlack" />
@@ -272,6 +279,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
                             android:hint="@string/str_con_password_hint"
+                            android:textSize="@dimen/textsize_forteen"
                             android:inputType="textPassword"
                             android:text="@={vmSignUp.observerConPassword}"
                             android:textColor="@color/colorBlack" />
@@ -295,6 +303,7 @@
                             android:layout_gravity="center_vertical"
                             android:hint="@string/str_phone_hint"
                             android:inputType="phone"
+                            android:textSize="@dimen/textsize_forteen"
                             android:text="@={vmSignUp.observerPhone}"
                             android:textColor="@color/colorBlack" />
                     </com.google.android.material.textfield.TextInputLayout>
@@ -305,6 +314,7 @@
                         android:layout_height="wrap_content"
                         android:text="@string/txt_create_accnt_des"
                         android:layout_marginTop="@dimen/margin_five"
+                        android:textSize="@dimen/textsize_twelve"
                         app:layout_constraintTop_toBottomOf="@+id/textinputlayout_phone"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"/>
@@ -313,14 +323,14 @@
                     <androidx.appcompat.widget.AppCompatCheckBox
                         android:id="@+id/cb_tandc"
                         style="@style/regular"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/margin_ten"
                         android:gravity="start"
                         android:onClick="@{()->vmSignUp.clickCheckbox()}"
                         android:text="@string/str_tb_desc"
                         android:textColor="@color/colorLightBlue"
-                        android:textSize="@dimen/textsize_sixteen"
+                        android:textSize="@dimen/textsize_forteen"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/txt_des" />
@@ -338,7 +348,7 @@
                         android:text="@string/str_sign_up"
                         android:textAllCaps="false"
                         android:textColor="@color/colorWhite"
-                        android:textSize="@dimen/textsize_eighteen"
+                        android:textSize="@dimen/textsize_sixteen"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/cb_tandc" />

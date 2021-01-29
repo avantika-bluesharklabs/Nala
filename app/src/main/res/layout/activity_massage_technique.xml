@@ -11,6 +11,10 @@
             name="vmMassageTechnique"
             type="com.nala.businesslogic.viewmodel.activities.ViewModelMassageTechnique" />
 
+        <variable
+            name="onContentClickListener"
+            type="com.nala.businesslogic.interfaces.OnClickMassageType" />
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -32,6 +36,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/margin_ten"
+                android:onClick="@{()->vmMassageTechnique.clickBackPress()}"
                 android:src="@drawable/ic_back"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -41,27 +46,7 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline_bottom"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_end="@dimen/margin_ten" />
 
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline_start"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_begin="@dimen/margin_ten" />
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline_end"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_end="@dimen/margin_ten" />
 
         <androidx.core.widget.NestedScrollView
             android:layout_width="0dp"
@@ -69,8 +54,8 @@
             android:layout_marginBottom="@dimen/margin_ten"
             android:background="@drawable/top_curve_view"
             app:layout_constraintBottom_toTopOf="@id/btn_continue"
-            app:layout_constraintEnd_toEndOf="@id/guideline_end"
-            app:layout_constraintStart_toStartOf="@+id/guideline_start"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/const_toolbar">
 
 
@@ -83,10 +68,11 @@
                     android:id="@+id/title_msg_tcnc"
                     style="@style/bold"
                     android:layout_width="wrap_content"
+                    android:layout_margin="@dimen/margin_ten"
                     android:layout_height="wrap_content"
                     android:text="@string/str_msg_technique"
                     android:textColor="@color/colorBlack"
-                    android:textSize="@dimen/textsize_twenty_four"
+                    android:textSize="@dimen/textsize_twenty"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -97,7 +83,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/margin_ten"
                     android:background="@drawable/top_curve_view"
-                    android:backgroundTint="@color/colorGray"
+                    android:backgroundTint="@color/colorgray_9"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/title_msg_tcnc">
@@ -110,8 +96,9 @@
                         android:layout_height="wrap_content"
                         android:padding="@dimen/margin_five"
                         android:text="@string/txt_massage_location"
+                        android:layout_marginStart="@dimen/margin_ten"
                         android:textColor="@color/colorDarkGray"
-                        android:textSize="@dimen/textsize_sixteen"
+                        android:textSize="@dimen/textsize_forteen"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -121,6 +108,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_marginTop="@dimen/margin_five"
+                        android:layout_marginStart="@dimen/margin_five"
+                        android:layout_marginEnd="@dimen/margin_five"
                         app:cardBackgroundColor="@color/colorWhite"
                         app:cardCornerRadius="@dimen/margin_five"
                         app:cardElevation="@dimen/margin_five"
@@ -138,7 +127,7 @@
                             android:padding="@dimen/margin_ten"
                             android:text="@string/str_at_stuidio"
                             android:textColor="@color/colorBlack"
-                            android:textSize="@dimen/textsize_sixteen" />
+                            android:textSize="@dimen/textsize_forteen" />
 
                     </androidx.cardview.widget.CardView>
 
@@ -149,6 +138,8 @@
                         android:layout_height="0dp"
                         app:cardBackgroundColor="@color/colorWhite"
                         app:cardCornerRadius="@dimen/margin_five"
+                        android:layout_marginStart="@dimen/margin_five"
+                        android:layout_marginEnd="@dimen/margin_five"
                         app:cardElevation="@dimen/margin_five"
                         app:cardUseCompatPadding="true"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -164,7 +155,7 @@
                             android:padding="@dimen/margin_ten"
                             android:text="@string/str_mob_table"
                             android:textColor="@color/colorBlack"
-                            android:textSize="@dimen/textsize_sixteen" />
+                            android:textSize="@dimen/textsize_forteen" />
 
                     </androidx.cardview.widget.CardView>
 
@@ -177,11 +168,11 @@
                     style="@style/bold"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/margin_five"
+                    android:layout_marginStart="@dimen/margin_ten"
                     android:layout_marginTop="@dimen/margin_ten"
                     android:text="@string/str_type_massage"
                     android:textColor="@color/colorDarkGray"
-                    android:textSize="@dimen/textsize_sixteen"
+                    android:textSize="@dimen/textsize_forteen"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/const_massage_location" />
 
@@ -190,10 +181,14 @@
                     android:id="@+id/recycle_massage_type"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
+                    app:recyclerMassageType="@{vmMassageTechnique.layoutManager}"
+                    app:adapterMassageType="@{vmMassageTechnique.observerContent}"
+                    app:clickListenerMassageType="@{onContentClickListener}"
+                    app:scrollListenerMassageType="@{vmMassageTechnique.scrollListener}"
+                    android:layout_margin="@dimen/margin_ten"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/txt_type_massages" />
-
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -203,17 +198,21 @@
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_continue"
             style="@style/bold"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_ten"
+            android:layout_marginBottom="@dimen/margin_ten"
+            android:layout_marginEnd="@dimen/margin_ten"
+            android:layout_marginStart="@dimen/margin_ten"
             android:background="@drawable/btn_signup"
             android:text="@string/btn_continue"
+            android:onClick="@{()->vmMassageTechnique.clickContinue()}"
             android:textAllCaps="false"
             android:textColor="@color/colorWhite"
-            android:textSize="@dimen/textsize_eighteen"
+            android:textSize="@dimen/textsize_sixteen"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@id/guideline_end"
-            app:layout_constraintStart_toStartOf="@id/guideline_start" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

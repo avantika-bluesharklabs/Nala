@@ -43,7 +43,7 @@
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/txt_success_text"
             style="@style/bold"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
             android:text="@string/str_success"
@@ -58,7 +58,7 @@
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/txt_success_desc"
             style="@style/medium"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_ten"
             android:text="@string/str_success_desc"
@@ -84,7 +84,7 @@
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/txt_success_desc2"
             style="@style/regular"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_fifteen"
             android:text="@string/str_success_desc_2"

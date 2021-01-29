@@ -16,7 +16,9 @@ class ViewModelMassagesCharges (myApplication: MyApplication, isToShowErrors: Bo
 
 
     private val liveEvent: SingleLiveEvent<Boolean> = SingleLiveEvent()
+    private val liveEventContinue: SingleLiveEvent<Boolean> = SingleLiveEvent()
     private val liveEventSuccess: SingleLiveEvent<PojoMassageCharges> = SingleLiveEvent()
+    private val liveEventBackPress: SingleLiveEvent<Boolean> = SingleLiveEvent()
 
     init {
 
@@ -63,6 +65,22 @@ class ViewModelMassagesCharges (myApplication: MyApplication, isToShowErrors: Bo
 
     fun getLiveEvent(): SingleLiveEvent<Boolean> {
         return liveEvent
+    }
+
+    fun getLiveEventBackPress(): SingleLiveEvent<Boolean> {
+        return liveEventBackPress
+    }
+
+    fun clickBackPress() {
+        liveEventBackPress.value = true
+    }
+
+    fun getLiveEventContinue(): SingleLiveEvent<Boolean> {
+        return liveEventContinue
+    }
+
+    fun clickContinue(){
+        liveEventContinue.value = true
     }
 
     fun getLiveEventSuccess(): SingleLiveEvent<PojoMassageCharges> {

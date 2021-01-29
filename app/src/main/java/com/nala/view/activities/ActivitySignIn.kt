@@ -21,15 +21,14 @@ class ActivitySignIn : ActivityBase() {
     override fun onCreate(savedInstanceState: Bundle?) {
         window.statusBarColor = Color.WHITE
         super.onCreate(savedInstanceState)
+
         mBinding = DataBindingUtil.setContentView(this, R.layout.activity_sign_in)
-        mViewModelSignIn =
-            ViewModelSignIn(
-                mApplication,
-                true
-            )
+
+        mViewModelSignIn = ViewModelSignIn(mApplication, true)
+
         mBinding.vmSignIn = mViewModelSignIn
 
-        mBinding.imgBack.setOnClickListener { finish() }
+
 
         observable()
     }
@@ -61,6 +60,10 @@ class ActivitySignIn : ActivityBase() {
         mViewModelSignIn.getLiveEventForgotPass().observe(this, {
             startActivity(Intent(this, ActivityForgotPassword::class.java))
 //            finish()
+        })
+
+        mViewModelSignIn.getLiveEventCreateOne().observe(this,{
+            startActivity(Intent(this,ActivityContinueAs::class.java))
         })
     }
 }

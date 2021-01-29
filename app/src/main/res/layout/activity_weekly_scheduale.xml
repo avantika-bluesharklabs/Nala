@@ -43,6 +43,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/margin_ten"
+                android:onClick="@{()->vmWeeklyDayScheduale.clickBackPress()}"
                 android:src="@drawable/ic_back"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -101,7 +102,7 @@
                     android:layout_height="0dp"
                     android:layout_marginTop="@dimen/margin_fifteen"
                     android:background="@drawable/top_curve_view"
-                    android:backgroundTint="@color/colorcardbg"
+                    android:backgroundTint="@color/colorgray_9"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/txt_date">
@@ -159,7 +160,7 @@
                                     android:layout_height="wrap_content"
                                     android:text="@string/str_from"
                                     android:textColor="@color/colorDarkGray"
-                                    android:textSize="@dimen/textsize_sixteen"
+                                    android:textSize="@dimen/textsize_forteen"
                                     app:layout_constraintStart_toStartOf="@+id/txt_timing"
                                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -173,7 +174,7 @@
                                     android:drawablePadding="@dimen/margin_twenty"
                                     android:text="@string/dummy_time"
                                     android:textColor="@color/colorBlack"
-                                    android:textSize="@dimen/textsize_eighteen"
+                                    android:textSize="@dimen/textsize_sixteen"
                                     app:layout_constraintEnd_toEndOf="parent"
                                     app:layout_constraintStart_toStartOf="parent"
                                     app:layout_constraintTop_toBottomOf="@+id/txt_from" />
@@ -211,7 +212,7 @@
                                     android:layout_height="wrap_content"
                                     android:text="@string/str_from"
                                     android:textColor="@color/colorDarkGray"
-                                    android:textSize="@dimen/textsize_sixteen"
+                                    android:textSize="@dimen/textsize_forteen"
                                     app:layout_constraintStart_toStartOf="@+id/txt_at_timing"
                                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -225,7 +226,7 @@
                                     android:drawablePadding="@dimen/margin_twenty"
                                     android:text="@string/dummy_time"
                                     android:textColor="@color/colorBlack"
-                                    android:textSize="@dimen/textsize_eighteen"
+                                    android:textSize="@dimen/textsize_sixteen"
                                     app:layout_constraintEnd_toEndOf="parent"
                                     app:layout_constraintStart_toStartOf="parent"
                                     app:layout_constraintTop_toBottomOf="@+id/txt_at" />
@@ -275,7 +276,7 @@
                     android:layout_marginTop="@dimen/margin_fifteen"
                     android:text="@string/str_wed_slot"
                     android:textColor="@color/colorDarkGray"
-                    android:textSize="@dimen/textsize_sixteen"
+                    android:textSize="@dimen/textsize_forteen"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/const_slot" />
 
@@ -311,8 +312,8 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/margin_ten"
                     android:text="@string/str_repeat_weekly"
-                    android:textSize="@dimen/textsize_sixteen"
-                    android:textColor="@color/colorGray"
+                    android:textSize="@dimen/textsize_forteen"
+                    android:textColor="@color/colorDarkGray"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/view_slot" />
 
@@ -341,9 +342,10 @@
             android:layout_margin="@dimen/margin_ten"
             android:background="@drawable/btn_signup"
             android:text="@string/btn_set_scheduale"
+            android:onClick="@{()->vmWeeklyDayScheduale.clickSetSchedule()}"
             android:textAllCaps="false"
             android:textColor="@color/colorWhite"
-            android:textSize="@dimen/textsize_eighteen"
+            android:textSize="@dimen/textsize_sixteen"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />

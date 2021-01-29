@@ -44,7 +44,7 @@ class ActivityAddUserDetails : ActivityBase() {
 
         mBroadcastManager.registerReceiver(mReceiverImageResult, IntentFilter(resources.getString(R.string.broadcastImageResult)))
 
-        mBinding.imgBack.setOnClickListener { finish() }
+
 
         observable();
         selectMale()
@@ -74,10 +74,14 @@ class ActivityAddUserDetails : ActivityBase() {
 
 
         mViewModelAddDetails.getLiveEventGender().observe(this, {
-            if (it != 0) {
-                selectFemale()
-            } else {
+            if (it == 0) {
                 selectMale()
+            } else if (it == 1 ) {
+                selectFemale()
+            }else {
+
+                selectNotPecified()
+
             }
         })
 
@@ -88,7 +92,7 @@ class ActivityAddUserDetails : ActivityBase() {
             Utils.hideKeyboard(this@ActivityAddUserDetails)
 
             if (it) {
-                startActivity(Intent(this, ActivityPhoneVerification::class.java))
+                startActivity(Intent(this, ActivityMassageTechnique::class.java))
                 finish()
 
 //                mViewModelSignUp.networkCallData()
@@ -98,6 +102,12 @@ class ActivityAddUserDetails : ActivityBase() {
 
 
     private fun selectMale() {
+
+        txt_not_specified.setTextColor(
+            ColorStateList.valueOf(
+                ContextCompat.getColor(this@ActivityAddUserDetails, R.color.colorSemiLightGray)
+            )
+        )
 
         txt_female.setTextColor(
             ColorStateList.valueOf(
@@ -110,8 +120,10 @@ class ActivityAddUserDetails : ActivityBase() {
             )
         )
 
-        txt_female.setBackgroundResource(R.drawable.curve_view_360_right_half_with_border)
+        txt_female.setBackgroundResource(R.drawable.curve_veiw_rectangle)
+        txt_not_specified.setBackgroundResource(R.drawable.curve_view_360_right_half_with_border)
         txt_male.setBackgroundResource(R.drawable.curve_view_360_left_half_with_border_selected)
+
     }
 
     private fun selectFemale() {
@@ -128,8 +140,41 @@ class ActivityAddUserDetails : ActivityBase() {
             )
         )
 
-        txt_female.setBackgroundResource(R.drawable.curve_view_360_right_half_with_border_selected)
+        txt_not_specified.setTextColor(
+            ColorStateList.valueOf(
+                ContextCompat.getColor(this@ActivityAddUserDetails, R.color.colorSemiLightGray)
+            )
+        )
+
+        txt_female.setBackgroundResource(R.drawable.curve_veiw_rectangle_selected)
         txt_male.setBackgroundResource(R.drawable.curve_view_360_left_half_with_border)
+        txt_not_specified.setBackgroundResource(R.drawable.curve_view_360_right_half_with_border)
+
+    }
+
+    private fun selectNotPecified() {
+
+
+        txt_female.setTextColor(
+            ColorStateList.valueOf(
+                ContextCompat.getColor(this@ActivityAddUserDetails, R.color.colorSemiLightGray)
+            )
+        )
+        txt_male.setTextColor(
+            ColorStateList.valueOf(
+                ContextCompat.getColor(this@ActivityAddUserDetails, R.color.colorSemiLightGray)
+            )
+        )
+
+        txt_not_specified.setTextColor(
+            ColorStateList.valueOf(
+                ContextCompat.getColor(this@ActivityAddUserDetails, R.color.colorWhite)
+            )
+        )
+
+        txt_female.setBackgroundResource(R.drawable.curve_veiw_rectangle)
+        txt_male.setBackgroundResource(R.drawable.curve_view_360_left_half_with_border)
+        txt_not_specified.setBackgroundResource(R.drawable.curve_view_360_right_half_with_border_selected)
 
     }
 

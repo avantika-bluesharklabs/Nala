@@ -35,7 +35,7 @@
     <string name="message_camera_unabletocapture">Unable to capture from camera</string>
     <string name="message_camera_unabletoopen">Unable to open camera</string>
     <string name="text_storage">Storage</string>
-    <string name="txt_create_accnt_des">By providing your mobile number to Nala,you \n agree that Nala and pros may use that number to \n communicate with you via call and text messages \n (including automatically dialed calls and texts) \n regarding your appoinments and account.</string>
+    <string name="txt_create_accnt_des">By providing your mobile number to Nala,you \nagree that Nala and pros may use that number to \ncommunicate with you via call and text messages \n(including automatically dialed calls and texts) \nregarding your appoinments and account.</string>
 
     <string name="permission_camera">Camera permission is needed to capture image</string>
     <string name="permission_location">Location permission is needed to fetch current location</string>
@@ -235,5 +235,7 @@
     <string name="massage_license">Massage License</string>
     <string name="txt_weekly_schedule">Weekly Schedule</string>
     <string name="txt_msg_request">Massage requests</string>
+    <string name="str_my_gender">My Gender</string>
+    <string name="str_not_specified">Not Specified</string>
 </resources>
 

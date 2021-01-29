@@ -26,7 +26,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/colorLightGrayUser"
+        android:background="@color/colorgray_9"
         android:fitsSystemWindows="true">
 
         <!-- <androidx.core.widget.NestedScrollView
@@ -133,6 +133,7 @@
             android:background="@drawable/curve_view_border_blue_360"
             android:elevation="@dimen/margin_two"
             android:padding="@dimen/margin_ten"
+            android:textSize="@dimen/textsize_twelve"
             android:text="@string/str_female"
             android:textColor="@color/colorBlueForButtons"
             app:layout_constraintEnd_toEndOf="parent"
@@ -148,7 +149,7 @@
             android:elevation="@dimen/margin_two"
             android:text="@string/str_demo_name"
             android:textColor="@color/colorBlack"
-            android:textSize="@dimen/textsize_twenty"
+            android:textSize="@dimen/textsize_eighteen"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/txt_gender" />
@@ -165,7 +166,7 @@
             android:elevation="@dimen/margin_two"
             android:text="@string/dummy_location"
             android:textColor="@color/colorBlack"
-            android:textSize="@dimen/textsize_sixteen"
+            android:textSize="@dimen/textsize_forteen"
             app:layout_constraintBottom_toBottomOf="@+id/cons_middle"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -194,7 +195,7 @@
             android:elevation="@dimen/margin_two"
             android:text="@string/str_aboutme"
             android:textColor="@color/colorWhite"
-            android:textSize="@dimen/textsize_sixteen"
+            android:textSize="@dimen/textsize_forteen"
             app:layout_constraintStart_toStartOf="@+id/cons_last"
             app:layout_constraintTop_toTopOf="@+id/cons_last" />
 
@@ -213,7 +214,7 @@
             android:singleLine="false"
             android:text="@string/str_long_text"
             android:textColor="@color/colorWhite"
-            android:textSize="@dimen/textsize_forteen"
+            android:textSize="@dimen/textsize_twelve"
             app:layout_constraintEnd_toEndOf="@+id/cons_last"
             app:layout_constraintStart_toStartOf="@+id/txt_about"
             app:layout_constraintTop_toBottomOf="@+id/txt_about" />
@@ -240,7 +241,7 @@
             android:elevation="@dimen/margin_two"
             android:text="@string/txt_accnt_setting"
             android:textColor="@color/colorDarkGray"
-            android:textSize="@dimen/textsize_sixteen"
+            android:textSize="@dimen/textsize_forteen"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/constraint_bottom" />
 
@@ -269,7 +270,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/margin_fifteen"
-                    android:padding="@dimen/margin_five"
                     android:src="@drawable/profile_edit"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -278,13 +278,13 @@
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/txt_msg_tcnq"
-                    style="@style/medium"
+                    style="@style/semibold"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="@dimen/margin_five"
                     android:text="@string/str_msg_technique"
+                    android:padding="@dimen/margin_five"
                     android:textColor="@color/colorBlack"
-                    android:textSize="@dimen/textsize_sixteen"
+                    android:textSize="@dimen/textsize_forteen"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/img_msg_tcnq"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -318,7 +318,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/margin_fifteen"
-                    android:padding="@dimen/margin_five"
                     android:src="@drawable/profile_edit"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -327,13 +326,13 @@
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/txt_massage_charge"
-                    style="@style/medium"
+                    style="@style/semibold"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="@dimen/margin_five"
                     android:text="@string/msg_charges"
                     android:textColor="@color/colorBlack"
-                    android:textSize="@dimen/textsize_sixteen"
+                    android:textSize="@dimen/textsize_forteen"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/img_massage_charge"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -367,7 +366,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/margin_fifteen"
-                    android:padding="@dimen/margin_five"
                     android:src="@drawable/profile_edit"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -376,13 +374,13 @@
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/txt_massage_license"
-                    style="@style/medium"
+                    style="@style/semibold"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="@dimen/margin_five"
                     android:text="@string/massage_license"
                     android:textColor="@color/colorBlack"
-                    android:textSize="@dimen/textsize_sixteen"
+                    android:textSize="@dimen/textsize_forteen"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/img_massage_license"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -412,32 +410,43 @@
                 app:layout_constraintTop_toBottomOf="@+id/const_massage_license">
 
 
+
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/img_weekly_schedule"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/margin_fifteen"
-                    android:layout_marginBottom="@dimen/margin_ten"
-                    android:padding="@dimen/margin_five"
                     android:src="@drawable/profile_edit"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
 
+
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/txt_weekly_schedule"
-                    style="@style/medium"
+                    style="@style/semibold"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/margin_ten"
                     android:padding="@dimen/margin_five"
                     android:text="@string/txt_weekly_schedule"
                     android:textColor="@color/colorBlack"
-                    android:textSize="@dimen/textsize_sixteen"
+                    android:textSize="@dimen/textsize_forteen"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/img_weekly_schedule"
                     app:layout_constraintTop_toTopOf="parent" />
+
+
+                <View
+                    android:id="@+id/view_weekly_schedule"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/margin_ten"
+                    android:background="@color/colorGray"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_weekly_schedule" />
+
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>

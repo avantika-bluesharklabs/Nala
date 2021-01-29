@@ -35,7 +35,7 @@ class ActivityPhoneVerification : ActivityBase() {
     }
 
 
-    private fun showDialog() {
+   /* private fun showDialog() {
         val dialog = Dialog(this)
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
         dialog.getWindow()?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT));
@@ -48,11 +48,11 @@ class ActivityPhoneVerification : ActivityBase() {
 //        yesBtn.setOnClickListener {
 //            dialog.dismiss()
 //        }
-        body.setOnClickListener {  startActivity(Intent(this, ActivityMain::class.java))
+        body.setOnClickListener {  startActivity(Intent(this, ActivityAddUserDetails::class.java))
             finish() }
         dialog.show()
 
-    }
+    }*/
 
 
     fun observable() {
@@ -72,7 +72,10 @@ class ActivityPhoneVerification : ActivityBase() {
 
             mViewModelPhoneVerification.mOtp = sb.toString()
 
-            showDialog()
+            if (it) {
+                startActivity(Intent(this, ActivityAddUserDetails::class.java))
+
+            }
 //            mViewModelPhoneVerification.networkCallData()
 
         })

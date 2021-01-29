@@ -11,10 +11,6 @@
             name="vmHomeList"
             type="com.nala.businesslogic.viewmodel.fragments.ViewModelHome" />
 
-        <variable
-            name="vmHomeMap"
-            type="com.nala.businesslogic.viewmodel.fragments.ViewModelHomeMap" />
-
 
         <variable
             name="onContentClickListener"
@@ -27,31 +23,30 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/colorcardbg">
+        android:background="@color/colorgray_9">
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/const_toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="@dimen/margin_five"
             android:background="@color/colorWhite"
+            android:padding="@dimen/margin_five"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/txt_continue"
+                style="@style/bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/txt_msg_request"
-                style="@style/bold"
                 android:layout_marginStart="@dimen/margin_ten"
-                android:textSize="@dimen/textsize_twenty_four"
+                android:text="@string/txt_msg_request"
                 android:textColor="@color/colorBlack"
+                android:textSize="@dimen/textsize_twenty"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"/>
-
+                app:layout_constraintTop_toTopOf="parent" />
 
 
             <androidx.cardview.widget.CardView
@@ -81,23 +76,23 @@
             android:id="@+id/view"
             android:layout_width="wrap_content"
             android:layout_height="0.5dp"
-            android:background="@color/colorGray"
             android:layout_marginTop="@dimen/margin_five"
-            app:layout_constraintStart_toStartOf="parent"
+            android:background="@color/colorGray"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/const_toolbar"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/const_toolbar" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/txt_msg_req"
+            style="@style/semibold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_ten"
             android:text="@string/txt_msg_request"
             android:textColor="@color/colorDarkGray"
-            style="@style/semibold"
-            android:layout_margin="@dimen/margin_ten"
-            android:textSize="@dimen/textsize_sixteen"
+            android:textSize="@dimen/textsize_forteen"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/view"/>
+            app:layout_constraintTop_toBottomOf="@+id/view" />
 
 
         <androidx.recyclerview.widget.RecyclerView

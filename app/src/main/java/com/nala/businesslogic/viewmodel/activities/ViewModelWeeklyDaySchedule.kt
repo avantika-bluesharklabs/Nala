@@ -16,6 +16,8 @@ class ViewModelWeeklyDaySchedule(myApplication: MyApplication, isToShowErrors: B
 
     private val liveEvent: SingleLiveEvent<Boolean> = SingleLiveEvent()
     private val liveEventSuccess: SingleLiveEvent<PojoWeeklyDaySchedule> = SingleLiveEvent()
+    private val liveEventSetSchedule: SingleLiveEvent<Boolean> = SingleLiveEvent()
+    private val liveEventBackPress: SingleLiveEvent<Boolean> = SingleLiveEvent()
 
     init {
 
@@ -50,6 +52,22 @@ class ViewModelWeeklyDaySchedule(myApplication: MyApplication, isToShowErrors: B
 
 
 
+    }
+
+    fun getLiveEventBackPress(): SingleLiveEvent<Boolean> {
+        return liveEventBackPress
+    }
+
+    fun clickBackPress() {
+        liveEventBackPress.value = true
+    }
+
+    fun getLiveSetSchedule(): SingleLiveEvent<Boolean> {
+        return liveEventSetSchedule
+    }
+
+    fun clickSetSchedule(){
+        liveEventSetSchedule.value = true
     }
 
 

@@ -1,10 +1,12 @@
 package com.nala.view.activities
 
 
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.view.View
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.observe
 import com.nala.R
 import com.nala.businesslogic.interfaces.OnClickWeeklyDaySchedule
 import com.nala.businesslogic.interfaces.OnClickWeeklyTimeSchedule
@@ -38,6 +40,8 @@ class ActivityWeeklyScheduale :  ActivityBase(), OnClickWeeklyDaySchedule,OnClic
         mBinding.vmWeeklyTimeScheduale = mViewModelWeeklyTimeSchedule
         mBinding.onContentClickTimeListener = this
 
+        observable()
+
     }
 
     override fun onClickWeeklyDayScheduleItem(
@@ -53,6 +57,25 @@ class ActivityWeeklyScheduale :  ActivityBase(), OnClickWeeklyDaySchedule,OnClic
         layoutPosition: Int,
         data: PojoWeeklyTimeSchedule
     ) {
+
+    }
+
+    private fun observable() {
+
+        mViewModelWeeklyDaySchedule.getLiveEventBackPress().observe(this, {
+            onBackPressed()
+        })
+
+        mViewModelWeeklyDaySchedule.getLiveSetSchedule().observe(this, {
+
+            if (it) {
+                startActivity(Intent(this, ActivityCalender::class.java))
+
+            }
+
+
+        })
+
 
     }
 }

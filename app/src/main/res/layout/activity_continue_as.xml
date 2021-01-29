@@ -8,7 +8,7 @@
         <import type="android.view.View" />
 
         <variable
-            name="vmAddDetails"
+            name="vmContinueAs"
             type="com.nala.businesslogic.viewmodel.activities.ViewModelContinueAs" />
 
 
@@ -36,6 +36,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/margin_ten"
+                android:onClick="@{()->vmContinueAs.clickBackPress()}"
                 android:src="@drawable/ic_back"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -85,7 +86,7 @@
             android:layout_marginTop="@dimen/margin_twenty"
             android:text="@string/str_continue_as"
             style="@style/bold"
-            android:textSize="@dimen/textsize_twenty_four"
+            android:textSize="@dimen/textsize_twenty"
             android:textColor="@color/colorBlack"
             app:layout_constraintStart_toStartOf="@id/guideline_start"
             app:layout_constraintEnd_toEndOf="@id/guideline_end"
@@ -98,6 +99,7 @@
             android:layout_marginTop="@dimen/margin_ten"
             android:background="@drawable/therapist_bg"
             android:padding="@dimen/margin_twenty"
+            android:onClick="@{()->vmContinueAs.clickheTherarapist()}"
             app:layout_constraintStart_toStartOf="@id/guideline_start"
             app:layout_constraintEnd_toEndOf="@id/guideline_end"
             app:layout_constraintTop_toBottomOf="@+id/txt_continue">
@@ -120,7 +122,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/str_therapist"
-                android:textSize="@dimen/textsize_twenty_four"
+                android:textSize="@dimen/textsize_eighteen"
                 android:textColor="@color/colorPrimary"
                 style="@style/bold"
                 app:layout_constraintEnd_toStartOf="@+id/img_therapist_arrow"
@@ -151,6 +153,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_ten"
             android:background="@drawable/client_bg"
+            android:onClick="@{()->vmContinueAs.clickheClient()}"
             android:padding="@dimen/margin_twenty"
             app:layout_constraintStart_toStartOf="@id/guideline_start"
             app:layout_constraintEnd_toEndOf="@id/guideline_end"
@@ -174,7 +177,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/str_client"
-                android:textSize="@dimen/textsize_twenty_four"
+                android:textSize="@dimen/textsize_eighteen"
                 android:textColor="@color/colorBlueForButtons"
                 style="@style/bold"
                 app:layout_constraintEnd_toStartOf="@+id/img_client_arrow"
@@ -215,6 +218,7 @@
             android:textSize="@dimen/textsize_forteen"
             style="@style/medium"
             android:padding="@dimen/margin_ten"
+            android:onClick="@{()->vmContinueAs.clickheSignin()}"
             app:layout_constraintStart_toStartOf="@id/guideline_start"
             app:layout_constraintEnd_toEndOf="@id/guideline_end"
             app:layout_constraintBottom_toBottomOf="@id/guideline_bottom" />

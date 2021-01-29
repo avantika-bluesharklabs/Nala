@@ -8,18 +8,16 @@
         <import type="android.view.View" />
 
         <variable
-            name="vmMassageCharges"
-            type="com.nala.businesslogic.viewmodel.activities.ViewModelMassagesCharges" />
+            name="vmCalender"
+            type="com.nala.businesslogic.viewmodel.activities.ViewModelCalender" />
 
-        <variable
-            name="onContentClickListener"
-            type="com.nala.businesslogic.interfaces.OnClickMassageCharges" />
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/colorcardbg">
+        android:background="@color/colorgray_9">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/const_toolbar"
@@ -122,6 +120,8 @@
             android:layout_margin="@dimen/margin_ten"
             android:textAllCaps="false"
             style="@style/bold"
+            android:textSize="@dimen/textsize_sixteen"
+            android:onClick="@{()->vmCalender.clickClearSchedule()}"
             android:textColor="@color/colorPrimary"
             android:text="@string/btn_clear_schedule"
             app:layout_constraintStart_toStartOf="parent"

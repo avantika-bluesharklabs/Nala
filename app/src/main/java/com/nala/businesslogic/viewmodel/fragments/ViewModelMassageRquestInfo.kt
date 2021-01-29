@@ -1,11 +1,11 @@
-package com.nala.businesslogic.viewmodel.activities
+package com.nala.businesslogic.viewmodel.fragments
 
 import com.nala.businesslogic.interactors.SingleLiveEvent
 import com.nala.businesslogic.pojo.PojoCommonResponse
 import com.nala.businesslogic.viewmodel.ViewModelCommon
 import com.nala.view.MyApplication
 
-class ViewModelBookingInfo(mApplication: MyApplication, isToShowErrors: Boolean) :
+class ViewModelMassageRquestInfo(mApplication: MyApplication, isToShowErrors: Boolean) :
     ViewModelCommon<PojoCommonResponse>(mApplication, isToShowErrors) {
 
 

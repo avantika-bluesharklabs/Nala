@@ -73,6 +73,10 @@ class ViewModelAddDetails(
         liveEventGender.value = 1
     }
 
+    fun clickNotSpecified() {
+        liveEventGender.value = 2
+    }
+
     private fun validateAboutMe(): Boolean {
 
         return if (TextUtils.isEmpty(observerAboutMe.getTrimmed())) {

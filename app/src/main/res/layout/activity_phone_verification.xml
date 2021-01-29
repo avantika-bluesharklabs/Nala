@@ -41,9 +41,6 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
 
-
-
-
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 
@@ -129,27 +126,27 @@
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/txt_pv"
+                    style="@style/bold"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/margin_twenty"
                     android:text="@string/str_phone_vari"
-                    android:textSize="@dimen/textsize_thirty"
                     android:textColor="@color/colorBlack"
-                    style="@style/bold"
+                    android:textSize="@dimen/textsize_twenty"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/img_vari_image" />
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/txt_pv_desc"
+                    style="@style/medium"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/margin_twelve"
-                    android:textAlignment="center"
-                    android:textSize="@dimen/textsize_sixteen"
                     android:text="@string/str_verification_msg"
-                    style="@style/medium"
+                    android:textAlignment="center"
                     android:textColor="@color/colorDarkGray"
+                    android:textSize="@dimen/textsize_forteen"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/txt_pv" />
@@ -157,6 +154,7 @@
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/txt_code"
+                    style="@style/regular"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/margin_twenty_five"
@@ -164,9 +162,8 @@
                     android:layout_marginEnd="@dimen/margin_twenty_five"
                     android:text="@string/str_enter_code"
                     android:textAlignment="center"
-                    style="@style/regular"
                     android:textColor="@color/colorDarkGray"
-                    android:textSize="@dimen/textsize_sixteen"
+                    android:textSize="@dimen/textsize_forteen"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/txt_pv_desc" />
@@ -183,6 +180,7 @@
 
                     <androidx.appcompat.widget.AppCompatEditText
                         android:id="@+id/edt_otp_one"
+                        style="@style/bold"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/margin_ten"
@@ -190,7 +188,6 @@
                         android:gravity="center_horizontal"
                         android:inputType="numberPassword"
                         android:maxLength="1"
-                        style="@style/bold"
                         android:textColor="@color/colorBlack"
                         app:layout_constraintEnd_toStartOf="@+id/edt_otp_two"
                         app:layout_constraintStart_toStartOf="parent"
@@ -198,6 +195,7 @@
 
                     <androidx.appcompat.widget.AppCompatEditText
                         android:id="@+id/edt_otp_two"
+                        style="@style/bold"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/margin_five"
@@ -205,7 +203,6 @@
                         android:gravity="center_horizontal"
                         android:inputType="numberPassword"
                         android:maxLength="1"
-                        style="@style/bold"
                         android:textColor="@color/colorBlack"
                         app:layout_constraintEnd_toStartOf="@+id/edt_otp_three"
                         app:layout_constraintStart_toEndOf="@+id/edt_otp_one"
@@ -213,6 +210,7 @@
 
                     <androidx.appcompat.widget.AppCompatEditText
                         android:id="@+id/edt_otp_three"
+                        style="@style/bold"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/margin_five"
@@ -220,7 +218,6 @@
                         android:gravity="center_horizontal"
                         android:inputType="numberPassword"
                         android:maxLength="1"
-                        style="@style/bold"
                         android:textColor="@color/colorBlack"
                         app:layout_constraintEnd_toStartOf="@+id/edt_otp_four"
                         app:layout_constraintStart_toEndOf="@+id/edt_otp_two"
@@ -228,6 +225,7 @@
 
                     <androidx.appcompat.widget.AppCompatEditText
                         android:id="@+id/edt_otp_four"
+                        style="@style/bold"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/margin_five"
@@ -235,7 +233,6 @@
                         android:gravity="center_horizontal"
                         android:inputType="numberPassword"
                         android:maxLength="1"
-                        style="@style/bold"
                         android:textColor="@color/colorBlack"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/edt_otp_three"
@@ -247,15 +244,15 @@
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btn_submit"
+                    style="@style/bold"
                     android:layout_width="0dp"
                     android:layout_height="@dimen/margin_fifty_five"
                     android:layout_marginTop="@dimen/margin_twenty_five"
                     android:background="@drawable/btn_submit"
                     android:onClick="@{()->vmVerifyMobile.clickSubmit()}"
                     android:text="@string/str_verify"
-                    style="@style/bold"
                     android:textColor="@color/colorWhite"
-                    android:textSize="@dimen/textsize_eighteen"
+                    android:textSize="@dimen/textsize_sixteen"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/cl_code" />
@@ -287,7 +284,7 @@
                         android:id="@+id/img_user_image"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                       android:layout_margin="@dimen/margin_ten"
+                        android:layout_margin="@dimen/margin_ten"
                         android:src="@drawable/ic_resend"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -296,13 +293,13 @@
 
                     <androidx.appcompat.widget.AppCompatTextView
                         android:id="@+id/txt_resend"
+                        style="@style/regular"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                       android:layout_margin="@dimen/margin_ten"
-                        style="@style/regular"
-                        android:textColor="@color/colorBlueForButtons"
+                        android:layout_margin="@dimen/margin_ten"
                         android:text="@string/str_code_not_receive"
-                        android:textSize="@dimen/textsize_eighteen"
+                        android:textColor="@color/colorBlueForButtons"
+                        android:textSize="@dimen/textsize_forteen"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/img_user_image"

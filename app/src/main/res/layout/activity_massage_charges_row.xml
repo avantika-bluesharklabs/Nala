@@ -43,12 +43,12 @@
             android:id="@+id/const_therapist"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_ten"
             android:background="@drawable/therapist_bg"
             android:padding="@dimen/margin_twenty"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
 
 
             <androidx.appcompat.widget.AppCompatImageView
@@ -78,7 +78,7 @@
                     android:layout_height="wrap_content"
                     android:text="@{data.txt_doller}"
                     android:textColor="@color/colorBlack"
-                    android:textSize="@dimen/textsize_sixteen"
+                    android:textSize="@dimen/textsize_forteen"
                     app:layout_constraintBottom_toBottomOf="@+id/txt_price"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="@+id/txt_price" />
@@ -91,7 +91,7 @@
                     android:layout_marginStart="@dimen/margin_three"
                     android:text="@{data.txt_price}"
                     android:textColor="@color/colorBlack"
-                    android:textSize="@dimen/textsize_thirty_six"
+                    android:textSize="@dimen/textsize_twenty_four"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/txt_doller"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -105,7 +105,7 @@
                     android:layout_marginStart="@dimen/margin_three"
                     android:text="@{data.txt_time}"
                     android:textColor="@color/colorBlack"
-                    android:textSize="@dimen/textsize_sixteen"
+                    android:textSize="@dimen/textsize_forteen"
                     app:layout_constraintBottom_toBottomOf="@id/txt_price"
                     app:layout_constraintStart_toEndOf="@+id/txt_price"
                     app:layout_constraintTop_toTopOf="@id/txt_price" />

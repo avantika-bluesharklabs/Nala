@@ -11,6 +11,7 @@ import com.nala.R
 import com.nala.businesslogic.viewmodel.fragments.ViewModelBookingInfo
 import com.nala.databinding.FragmentBookingInfoBinding
 
+
 class FragmentBookingInfo : FragmentBase() {
 
     private lateinit var mViewModelBookingInfo: ViewModelBookingInfo
@@ -29,12 +30,12 @@ class FragmentBookingInfo : FragmentBase() {
         observer()
 
 
-      /*  mBinding.cosntRateReview.setOnClickListener {
+        mBinding.cosntRateReview.setOnClickListener {
 
             val fragment: Fragment = FragmentRateReview()
             mMainActivity?.addFragment(fragment, "FragmentRateReview", "FragmentRateReview")
 
-        }*/
+        }
 
         return mBinding.root
     }

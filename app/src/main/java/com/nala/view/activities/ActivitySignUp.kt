@@ -66,7 +66,7 @@ class ActivitySignUp : ActivityBase() {
             Utils.hideKeyboard(this@ActivitySignUp)
 
             if (it) {
-                startActivity(Intent(this, ActivityAddUserDetails::class.java))
+                startActivity(Intent(this, ActivityPhoneVerification::class.java))
                 finish()
 
 //                mViewModelSignUp.networkCallData()

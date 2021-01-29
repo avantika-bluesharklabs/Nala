@@ -11,7 +11,6 @@ import com.nala.R
 import com.nala.businesslogic.interfaces.OnClickMyBooking
 import com.nala.businesslogic.pojo.PojoMyBooking
 import com.nala.businesslogic.viewmodel.fragments.ViewModelMyBookings
-
 import com.nala.databinding.FragmentMyBookingsBinding
 
 
@@ -34,12 +33,8 @@ class FragmentMyBookings() : FragmentBase(),OnClickMyBooking {
 
         mBinding.imgFilter.setOnClickListener {
 
-            //FragmentBottomsheetFilter().show(mActivity.getSupportFragmentManager(), "Dialog")
-
             val dialog = BottomSheetDialog(mContext)
             val bottomSheet = layoutInflater.inflate(R.layout.layout_my_booking_filters, null)
-
-          //  bottomSheet.img.setOnClickListener { dialog.dismiss() }
 
             dialog.setContentView(bottomSheet)
             dialog.show()
@@ -53,13 +48,16 @@ class FragmentMyBookings() : FragmentBase(),OnClickMyBooking {
 
     override fun onClickMyBookingItem(view: View?, layoutPosition: Int, data: PojoMyBooking) {
 
+        val fragment: Fragment = FragmentBookingInfo()
+        mMainActivity?.addFragment(fragment, "FragmentBookingInfo", "FragmentBookingInfo")
+
 
     }
 
     override fun onClickMyBookingCancel(view: View?, layoutPosition: Int, data: PojoMyBooking) {
 
-        val fragment: Fragment = FragmentBookingInfo()
-        mMainActivity?.addFragment(fragment, "FragmentBookingInfo", "FragmentBookingInfo")
+       /* val fragment: Fragment = FragmentBookingInfo()
+        mMainActivity?.addFragment(fragment, "FragmentBookingInfo", "FragmentBookingInfo")*/
 
     }
 

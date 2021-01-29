@@ -10,6 +10,7 @@ import com.nala.R
 import com.nala.businesslogic.viewmodel.activities.ViewModelForgotPassword
 import com.nala.databinding.ActivityForgotPasswordBinding
 
+
 class ActivityForgotPassword : ActivityBase() {
 
     private lateinit var mViewModelForgotPass: ViewModelForgotPassword

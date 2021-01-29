@@ -35,6 +35,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/margin_ten"
+                android:onClick="@{()->vmMassageCharges.clickBackPress()}"
                 android:src="@drawable/ic_back"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -74,7 +75,7 @@
             android:text="@string/str_msg_charges"
             android:layout_marginTop="@dimen/margin_five"
             android:textColor="@color/colorBlack"
-            android:textSize="@dimen/textsize_twenty_four"
+            android:textSize="@dimen/textsize_twenty"
             app:layout_constraintStart_toStartOf="@id/guideline_start"
             app:layout_constraintTop_toBottomOf="@+id/const_toolbar" />
 
@@ -99,7 +100,8 @@
             android:text="@string/btn_continue"
             android:textAllCaps="false"
             android:textColor="@color/colorWhite"
-            android:textSize="@dimen/textsize_eighteen"
+            android:onClick="@{()->vmMassageCharges.clickContinue()}"
+            android:textSize="@dimen/textsize_sixteen"
             android:layout_marginBottom="@dimen/margin_ten"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@id/guideline_end"

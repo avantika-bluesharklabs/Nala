@@ -32,7 +32,7 @@ import java.util.*
 class FragmentHome : FragmentBase(), OnClickHome {
 
     private lateinit var mViewModelHome: ViewModelHome
-    private lateinit var mViewModelHomeMap: ViewModelHomeMap
+
     private lateinit var mBinding: FragmentHomeBinding
 
   
@@ -93,18 +93,20 @@ class FragmentHome : FragmentBase(), OnClickHome {
     override fun onClickHomeItem(view: View?, layoutPosition: Int, data: PojoHome) {
 
 
+        val fragment: Fragment = FragmentMsgRequestInfo()
+        mMainActivity?.addFragment(fragment, "FragmentMsgRequestInfo", "FragmentMsgRequestInfo")
+
+
+
     }
 
-    override fun onClickHomeBookNow(view: View?, layoutPosition: Int, data: PojoHome) {
+    /*override fun onClickHomeBookNow(view: View?, layoutPosition: Int, data: PojoHome) {
 
         val fragment: Fragment = FragmentServicePro()
         mMainActivity?.addFragment(fragment, "FragmentServicePro", "FragmentServicePro")
 
-    }
+    }*/
 
-    override fun onClickHomeHeart(view: View?, layoutPosition: Int, data: PojoHome) {
-
-    }
 
 
 }

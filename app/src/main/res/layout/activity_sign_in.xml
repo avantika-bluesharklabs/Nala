@@ -28,7 +28,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
 
-            <androidx.appcompat.widget.AppCompatImageView
+           <!-- <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/img_back"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -36,7 +36,7 @@
                 android:src="@drawable/ic_back"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent" />-->
 
 
 
@@ -81,7 +81,7 @@
             android:text="@string/str_sign_in"
             style="@style/bold"
             android:textColor="@color/colorBlack"
-            android:textSize="@dimen/textsize_twenty_four"
+            android:textSize="@dimen/textsize_twenty"
             app:layout_constraintStart_toStartOf="@+id/guideline_start"
             app:layout_constraintTop_toBottomOf="@id/const_toolbar" />
 
@@ -95,7 +95,7 @@
             android:text="@string/str_sign_fb"
             android:textColor="@color/colorWhite"
             style="@style/bold"
-            android:textSize="@dimen/textsize_sixteen"
+            android:textSize="@dimen/textsize_forteen"
             app:layout_constraintStart_toStartOf="@id/guideline_start"
             app:layout_constraintEnd_toEndOf="@id/guideline_end"
             app:layout_constraintTop_toBottomOf="@+id/txt_signin"/>
@@ -110,7 +110,7 @@
             android:text="@string/str_sign_apple"
             android:textColor="@color/colorWhite"
             style="@style/bold"
-            android:textSize="@dimen/textsize_sixteen"
+            android:textSize="@dimen/textsize_forteen"
             app:layout_constraintStart_toStartOf="@id/guideline_start"
             app:layout_constraintEnd_toEndOf="@id/guideline_end"
             app:layout_constraintTop_toBottomOf="@+id/btn_facebook"/>
@@ -124,7 +124,7 @@
             android:text="@string/str_sign_google"
             android:textColor="@color/colorWhite"
             style="@style/bold"
-            android:textSize="@dimen/textsize_sixteen"
+            android:textSize="@dimen/textsize_forteen"
             app:layout_constraintStart_toStartOf="@id/guideline_start"
             app:layout_constraintEnd_toEndOf="@id/guideline_end"
             app:layout_constraintTop_toBottomOf="@+id/btn_apple"/>
@@ -136,6 +136,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/or"
+            android:textSize="@dimen/textsize_twelve"
             android:background="@color/colorLightGray"
             android:textAllCaps="true"
             android:layout_marginTop="@dimen/margin_fifteen"
@@ -181,6 +182,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:hint="@string/str_email_hint"
+                android:textSize="@dimen/textsize_forteen"
                 android:inputType="textEmailAddress"
                 android:text="@={vmSignIn.observerEmail}"
                 android:textColor="@color/colorBlack" />
@@ -211,6 +213,7 @@
                 android:imeOptions="actionDone"
                 android:inputType="textPassword"
                 android:singleLine="true"
+                android:textSize="@dimen/textsize_forteen"
                 android:text="@={vmSignIn.observerPassword}"
                 android:textColor="@color/colorBlack" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -223,6 +226,8 @@
             android:text="@string/str_forgot_pass"
             android:textColor="@color/colorBlack"
             style="@style/medium"
+            android:textSize="@dimen/textsize_forteen"
+            android:onClick="@{()->vmSignIn.clickForgotPass()}"
             android:layout_marginTop="@dimen/margin_fifteen"
             app:layout_constraintEnd_toEndOf="@id/guideline_end"
             app:layout_constraintTop_toBottomOf="@+id/textinputlayout_login_password"/>
@@ -236,9 +241,10 @@
             android:background="@drawable/btn_submit"
             android:text="@string/str_sign_in"
             style="@style/bold"
+            android:onClick="@{()->vmSignIn.clickSignIn()}"
             android:textAllCaps="false"
             android:textColor="@color/colorWhite"
-            android:textSize="@dimen/textsize_eighteen"
+            android:textSize="@dimen/textsize_sixteen"
             app:layout_constraintEnd_toEndOf="@id/guideline_end"
             app:layout_constraintStart_toStartOf="@id/guideline_start"
             app:layout_constraintTop_toBottomOf="@id/txt_forgot_password" />
@@ -251,6 +257,7 @@
             android:text="@string/dont_have_account"
             android:textColor="@color/colorDarkGray"
             style="@style/medium"
+            android:textSize="@dimen/textsize_forteen"
             android:layout_marginTop="@dimen/margin_twenty"
             app:layout_constraintEnd_toEndOf="@id/guideline_end"
             app:layout_constraintStart_toStartOf="@id/guideline_start"
@@ -263,7 +270,9 @@
             android:text="@string/str_create_one"
             android:textColor="@color/colorBlueForButtons"
             style="@style/bold"
-            android:layout_marginTop="@dimen/margin_ten"
+            android:textSize="@dimen/textsize_forteen"
+            android:onClick="@{()->vmSignIn.clickCreateOne()}"
+            android:padding="@dimen/margin_five"
             app:layout_constraintEnd_toEndOf="@id/guideline_end"
             app:layout_constraintStart_toStartOf="@id/guideline_start"
             app:layout_constraintTop_toBottomOf="@+id/txt_don_have_accnt"/>
