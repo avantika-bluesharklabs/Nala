@@ -43,8 +43,8 @@ class ActivityMassageCharges : ActivityBase(),OnClickMassageCharges {
 
             if (it) {
                 startActivity(Intent(this, ActivityAddLicenses::class.java))
-
             }
+
 
 
         })

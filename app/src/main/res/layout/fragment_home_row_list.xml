@@ -289,7 +289,7 @@
                         android:textSize="@dimen/textsize_forteen"
                         android:visibility="visible"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toStartOf="@+id/txt_reject"
+                        app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
 
@@ -307,7 +307,7 @@
                         android:textSize="@dimen/textsize_forteen"
                         android:visibility="visible"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/txt_accept"
                         app:layout_constraintTop_toTopOf="parent" />
 
 

@@ -32,9 +32,6 @@ class ActivityAddLicenses : ActivityBase(), OnClickAddLicenses {
 
         observable()
 
-
-
-
     }
 
 

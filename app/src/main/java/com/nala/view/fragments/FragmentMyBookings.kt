@@ -33,10 +33,11 @@ class FragmentMyBookings() : FragmentBase(),OnClickMyBooking {
 
         mBinding.imgFilter.setOnClickListener {
 
-            val dialog = BottomSheetDialog(mContext)
-            val bottomSheet = layoutInflater.inflate(R.layout.layout_my_booking_filters, null)
 
-            dialog.setContentView(bottomSheet)
+            val view: View = layoutInflater.inflate(R.layout.layout_my_booking_filters, null)
+            val dialog = BottomSheetDialog(mContext, R.style.BottomSheetDialogTheme) // Style here
+
+            dialog.setContentView(view)
             dialog.show()
         }
 

@@ -9,9 +9,11 @@ import com.nala.businesslogic.pojo.PojoWeeklyTimeSchedule
 import com.nala.businesslogic.viewmodel.ViewModelRecyclerView
 import com.nala.view.MyApplication
 
-class ViewModelWeeklyTimeSchedule (myApplication: MyApplication, isToShowErrors: Boolean) :
-    ViewModelRecyclerView<PojoCommonResponse, PojoWeeklyTimeSchedule>(myApplication,false,true,
-        2, RecyclerView.VERTICAL){
+class ViewModelWeeklyTimeSchedule(myApplication: MyApplication, isToShowErrors: Boolean) :
+    ViewModelRecyclerView<PojoCommonResponse, PojoWeeklyTimeSchedule>(
+        myApplication, false, true,
+        2, RecyclerView.VERTICAL
+    ) {
 
 
     private val liveEvent: SingleLiveEvent<Boolean> = SingleLiveEvent()
@@ -20,27 +22,23 @@ class ViewModelWeeklyTimeSchedule (myApplication: MyApplication, isToShowErrors:
     init {
 
         var pojo = PojoWeeklyTimeSchedule()
-        pojo.txt_time_slot =" 1 Jan,2021 to 7 Jan,2021"
+        pojo.txt_time_slot = " 1 Jan,2021 to 7 Jan,2021"
         observerContent.add(pojo)
 
-         pojo = PojoWeeklyTimeSchedule()
-        pojo.txt_time_slot =" 1 Jan,2021 to 7 Jan,2021"
+        pojo = PojoWeeklyTimeSchedule()
+        pojo.txt_time_slot = " 1 Jan,2021 to 7 Jan,2021"
         observerContent.add(pojo)
 
-         pojo = PojoWeeklyTimeSchedule()
-        pojo.txt_time_slot =" 1 Jan,2021 to 7 Jan,2021"
+        pojo = PojoWeeklyTimeSchedule()
+        pojo.txt_time_slot = " 1 Jan,2021 to 7 Jan,2021"
         observerContent.add(pojo)
 
-         pojo = PojoWeeklyTimeSchedule()
-        pojo.txt_time_slot =" 1 Jan,2021 to 7 Jan,2021"
+        pojo = PojoWeeklyTimeSchedule()
+        pojo.txt_time_slot = " 1 Jan,2021 to 7 Jan,2021"
         observerContent.add(pojo)
-
-
 
 
     }
-
-
 
     fun getLiveEvent(): SingleLiveEvent<Boolean> {
         return liveEvent
@@ -65,7 +63,6 @@ class ViewModelWeeklyTimeSchedule (myApplication: MyApplication, isToShowErrors:
     override fun sendResponseBodyList(list: PojoCommonResponse?) {
 
     }
-
 
 
 }

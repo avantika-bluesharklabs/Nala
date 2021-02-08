@@ -14,6 +14,7 @@
         <variable
             name="vmWeeklyTimeScheduale"
             type="com.nala.businesslogic.viewmodel.activities.ViewModelWeeklyTimeSchedule" />
+
         <variable
             name="onContentClickListener"
             type="com.nala.businesslogic.interfaces.OnClickWeeklyDaySchedule" />
@@ -318,13 +319,14 @@
                     app:layout_constraintTop_toBottomOf="@+id/view_slot" />
 
 
-                <androidx.appcompat.widget.AppCompatImageView
+                <androidx.appcompat.widget.SwitchCompat
                     android:id="@+id/img_on_off"
                     style="@style/regular"
                     android:layout_width="wrap_content"
                     android:src="@drawable/profile_edit"
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/margin_ten"
+                    android:checked="true"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/view_slot" />
 

@@ -1,16 +1,13 @@
 package com.nala.view.fragments
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.observe
 import com.nala.R
-import com.nala.businesslogic.viewmodel.fragments.ViewModelBookingInfo
 import com.nala.businesslogic.viewmodel.fragments.ViewModelMassageRquestInfo
-import com.nala.databinding.FragmentBookingInfoBinding
 import com.nala.databinding.FragmentMsgRequestInfoBinding
 
 

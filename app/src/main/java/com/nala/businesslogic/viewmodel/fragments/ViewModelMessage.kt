@@ -25,21 +25,21 @@ class ViewModelMessage (myApplication: MyApplication, isToShowErrors: Boolean) :
         observerContent.add(pojo)
 
         pojo =PojoMessage()
-        pojo.txt_name = "Virat kohli"
+        pojo.txt_name = "Jessica Marcel"
         pojo.txt_status = "Nice"
         pojo.txt_time = "1Week ago"
 
         observerContent.add(pojo)
 
         pojo = PojoMessage()
-        pojo.txt_name = "Rishabh Pant"
+        pojo.txt_name = "Cellina Mark"
         pojo.txt_status = "Your Service is Awesome"
         pojo.txt_time = "3d ago"
 
         observerContent.add(pojo)
 
         pojo = PojoMessage()
-        pojo.txt_name = "Ajinkya rahane"
+        pojo.txt_name = "Jordan King"
         pojo.txt_status = "Great Idea!!!"
         pojo.txt_time = "1year ago"
 

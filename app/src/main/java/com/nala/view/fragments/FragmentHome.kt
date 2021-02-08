@@ -1,38 +1,23 @@
 package com.nala.view.fragments
 
-import android.content.BroadcastReceiver
-import android.content.Context
-import android.content.Intent
-import android.content.IntentFilter
-import android.location.Address
-import android.location.Geocoder
+
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import com.google.android.gms.maps.CameraUpdateFactory
-import com.google.android.gms.maps.GoogleMap
-import com.google.android.gms.maps.OnMapReadyCallback
-import com.google.android.gms.maps.SupportMapFragment
-import com.google.android.gms.maps.model.LatLng
-import com.google.android.gms.maps.model.MarkerOptions
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.nala.R
 import com.nala.businesslogic.interfaces.OnClickHome
 import com.nala.businesslogic.pojo.PojoHome
 import com.nala.businesslogic.viewmodel.fragments.ViewModelHome
-import com.nala.businesslogic.viewmodel.fragments.ViewModelHomeMap
 import com.nala.databinding.FragmentHomeBinding
-import java.util.*
 
 
 class FragmentHome : FragmentBase(), OnClickHome {
 
     private lateinit var mViewModelHome: ViewModelHome
-
     private lateinit var mBinding: FragmentHomeBinding
 
   
@@ -49,7 +34,6 @@ class FragmentHome : FragmentBase(), OnClickHome {
         mBinding.vmHomeList = mViewModelHome
 
         mBinding.onContentClickListener = this
-
 
         mBinding.imgFilter.setOnClickListener {
 
@@ -85,18 +69,14 @@ class FragmentHome : FragmentBase(), OnClickHome {
 
         }
 
-
         return mBinding.root
 
     }
 
     override fun onClickHomeItem(view: View?, layoutPosition: Int, data: PojoHome) {
 
-
         val fragment: Fragment = FragmentMsgRequestInfo()
         mMainActivity?.addFragment(fragment, "FragmentMsgRequestInfo", "FragmentMsgRequestInfo")
-
-
 
     }
 
