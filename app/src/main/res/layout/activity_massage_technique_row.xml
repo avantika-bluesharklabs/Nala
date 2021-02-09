@@ -42,7 +42,7 @@
             android:id="@+id/card_technique"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:cardBackgroundColor="@color/colorWhite"
+            app:cardBackgroundColor="@{data.isSelected?@color/colorPrimary :@color/colorWhite}"
             app:cardCornerRadius="@dimen/margin_five"
             app:cardElevation="@dimen/margin_five"
             app:cardUseCompatPadding="true"
@@ -61,7 +61,7 @@
                 android:gravity="center"
                 android:layout_gravity="center"
                 android:text="@{data.txt_type}"
-                android:textColor="@color/colorBlack"
+                android:textColor="@{data.isSelected?@color/colorWhite :@color/colorBlack}"
                 android:textSize="@dimen/textsize_twelve" />
 
         </androidx.cardview.widget.CardView>

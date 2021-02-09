@@ -8,4 +8,5 @@ interface OnClickMyBooking {
 
     fun onClickMyBookingItem(view: View?, layoutPosition: Int, data: PojoMyBooking)
     fun onClickMyBookingCancel(view: View?, layoutPosition: Int, data: PojoMyBooking)
+
 }

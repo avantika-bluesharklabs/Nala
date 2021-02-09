@@ -15,6 +15,8 @@ import com.nala.businesslogic.pojo.PojoWeeklyTimeSchedule
 import com.nala.businesslogic.viewmodel.activities.ViewModelWeeklyDaySchedule
 import com.nala.businesslogic.viewmodel.activities.ViewModelWeeklyTimeSchedule
 import com.nala.databinding.ActivityWeeklySchedualeBinding
+import com.nala.view.adapter.AdapterMassageType
+import com.nala.view.adapter.AdapterWeeklyDaySchedule
 
 
 class ActivityWeeklyScheduale :  ActivityBase(), OnClickWeeklyDaySchedule,OnClickWeeklyTimeSchedule {
@@ -24,6 +26,8 @@ class ActivityWeeklyScheduale :  ActivityBase(), OnClickWeeklyDaySchedule,OnClic
     private lateinit var mViewModelWeeklyTimeSchedule: ViewModelWeeklyTimeSchedule
 
     private lateinit var mBinding:ActivityWeeklySchedualeBinding
+
+    lateinit var adapterWeeklyDaySchedule: AdapterWeeklyDaySchedule
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -50,6 +54,24 @@ class ActivityWeeklyScheduale :  ActivityBase(), OnClickWeeklyDaySchedule,OnClic
         data: PojoWeeklyDaySchedule
     ) {
 
+        adapterWeeklyDaySchedule = mBinding.recyclerWeekly.adapter as AdapterWeeklyDaySchedule
+
+        adapterWeeklyDaySchedule.selected(data.txt_day!!)
+
+       /* if( mViewModelWeeklyDaySchedule.observerContent.get(layoutPosition)?.isSelected == true){
+
+            mViewModelWeeklyDaySchedule.observerContent.get(layoutPosition)?.isSelected = false
+
+        }else{
+
+            mViewModelWeeklyDaySchedule.observerContent.get(layoutPosition)?.isSelected = true
+        }
+
+
+        adapterWeeklyDaySchedule = mBinding.recyclerWeekly.adapter as AdapterWeeklyDaySchedule
+
+        adapterWeeklyDaySchedule.notifyDataSetChanged()*/
+
     }
 
     override fun onClickWeeklyTimeScheduleItem(
@@ -69,6 +91,7 @@ class ActivityWeeklyScheduale :  ActivityBase(), OnClickWeeklyDaySchedule,OnClic
         mViewModelWeeklyDaySchedule.getLiveSetSchedule().observe(this, {
 
             if (it) {
+
                 startActivity(Intent(this, ActivityCalender::class.java))
 
             }

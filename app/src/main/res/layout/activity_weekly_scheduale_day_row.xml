@@ -24,8 +24,6 @@
             name="requestOptions"
             type="com.bumptech.glide.request.RequestOptions" />
 
-
-
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -40,7 +38,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="@dimen/margin_ten"
-            android:background="@drawable/bg_weekly_day"
+            android:background="@{data.isSelected?@drawable/bg_weekly_day_selected :@drawable/bg_weekly_day}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -52,10 +50,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@{data.txt_day}"
-                android:textColor="@color/colorBlueForButtons"
+                android:textColor="@{data.isSelected?@color/colorWhite :@color/colorBlueForButtons}"
                 android:textSize="@dimen/textsize_twelve"
                 style="@style/semibold"
-                android:padding="@dimen/margin_ten"
+                android:padding="@dimen/margin_twenty"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"

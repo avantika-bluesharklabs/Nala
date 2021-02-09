@@ -8,4 +8,6 @@ class PojoMassageType {
     @SerializedName("txt_type")
     @Expose
     var txt_type: String? = null
+
+    var isSelected: Boolean? = null
 }

@@ -44,21 +44,17 @@ class ActivityAddUserDetails : ActivityBase() {
 
         mBroadcastManager.registerReceiver(mReceiverImageResult, IntentFilter(resources.getString(R.string.broadcastImageResult)))
 
-
-
         observable();
         selectMale()
 
        // mBinding.set(mApplication.glideCenterCircle(R.drawable.add_photo))
 
-
-
         mBinding.imgUserImage.setOnClickListener {
 
             imageChooser(true)
 
-
         }
+
     }
 
     override fun onBackPressed() {
@@ -67,17 +63,22 @@ class ActivityAddUserDetails : ActivityBase() {
 
     private fun observable() {
 
-
         mViewModelAddDetails.getLiveEventBackPress().observe(this, {
+
             onBackPressed()
+
         })
 
-
         mViewModelAddDetails.getLiveEventGender().observe(this, {
+
             if (it == 0) {
+
                 selectMale()
+
             } else if (it == 1 ) {
+
                 selectFemale()
+
             }else {
 
                 selectNotPecified()
@@ -128,7 +129,6 @@ class ActivityAddUserDetails : ActivityBase() {
 
     private fun selectFemale() {
 
-
         txt_female.setTextColor(
             ColorStateList.valueOf(
                 ContextCompat.getColor(this@ActivityAddUserDetails, R.color.colorWhite)
@@ -139,7 +139,6 @@ class ActivityAddUserDetails : ActivityBase() {
                 ContextCompat.getColor(this@ActivityAddUserDetails, R.color.colorSemiLightGray)
             )
         )
-
         txt_not_specified.setTextColor(
             ColorStateList.valueOf(
                 ContextCompat.getColor(this@ActivityAddUserDetails, R.color.colorSemiLightGray)

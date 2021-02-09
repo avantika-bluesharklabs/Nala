@@ -167,7 +167,7 @@
 
                                 <androidx.appcompat.widget.AppCompatTextView
                                     android:id="@+id/txt_timing"
-                                    style="@style/medium"
+                                    style="@style/bold"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="@dimen/margin_two"
@@ -219,7 +219,7 @@
 
                                 <androidx.appcompat.widget.AppCompatTextView
                                     android:id="@+id/txt_at_timing"
-                                    style="@style/medium"
+                                    style="@style/bold"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="@dimen/margin_two"
@@ -308,10 +308,12 @@
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/txt_repeat_weekly"
-                    style="@style/regular"
+                    style="@style/semibold"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/margin_ten"
+                    android:drawableStart="@drawable/ic_calender_black"
+                    android:drawablePadding="@dimen/margin_five"
                     android:text="@string/str_repeat_weekly"
                     android:textSize="@dimen/textsize_forteen"
                     android:textColor="@color/colorDarkGray"

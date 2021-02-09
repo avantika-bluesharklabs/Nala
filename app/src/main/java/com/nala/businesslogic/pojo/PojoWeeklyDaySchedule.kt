@@ -9,4 +9,6 @@ class PojoWeeklyDaySchedule:PojoCommonResponse() {
     @Expose
     var txt_day: String? = null
 
+    var isSelected: Boolean? = false
+
 }

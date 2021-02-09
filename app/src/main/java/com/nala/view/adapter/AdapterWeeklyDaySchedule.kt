@@ -12,12 +12,30 @@ import com.nala.businesslogic.interfaces.OnClickWeeklyDaySchedule
 import com.nala.businesslogic.pojo.PojoReview
 import com.nala.businesslogic.pojo.PojoWeeklyDaySchedule
 import com.nala.databinding.ActivityWeeklySchedualeDayRowBinding
-import com.nala.databinding.FragmentServiceProRowReviewBinding
+
 
 class AdapterWeeklyDaySchedule(
     var mContext: Context, var mArrayContent: List<PojoWeeklyDaySchedule>,
     var mOnClickWeeklyDayScheduleListener: OnClickWeeklyDaySchedule
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+
+
+    fun selected(txt:String){
+
+        for (i in mArrayContent){
+            if (i.txt_day.equals(txt,true)){
+
+                i.isSelected = true
+
+            }else{
+
+                i.isSelected = false
+            }
+        }
+
+        notifyDataSetChanged()
+
+    }
 
     val mViewTypeItem = 1
 
@@ -41,6 +59,7 @@ class AdapterWeeklyDaySchedule(
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+
         if (holder is Viewholder) {
             (holder as Viewholder).bind(mArrayContent[position], position)
         }
@@ -71,6 +90,7 @@ class AdapterWeeklyDaySchedule(
         }
 
         init {
+
             mBinding = binding
         }
     }
