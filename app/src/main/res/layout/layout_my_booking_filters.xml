@@ -130,7 +130,6 @@
                         android:id="@+id/img_date"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:padding="@dimen/margin_three"
                         android:src="@drawable/ic_calender_black"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
