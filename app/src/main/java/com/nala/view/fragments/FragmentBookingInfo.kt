@@ -17,18 +17,20 @@ class FragmentBookingInfo : FragmentBase() {
     private lateinit var mViewModelBookingInfo: ViewModelBookingInfo
     private lateinit var mBinding: FragmentBookingInfoBinding
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
 
-
-        mBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_booking_info, container, false)
+        mBinding =
+            DataBindingUtil.inflate(inflater, R.layout.fragment_booking_info, container, false)
 
         mViewModelBookingInfo = ViewModelBookingInfo(mApplication, false)
 
         mBinding.vmBookingInfo = mViewModelBookingInfo
 
-
         observer()
-
 
         mBinding.cosntRateReview.setOnClickListener {
 
@@ -42,7 +44,6 @@ class FragmentBookingInfo : FragmentBase() {
 
 
     fun observer() {
-
 
         mViewModelBookingInfo.getEventBack().observe(mActivity) {
             mMainActivity?.onBackPressed()

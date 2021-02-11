@@ -25,5 +25,6 @@ class ConstantCodes {
         const val REQUEST_RESULT_DOCUMENT = 35
         const val REQUEST_LOCATION_PERMISSION  = 2
         const val FILE_SEPERATOR = "/"
+        const val RC_SIGN_IN = 123
     }
 }

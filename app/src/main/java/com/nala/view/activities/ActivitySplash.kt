@@ -1,12 +1,21 @@
 package com.nala.view.activities
 
+import android.content.Context
 import android.content.Intent
+import android.content.pm.PackageInfo
+import android.content.pm.PackageManager
 import android.graphics.Color
 import android.os.Bundle
+import android.util.Base64
+import android.util.Log
 import android.view.View
+import androidx.fragment.app.FragmentActivity
+import com.bumptech.glide.load.engine.executor.GlideExecutor.UncaughtThrowableStrategy.LOG
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.messaging.FirebaseMessaging
 import com.nala.R
+import java.security.MessageDigest
+import java.security.NoSuchAlgorithmException
 
 
 /**
@@ -24,6 +33,7 @@ class ActivitySplash : ActivityBase() {
 
         beginNavigationThread()
         generateToken()
+        printHashKey(mContext)
 
     }
 
@@ -75,6 +85,25 @@ class ActivitySplash : ActivityBase() {
             mPreferences.setString(R.string.pref_fcm_token, token.toString())
 
         })
+    }
+
+
+    fun printHashKey(pContext: Context) {
+        try {
+            val info: PackageInfo = pContext.getPackageManager()
+                .getPackageInfo(pContext.getPackageName(), PackageManager.GET_SIGNATURES)
+            for (signature in info.signatures) {
+                val md: MessageDigest = MessageDigest.getInstance("SHA")
+                md.update(signature.toByteArray())
+                val hashKey = String(Base64.encode(md.digest(), 0))
+                Log.d("TAG","hashkey"+hashKey)
+             //   Log.i(FragmentActivity.TAG, "printHashKey() Hash Key: $hashKey")
+            }
+        } catch (e: NoSuchAlgorithmException) {
+         //   Log.e(FragmentActivity.TAG, "printHashKey()", e)
+        } catch (e: java.lang.Exception) {
+        //    Log.e(FragmentActivity.TAG, "printHashKey()", e)
+        }
     }
 
 

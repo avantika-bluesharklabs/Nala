@@ -237,5 +237,15 @@
     <string name="txt_msg_request">Massage requests</string>
     <string name="str_my_gender">My Gender</string>
     <string name="str_not_specified">Not Specified</string>
+    <string name="RC_SIGN_IN">sign in</string>
+
+
+
+    <!--facebook app id-->
+    <string name="facebook_app_id">1085921061820475</string>
+    <string name="fb_login_protocol_scheme">fb1085921061820475</string>
+    <string name="fb_login_hashkey">WVHyaxZJvwpyidHyh4pIZiV34pU=</string>
+
+
 </resources>
 

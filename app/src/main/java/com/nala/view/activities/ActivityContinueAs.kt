@@ -28,18 +28,20 @@ class ActivityContinueAs : ActivityBase() {
         mViewModelContinueAs = ViewModelContinueAs(mApplication, true)
         mBinding.vmContinueAs = mViewModelContinueAs
 
-
-
         observable()
+
     }
 
     fun observable() {
 
         mViewModelContinueAs.getLiveEventBackPress().observe(this, {
+
             onBackPressed()
+
         })
 
         mViewModelContinueAs.getLiveEvenTherapist().observe(this, {
+
             if (it) {
 
                 startActivity(Intent(this, ActivitySignUp::class.java))
@@ -48,6 +50,7 @@ class ActivityContinueAs : ActivityBase() {
         })
 
         mViewModelContinueAs.getLiveEventSignin().observe(this, {
+
             if (it) {
 
                 startActivity(Intent(this, ActivitySignIn::class.java))
@@ -56,6 +59,7 @@ class ActivityContinueAs : ActivityBase() {
         })
 
         mViewModelContinueAs.getLiveEvenClient().observe(this, {
+
             if (it) {
 
                 startActivity(Intent(this, ActivitySignUp::class.java))

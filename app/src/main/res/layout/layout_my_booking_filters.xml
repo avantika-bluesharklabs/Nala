@@ -198,7 +198,7 @@
                             android:layout_marginBottom="@dimen/margin_ten"
                             android:text="@string/str_deep_tisue"
                             android:textColor="@color/colorBlack"
-                            android:textSize="@dimen/textsize_sixteen" />
+                            android:textSize="@dimen/textsize_forteen" />
 
                     </androidx.cardview.widget.CardView>
 
@@ -241,7 +241,7 @@
                             android:layout_marginBottom="@dimen/margin_ten"
                             android:text="@string/str_deep_tisue"
                             android:textColor="@color/colorBlack"
-                            android:textSize="@dimen/textsize_sixteen" />
+                            android:textSize="@dimen/textsize_forteen" />
 
                     </androidx.cardview.widget.CardView>
 
@@ -398,7 +398,7 @@
                 android:text="@string/str_apply"
                 android:textAllCaps="false"
                 android:textColor="@color/colorWhite"
-                android:textSize="@dimen/textsize_sixteen"
+                android:textSize="@dimen/textsize_forteen"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
