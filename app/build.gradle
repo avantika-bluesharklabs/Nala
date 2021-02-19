@@ -111,9 +111,6 @@ dependencies {
 
     implementation 'com.google.android.gms:play-services-location:17.1.0'
 
-    //for rating
-    implementation 'com.github.ome450901:SimpleRatingBar:1.5.1'
-
     //facebook
     implementation 'com.facebook.android:facebook-android-sdk:4.31.0'
     implementation 'com.facebook.android:facebook-android-sdk:[5,6)'

@@ -5,11 +5,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import com.nala.R
 import com.nala.businesslogic.interfaces.OnClickMyBooking
 import com.nala.businesslogic.pojo.PojoMyBooking
 import com.nala.databinding.FragmentMyBookingsRowBinding
+import com.nala.view.fragments.FragmentBookingInfo
 
 class AdapterMyBookings(
     var mContext: Context, var mArrayContent: List<PojoMyBooking>,
@@ -30,6 +32,11 @@ class AdapterMyBookings(
             )
 
             binding.setOnContentClickListener(mOnClickmyBookingListener)
+
+           /* binding.btnCancel.setOnClickListener {
+
+
+            }*/
 
             Viewholder(binding)
 

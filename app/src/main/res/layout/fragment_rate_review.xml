@@ -34,8 +34,8 @@
                 android:id="@+id/img_back"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="@dimen/margin_five"
                 android:onClick="@{()->vmRateReview.clickBack()}"
+                android:padding="@dimen/margin_five"
                 android:src="@drawable/ic_back"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -100,9 +100,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_fifteen"
             android:elevation="@dimen/margin_one"
+            android:gravity="center"
             android:text="@string/str_rate_service"
             android:textAlignment="center"
-            android:gravity="center"
             android:textSize="@dimen/textsize_eighteen"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -123,28 +123,19 @@
             app:layout_constraintTop_toBottomOf="@id/txt_name" />
 
 
-        <com.willy.ratingbar.ScaleRatingBar
+        <androidx.appcompat.widget.AppCompatRatingBar
             android:id="@+id/simpleRatingBar"
+            style="@style/RatingBar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_ten"
+            android:elevation="@dimen/margin_one"
+            android:numStars="5"
+            android:rating="2"
+            android:stepSize="0.1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/txt_rating_text"
-            app:srb_clearRatingEnabled="true"
-            app:srb_clickable="true"
-            android:elevation="@dimen/margin_one"
-            app:srb_drawableEmpty="@drawable/ic_rating_unselect"
-            app:srb_drawableFilled="@drawable/ic_rating_select"
-            app:srb_isIndicator="false"
-            app:srb_minimumStars="1"
-            app:srb_numStars="5"
-            app:srb_rating="2"
-            app:srb_scrollable="true"
-            app:srb_starHeight="0dp"
-            app:srb_starPadding="0dp"
-            app:srb_starWidth="0dp"
-            app:srb_stepSize="1" />
+            app:layout_constraintTop_toBottomOf="@id/txt_rating_text" />
 
         <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/ed_review"
@@ -154,9 +145,9 @@
             android:layout_marginTop="@dimen/margin_twenty"
             android:layout_marginEnd="@dimen/margin_twenty"
             android:background="@drawable/bg_edittext"
+            android:elevation="@dimen/margin_one"
             android:gravity="top"
             android:hint="@string/str_write_review"
-            android:elevation="@dimen/margin_one"
             android:inputType="textMultiLine"
             android:lines="4"
             android:maxLines="4"
@@ -183,14 +174,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_twenty"
-            android:text="@string/str_no_tx"
             android:elevation="@dimen/margin_one"
+            android:text="@string/str_no_tx"
             android:textColor="@color/colorDarkGray"
             android:textSize="@dimen/textsize_forteen"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/btn_submit" />
-
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -208,8 +198,6 @@
         <!--  </androidx.constraintlayout.widget.ConstraintLayout>
 
           </androidx.core.widget.NestedScrollView>-->
-
-
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

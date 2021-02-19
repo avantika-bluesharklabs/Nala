@@ -30,6 +30,9 @@ import com.nala.businesslogic.pojo.*
 import java.io.ByteArrayOutputStream
 import java.io.File
 
+/*
+* Binder CLass for bind RecyclerViews and its Adapters with it's Interfaces.
+*/
 object BindingAdapterApp {
 
     @BindingAdapter(

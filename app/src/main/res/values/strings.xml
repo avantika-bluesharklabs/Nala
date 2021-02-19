@@ -247,5 +247,12 @@
     <string name="fb_login_hashkey">WVHyaxZJvwpyidHyh4pIZiV34pU=</string>
 
 
+
+
+    <!-- <google map>-->
+    <string name="google_map_api_key">AIzaSyCJcM2crKJaxENjQVq2usZfnNxzEFSwmcU</string>
+
+
+
 </resources>
 

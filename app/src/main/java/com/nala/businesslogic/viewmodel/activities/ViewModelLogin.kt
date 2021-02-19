@@ -5,7 +5,7 @@ import com.nala.businesslogic.viewmodel.ViewModelBase
 import com.nala.view.MyApplication
 
 class ViewModelLogin(
-    mApplication: MyApplication,
+    mApplication: MyApplication
 ) : ViewModelBase(mApplication) {
 
 

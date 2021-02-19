@@ -115,14 +115,17 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/txt_date_text">
 
-                    <androidx.appcompat.widget.AppCompatTextView
-                        android:id="@+id/txt_select"
-                        android:layout_width="wrap_content"
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/edt_date"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:text="@string/str_select_here"
+                        android:hint="@string/str_select_here"
+                        android:background="@null"
+                        android:maxLines="1"
                         android:textColor="@color/colorBlack"
                         android:textSize="@dimen/textsize_forteen"
                         app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/img_date"
                         app:layout_constraintTop_toTopOf="parent" />
 
 

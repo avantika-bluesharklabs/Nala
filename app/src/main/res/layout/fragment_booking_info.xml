@@ -34,8 +34,8 @@
                 android:id="@id/img_back"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="@dimen/margin_five"
                 android:onClick="@{()->vmBookingInfo.clickBack()}"
+                android:padding="@dimen/margin_five"
                 android:src="@drawable/ic_back"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -110,7 +110,7 @@
                     android:textColor="@color/colorWhite"
                     android:textSize="@dimen/textsize_sixteen"
                     app:layout_constraintStart_toEndOf="@+id/img_user"
-                   app:layout_constraintTop_toBottomOf="@+id/txt_booking_id" />
+                    app:layout_constraintTop_toBottomOf="@+id/txt_booking_id" />
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/txt_status"
@@ -390,12 +390,18 @@
                             app:layout_constraintTop_toBottomOf="@id/txt_type" />
 
 
+                        <fragment
+                            android:id="@+id/map_bookimg"
+                            android:name="com.google.android.gms.maps.SupportMapFragment"
+                            android:layout_width="0dp"
+                            android:layout_height="150dp"
+                            android:layout_marginTop="@dimen/margin_ten"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/txt_type" />
+
+
                     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
-
-
 
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
@@ -412,9 +418,9 @@
                     android:backgroundTint="@color/colorGray"
                     android:text="@string/str_cancel"
                     android:textAllCaps="false"
-                    android:visibility="gone"
                     android:textColor="@color/colorDarkGray"
                     android:textSize="@dimen/textsize_sixteen"
+                    android:visibility="gone"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/btn_aceept"
                     app:layout_constraintStart_toStartOf="parent" />
@@ -431,9 +437,9 @@
                     android:backgroundTint="@color/colorPrimary"
                     android:text="@string/btn_start"
                     android:textAllCaps="false"
-                    android:visibility="gone"
                     android:textColor="@color/colorWhite"
                     android:textSize="@dimen/textsize_sixteen"
+                    android:visibility="gone"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/btn_cancel" />
@@ -450,12 +456,12 @@
                     android:backgroundTint="@color/colorGray"
                     android:text="@string/str_cancel_booking"
                     android:textAllCaps="false"
-                    android:visibility="gone"
                     android:textColor="@color/colorDarkGray"
                     android:textSize="@dimen/textsize_sixteen"
+                    android:visibility="gone"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"/>
+                    app:layout_constraintStart_toStartOf="parent" />
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btn_complete_service"
@@ -468,42 +474,41 @@
                     android:backgroundTint="@color/ColorGreen"
                     android:text="@string/btn_complete_ser"
                     android:textAllCaps="false"
-                    android:visibility="gone"
                     android:textColor="@color/colorWhite"
                     android:textSize="@dimen/textsize_sixteen"
+                    android:visibility="gone"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent" />
-
 
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/cosnt_rate_review"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:elevation="@dimen/margin_two"
-                    android:visibility="visible"
                     android:background="@drawable/top_curve_view"
                     android:backgroundTint="@color/colorBlueForButtons"
+                    android:elevation="@dimen/margin_two"
+                    android:visibility="visible"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent">
 
                     <androidx.appcompat.widget.AppCompatTextView
                         android:id="@+id/txt_rate_review"
+                        style="@style/bold"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:drawableStart="@drawable/give_rate_review"
+                        android:drawablePadding="@dimen/margin_ten"
+                        android:padding="@dimen/margin_twenty"
                         android:text="@string/str_rateandreview"
                         android:textColor="@color/colorWhite"
                         android:textSize="@dimen/textsize_sixteen"
-                        style="@style/bold"
-                        android:padding="@dimen/margin_twenty"
-                        android:drawablePadding="@dimen/margin_ten"
-                        android:drawableStart="@drawable/give_rate_review"
-                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintBottom_toBottomOf="parent"/>
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -527,12 +532,6 @@
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
-
-
-
 
 
 </layout>

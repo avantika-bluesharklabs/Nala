@@ -27,6 +27,12 @@ class FragmentRateReview: FragmentBase() {
         mViewModelRateReview = ViewModelRateReview(mApplication, false)
         mBinding.vmRateReview = mViewModelRateReview
 
+        /*mBinding.simpleRatingBar.setOnRatingBarChangeListener { ratingBar, rating, fromUser ->
+
+            ratingBar.rating = rating
+
+        }*/
+
         observer()
 
         return mBinding.root
