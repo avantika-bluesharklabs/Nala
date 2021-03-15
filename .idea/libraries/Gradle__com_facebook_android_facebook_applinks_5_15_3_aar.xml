@@ -4,6 +4,12 @@
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/3bd204303ed049c98fd21d6c1cdca24f/jetified-facebook-applinks-5.15.3/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/3bd204303ed049c98fd21d6c1cdca24f/jetified-facebook-applinks-5.15.3/res" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/3bd204303ed049c98fd21d6c1cdca24f/jetified-facebook-applinks-5.15.3/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/83b00d12718e510c444b36055e7b4e2e/jetified-facebook-applinks-5.15.3/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/83b00d12718e510c444b36055e7b4e2e/jetified-facebook-applinks-5.15.3/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/83b00d12718e510c444b36055e7b4e2e/jetified-facebook-applinks-5.15.3/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/20de8503bf6a6a2fc64d7b9954997dd9/jetified-facebook-applinks-5.15.3/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/20de8503bf6a6a2fc64d7b9954997dd9/jetified-facebook-applinks-5.15.3/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/20de8503bf6a6a2fc64d7b9954997dd9/jetified-facebook-applinks-5.15.3/res" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.facebook.android/facebook-applinks/5.15.3/9c2ed5df92615e080cedace105ef91c63bb8096b/facebook-applinks-5.15.3-javadoc.jar!/" />

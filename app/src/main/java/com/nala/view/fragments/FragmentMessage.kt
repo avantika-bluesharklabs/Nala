@@ -30,11 +30,6 @@ class FragmentMessage : FragmentBase(), OnClickMessage {
         mBinding.vmMessage = mViewModelMessage
         mBinding.onContentClickListener = this
 
-
-
-
-
-
         return mBinding.root
     }
 

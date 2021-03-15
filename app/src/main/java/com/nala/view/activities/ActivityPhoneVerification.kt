@@ -41,24 +41,24 @@ class ActivityPhoneVerification : ActivityBase() {
     }
 
 
-   /* private fun showDialog() {
-        val dialog = Dialog(this)
-        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
-        dialog.getWindow()?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT));
-        dialog.setCancelable(true)
-        dialog.setContentView(R.layout.popup_account_created)
-        val body = dialog.findViewById(R.id.img_done) as AppCompatImageView
-//        body.text = title
-//        val yesBtn = dialog.findViewById(R.id.yesBtn) as Button
-//        val noBtn = dialog.findViewById(R.id.noBtn) as TextView
-//        yesBtn.setOnClickListener {
-//            dialog.dismiss()
-//        }
-        body.setOnClickListener {  startActivity(Intent(this, ActivityAddUserDetails::class.java))
-            finish() }
-        dialog.show()
+    /* private fun showDialog() {
+         val dialog = Dialog(this)
+         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+         dialog.getWindow()?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT));
+         dialog.setCancelable(true)
+         dialog.setContentView(R.layout.popup_account_created)
+         val body = dialog.findViewById(R.id.img_done) as AppCompatImageView
+ //        body.text = title
+ //        val yesBtn = dialog.findViewById(R.id.yesBtn) as Button
+ //        val noBtn = dialog.findViewById(R.id.noBtn) as TextView
+ //        yesBtn.setOnClickListener {
+ //            dialog.dismiss()
+ //        }
+         body.setOnClickListener {  startActivity(Intent(this, ActivityAddUserDetails::class.java))
+             finish() }
+         dialog.show()
 
-    }*/
+     }*/
 
 
     fun observable() {
@@ -123,7 +123,6 @@ class ActivityPhoneVerification : ActivityBase() {
                 //  edt_otp_2.transformationMethod = PasswordTransformationMethod.getInstance()
 
 
-
             }
 
             override fun afterTextChanged(s: Editable?) {
@@ -142,7 +141,6 @@ class ActivityPhoneVerification : ActivityBase() {
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                 mBinding.edtOtpThree.inputType = InputType.TYPE_CLASS_NUMBER
                 //   edt_otp_3.transformationMethod = PasswordTransformationMethod.getInstance()
-
 
 
             }
@@ -165,7 +163,6 @@ class ActivityPhoneVerification : ActivityBase() {
                 //   edt_otp_5.transformationMethod = PasswordTransformationMethod.getInstance()
 
 
-
             }
 
             override fun afterTextChanged(s: Editable?) {
@@ -176,19 +173,7 @@ class ActivityPhoneVerification : ActivityBase() {
         })
 
 
-
-
-
     }
-
-
-
-
-
-
-
-
-
 
 
 }
